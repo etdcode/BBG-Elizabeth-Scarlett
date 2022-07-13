@@ -1,0 +1,2135 @@
+{
+  "current": {
+    "product_default_option_type": "swatches",
+    "minicart_free_shipping": true,
+    "minicart_free_shipping_threshold": "50",
+    "minicart_free_shipping_under": "Spend {{ amount }} more to get free uk delivery",
+    "heading_treat_yourself": "Treat Yourself",
+    "collection_treat_yourself": "gift-notes",
+    "number_product": 10,
+    "cart_free_shipping_threshold": "50",
+    "favicon": "shopify:\/\/shop_images\/favicon_f4e0b944-0eb4-48ff-b235-992030e70abb.png",
+    "facebook": "https:\/\/www.facebook.com\/elizabethscarlettlondon",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Elizabeth_Scarlett_Main_Logo_RichBlack.png",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#fffef9",
+    "checkout_sidebar_background_color": "#faf4ec",
+    "checkout_accent_color": "#986473",
+    "checkout_button_color": "#986473",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "d693c8fa-48b8-4827-9902-88d4c5c79812": {
+            "type": "announcement",
+            "settings": {
+              "message": "<p>Explore What’s Trending   <a href=\"\/collections\/core\" title=\"Best Sellers\"><span style=\"text-decoration:underline\">SHOP NOW<\/span><\/a><\/p>",
+              "link": ""
+            }
+          },
+          "a4db3407-686b-4c47-bc81-47a9613ed0c9": {
+            "type": "announcement",
+            "settings": {
+              "message": "<p>Island Paradise Collection just launched - <a href=\"\/collections\/island-paradise\" title=\"Island Paradise\"><strong>SHOP HERE<\/strong><\/a><\/p>",
+              "link": ""
+            }
+          },
+          "307276fd-f4db-4b86-9781-7adb5ff087e0": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "message": "<p>Announce something here...<\/p>",
+              "link": ""
+            }
+          },
+          "bdd77a8a-f092-4fc4-847a-546fdfdd88b7": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "new in",
+              "product_1": "british-blooms-bedding-cushion-cover",
+              "product_2": "sunflower-blue-velvet-wash-bag",
+              "product_3": "british-blooms-bedding-cushion-cover",
+              "product_4": "orange-blue-velvet-day-bag"
+            }
+          },
+          "1f105ca8-1c6e-47c9-a8ee-8621f4dbe6a1": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "shop all",
+              "title_1": "ACCESSORIES",
+              "title_link_1": "",
+              "link_list_1": "accessories",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "b4f75a3e-2002-447f-a78a-0ee128c860ce": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "shop all",
+              "title_1": "HOMEWEAR",
+              "title_link_1": "",
+              "link_list_1": "homeware",
+              "title_2": "SLEEPWEAR",
+              "title_link_2": "",
+              "link_list_2": "sleepwear"
+            }
+          },
+          "6b85895e-c777-4292-9d1d-21b545f39e39": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "shop all",
+              "title_1": "SS22 Collections",
+              "title_link_1": "",
+              "link_list_1": "ss-2022-collections",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "d3d15b59-e2a7-430e-99c4-ede9ae55a072": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "shop all",
+              "title_1": "ES LOVES",
+              "title_link_1": "",
+              "link_list_1": "es-loves",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "bd5248c6-9210-4fa4-830b-8ba0d3b2be48": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "shop all",
+              "product_1": "swimming-turtle-everyday-pouch",
+              "product_2": "summer-palm-cosmetics-bag",
+              "product_3": "",
+              "product_4": ""
+            }
+          },
+          "5fdc95ed-babc-4a65-a112-71a217967587": {
+            "type": "corner_image",
+            "settings": {
+              "parent": "",
+              "corner_image_pos": "left",
+              "corner_image": "shopify:\/\/shop_images\/British_Bloom_s_collection_Aster_1.png"
+            }
+          },
+          "b40edb0d-ade4-4885-877b-875b04ef59d5": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "accessories",
+              "title_1": "",
+              "title_link_1": "",
+              "link_list_1": "accessories",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "35cf1da2-f9c3-466d-bd0e-2a923dc70f4a": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "accessories",
+              "product_1": "alphabet-orange-everyday-pouch",
+              "product_2": "cherry-blossom-everyday-pouch",
+              "product_3": "",
+              "product_4": ""
+            }
+          },
+          "d4d727dd-5b69-43a3-ba84-70173ed1006f": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "homewear",
+              "title_1": "",
+              "title_link_1": "",
+              "link_list_1": "homeware",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "33a91566-6bdb-445e-979a-3e5cefd670e2": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "homewear",
+              "product_1": "bees-bedding-set",
+              "product_2": "bee-bedding-cushion-cover",
+              "product_3": "",
+              "product_4": ""
+            }
+          },
+          "0609e095-d74d-4c46-9682-8fb4a8d7ecea": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "sleepwear",
+              "title_1": "",
+              "title_link_1": "",
+              "link_list_1": "sleepwear",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "4620a79b-9c1d-4845-a959-68cbeb5cfeb8": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "sleepwear",
+              "product_1": "star-pyjamas",
+              "product_2": "tiger-pyjamas",
+              "product_3": "",
+              "product_4": ""
+            }
+          },
+          "d5def39f-1117-4f46-a05a-fc3075d19b13": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "latest designs",
+              "title_1": "",
+              "title_link_1": "",
+              "link_list_1": "ss-2022-collections",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "b156dbbb-df4c-4204-b779-323b95eb765d": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "ss22 collections",
+              "product_1": "crane-day-bag",
+              "product_2": "cherry-blossom-eye-mask",
+              "product_3": "",
+              "product_4": ""
+            }
+          },
+          "f92d678a-2128-40db-b019-e6185b010679": {
+            "type": "megamenu_links",
+            "settings": {
+              "parent": "es favourites",
+              "title_1": "",
+              "title_link_1": "",
+              "link_list_1": "es-loves",
+              "title_2": "",
+              "title_link_2": "",
+              "link_list_2": ""
+            }
+          },
+          "0b25876b-4a82-4349-9be1-abfdb85d6664": {
+            "type": "megamenu_product",
+            "settings": {
+              "parent": "es loves",
+              "product_1": "elephant-khaki-velvet-cushion",
+              "product_2": "savanna-giraffe-makeup-bag",
+              "product_3": "",
+              "product_4": ""
+            }
+          }
+        },
+        "block_order": [
+          "d693c8fa-48b8-4827-9902-88d4c5c79812",
+          "a4db3407-686b-4c47-bc81-47a9613ed0c9",
+          "307276fd-f4db-4b86-9781-7adb5ff087e0",
+          "bdd77a8a-f092-4fc4-847a-546fdfdd88b7",
+          "1f105ca8-1c6e-47c9-a8ee-8621f4dbe6a1",
+          "b4f75a3e-2002-447f-a78a-0ee128c860ce",
+          "6b85895e-c777-4292-9d1d-21b545f39e39",
+          "d3d15b59-e2a7-430e-99c4-ede9ae55a072",
+          "bd5248c6-9210-4fa4-830b-8ba0d3b2be48",
+          "5fdc95ed-babc-4a65-a112-71a217967587",
+          "b40edb0d-ade4-4885-877b-875b04ef59d5",
+          "35cf1da2-f9c3-466d-bd0e-2a923dc70f4a",
+          "d4d727dd-5b69-43a3-ba84-70173ed1006f",
+          "33a91566-6bdb-445e-979a-3e5cefd670e2",
+          "0609e095-d74d-4c46-9682-8fb4a8d7ecea",
+          "4620a79b-9c1d-4845-a959-68cbeb5cfeb8",
+          "d5def39f-1117-4f46-a05a-fc3075d19b13",
+          "b156dbbb-df4c-4204-b779-323b95eb765d",
+          "f92d678a-2128-40db-b019-e6185b010679",
+          "0b25876b-4a82-4349-9be1-abfdb85d6664"
+        ],
+        "settings": {
+          "enable_sticky": true,
+          "main_menu": "new-header",
+          "main_menu_mobile": "mobile-menu",
+          "main_menu_mobile_2": "secondary-mobile-menu",
+          "logo": "shopify:\/\/shop_images\/Main_Logo_BlackESLOGO_2_1_1.png",
+          "logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/Elizabeth_Scarlett_Main_Logo_RichBlack.svg?v=1632145702",
+          "logo_mobile": "shopify:\/\/shop_images\/Group_345.png",
+          "logo_mobile_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/Elizabeth_Scarlett_Initials_Logo_RichBlack-1.svg?v=1632145766",
+          "about_menu": "",
+          "link_stockist": "shopify:\/\/pages\/faqs",
+          "link_contact": "shopify:\/\/pages\/contact-us",
+          "button_1": "SHOP NEW ARRIVALS",
+          "button_url_1": "shopify:\/\/collections\/new-in",
+          "button_2": "SHOP ALL-TIME FAVOURITES",
+          "button_url_2": "shopify:\/\/collections\/core",
+          "delivery_info": "Free uk delivery on orders over £50",
+          "show_announcement": false,
+          "announcement_speed": 3000
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "51c14cf8-c89f-48ce-ad91-24fb3c5c4649": {
+            "type": "list",
+            "settings": {
+              "title": "Shopping",
+              "linklist": "accessories"
+            }
+          },
+          "4e45b858-954d-4c6b-93f6-c2a642100dfc": {
+            "type": "list",
+            "settings": {
+              "title": "About",
+              "linklist": "footer1_new"
+            }
+          },
+          "319a8c6b-ed5c-4df3-8771-7d2c6c669549": {
+            "type": "list",
+            "settings": {
+              "title": "Account & Rewards",
+              "linklist": "footer-2"
+            }
+          },
+          "9bf32df9-e545-4ddd-94c1-71dfe5505099": {
+            "type": "list",
+            "settings": {
+              "title": "Follow us",
+              "linklist": "follow-us"
+            }
+          },
+          "7799fc36-5ca5-44bf-a336-adbdfb3bcd21": {
+            "type": "help",
+            "disabled": true,
+            "settings": {
+              "link_stockist": "shopify:\/\/pages\/stockists",
+              "link_contact": "shopify:\/\/pages\/contact-us"
+            }
+          }
+        },
+        "block_order": [
+          "51c14cf8-c89f-48ce-ad91-24fb3c5c4649",
+          "4e45b858-954d-4c6b-93f6-c2a642100dfc",
+          "319a8c6b-ed5c-4df3-8771-7d2c6c669549",
+          "9bf32df9-e545-4ddd-94c1-71dfe5505099",
+          "7799fc36-5ca5-44bf-a336-adbdfb3bcd21"
+        ],
+        "settings": {
+          "newsletter_heading": "Get 10% off your first order",
+          "newsletter_subheading": "Sign up to our newsletter",
+          "footer_logo": "shopify:\/\/shop_images\/Group_345_1.png",
+          "footer_logo_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/Elizabeth_Scarlett_Initials_Logo_RichBlack-1.svg?v=1632145766",
+          "show_payment": true
+        }
+      },
+      "16308337681265915a": {
+        "type": "index--carousel",
+        "blocks": {
+          "9d4cabf9-9cfc-466c-8757-2c6e570ea2c9": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IP_Header_DT.jpg",
+              "mobileimage": "shopify:\/\/shop_images\/IP_Header_Mob.jpg",
+              "use_video": false,
+              "video_type": "youtube",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "video_self_host": "",
+              "heading": "Island Paradise",
+              "subheading": "NEW Collection",
+              "button_color": "#fffef9",
+              "button_text_color": "#986473",
+              "button_text": "Shop Now",
+              "button_url": "shopify:\/\/collections\/island-paradise"
+            }
+          },
+          "546a998c-a49b-413b-883a-762ab18a4188": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/04_GROUP_SHOTS_037_2.jpg",
+              "mobileimage": "shopify:\/\/shop_images\/04_GROUP_SHOTS_037_1.jpg",
+              "use_video": false,
+              "video_type": "youtube",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "video_self_host": "",
+              "heading": "Turtle Conservation Collection",
+              "subheading": "NEW CHARITY COLLECTION",
+              "button_color": "#fffef9",
+              "button_text_color": "#986473",
+              "button_text": "PROTECT TURTLE HATCHLINGS",
+              "button_url": "shopify:\/\/collections\/conservation-collection-turtles"
+            }
+          },
+          "0266d2b1-792b-4eed-b77e-064bce9af516": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Rebirth_HP_DT.jpg",
+              "mobileimage": "shopify:\/\/shop_images\/Rebirth_DT_Mob.jpg",
+              "use_video": false,
+              "video_type": "youtube",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "video_self_host": "",
+              "heading": "Rebirth Collection",
+              "subheading": "New Collection",
+              "button_color": "#fffef9",
+              "button_text_color": "#986473",
+              "button_text": "Discover Now",
+              "button_url": "shopify:\/\/collections\/rebirth"
+            }
+          },
+          "0c5260bc-37eb-47b0-abe0-e697483263b1": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/safari_classics_banner.jpg",
+              "use_video": false,
+              "video_type": "youtube",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "video_self_host": "",
+              "heading": "Safari Classics",
+              "subheading": "new collection",
+              "button_color": "#fffef9",
+              "button_text_color": "#986473",
+              "button_text": "Shop now",
+              "button_url": "shopify:\/\/collections\/safari-classics"
+            }
+          },
+          "ce24d76f-0f2a-4350-987c-3d86c0e91302": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Homepage_DT_1.jpg",
+              "use_video": false,
+              "video_type": "youtube",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+              "video_self_host": "",
+              "heading": "Alphabet Pouches",
+              "subheading": "Best-selling",
+              "button_color": "#fffef9",
+              "button_text_color": "#986473",
+              "button_text": "shop now",
+              "button_url": "shopify:\/\/collections\/alphabet-pouches"
+            }
+          }
+        },
+        "block_order": [
+          "9d4cabf9-9cfc-466c-8757-2c6e570ea2c9",
+          "546a998c-a49b-413b-883a-762ab18a4188",
+          "0266d2b1-792b-4eed-b77e-064bce9af516",
+          "0c5260bc-37eb-47b0-abe0-e697483263b1",
+          "ce24d76f-0f2a-4350-987c-3d86c0e91302"
+        ],
+        "settings": {
+          "arrow_color": "#080c22",
+          "dot_color": "#fffef9",
+          "speed": 4000
+        }
+      },
+      "1630833925bd0803a9": {
+        "type": "index--product-recommendations",
+        "settings": {
+          "collection": "core",
+          "heading": "Our Best-sellers",
+          "subheading": "Discover",
+          "desc": "<p>Embroidered with our signature safari motifs these best-sellers are set to bring a touch of the wild to your every adventure.<\/p>",
+          "button_text": "Shop now",
+          "button_url": "shopify:\/\/collections\/core",
+          "background_color": ""
+        }
+      },
+      "16308339283fccca8a": {
+        "type": "index--copy-carousel",
+        "blocks": {
+          "db2ad6ab-9949-4263-8661-c3d8481970c0": {
+            "type": "page",
+            "settings": {
+              "text": "<p>We pledge at least 2% of our annual sales to the preservation of keystone species.<\/p>",
+              "icon": "shopify:\/\/shop_images\/bee_3_862ca843-3af8-48e0-8d3c-236db9a96b50.png"
+            }
+          },
+          "cec18d7d-4281-422c-9fa6-dd16cc3d7614": {
+            "type": "page",
+            "settings": {
+              "text": "<p>With the support of our community we have raised over £200K for animal conservation charities.<\/p>",
+              "icon": "shopify:\/\/shop_images\/Vector_21838aa4-3aae-4f3e-b22e-6686a07147e1.png"
+            }
+          },
+          "260d399f-348b-4db6-b1d1-ada42e237de2": {
+            "type": "page",
+            "settings": {
+              "text": "<p>Each intricate and embroidered design is hand-painted by founder and artist Elizabeth.<\/p>",
+              "icon": "shopify:\/\/shop_images\/Vector_1.png"
+            }
+          }
+        },
+        "block_order": [
+          "db2ad6ab-9949-4263-8661-c3d8481970c0",
+          "cec18d7d-4281-422c-9fa6-dd16cc3d7614",
+          "260d399f-348b-4db6-b1d1-ada42e237de2"
+        ],
+        "settings": {
+          "enable_autoplay": true,
+          "autoplay_speed": 5000
+        }
+      },
+      "16308356908985abe5": {
+        "type": "index--monogramming",
+        "settings": {
+          "background_image": "shopify:\/\/shop_images\/Mono_Banner_Updated_3e203af5-55aa-4a85-bb0d-645454303416.jpg",
+          "heading": "Monogramming",
+          "subheading": "discover",
+          "button_text": "personalise now",
+          "button_url": "shopify:\/\/pages\/bespoke-monogramming"
+        }
+      },
+      "16308361902181eab5": {
+        "type": "index--featured-collections",
+        "blocks": {
+          "dc4e856b-ea0d-4c37-b0ee-e140e4d30673": {
+            "type": "collection",
+            "settings": {
+              "title": "everyday Pouches",
+              "image_1": "shopify:\/\/shop_images\/Pouches_Mob.jpg",
+              "link": "shopify:\/\/collections\/pouches"
+            }
+          },
+          "a9c2d70d-fc1d-46fe-8a86-984f17744491": {
+            "type": "collection",
+            "settings": {
+              "title": "wash bags",
+              "image_1": "shopify:\/\/shop_images\/washbags.jpg",
+              "link": "shopify:\/\/collections\/wash-bags"
+            }
+          },
+          "d8fbe7d9-50f4-4814-ba41-acd20b85f65b": {
+            "type": "collection",
+            "settings": {
+              "title": "Makeup & Cosmetics bags",
+              "image_1": "shopify:\/\/shop_images\/Silhouettes_Cosmetics_Bags_DT.jpg",
+              "link": "shopify:\/\/collections\/makeup-bags"
+            }
+          },
+          "2624c5ee-bed3-4909-a571-2a62981d0622": {
+            "type": "collection",
+            "settings": {
+              "title": "Eye masks",
+              "image_1": "shopify:\/\/shop_images\/Silhouettes_Eyemasks_DT.jpg",
+              "link": "shopify:\/\/collections\/eye-masks"
+            }
+          },
+          "68b41156-a089-4639-a365-ce8c9acc2a17": {
+            "type": "collection",
+            "settings": {
+              "title": "Pyjamas",
+              "image_1": "shopify:\/\/shop_images\/pjs.jpg",
+              "link": "shopify:\/\/collections\/pyjamas"
+            }
+          },
+          "76f954cd-9d44-459b-a66b-6775181f0abf": {
+            "type": "collection",
+            "settings": {
+              "title": "Bags",
+              "image_1": "shopify:\/\/shop_images\/Silhouettes_Bags_DT.jpg",
+              "link": "shopify:\/\/collections\/bags"
+            }
+          },
+          "0f2f6fa8-f196-4adf-9828-e2a95cc05dc0": {
+            "type": "collection",
+            "settings": {
+              "title": "Bedding",
+              "image_1": "shopify:\/\/shop_images\/bedding_7698111b-b67c-4461-9442-10482f5cb613.jpg",
+              "link": "shopify:\/\/collections\/bedding"
+            }
+          }
+        },
+        "block_order": [
+          "dc4e856b-ea0d-4c37-b0ee-e140e4d30673",
+          "a9c2d70d-fc1d-46fe-8a86-984f17744491",
+          "d8fbe7d9-50f4-4814-ba41-acd20b85f65b",
+          "2624c5ee-bed3-4909-a571-2a62981d0622",
+          "68b41156-a089-4639-a365-ce8c9acc2a17",
+          "76f954cd-9d44-459b-a66b-6775181f0abf",
+          "0f2f6fa8-f196-4adf-9828-e2a95cc05dc0"
+        ],
+        "settings": {
+          "section_label": "shopify:\/\/shop_images\/ELEPHANTS-V2_1.png",
+          "heading": "Silhouettes",
+          "subheading": "best-selling",
+          "desc": "<p>Be organised for every occasion with  accessories designed to make life a little easier and more luxurious. <\/p>",
+          "button_text": "",
+          "button_url": "shopify:\/\/collections\/core",
+          "background_color": "#faf4ec"
+        }
+      },
+      "1630836229a1f7adc9": {
+        "type": "index--storytelling",
+        "settings": {
+          "customClass": "",
+          "backcolor": "",
+          "heading": "Elizabeth Scarlett",
+          "subheading": "Meet the designer",
+          "desc": "<p>We are a family-owned business, founded by artist and conservationist Elizabeth Scarlett Petrides. Driven by her passion to give back to our natural world, she creates beautiful, embroidered accessories, inspired by nature and designed to last.<\/p>",
+          "button_text": "Discover more",
+          "button_url": "shopify:\/\/pages\/about-us",
+          "image_1": "shopify:\/\/shop_images\/elizabeth_2.jpg",
+          "use_video_1": false,
+          "video_type_1": "vimeo",
+          "video_url_1": "https:\/\/vimeo.com\/691812295",
+          "video_self_host_1": "",
+          "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+          "image_2": "shopify:\/\/shop_images\/lizzie2.jpg",
+          "use_video_2": true,
+          "video_type_2": "self_host",
+          "video_url_2": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "video_self_host_2": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/lizzie.mp4?v=1649746393",
+          "image_3": "shopify:\/\/shop_images\/lizzie2.jpg",
+          "story": "<p>I founded Elizabeth Scarlett in 2015 with the intention of adding joy to peoples day with colourful accessories and homewares. Seven years on I am so proud of what we have achieved and incredibly grateful to use our brand as a platform to give back to our natural world and the majestic animals that inspire my designs.<\/p>",
+          "sign": "shopify:\/\/shop_images\/Elizabeth_Scarlett_Signature_RichBlack.png",
+          "sign_svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/Elizabeth_Scarlett_Signature_RichBlack.svg?v=1632146320"
+        }
+      },
+      "163083643515a1d887": {
+        "type": "index--pressl",
+        "blocks": {
+          "6929405a-bbdc-4fbd-92f7-ce28591cb263": {
+            "type": "press",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/image-10q.png",
+              "text": "<p>We’re so in love with this pretty Elizabeth Scarlett travel pouch that we sometimes forget it’s filled with products.<\/p>"
+            }
+          },
+          "8c19423b-1b87-4558-a2b4-4082baf2bf24": {
+            "type": "press",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/You_Mag_Black.png",
+              "text": "<p>For a new wash bag, look to Elizabeth Scarlett’s collection of velvet bags with waterproof interiors. They are sumptuous but practical and highly desirable.<\/p>"
+            }
+          },
+          "5c8c0a6f-bfde-4dc8-a0d8-c2ea93754fff": {
+            "type": "press",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Sheerluxe_Black_6deae1f7-2016-4bd8-9945-11f56eaa3619.png",
+              "text": "<p><em>Elizabeth Scarlett clutches, pouches and bags a must-have for your impending hols.<\/em><\/p>"
+            }
+          },
+          "2bcd9f8e-55cd-4192-8933-475863ec4021": {
+            "type": "press",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/image-q.png",
+              "text": "<p>Every woman needs a sleep mask - a boujee one at that - and this one from Elizabeth Scarlett is perfect!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "6929405a-bbdc-4fbd-92f7-ce28591cb263",
+          "8c19423b-1b87-4558-a2b4-4082baf2bf24",
+          "5c8c0a6f-bfde-4dc8-a0d8-c2ea93754fff",
+          "2bcd9f8e-55cd-4192-8933-475863ec4021"
+        ],
+        "settings": {
+          "enable_autoplay": true,
+          "autoplay_speed": 5000
+        }
+      },
+      "product": {
+        "type": "product",
+        "settings": {}
+      },
+      "list-icon-product": {
+        "type": "list-icon-product",
+        "blocks": {
+          "a21e010f-7a29-4273-81e9-715b9538f8b7": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.27.png",
+              "name_tag": "handpainted",
+              "content": "Hand Painted Designs"
+            }
+          },
+          "d52537f3-ec26-4a43-9aae-bc8a0398c265": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.24.png",
+              "name_tag": "velvetbase",
+              "content": "Soft Velvet Bases"
+            }
+          },
+          "085f4a02-7968-4279-addd-661a68df09de": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.15.png",
+              "name_tag": "doublesided",
+              "content": "Double Sided Designs"
+            }
+          },
+          "97d64f12-fcd9-4e55-935c-ada1da875807": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.27.png",
+              "name_tag": "handpainted",
+              "content": "Hand Painted Designs"
+            }
+          },
+          "83954808-95ef-4d54-96a0-9822729defdb": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.27.png",
+              "name_tag": "handpainted",
+              "content": "Hand Painted Designs"
+            }
+          },
+          "8c1379fe-f369-49fc-b9c9-e363aa1c1858": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Screenshot_2021-11-30_at_15.39.27.png",
+              "name_tag": "handpainted",
+              "content": "Hand Painted Designs"
+            }
+          }
+        },
+        "block_order": [
+          "a21e010f-7a29-4273-81e9-715b9538f8b7",
+          "d52537f3-ec26-4a43-9aae-bc8a0398c265",
+          "085f4a02-7968-4279-addd-661a68df09de",
+          "97d64f12-fcd9-4e55-935c-ada1da875807",
+          "83954808-95ef-4d54-96a0-9822729defdb",
+          "8c1379fe-f369-49fc-b9c9-e363aa1c1858"
+        ],
+        "settings": {}
+      },
+      "list-gift": {
+        "type": "list-gift",
+        "settings": {
+          "featured_collection": "upsell",
+          "sub_heading": "MAKE IT THE PERFECT GIFT",
+          "heading": "Add those finishing touches"
+        }
+      },
+      "list-product": {
+        "type": "list-product",
+        "blocks": {
+          "1eb791ae-8fb9-4ba6-8dba-9a70c9455a57": {
+            "type": "products",
+            "settings": {
+              "featured_product": "british-blooms-black-velvet-cushion"
+            }
+          },
+          "25ba007f-bffb-4d53-825d-f6a2d967c499": {
+            "type": "products",
+            "settings": {
+              "featured_product": "british-blooms-wash-bag"
+            }
+          },
+          "8b9341ea-eb8e-45bb-be5e-2591ceb597cd": {
+            "type": "products",
+            "settings": {
+              "featured_product": "constellations-natural-velvet-wash-bag"
+            }
+          },
+          "c3840c54-985f-49a6-9106-f691e67690d8": {
+            "type": "products",
+            "settings": {
+              "featured_product": "aquarius-velvet-travel-pouch"
+            }
+          },
+          "ce55b411-c9bf-4de2-9c5f-093f081bf0f4": {
+            "type": "products",
+            "disabled": true,
+            "settings": {
+              "featured_product": "british-blooms-black-velvet-eye-mask"
+            }
+          },
+          "b46cf6b0-e144-42e4-99c9-ee648e42cdb1": {
+            "type": "products",
+            "disabled": true,
+            "settings": {
+              "featured_product": ""
+            }
+          },
+          "e66b3c3d-00fc-42b2-83ea-70a7b5bb5e2a": {
+            "type": "img-text",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/BF_Homepage_Mob_07.jpg",
+              "text": "Pouches",
+              "link": "shopify:\/\/collections\/pouches"
+            }
+          }
+        },
+        "block_order": [
+          "1eb791ae-8fb9-4ba6-8dba-9a70c9455a57",
+          "25ba007f-bffb-4d53-825d-f6a2d967c499",
+          "8b9341ea-eb8e-45bb-be5e-2591ceb597cd",
+          "c3840c54-985f-49a6-9106-f691e67690d8",
+          "ce55b411-c9bf-4de2-9c5f-093f081bf0f4",
+          "b46cf6b0-e144-42e4-99c9-ee648e42cdb1",
+          "e66b3c3d-00fc-42b2-83ea-70a7b5bb5e2a"
+        ],
+        "settings": {
+          "sub_heading": "discover",
+          "heading": "Wonderful Things",
+          "description": "Embroidered with Elizabeth's hand-painted designs from her travels, every limited-edition collections is designed to bring a little more luxury to the every day.",
+          "link_txt": "Shop best sellers",
+          "link": "shopify:\/\/collections\/constellations-collection"
+        }
+      },
+      "list-icon-product-tab": {
+        "type": "list-icon-product-tab",
+        "blocks": {
+          "baac3ad9-a595-4f57-ab3d-5ed06938b8ad": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "uk standard delivery",
+              "content": "Free with orders over £50"
+            }
+          },
+          "68a80188-2921-426f-b1e3-4cf80d9b7672": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "delivery of monogrammed orders",
+              "content": "Estimated delivery is currently 10-14 working days."
+            }
+          },
+          "1fc4196f-30a5-4539-b256-f8a385fe585b": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "delivery to usa",
+              "content": "from £20"
+            }
+          },
+          "7f11a1f6-7f43-42a8-861d-39e291934963": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "delivery to australia",
+              "content": "delivery to australia"
+            }
+          },
+          "90302594-c56a-42a6-849a-167a2c944245": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "delivery to australia",
+              "content": "delivery to australia"
+            }
+          },
+          "cae40b36-3345-4c22-abdd-ac8134079104": {
+            "type": "icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/British_Bloom_s_collection-05_White_one_1.png",
+              "heading": "delivery to australia",
+              "content": "In the unlikely event that you receive a faulty item, please contact us and include images and a description of the issue."
+            }
+          }
+        },
+        "block_order": [
+          "baac3ad9-a595-4f57-ab3d-5ed06938b8ad",
+          "68a80188-2921-426f-b1e3-4cf80d9b7672",
+          "1fc4196f-30a5-4539-b256-f8a385fe585b",
+          "7f11a1f6-7f43-42a8-861d-39e291934963",
+          "90302594-c56a-42a6-849a-167a2c944245",
+          "cae40b36-3345-4c22-abdd-ac8134079104"
+        ],
+        "settings": {}
+      },
+      "recent-articles": {
+        "type": "recent-articles",
+        "settings": {
+          "title": "Discover More Stories"
+        }
+      },
+      "collection-template-boost-pfs-filter": {
+        "type": "collection-template-boost-pfs-filter",
+        "settings": {
+          "switch_layout_filter": "switch_layout_filter_vertical",
+          "enable_filter_sticky": false,
+          "toolbar_filter_sticky_mobile": true,
+          "filter_layout": "filter_layout_default",
+          "layout_type": "box",
+          "show_collection_image": true,
+          "show_collection_des": true,
+          "collection_header_bg_color": "#e5d9df",
+          "collection_header_text_color": "",
+          "show_toolbar_view_as": true,
+          "show_toolbar_product_count": true,
+          "show_toolbar_sort_by": true,
+          "show_toolbar_view_as_mobile": true,
+          "show_toolbar_product_count_mobile": true,
+          "show_toolbar_sort_by_mobile": true,
+          "view_as_type": "view_as_type_grid_list",
+          "products_per_page": 31,
+          "products_per_row": 3,
+          "products_per_row_mobile": 2,
+          "product_item_type": "grid",
+          "product_item_layout": "no-border",
+          "text_alignment": "left",
+          "show_details_when_hovering": false,
+          "show_vendor": true,
+          "show_price": true,
+          "active_image_swap": true,
+          "show_product_review": false,
+          "show_sold_out_label": true,
+          "show_sale_label": true,
+          "show_sale_percent": false,
+          "product_label_has_border_radius": true,
+          "show_label_by_tag": false,
+          "product_item_label_position": "top_left",
+          "product_label_type": "rectangle",
+          "product_item_label_bg_color": "",
+          "product_item_label_text_color": "",
+          "show_product_label_image": false,
+          "product_item_title_color": "#3d4246",
+          "product_item_title_font": "poppins_n6",
+          "product_item_title_font_size": 14,
+          "product_item_vendor_color": "#969595",
+          "product_item_vendor_font": "poppins_n4",
+          "product_item_vendor_font_size": 12,
+          "product_item_price_color": "#222222",
+          "product_item_old_price_color": "#969595",
+          "product_item_sale_price_color": "#f30000",
+          "product_item_price_font": "poppins_n4",
+          "product_item_price_font_size": 14,
+          "product_item_des_color": "#3a3a3a",
+          "product_item_des_font": "poppins_n4",
+          "product_item_des_font_size": 14,
+          "display_item_swatch": true,
+          "show_item_swatch_tooltip": true,
+          "swatch_color_display_type": "swatch_color_display_type_image_product",
+          "swatch_color_event_change_image": "hover",
+          "swatches_color_shape": "circle",
+          "display_item_swatch_size": false,
+          "equal_height": "auto",
+          "ratio_width_height_other": "",
+          "equal_height_crop_image_position": "center"
+        }
+      },
+      "16316920075c089f98": {
+        "type": "index--image-with-text",
+        "settings": {
+          "background-color": "",
+          "button_text": "Shop now",
+          "image_1": "shopify:\/\/shop_images\/safariclassicshomepgabe.jpg",
+          "caption_1": "New In: Safari Classics",
+          "link_1": "shopify:\/\/collections\/safari-classics",
+          "image_2": "shopify:\/\/shop_images\/elephant.jpg",
+          "caption_2": "Conservation Collection",
+          "link_2": "shopify:\/\/collections\/conservation-collection-elephants"
+        }
+      },
+      "cart--gift-products": {
+        "type": "cart--gift-products",
+        "settings": {
+          "collection": "upsell"
+        }
+      },
+      "about-us_hero-with-text": {
+        "type": "about-us_hero-with-text",
+        "settings": {
+          "background-height": "medium",
+          "background-type": "image",
+          "image": "shopify:\/\/shop_images\/Hero_Video_f2277eac-f490-4629-9e78-ab04680e06ad.png",
+          "video-type": "own",
+          "own-url": "",
+          "external-url": "",
+          "sub-title": "Welcome to Our Purpose",
+          "title": "<p>Cultivating Joy and Giving Back to Nature<\/p>",
+          "cta-text": "",
+          "cta-url": "",
+          "color": "#986473",
+          "btn-color": "#fffef9"
+        }
+      },
+      "about-us_vision-statement": {
+        "type": "about-us_vision-statement",
+        "settings": {
+          "statement": "<p>Elizabeth Scarlett exists to promote joyful living, while raising funds to protect our planet’s precious keystone species.<\/p>",
+          "background-color": "#fffef9"
+        }
+      },
+      "about-us_timeline": {
+        "type": "about-us_timeline",
+        "settings": {
+          "sub-title": "Our Founder",
+          "title": "Meet Elizabeth",
+          "content1": "<p>Elizabeth started building Elizabeth Scarlett in 2015, painting beautiful watercolours that were then translated onto gorgeous fabrics with intricate embroidery. To this day, every pattern, symbol or motif comes from one of Elizabeth’s original paintings. “I wanted to create pieces that evoked feelings of joy, inspired wanderlust and captured the beauty of the world.”<\/p><p><br\/>Our business is still family-owned and has grown to be a full team of talented and passionate people. We are lucky to have worked with some incredible brand partners, including Antropologie, Birchbox, Bobbi Brown, L’Occitane and Estee Lauder, who have all helped us get to where we are today.<\/p><p><br\/>Elizabeth Scarlett grew from a passion for art, finding pleasure in small everyday moments and appreciating the natural world around us. Each year, we commit to giving back to wildlife and supporting keystone species. Find out more below…<\/p>",
+          "image1": "shopify:\/\/shop_images\/Screenshot_2021-08-05_at_19.37.32_1_949a1f4d-68f4-4635-856e-5c6585975ba9.png",
+          "image2": "shopify:\/\/shop_images\/Screenshot_2021-08-05_at_19.44.05_1_311fe153-86df-4ebf-99d8-b5e6a4c33bc6.png",
+          "image3": "shopify:\/\/shop_images\/Screenshot_2021-08-05_at_19.44.05_2_d773100c-7c5a-4f8f-8e32-33c777d42b1e.png",
+          "content2": "“Since I can remember, I’ve always loved wildlife, drawing and painting animals. It soothes me, brings me into a flow and connects me with my youthful spirit.”",
+          "image4": "shopify:\/\/shop_images\/Screenshot_2021-08-04_at_16.32_1_869714ba-9413-434e-8f29-464c33751828.png",
+          "signature": true
+        }
+      },
+      "about-us_hero-with-text-2": {
+        "type": "about-us_hero-with-text-2",
+        "settings": {
+          "background-height": "medium",
+          "background-type": "image",
+          "image": "shopify:\/\/shop_images\/Screenshot_2021-08-03_at_11.33_5_167d7fd6-8d3a-4e45-9821-24fb4fdaf0bb.png",
+          "video-type": "own",
+          "own-url": "",
+          "external-url": "",
+          "sub-title": "Discover",
+          "title": "<p>Why Keystone  Species Matter<\/p>",
+          "cta-text": "",
+          "cta-url": "",
+          "color": "#986473",
+          "btn-color": "#fffef9"
+        }
+      },
+      "about-us_vision-statement-2": {
+        "type": "about-us_vision-statement-2",
+        "settings": {
+          "statement": "<p>So far, with your help, we’ve awarded over £220,000 to charities and projects that support keystone species.<\/p>",
+          "background-color": "#fffef9"
+        }
+      },
+      "about-us_image-with-text": {
+        "type": "about-us_image-with-text",
+        "settings": {
+          "sub-title": "Our Pledge",
+          "title": "2% To The Wild",
+          "description": "<p>As of 2021, we are pledging 2% of our annual sales to the preservation of keystone species. This means that, whether we make money or not, we tax ourselves for using the earth’s resources and honour the animals that embellish our much-loved textiles.<\/p>",
+          "cta-text": "",
+          "cta-link": "",
+          "thumbnail": "shopify:\/\/shop_images\/2__to_the_wild_logo_-_rich_black_1_bed0c018-445f-4609-b3be-7e1bf3c94fd1.png",
+          "image-position": "right",
+          "image-1": "shopify:\/\/shop_images\/Screenshot_2021-08-23_at_15.16_1_4977d650-c226-41e5-9dc2-ad8bb3b88a3f.png",
+          "image-2": "shopify:\/\/shop_images\/Screenshot_2021-08-23_at_15.16_2_51b1bcca-e014-43af-ac6b-0f91f27cb64e.png",
+          "image-mobile-position": "upper"
+        }
+      },
+      "about-us_image-with-text-2": {
+        "type": "about-us_image-with-text-2",
+        "settings": {
+          "sub-title": "our mission",
+          "title": "Why Keystone Species?",
+          "description": "<p>Keystone species uphold balance in their ecosystems, enabling biodiversity. The term is coined to describe the key role they play within their natural habitat. While they may not be the most productive species, or the most endangered, their very existence helps prevent a dramatic, disastrous change in their ecosystem.<\/p><p><br\/>Given Elizabeth’s passion for wildlife, we consider supporting keystone species our most valuable contribution to conservation efforts. We cannot promise to save this much-challenged world, but, having defined our focus, will do our best to drive change in the areas we can.<\/p>",
+          "cta-text": "",
+          "cta-link": "",
+          "image-position": "left",
+          "image-1": "shopify:\/\/shop_images\/Screenshot_2021-08-23_at_14.47_1_a76aa672-c69c-4213-a68c-eef09e74d747.png",
+          "image-mobile-position": "upper"
+        }
+      },
+      "about-us_cards": {
+        "type": "about-us_cards",
+        "blocks": {
+          "953065e5-35fc-4c98-b2fe-3ad6ec319544": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2021-08-23_at_14.59_1_758f413a-0074-41d0-9e55-e83d0e4b98ae.png",
+              "title": "Endangered Sea Turtles",
+              "description": "In 2019 and 2020* we raised £30,000 for Local Ocean Conservation in Watamu Kenya, who work to protect endangered sea turtles.",
+              "cta-text": "learn more",
+              "cta-link": "",
+              "footnote": ""
+            }
+          },
+          "e5e468e1-7dcc-44b6-8bd2-56397090ff17": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Pouchforpurpose-3_1024x1024_1_49f0ab76-7226-4e08-a826-40e739b4eff6.png",
+              "title": "Milk for Orphaned Elephants",
+              "description": "Through our Pouch for Purpose, we raised enough money to buy 5,000 bottles of specialist milk for baby elephants in the care of the Sheldrick Wildlife Trust.",
+              "cta-text": "learn more",
+              "cta-link": "",
+              "footnote": ""
+            }
+          },
+          "275629c4-3975-40ad-9c06-f57762f11ac9": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2021-08-23_at_15.00_1_bd75c355-5dab-4786-b6dd-941c1e83d06f.png",
+              "title": "Sheldrick Wildlife Trust",
+              "description": "In 2020* we raised £4,660 through a charity pouch raffle to support the Sheldrick Wildlife Trust in their wildlife protection programmes in Kenya.",
+              "cta-text": "learn more",
+              "cta-link": "",
+              "footnote": ""
+            }
+          }
+        },
+        "block_order": [
+          "953065e5-35fc-4c98-b2fe-3ad6ec319544",
+          "e5e468e1-7dcc-44b6-8bd2-56397090ff17",
+          "275629c4-3975-40ad-9c06-f57762f11ac9"
+        ],
+        "settings": {
+          "sub-title": "Our Projects",
+          "title": "Our Proudest Achievements"
+        }
+      },
+      "about-us_text-banner": {
+        "type": "about-us_text-banner",
+        "settings": {
+          "sub-title": "future impact",
+          "title": "Are you working for a charity or project that helps protect wildlife? We’d love to hear from you.",
+          "description": "Beneficiaries include the Sheldrick Wildlife Trust - in support of Elephants, Giraffes and other iconic African Wildlife - and Local Ocean Conservation - in support of Turtles. In 2021, we're specifically looking for grassroots projects in the UK that support Bees, Beavers and Red Squirrels.",
+          "cta-text": "Contact Us",
+          "cta-link": "shopify:\/\/pages\/contact-us",
+          "background-color": "#929c6f",
+          "color": "#929c6f",
+          "btn-color": "#fffef9"
+        }
+      },
+      "about-us_hero-with-text-3": {
+        "type": "about-us_hero-with-text-3",
+        "settings": {
+          "background-height": "medium",
+          "background-type": "image",
+          "image": "shopify:\/\/shop_images\/About_Page_Banner.jpg",
+          "video-type": "own",
+          "own-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/ES_WIMP_Holly_V1_-_converted_with_Clipchamp.mp4?v=1613787009",
+          "external-url": "",
+          "sub-title": "Discover",
+          "title": "<p>Creating with Care<\/p>",
+          "cta-text": "",
+          "cta-url": "",
+          "color": "#986473",
+          "btn-color": "#fffef9"
+        }
+      },
+      "about-us_vision-statement-3": {
+        "type": "about-us_vision-statement-3",
+        "settings": {
+          "statement": "<p>As part of our commitment to ensure you can shop with confidence, we are continuously reviewing and updating our fabrics, packaging and processes to be kinder to the planet.<\/p>",
+          "background-color": "#faf4ec"
+        }
+      },
+      "about-us_image-with-accordion": {
+        "type": "about-us_image-with-accordion",
+        "blocks": {
+          "1bab1621-0f36-473f-97c9-c2b170b7e5d0": {
+            "type": "accordion-item",
+            "settings": {
+              "title": "The better cotton Initiative",
+              "description": "<p>The BCI is a non-profit initiative, which intends to make the growing and extraction of cotton more sustainable. BCI farmers are trained on how to use water efficiently, care for the soil and natural habitats and apply decent work principles within their teams. You can read more about their work here.<\/p><p><br\/>Only 81,000 of the 24 million cotton farmers in China are BCI certified, which puts our cotton in the top 0.3% of cotton grown there. Industry wide change can’t come quick enough. As of 2017, Better Cotton accounted for only 14% of global cotton production, but cotton is in 70% of all fashion garments.<br\/><br\/>At Elizabeth Scarlett we are pushing our efforts one step further, and we’ll be introducing organic and recycled materials to our repertoire in 2021<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1bab1621-0f36-473f-97c9-c2b170b7e5d0"
+        ],
+        "settings": {
+          "sub-title": "discover",
+          "title": "Our Thoughtful Materials",
+          "image": "shopify:\/\/shop_images\/11_POUCHES_588_RT.jpg",
+          "background-color": "#faf4ec"
+        }
+      },
+      "about-us_image-with-text-3": {
+        "type": "about-us_image-with-text-3",
+        "settings": {
+          "sub-title": "Our Partners",
+          "title": "Meet our Makers",
+          "description": "<p>We only work with trusted, certified factories that are regularly audited by us or our partners. This ensures they uphold our values and have the same vision for social and environmental practices that we do. These are factories that are free from forced or underage labour; where employees benefit from a safe working environment and are paid a decent, living wage.<br\/><br\/>Each collection is produced in small batches every few months to ensure we are never overstocked and nothing goes to waste.<\/p>",
+          "cta-text": "",
+          "cta-link": "",
+          "image-position": "right",
+          "image-1": "shopify:\/\/shop_images\/meet-our-markers_1200x_1_f4706612-d3c5-4760-bd66-620869dc4afd.png",
+          "image-mobile-position": "upper"
+        }
+      },
+      "about-us_cards-2": {
+        "type": "about-us_cards-2",
+        "blocks": {
+          "9f704870-e32f-4943-8349-e1717867b7ca": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Pink_Bees_Bag_1_1024x1024_1_b6f6d458-3e37-48cf-9208-058ade22db20.png",
+              "title": "Embroidery & Cottons",
+              "description": "Our family has worked with Susan and her team in China for generations and our embroidered textile products are all cut and finished at her factory. We continue to work closely with experts Karen, Wendy and Susan on sourcing and improving our fabrics, packaging and techniques.",
+              "cta-text": "",
+              "cta-link": "",
+              "footnote": "Shandong Province | China"
+            }
+          },
+          "3eaea7d4-087f-4b1e-9295-e60b32a5397e": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/download_1_396e93a8-951e-48da-96c2-d4b11a233fab.png",
+              "title": "Monogramming & Personalisation",
+              "description": "When we first met Marci, she worked at the local school uniform shop. She now has her own embroidery business and personalises all of your pouches, purses and bags, right here in the UK.",
+              "cta-text": "",
+              "cta-link": "",
+              "footnote": "Hertfordshire | England"
+            }
+          },
+          "d95e6477-4beb-4a52-9f60-bb93ee691a15": {
+            "type": "card",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Asset_10_2x-80_900x_1_10a5ff45-633c-4b25-b046-a1271473976a.png",
+              "title": "Glass & Candle Pouring",
+              "description": "Our first candles were poured and set with Artur and his team in Poland. As we look to bring candles back, we’re in talks with a handful of unique French and UK producers.",
+              "cta-text": "",
+              "cta-link": "",
+              "footnote": "Radom | Poland"
+            }
+          }
+        },
+        "block_order": [
+          "9f704870-e32f-4943-8349-e1717867b7ca",
+          "3eaea7d4-087f-4b1e-9295-e60b32a5397e",
+          "d95e6477-4beb-4a52-9f60-bb93ee691a15"
+        ],
+        "settings": {
+          "sub-title": "",
+          "title": ""
+        }
+      },
+      "about-us_featured-articles": {
+        "type": "about-us_featured-articles",
+        "blocks": {
+          "5421116f-6ad5-4ff8-ad24-283189070dff": {
+            "type": "featured-article",
+            "settings": {
+              "article": "scarlettstories\/lizzies-guide-to-a-weekend-in-norfolk"
+            }
+          },
+          "a69b306d-0a3e-4b73-85ae-82404e32fc4b": {
+            "type": "featured-article",
+            "settings": {
+              "article": "scarlettstories\/born-to-be-wild-wild-tigers-collection"
+            }
+          },
+          "87e31886-8cec-468a-ba69-a5c6d5d08463": {
+            "type": "featured-article",
+            "settings": {
+              "article": "scarlettstories\/the-inspiration-behind-the-savanna-giraffe-collection"
+            }
+          }
+        },
+        "block_order": [
+          "5421116f-6ad5-4ff8-ad24-283189070dff",
+          "a69b306d-0a3e-4b73-85ae-82404e32fc4b",
+          "87e31886-8cec-468a-ba69-a5c6d5d08463"
+        ],
+        "settings": {
+          "title": "Discover More Stories",
+          "view-all": "view all",
+          "view-all-link": ""
+        }
+      },
+      "monogram_hero": {
+        "type": "monogram_hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Banner_357c70e7-b79b-427d-aac1-d1017852441f.jpg",
+          "subtitle": "Discover",
+          "title": "Bespoke Monogramming"
+        }
+      },
+      "monogram_lead-in": {
+        "type": "monogram_lead-in",
+        "settings": {
+          "content": "Add up to three initials, from A-Z, beautiful gold lettering embroidered onto our best-selling Pouches & Make Up Bags."
+        }
+      },
+      "monogram_demo": {
+        "type": "monogram_demo",
+        "blocks": {
+          "6a3c5853-d25a-4613-92f8-4a4070c560e5": {
+            "type": "product-demo",
+            "settings": {
+              "tab_name": "Everyday Pouch",
+              "subtitle": "Try it out",
+              "title": "Personalise your Pouch",
+              "text": "Our pouches are your new everyday essential, ideally sized to fit in your handbag, suitcase or to use as a clutch. You can have many of them monogrammed with up to three initials, from A-Z, so they're the perfect personalised gift. They make life a little more organised and a lot more luxurious.",
+              "label": "Add up to three initials",
+              "char_limit": 3,
+              "xpos": 325,
+              "ypos": 205,
+              "font_size": 27,
+              "font_colour": "#ad9664",
+              "image": "shopify:\/\/shop_images\/20x11_orange_alphabet_pouch.jpg"
+            }
+          },
+          "b78d53f7-3ce1-4aa0-a1a2-1bca03ee270a": {
+            "type": "product-demo",
+            "settings": {
+              "tab_name": "Cosmetic Bags",
+              "subtitle": "Try it out",
+              "title": "Personalise your Cosmetics Bag",
+              "text": "Our cosmetics bags are the perfect size to store your makeup, skincare and other lotions and potions. They add a little luxury and colour to your day and feature a handy water-resistant lining, so no need to worry about messy mishaps.",
+              "label": "Add up to three initials",
+              "char_limit": 3,
+              "xpos": 290,
+              "ypos": 150,
+              "font_size": 28,
+              "font_colour": "#ad9664",
+              "image": "shopify:\/\/shop_images\/20x11_tiger_blue_cosmetics_bag.jpg"
+            }
+          },
+          "1abd2df1-145d-4d89-9bad-ec78fe84dfa9": {
+            "type": "product-demo",
+            "settings": {
+              "tab_name": "Maxi Pouch",
+              "subtitle": "Try it out",
+              "title": "Personalise your Maxi Pouch",
+              "text": "Perfect for storing everything from tablets to baby essentials, this Maxi Pouch is designed to make life just that little bit more organised. Perfectly sized to be used as a clutch, or to slot straight into your bag, it also features a small internal pocket to keep all your bits and bobs safe.",
+              "label": "Add up to three initials",
+              "char_limit": 3,
+              "xpos": 250,
+              "ypos": 150,
+              "font_size": 40,
+              "font_colour": "#ad9664",
+              "image": "shopify:\/\/shop_images\/20x11_elephant_olive_maxi.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "6a3c5853-d25a-4613-92f8-4a4070c560e5",
+          "b78d53f7-3ce1-4aa0-a1a2-1bca03ee270a",
+          "1abd2df1-145d-4d89-9bad-ec78fe84dfa9"
+        ],
+        "settings": {}
+      },
+      "monogram_editorial": {
+        "type": "monogram_editorial",
+        "settings": {
+          "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/1957\/2463\/files\/monogram.mp4?v=1649746512",
+          "quote": "“There’s nothing quite as special as a gift that is uniquely personalised. Whether you’re shopping for a birthday, bridesmaid, or your best friends, you can create something they’ll treasure for years to come.”",
+          "first_image": "shopify:\/\/shop_images\/Mono_01.jpg",
+          "second_image": "shopify:\/\/shop_images\/Mono_02.jpg"
+        }
+      },
+      "monogram_product-carousel": {
+        "type": "monogram_product-carousel",
+        "blocks": {
+          "c1a83aa6-1349-4e7e-b0ac-03e5d6b1e5c7": {
+            "type": "collection",
+            "settings": {
+              "tab_title": "Everyday Pouches",
+              "collection": "pouches",
+              "subtitle": "Monogram",
+              "title": "Pouches",
+              "text": "Designed to make your life a little more organised and a lot more luxurious, this timeless Pouch features delicate embroidery on a soft velvet base. Ideally sized, it is perfect for storing your daily essentials, fitting in your handbag, or using as a clutch.",
+              "cta_text": "Shop Collection"
+            }
+          },
+          "5bc272da-c15b-4ace-ae03-d86ffd5e69cf": {
+            "type": "collection",
+            "settings": {
+              "tab_title": "Cosmetic Bags",
+              "collection": "makeup-bags",
+              "subtitle": "Monogram me",
+              "title": "Cosmetic Bags",
+              "text": "Our cosmetics bags are the perfect size to store your makeup, skincare and other lotions and potions. They add a little luxury and colour to your day and feature a handy water-resistant lining, so no need to worry about messy mishaps.",
+              "cta_text": "Shop Collection"
+            }
+          },
+          "1aaa1bb3-b3de-4e1d-88cc-8c8d3fc9981a": {
+            "type": "collection",
+            "settings": {
+              "tab_title": "Day Bags",
+              "collection": "bags",
+              "subtitle": "Monogram me",
+              "title": "Day Bags",
+              "text": "This Day Bag features delicate embroidery on a luxurious velvet base. Capturing all the details with gold accents, it is ideally sized to hold all of your essentials for a day in town.",
+              "cta_text": "Shop Collection"
+            }
+          }
+        },
+        "block_order": [
+          "c1a83aa6-1349-4e7e-b0ac-03e5d6b1e5c7",
+          "5bc272da-c15b-4ace-ae03-d86ffd5e69cf",
+          "1aaa1bb3-b3de-4e1d-88cc-8c8d3fc9981a"
+        ],
+        "settings": {}
+      },
+      "monogram_gift-note-upsell": {
+        "type": "monogram_gift-note-upsell",
+        "settings": {
+          "subtitle": "Make it the perfect gift",
+          "title": "Add those finishing touches",
+          "product": "greeting-card"
+        }
+      },
+      "monogram_banner": {
+        "type": "monogram_banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Bedding_Mobile_Banner.jpg",
+          "subtitle": "Meet the maker",
+          "title": "Emroidery & Cottons",
+          "text": "Our family has worked with Susan and her team for generations. We cut and finish all our embroidered textile products here, and work closely with Karen, Wendy and Susan to source new fabrics, packaging and techniques to improve each of our products.",
+          "url": "shopify:\/\/pages\/about-us",
+          "cta_text": "Discover More"
+        }
+      },
+      "monogram_social-proof": {
+        "type": "monogram_social-proof",
+        "blocks": {
+          "01ef90fc-8277-417b-8d60-cacca71b47a6": {
+            "type": "image_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Bedding_Mobile_Banner.jpg"
+            }
+          },
+          "1941a9a8-28da-404a-9fa0-451d06dc689f": {
+            "type": "image_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/download_1_396e93a8-951e-48da-96c2-d4b11a233fab.png"
+            }
+          },
+          "6c5f1b89-2201-407b-a449-e7a4a3050bd2": {
+            "type": "image_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Asset_10_2x-80_900x_1_10a5ff45-633c-4b25-b046-a1271473976a.png"
+            }
+          },
+          "d23c5531-7528-4a58-a16b-419f9b93c894": {
+            "type": "image_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Pink_Bees_Bag_1_1024x1024_1_b6f6d458-3e37-48cf-9208-058ade22db20.png"
+            }
+          },
+          "6553bdda-78a6-4b4c-a47a-7cf004712f60": {
+            "type": "image_block",
+            "disabled": true,
+            "settings": {}
+          },
+          "72c2c67c-95b9-43a1-a96c-428b29cb0dad": {
+            "type": "image_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screenshot_2021-08-04_at_16.32_1_869714ba-9413-434e-8f29-464c33751828.png"
+            }
+          },
+          "b7284255-8681-4e27-8a17-8e188dab60cf": {
+            "type": "image_block",
+            "disabled": true,
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "01ef90fc-8277-417b-8d60-cacca71b47a6",
+          "1941a9a8-28da-404a-9fa0-451d06dc689f",
+          "6c5f1b89-2201-407b-a449-e7a4a3050bd2",
+          "d23c5531-7528-4a58-a16b-419f9b93c894",
+          "6553bdda-78a6-4b4c-a47a-7cf004712f60",
+          "72c2c67c-95b9-43a1-a96c-428b29cb0dad",
+          "b7284255-8681-4e27-8a17-8e188dab60cf"
+        ],
+        "settings": {
+          "subtitle": "Monogrammed by ES",
+          "title": "Forever Yours!",
+          "text": "Share your #MonogrammedbyES haul and tag @elizabethscarlett for a chance to be featured!",
+          "url": "https:\/\/www.instagram.com\/elizabethscarlett\/",
+          "cta_text": "Follow Us"
+        }
+      },
+      "163647597830bb9818": {
+        "type": "covet-pics",
+        "settings": {
+          "label": "Discover",
+          "title": "Our Community",
+          "text": "Share your #ElizabethScarlett haul and tag @elizabethscarlett for a chance to be featured!",
+          "button_text": "Follow Us",
+          "button_url": "https:\/\/www.instagram.com\/elizabethscarlett\/"
+        }
+      },
+      "1648121015e7e41f2f": {
+        "type": "index--featured-collections",
+        "disabled": true,
+        "blocks": {
+          "3c3fe53e-6652-4b7e-9ad3-d7c14a98deea": {
+            "type": "collection",
+            "settings": {
+              "title": "ALPHABET",
+              "image_1": "shopify:\/\/shop_images\/alphabet_f22170a0-608e-4db3-a3df-6caabfe3b3b5.jpg",
+              "image_2": "shopify:\/\/shop_images\/alphabet1_0dc5861f-6f60-4bb6-b9c4-2a407aee1388.jpg",
+              "link": "shopify:\/\/collections\/alphabet-pouches"
+            }
+          },
+          "487bcd44-f54f-4a26-a54d-23de0d081a0e": {
+            "type": "collection",
+            "settings": {
+              "title": "WILD TIGER",
+              "image_1": "shopify:\/\/shop_images\/tiger_2.jpg",
+              "image_2": "shopify:\/\/shop_images\/tiger1_5d26a88a-cf72-4d3d-951f-156b5963afd5.jpg",
+              "link": "shopify:\/\/collections\/wild-tigers-collection"
+            }
+          },
+          "f13189fb-e2d2-49eb-bda0-f97a6b3477ad": {
+            "type": "collection",
+            "settings": {
+              "title": "SAVANNA GIRAFFE",
+              "image_1": "shopify:\/\/shop_images\/giraffe.jpg",
+              "image_2": "shopify:\/\/shop_images\/giraffe1_35240a20-ebd1-46bd-ac8a-919f6d452692.jpg",
+              "link": "shopify:\/\/collections\/savanna-giraffe"
+            }
+          },
+          "d6e7e01f-6aa9-4163-a7df-4bb4d6302ef2": {
+            "type": "collection",
+            "settings": {
+              "title": "ZEBRA",
+              "image_1": "shopify:\/\/shop_images\/zebra_f9dd0034-2db4-4d90-8bab-f00d94089942.jpg",
+              "image_2": "shopify:\/\/shop_images\/zebra1_e6ea8184-ef1c-4ca2-bef9-12fe6ff8ac3c.jpg",
+              "link": "shopify:\/\/collections\/zebra"
+            }
+          }
+        },
+        "block_order": [
+          "3c3fe53e-6652-4b7e-9ad3-d7c14a98deea",
+          "487bcd44-f54f-4a26-a54d-23de0d081a0e",
+          "f13189fb-e2d2-49eb-bda0-f97a6b3477ad",
+          "d6e7e01f-6aa9-4163-a7df-4bb4d6302ef2"
+        ],
+        "settings": {
+          "section_label": "shopify:\/\/shop_images\/acf.ELEPHANTS-V2-1.png",
+          "heading": "collections",
+          "subheading": "our iconic",
+          "desc": "<p>Discover our <strong>sell-out collections <\/strong>delicately embroidered with our signature motifs inspired the beauty found in our wild world. <\/p>",
+          "button_text": "",
+          "button_url": "",
+          "background_color": "#fffef9"
+        }
+      },
+      "uwp-password-page": {
+        "type": "uwp-password-page",
+        "settings": {
+          "screens_to_display": "message",
+          "es_logo": "shopify:\/\/shop_images\/Elizabeth_Scarlett_Main_Logo_RichBlack.png",
+          "message_page_title": "We’ll be back",
+          "message_page_text": "<p>We’re busy updating our store for you, but we’ll be back soon.<\/p>",
+          "force_message": false,
+          "message_links_text_color": "#00D0FF",
+          "password_page_title": "Need access now?",
+          "password_page_text": "<p>Enter the password to go to the store:<\/p>",
+          "login_button_color": "#000",
+          "login_button_text_color": "#fff",
+          "enable_shop_owner_login": true,
+          "login_links_text_color": "#00B3DB"
+        }
+      },
+      "faq-page": {
+        "type": "faq-page",
+        "blocks": {
+          "e1272797-c4e2-405d-aaa1-07d8dd69e776": {
+            "type": "rich-text",
+            "settings": {
+              "title": "LOGIN & ACCOUNT",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "4af0ae29-b24d-44e2-89cb-0ef47b931045": {
+            "type": "question",
+            "settings": {
+              "title": "How do I sign up to be a part of the Elizabeth Scarlett Collective?",
+              "text": "<p>Signing up is easy! Simply create an account and enter your name, email, and password. It’s free to join and you’ll be signed up to receive emails with exclusive offers and early access to our new collections. <\/p>"
+            }
+          },
+          "46cfa0cc-5547-49fa-950a-008ea9d24d1e": {
+            "type": "question",
+            "settings": {
+              "title": "What are the advantages of joining the Collective?",
+              "text": "<p>Our rewards program is a tiered program that allows you to earn more perks the more you engage with us. Members receive Stars for each purchase, which can then be redeemed towards the cost of future purchases. You also earn Stars for sharing with friends, following us on Instagram, leaving product reviews, and are even gifted with bonus points just for having a birthday! You can view the full list of perks on the <a href=\"https:\/\/www.elizabethscarlett.com\/pages\/rewards\"><span style=\"text-decoration:underline\">rewards page.<\/span><\/a><\/p>"
+            }
+          },
+          "eb07b809-2047-4b00-a730-d2ea07e909e3": {
+            "type": "question",
+            "settings": {
+              "title": "Where can I find all of my rewards info?",
+              "text": "<p>The rewards page is home to all your exclusive rewards and Stars stash. You can access all your info by logging in and visiting our <a href=\"https:\/\/www.elizabethscarlett.com\/pages\/rewards\">Rewards Page. <\/a><\/p>"
+            }
+          },
+          "c619d90d-0fca-44bc-9cc5-6f6a1bb99e02": {
+            "type": "question",
+            "settings": {
+              "title": "Will I receive Stars for the purchases I made before joining the Collective?",
+              "text": "<p>Purchases within the 12 months will count towards our VIP tiers - Bronze Tiger, Golden Giraffe and Platinum Elephant. Upon reaching the Golden Giraffe and Platinum Elephant tier you will be awarded with 100 Stars (£10). However, Stars earned from making purchases can only be awarded after joining the Elizabeth Scarlett Collective. <\/p>"
+            }
+          },
+          "7ad3329f-63ea-46d6-81f9-938c60b81a42": {
+            "type": "question",
+            "settings": {
+              "title": "I already receive Elizabeth Scarlett Newsletters, does this mean I have an account?",
+              "text": "<p>No, it does not. We would recommend creating an account with the same email address you receive newsletters to. Don’t worry, we won’t double up our communications.<br\/><\/p>"
+            }
+          },
+          "e750bfba-00ec-476c-b7ef-2612e454d1dd": {
+            "type": "question",
+            "settings": {
+              "title": "Does it cost anything to join the Elizabeth Scarlett Collective?",
+              "text": "<p>Absolutely not! Sign up is 100% free, and it will never cost you anything to earn Stars. <\/p>"
+            }
+          },
+          "a01d55b7-d08b-40e2-9d0e-0b1e5e55fc62": {
+            "type": "rich-text",
+            "settings": {
+              "title": "EARNING & REDEEMING STARS",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "13e5b350-c311-43fb-801f-de25261ed8ad": {
+            "type": "question",
+            "settings": {
+              "title": "How do I spend my Stars?",
+              "text": "<p>For every 100 Stars earned, you have the option of converting these Stars into a £10 voucher. 100 Stars = £10 voucher, 200 Stars = £20 voucher, 300 Stars = £30 voucher, and so on… <br\/>These unique voucher codes will be emailed to you and can also be found under ‘Rewards History’. <\/p>"
+            }
+          },
+          "2416550c-f099-4108-9bfb-bc047dcee027": {
+            "type": "question",
+            "settings": {
+              "title": "How do Stars convert to pounds?",
+              "text": "<p>100 Stars is equal to £10. <\/p>"
+            }
+          },
+          "e8f89d5d-ee91-48fa-b2d8-850383431bca": {
+            "type": "question",
+            "settings": {
+              "title": "Is there a limit to how many Stars I can earn?",
+              "text": "<p>Nope! That’s the best part about being a rewards member!You will always have an opportunity to earn<br\/>more points by shopping with us, engaging with our community online, and through seasonal sales.<\/p>"
+            }
+          },
+          "72cd1188-ec3a-4221-b921-7f666fecab9d": {
+            "type": "question",
+            "settings": {
+              "title": "Can I return my order if I redeemed Stars for a discount?",
+              "text": "<p>You can return your order but you would not receive the points back from the Rewards discount that you redeemed. The amount of Stars you might earn from what you spent on the purchase post-discount will also be adjusted to reflect how much you ended up spending post-return. For example, if you use a £10 voucher (that you traded 100 Stars for) towards a £100 purchase that you decide to return, the £90 balance charged to your payment method will be refunded on your credit card but the 90 Stars that you earned would be deducted. The 100 Stars that you traded for the £10 discount would not be returned.<\/p>"
+            }
+          },
+          "e67215f2-fba4-4aaa-baef-ed83c6928b45": {
+            "type": "question",
+            "settings": {
+              "title": "I’ve earned Stars \/ leveled up to a new tier with my last purchase, but now want to return it. What will happen to my reward?",
+              "text": "<p>If you return a purchase that bumped you up into a higher VIP tier but ultimately you decide to return it, you will return to your original tier.<\/p>"
+            }
+          },
+          "d1b80bb5-f313-4b1b-87fd-aa958ec3d855": {
+            "type": "question",
+            "settings": {
+              "title": "Do Stars ever expire?",
+              "text": "<p>Stars will expire after 12 months if you do not earn or redeem any points.<\/p>"
+            }
+          },
+          "f612a896-150f-4fd7-a52d-cc688a9b6adc": {
+            "type": "question",
+            "settings": {
+              "title": "How do I get a Birthday Reward?",
+              "text": "<p>Add your birthday under the ‘ways to earn points’ on the rewards page.<br\/>On your birthday we will add 100 Stars directly to your Rewards account!<\/p>"
+            }
+          },
+          "9b8f0b15-7259-42eb-8150-c845d27d8e45": {
+            "type": "question",
+            "settings": {
+              "title": "I signed up for a birthday reward but didn't receive it?",
+              "text": "<p>Happy Birthday! In order for you to receive your birthday bonus on your birthday, you must register your birthday at least 30 days prior to your birthday. If your birthday falls between the day that you registered and the 30 day waiting period afterwards, you will receive your<br\/>birthday bonus 30 days after your registration. This delay is only applicable for the first year that you signed up. All successive birthday bonuses will be emailed to you on your birthday. If you register your birthday through your rewards account any time after it has<br\/>passed in the current calendar year, rewards will not be added to your account until the day of your birthday in the following year.<\/p>"
+            }
+          },
+          "eaf13494-732d-42a4-ab46-852ab8f6fc16": {
+            "type": "rich-text",
+            "settings": {
+              "title": "TIER PROGRAM",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "62ddf332-49b3-4194-9c40-15169d17c63f": {
+            "type": "question",
+            "settings": {
+              "title": "How is my tier determined?",
+              "text": "<p>Your tier is determined by your number of purchases:<br\/>●      Bronze Tiger = 1 purchase (within the last 12 months)<br\/>●      Golden Giraffe = 2 purchases (within the last 12 months) <br\/>●      Platinum Elephant = 4 purchases (within the last 12 months) <br\/><br\/><\/p><p><\/p>"
+            }
+          },
+          "d94c2224-fec6-457c-8025-bf1de84a82e7": {
+            "type": "question",
+            "settings": {
+              "title": "How do I know which Tier I am currently in?",
+              "text": "<p>When you are signed into your account, your <a href=\"https:\/\/www.elizabethscarlett.com\/pages\/rewards\">rewards homepage<\/a> will list all of the rewards tiers. Your current tier and perks will be highlighted with a box around it.<\/p>"
+            }
+          },
+          "9c88ab0b-7108-4ce2-af90-9612f7268230": {
+            "type": "question",
+            "settings": {
+              "title": "How will I know when I have leveled up to a new tier?",
+              "text": "<p>When your total spend crosses a tier threshold you will receive an email welcoming you into Bronze Tiger, Golden Giraffe, or Platimum Elephant. <\/p>"
+            }
+          },
+          "a63d573e-d474-45f9-9218-e088e8a31dc6": {
+            "type": "question",
+            "settings": {
+              "title": "Do tiers expire?",
+              "text": "<p>Purchases must be made within a rolling 12-month period to count towards the next tier. If purchases are not made within this time frame you will move down to the appropriate tier.<\/p>"
+            }
+          },
+          "b6b82edf-cf5b-43e3-8788-c9e0c73f1f4e": {
+            "type": "rich-text",
+            "settings": {
+              "title": "TROUBLESHOOTING",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "5f581c9d-466a-4569-8245-26ae83fdc0ce": {
+            "type": "question",
+            "settings": {
+              "title": "I should have earned Stars for my last purchase but my account hasn’t changed. Did I get Stars?",
+              "text": "<p>Yes! However, there are occasionally delays in our systems communicating and stars could take anywhere from minutes to several hours to appear in your account.  However, if you feel like you have earned points but they are not showing up in your account you can also troubleshoot it with these tricks:<\/p><p>1. Try to refresh your browser.<\/p><p>2. Try to log out and then back in to your account.<\/p><p>3. Check your ‘Rewards history’ in your Rewards account to see if the points were added without you realizing it.<\/p><p>Your ‘Rewards history’ will show you the number of points earned, how and when they were earned, as well as any redemptions of points made on your account. If you still feel like your points balance is not accurate you can contact our team at <a href=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> and they will look into the issue for you.<\/p>"
+            }
+          },
+          "b01eb68a-d989-4701-8b59-9dc628083c1f": {
+            "type": "question",
+            "settings": {
+              "title": "I have received an error message when referring a friend through the email box. What went wrong?",
+              "text": "<p>We are sorry to hear that. The most common reason for the error message is that there was a mistype in one of the email addresses that you entered or you forgot to put commas between multiple emails to separate them. To eliminate confusion over what occurred, we recommend that you go back and enter each email address one at a time, clicking ‘send’ after each one rather than uploading them all at once. Please contact our support team at support@helloseen.com if you need further assistance.<\/p>"
+            }
+          },
+          "71253958-b7b3-4144-b8cc-b182f22f5458": {
+            "type": "question",
+            "settings": {
+              "title": "I have referred several friends but I haven’t received any points for it. Is there something else I need to do?",
+              "text": "<p>Thank you so much for sharing us with your friends! We really appreciate it. Referred friends must be a first time customer in order for both of you to receive the referral rewards. In addition, the referral must be initiated through our rewards referral box on your<br\/>personal rewards page or through the use of your unique referral link also found there. Points will be added to your account as soon as your friend completes their first purchase on our website. When this happens you will receive an email letting you know that one of your referrals made a purchase using your code and that a reward was added to your account.You can also check your ‘Rewards History’ to see a list of any points that you have received for referrals.<\/p>"
+            }
+          },
+          "483c1ba7-b119-4425-9c91-893411a15921": {
+            "type": "rich-text",
+            "settings": {
+              "title": "CHECKOUT",
+              "text": "",
+              "align_text": "left"
+            }
+          },
+          "b3aa23d8-6a90-4eec-97b0-7535bd929a23": {
+            "type": "question",
+            "settings": {
+              "title": "How do I use my discount code?",
+              "text": "<p>To use your discount code, simple enter the code the code at checkout and the amount will be deducted from your total. <\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "e1272797-c4e2-405d-aaa1-07d8dd69e776",
+          "4af0ae29-b24d-44e2-89cb-0ef47b931045",
+          "46cfa0cc-5547-49fa-950a-008ea9d24d1e",
+          "eb07b809-2047-4b00-a730-d2ea07e909e3",
+          "c619d90d-0fca-44bc-9cc5-6f6a1bb99e02",
+          "7ad3329f-63ea-46d6-81f9-938c60b81a42",
+          "e750bfba-00ec-476c-b7ef-2612e454d1dd",
+          "a01d55b7-d08b-40e2-9d0e-0b1e5e55fc62",
+          "13e5b350-c311-43fb-801f-de25261ed8ad",
+          "2416550c-f099-4108-9bfb-bc047dcee027",
+          "e8f89d5d-ee91-48fa-b2d8-850383431bca",
+          "72cd1188-ec3a-4221-b921-7f666fecab9d",
+          "e67215f2-fba4-4aaa-baef-ed83c6928b45",
+          "d1b80bb5-f313-4b1b-87fd-aa958ec3d855",
+          "f612a896-150f-4fd7-a52d-cc688a9b6adc",
+          "9b8f0b15-7259-42eb-8150-c845d27d8e45",
+          "eaf13494-732d-42a4-ab46-852ab8f6fc16",
+          "62ddf332-49b3-4194-9c40-15169d17c63f",
+          "d94c2224-fec6-457c-8025-bf1de84a82e7",
+          "9c88ab0b-7108-4ce2-af90-9612f7268230",
+          "a63d573e-d474-45f9-9218-e088e8a31dc6",
+          "b6b82edf-cf5b-43e3-8788-c9e0c73f1f4e",
+          "5f581c9d-466a-4569-8245-26ae83fdc0ce",
+          "b01eb68a-d989-4701-8b59-9dc628083c1f",
+          "71253958-b7b3-4144-b8cc-b182f22f5458",
+          "483c1ba7-b119-4425-9c91-893411a15921",
+          "b3aa23d8-6a90-4eec-97b0-7535bd929a23"
+        ],
+        "settings": {
+          "classname": "",
+          "faq-title": "FAQs",
+          "faq-desc": ""
+        }
+      },
+      "bbg-lp1": {
+        "type": "bbg-lp1",
+        "blocks": {
+          "3f6212b4-6001-441f-985b-2f55ba8c9bf3": {
+            "type": "Hero",
+            "settings": {
+              "section-headline1": "Luxury, Personalised Gifting Made Irresistibly Easy",
+              "section-subhead1": "Make them feel special with a gorgeous gift they’ll use and treasure (that also fits your budget!)",
+              "rev-img": "shopify:\/\/shop_images\/Group_1.png",
+              "score1": "Over 4000 5-star reviews",
+              "body1": "It’s time to stop buying useless, last minute gifts that say: “I ran out of time.” Delight your favourite people with a luxurious & personalisable Everyday Pouch from Elizabeth Scarlett. It’ll show them you really care (even if it only took you a few minutes!).",
+              "check1": "Hand-painted, embroidered designs",
+              "check2": "Monogrammable for a personal touch",
+              "check3": "Gives back to wildlife conservation",
+              "but-txt": "GIVE A GIFT THEY'LL TREASURE",
+              "but-url": "#shop",
+              "sec-img": "shopify:\/\/shop_images\/Elephanthomepage-banner_ef232d53-98ad-4454-8a80-1a0a3bfda4dd_1.png",
+              "sec-imgmob": "shopify:\/\/shop_images\/Elephanthomepage-banner_1_6624b7b0-f3b8-4fe8-ade7-8414e0d7477a.png"
+            }
+          }
+        },
+        "block_order": [
+          "3f6212b4-6001-441f-985b-2f55ba8c9bf3"
+        ],
+        "settings": {}
+      },
+      "bbg-lp2": {
+        "type": "bbg-lp2",
+        "blocks": {
+          "ceb1200a-e357-4e06-8e52-b3553dec492b": {
+            "type": "Hero",
+            "settings": {
+              "section-headline2": "Luxurious Designer Quality, Made to Last",
+              "section-subhead2": "Customise & package a Pouch that’s uniquely them, all in one place",
+              "block1-img": "shopify:\/\/shop_images\/Base.png",
+              "blocktitle1": "Highlight Their Unique Style",
+              "blockbody1": "Celebrate their personal style — in soft velvet & colourful embroidery — with a wide range of hand-illustrated, nature-inspired Pouches.",
+              "block2-img": "shopify:\/\/shop_images\/Base-1.png",
+              "blocktitle2": "Give A Stunning Gift That’s Actually Useful",
+              "blockbody2": "No more wasting time and money on gifts that just sit on the shelf. Fans love it as a clutch, makeup bag, storage cube and more! (Plus, every purchase supports wildlife 🐘)",
+              "block3-img": "shopify:\/\/shop_images\/Base-2.png",
+              "blocktitle3": "Wrap It All Up With Beautiful Add-Ons",
+              "blockbody3": "Elizabeth Scarlett is your go-to shop for a gorgeously finished gift: get your personalised Everyday Pouch, embossed gift box, and illustrated gift note in one place!",
+              "block4-img": "shopify:\/\/shop_images\/Base_1.png",
+              "blocktitle4": "Fully Personalise In A Single Click",
+              "blockbody4": "Surprise them with a truly one-of-a-kind gift when you monogram any pouch with delicate embroidery in just a click.",
+              "lrg-img": "shopify:\/\/shop_images\/Rectangle_7.png"
+            }
+          }
+        },
+        "block_order": [
+          "ceb1200a-e357-4e06-8e52-b3553dec492b"
+        ],
+        "settings": {}
+      },
+      "bbg-lp3": {
+        "type": "bbg-lp3",
+        "blocks": {
+          "4356fb8b-36a6-4cad-b021-4ec998e1c6a5": {
+            "type": "Hero",
+            "settings": {
+              "section-headline3": "Join Thousands Delighting Their Loved Ones With A Gorgeous Quality Gift",
+              "rev-body1": "“I love this beautiful, jewel-like bag. It feels so luxurious and is a nice size to keep things in. The only problem is that I am meant to be giving it to my goddaughter!”",
+              "score1": "Dee G.",
+              "rev-body2": "“I bought this beautiful pouch for a friend at work. She was absolutely delighted with it. Your items are all so beautifully made!”",
+              "score2": "Helen P.",
+              "rev-body3": "“This was a present for my neighbour, and she absolutely loves it, as do I. Very good quality and very luxurious. So happy I found you!”",
+              "score3": "Jane R.",
+              "rev-body4": "“Bought this as a gift and could hardly bear to part with it. But I did…and it was very well received!”",
+              "score4": "Jackie P."
+            }
+          }
+        },
+        "block_order": [
+          "4356fb8b-36a6-4cad-b021-4ec998e1c6a5"
+        ],
+        "settings": {}
+      },
+      "bbg-lp4": {
+        "type": "bbg-lp4",
+        "blocks": {
+          "17c1de7e-ccd5-49ae-8416-cbfe582b072e": {
+            "type": "Hero",
+            "settings": {
+              "gallery-headline1": "See It In Action...",
+              "gallery-img1": "shopify:\/\/shop_images\/wdfqfd.png",
+              "gallery-img2": "shopify:\/\/shop_images\/www.png",
+              "gallery-img3": "shopify:\/\/shop_images\/fwqerre.png",
+              "gallery-img4": "shopify:\/\/shop_images\/qwfwq.png",
+              "section-headline1": "Elevate Their Everyday With Plush Velvet & Rich Embroidery",
+              "body1": "Tired of giving gifts that never get used? The good news: there’s a place\nfor the Everyday Pouch in every part of their daily routine. Give more than a bag: give a reminder to savour the little moments of luxury in each day. Everyday Pouch fans love it as:",
+              "check1": "A classic clutch",
+              "check2": "An elevated makeup bag",
+              "check3": "A passport holder",
+              "check4": "Organising cables and tech",
+              "check5": "A discreet nappy bag",
+              "check6": "A packing cube for all your essentials",
+              "body2": "And so much more!",
+              "but-txt": "SHOP EVERYDAY POUCHES",
+              "but-url": "#shop",
+              "sec-img": "shopify:\/\/shop_images\/Silhouettes_Cosmetics_Bags_DT_600x_1.png"
+            }
+          }
+        },
+        "block_order": [
+          "17c1de7e-ccd5-49ae-8416-cbfe582b072e"
+        ],
+        "settings": {}
+      },
+      "bbg-lp5": {
+        "type": "bbg-lp5",
+        "blocks": {
+          "3ce13024-d412-4668-b68c-e7df61a0cdbf": {
+            "type": "Hero",
+            "settings": {
+              "section-headline1": "Surprise Them With Designer Style That’s Just for Them",
+              "section-subhead1": "Make their life a little more organised and a lot more luxurious with the Everyday Pouch. Featuring delicate embroidery on a soft, durable velvet base, each Pouch can be monogrammed for an extra personalised touch.",
+              "prod1-img1": "shopify:\/\/shop_images\/alphabet-navy-everyday-pouch-001_ca7260db-272a-4c0c-b979-3811fd9d4dca.webp",
+              "prod1-img2": "shopify:\/\/shop_images\/03_E_POUCH_154_67bbe4fe-d1ca-48ed-b1aa-8d0e7a702fd8.webp",
+              "prod1-img3": "shopify:\/\/shop_images\/alphabet-navy-everyday-pouch-002_700x_536df303-67ab-492d-a905-36f75617f454.webp",
+              "prodname1": "Alphabet Navy Everyday Pouch",
+              "prodprice1": "£32.00",
+              "prod2-img1": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-001.webp",
+              "prod2-img2": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-002.webp",
+              "prod2-img3": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-001.webp",
+              "prodname2": "Hummingbird Blue Everyday Pouch",
+              "prodprice2": "£30.00",
+              "prod3-img1": "shopify:\/\/shop_images\/elizabeth-scarlett-036.webp",
+              "prod3-img2": "shopify:\/\/shop_images\/07_BLUE_TURTLE_AND_TEAL_BEE_267.webp",
+              "prod3-img3": "shopify:\/\/shop_images\/elizabeth-scarlett-037.webp",
+              "prodname3": "Turtle Conservation Everyday Pouch",
+              "prodprice3": "£30.00",
+              "prod4-img1": "shopify:\/\/shop_images\/tiger-rich-blue-velvet-everyday-pouch-001.webp",
+              "prod4-img2": "shopify:\/\/shop_images\/21_TIGER_TEAL_POUCH_1065.webp",
+              "prod4-img3": "shopify:\/\/shop_images\/11_POUCHES_562.webp",
+              "prodname4": "Tiger Rich Blue",
+              "prodprice4": "£30.00",
+              "prod5-img1": "shopify:\/\/shop_images\/honey-bee-rich-blue-everyday-pouch-001.webp",
+              "prod5-img2": "shopify:\/\/shop_images\/07_BLUE_TURTLE_AND_TEAL_BEE_340.webp",
+              "prod5-img3": "shopify:\/\/shop_images\/honey-bee-rich-blue-everyday-pouch-002.webp",
+              "prodname5": "Honey Bee Rich Blue",
+              "prodprice5": "£30.00",
+              "prod6-img1": "shopify:\/\/shop_images\/HoneyBeeeverydaypouchCharcoal_NEW.webp",
+              "prod6-img2": "shopify:\/\/shop_images\/06_POUCHES_MIX_417-copy.webp",
+              "prod6-img3": "shopify:\/\/shop_images\/elizabeth-scarlett-019-Edit_c464ab70-182a-4a24-bcde-46a27c656bd7.webp",
+              "prodname6": "Honey Bee Charcoal",
+              "prodprice6": "£30.00",
+              "prod7-img1": "shopify:\/\/shop_images\/giraffe-navy-everyday-pouch-001.webp",
+              "prod7-img2": "shopify:\/\/shop_images\/06_POUCHES_MIX_420.webp",
+              "prod7-img3": "shopify:\/\/shop_images\/giraffe-navy-everyday-pouch-002.webp",
+              "prodname7": "Giraffe Everyday Pouch Navy",
+              "prodprice7": "£30.00",
+              "prod8-img1": "shopify:\/\/shop_images\/coralelephantpouch.webp",
+              "prod8-img2": "shopify:\/\/shop_images\/02_ELEPHANT_FLATLAY_036_3.webp",
+              "prod8-img3": "shopify:\/\/shop_images\/Pouchforpurpose-2_ad41bbd9-4eaf-40be-9c79-76aae2213719.webp",
+              "prodname8": "Elephant Conservation Coral",
+              "prodprice8": "£28.00",
+              "prod9-img1": "shopify:\/\/shop_images\/greenelephantpouch.webp",
+              "prod9-img2": "shopify:\/\/shop_images\/0002_SHOT_17_ELEPHANT_POUCH_362_jpg_187256b4-6fb6-4db2-adf6-5ee2adb76fde.webp",
+              "prod9-img3": "shopify:\/\/shop_images\/Sheldrickpouchgreen2_d4cf3ff6-f64b-40c2-aec7-312d786b754a.webp",
+              "prodname9": "Elephant Conservation Olive",
+              "prodprice9": "£28.00",
+              "prod10-img1": "shopify:\/\/shop_images\/daisy-sky-blue-velvet-everyday-pouch-1.webp",
+              "prod10-img2": "shopify:\/\/shop_images\/22_DAISY_POUCH_243_RT-copy.webp",
+              "prod10-img3": "shopify:\/\/shop_images\/19_POUCHES_188_RT-copy.webp",
+              "prodname10": "Daisy Sky Blue",
+              "prodprice10": "£30.00",
+              "prod11-img1": "shopify:\/\/shop_images\/dragonfly-moon-rich-blue-everyday-pouch-1.webp",
+              "prod11-img2": "shopify:\/\/shop_images\/19_POUCHES_173.webp",
+              "prod11-img3": "shopify:\/\/shop_images\/dragonfly-moon-rich-blue-everyday-pouch-2.webp",
+              "prodname11": "Dragonfly Blue",
+              "prodprice11": "£30.00",
+              "prod12-img1": "shopify:\/\/shop_images\/strawberry-moon-black-velvet-everday-pouch-1.webp",
+              "prod12-img2": "shopify:\/\/shop_images\/17_MOON_AND_STRAWBS_233_RT-copy.webp",
+              "prod12-img3": "shopify:\/\/shop_images\/strawberry-moon-black-velvet-everday-pouch-2.webp",
+              "prodname12": "Strawberry Moon",
+              "prodprice12": "£30.00"
+            }
+          }
+        },
+        "block_order": [
+          "3ce13024-d412-4668-b68c-e7df61a0cdbf"
+        ],
+        "settings": {}
+      },
+      "bbg-lp-mob": {
+        "type": "bbg-lp-mob",
+        "blocks": {
+          "b5067343-de54-454e-9595-4edf63e9d9b9": {
+            "type": "Hero",
+            "settings": {
+              "section-headline1": "Surprise Them With Designer Style That’s Just for Them",
+              "section-subhead1": "Make their life a little more organised and a lot more luxurious with the Everyday Pouch. Featuring delicate embroidery on a soft, durable velvet base, each Pouch can be monogrammed for an extra personalised touch.",
+              "prod1-img1": "shopify:\/\/shop_images\/alphabet-navy-everyday-pouch-001_ca7260db-272a-4c0c-b979-3811fd9d4dca.webp",
+              "prod1-img2": "shopify:\/\/shop_images\/03_E_POUCH_154_67bbe4fe-d1ca-48ed-b1aa-8d0e7a702fd8.webp",
+              "prod1-img3": "shopify:\/\/shop_images\/alphabet-navy-everyday-pouch-002_700x_536df303-67ab-492d-a905-36f75617f454.webp",
+              "prodname1": "Alphabet Navy Everyday Pouch",
+              "prodprice1": "£32.00",
+              "prod2-img1": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-001.webp",
+              "prod2-img2": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-002.webp",
+              "prod2-img3": "shopify:\/\/shop_images\/hummingbird-caribbean-blue-everyday-pouch-001.webp",
+              "prodname2": "Hummingbird Blue Everyday Pouch",
+              "prodprice2": "£30.00",
+              "prod3-img1": "shopify:\/\/shop_images\/elizabeth-scarlett-036.webp",
+              "prod3-img2": "shopify:\/\/shop_images\/07_BLUE_TURTLE_AND_TEAL_BEE_267.webp",
+              "prod3-img3": "shopify:\/\/shop_images\/elizabeth-scarlett-037.webp",
+              "prodname3": "Turtle Conservation Everyday Pouch",
+              "prodprice3": "£30.00",
+              "prod4-img1": "shopify:\/\/shop_images\/tiger-rich-blue-velvet-everyday-pouch-001.webp",
+              "prod4-img2": "shopify:\/\/shop_images\/21_TIGER_TEAL_POUCH_1065.webp",
+              "prod4-img3": "shopify:\/\/shop_images\/11_POUCHES_562.webp",
+              "prodname4": "Tiger Rich Blue",
+              "prodprice4": "£30.00",
+              "prod5-img1": "shopify:\/\/shop_images\/honey-bee-rich-blue-everyday-pouch-001.webp",
+              "prod5-img2": "shopify:\/\/shop_images\/07_BLUE_TURTLE_AND_TEAL_BEE_340.webp",
+              "prod5-img3": "shopify:\/\/shop_images\/honey-bee-rich-blue-everyday-pouch-002.webp",
+              "prodname5": "Honey Bee Rich Blue",
+              "prodprice5": "£30.00",
+              "prod6-img1": "shopify:\/\/shop_images\/HoneyBeeeverydaypouchCharcoal_NEW.webp",
+              "prod6-img2": "shopify:\/\/shop_images\/06_POUCHES_MIX_417-copy.webp",
+              "prod6-img3": "shopify:\/\/shop_images\/elizabeth-scarlett-019-Edit_c464ab70-182a-4a24-bcde-46a27c656bd7.webp",
+              "prodname6": "Honey Bee Charcoal",
+              "prodprice6": "£30.00",
+              "prod7-img1": "shopify:\/\/shop_images\/giraffe-navy-everyday-pouch-001.webp",
+              "prod7-img2": "shopify:\/\/shop_images\/06_POUCHES_MIX_420.webp",
+              "prod7-img3": "shopify:\/\/shop_images\/giraffe-navy-everyday-pouch-002.webp",
+              "prodname7": "Giraffe Everyday Pouch Navy",
+              "prodprice7": "£30.00",
+              "prod8-img1": "shopify:\/\/shop_images\/coralelephantpouch.webp",
+              "prod8-img2": "shopify:\/\/shop_images\/02_ELEPHANT_FLATLAY_036_3.webp",
+              "prod8-img3": "shopify:\/\/shop_images\/Pouchforpurpose-2_ad41bbd9-4eaf-40be-9c79-76aae2213719.webp",
+              "prodname8": "Elephant Conservation Coral",
+              "prodprice8": "£28.00",
+              "prod9-img1": "shopify:\/\/shop_images\/greenelephantpouch.webp",
+              "prod9-img2": "shopify:\/\/shop_images\/0002_SHOT_17_ELEPHANT_POUCH_362_jpg_187256b4-6fb6-4db2-adf6-5ee2adb76fde.webp",
+              "prod9-img3": "shopify:\/\/shop_images\/Sheldrickpouchgreen2_d4cf3ff6-f64b-40c2-aec7-312d786b754a.webp",
+              "prodname9": "Elephant Conservation Olive",
+              "prodprice9": "£28.00",
+              "prod10-img1": "shopify:\/\/shop_images\/daisy-sky-blue-velvet-everyday-pouch-1.webp",
+              "prod10-img2": "shopify:\/\/shop_images\/22_DAISY_POUCH_243_RT-copy.webp",
+              "prod10-img3": "shopify:\/\/shop_images\/19_POUCHES_188_RT-copy.webp",
+              "prodname10": "Daisy Sky Blue",
+              "prodprice10": "£30.00",
+              "prod11-img1": "shopify:\/\/shop_images\/dragonfly-moon-rich-blue-everyday-pouch-1.webp",
+              "prod11-img2": "shopify:\/\/shop_images\/19_POUCHES_173.webp",
+              "prod11-img3": "shopify:\/\/shop_images\/dragonfly-moon-rich-blue-everyday-pouch-2.webp",
+              "prodname11": "Dragonfly Blue",
+              "prodprice11": "£30.00",
+              "prod12-img1": "shopify:\/\/shop_images\/strawberry-moon-black-velvet-everday-pouch-1.webp",
+              "prod12-img2": "shopify:\/\/shop_images\/17_MOON_AND_STRAWBS_233_RT-copy.webp",
+              "prod12-img3": "shopify:\/\/shop_images\/strawberry-moon-black-velvet-everday-pouch-2.webp",
+              "prodname12": "Strawberry Moon",
+              "prodprice12": "£30.00"
+            }
+          }
+        },
+        "block_order": [
+          "b5067343-de54-454e-9595-4edf63e9d9b9"
+        ],
+        "settings": {}
+      },
+      "bbg-lp6": {
+        "type": "bbg-lp6",
+        "blocks": {
+          "5181c487-af21-494c-9a97-4013dc73d537": {
+            "type": "Hero",
+            "settings": {
+              "section-headline2": "As Seen In...",
+              "block1-img": "shopify:\/\/shop_images\/Tatler_logo_1.png",
+              "blocktitle1": "“We’re so in love with this pretty Elizabeth Scarlett travel pouch”",
+              "block2-img": "shopify:\/\/shop_images\/ERIGD3sylawt_9590fcae-56dd-41a9-b36f-6ef5d9451493.png",
+              "blockbody2": "“Elizabeth Scarlett pouches are a must-have for your impending hols”",
+              "block3-img": "shopify:\/\/shop_images\/The-Independent-Logo-2005_1.png",
+              "blocktitle3": "“I always use these gorgeous pouches, which I think are a \tgodsend”",
+              "block4-img": "shopify:\/\/shop_images\/1024px-Marie_Claire_Magazine_logo.svg_f635da99-1555-4771-bd3a-5aa8a8945252.png",
+              "blocktitle4": "“It can be used for anything…storing your makeup,  keeping your handbag organised”",
+              "block5-img": "shopify:\/\/shop_images\/2560px-Logo_Stylist.svg_b2f5ad04-e12e-43a7-bccf-a13f4388b510.png",
+              "blocktitle5": "“Best make-up and toiletry bags to store your beauty stash and keep it organised”",
+              "block1-imgb": "shopify:\/\/shop_images\/Untitled-4_36d50216-fa9b-45b6-93b3-a52d30ef537b.png",
+              "blocktitle1b": "Every Purchase Supports Wildlife",
+              "block2-imgb": "shopify:\/\/shop_images\/5136312_design_draw_fingers_gesture_hand_icon_1.png",
+              "blockbody2b": "Hand-Illustrated<br>Designs",
+              "block3-imgb": "shopify:\/\/shop_images\/8788112_building_materials_fiberglass_mesh_roll_icon_1.png",
+              "blocktitle3b": "Thoughtfully Sourced Materials",
+              "block4-imgb": "shopify:\/\/shop_images\/ffffff.png",
+              "blocktitle4b": "Shop Small & Female-Owned"
+            }
+          }
+        },
+        "block_order": [
+          "5181c487-af21-494c-9a97-4013dc73d537"
+        ],
+        "settings": {}
+      },
+      "bbg-lp7": {
+        "type": "bbg-lp7",
+        "blocks": {
+          "f178b70c-6d77-4af5-b683-79fa1dd55b30": {
+            "type": "Hero",
+            "settings": {
+              "section-headline7": "Joyful Treasures that Give Back to Nature",
+              "rev-body1": "An avid painter and world-traveller since childhood, our founder\n\t\t\t\t\t\tElizabeth Scarlett began embroidering her artwork onto fabrics with the goal of creating\n\t\t\t\t\t\twearable pieces that “evoke feelings of joy, inspire wanderlust, and capture the beauty of\n\t\t\t\t\t\tthe world.”<br>\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\t7 years on, Elizabeth Scarlett has grown to partner with incredible brands — like L’Occitane,\n\t\t\t\t\t\tThe White Company, and Estee Lauder <strong>— raise over £230,000 for wildlife\n\t\t\t\t\t\tconservation,<\/strong> and provide joyful, indulgent moments in the daily lives of thousands\n\t\t\t\t\t\twith our nature-inspired designs.<br>\n\t\t\t\t\t\t<br>\n\t\t\t\t\t\tDespite our journey, we’re still a family-owned company — and we’re proud to share that\n\t\t\t\t\t\t<strong>every design, pattern, symbol, and motif still comes from Elizabeth’s hand-painted\n\t\t\t\t\t\twork,<\/strong> inspired by her travels both at home and abroad.",
+              "sec-img": "shopify:\/\/shop_images\/qqqq.png"
+            }
+          }
+        },
+        "block_order": [
+          "f178b70c-6d77-4af5-b683-79fa1dd55b30"
+        ],
+        "settings": {}
+      },
+      "bbg-lp8": {
+        "type": "bbg-lp8",
+        "blocks": {
+          "670c7eed-9ed9-4f95-9dd6-d73d8a0ce09f": {
+            "type": "Hero",
+            "settings": {
+              "section-headline8": "Are you ready to give a gift they’ll cherish for years to come?",
+              "mob-headline8": "Ready to give a gift they’ll cherish for years to come?",
+              "rev-body1": "It’s time to give a beautiful quality gift you’re truly proud of,\n\t\t\t\t\t\twithout all the hassle.",
+              "but-txt": "YES, SHOP EVERYDAY POUCHES",
+              "but-url": "#shop"
+            }
+          }
+        },
+        "block_order": [
+          "670c7eed-9ed9-4f95-9dd6-d73d8a0ce09f"
+        ],
+        "settings": {}
+      },
+      "bbg-lp9": {
+        "type": "bbg-lp9",
+        "blocks": {
+          "1867d312-6fc6-4855-a6eb-0d9fcd2d02a6": {
+            "type": "Hero",
+            "settings": {
+              "section-headline7": "Any Questions?",
+              "question1": "I want my Pouch monogrammed. How long does that take?",
+              "answer1": "We work with a lovely local team to personalise your products and we aim to deliver monogrammed products within 5 - 7 days from your order date. This time frame allows our team to ensure your products are perfectly personalised for you on arrival - whether that be a special gift for someone or a treat just for you.",
+              "question2": "Where are your products made?",
+              "answer2": "Most of our textile-based accessories are made by a female-run, family-owned production team in Qingdao, China. Managed by our trusted partner Susan, it’s a socially-forward, fair-wage company that is fully SMETA audited, we visit often, who shares our values of thoughtful sourcing and premium quality.",
+              "question3": "Can I send items directly to someone as a gift?",
+              "answer3": "If you’d like to send a gift to someone, you can use their address for delivery when you’re checking out. Don’t worry, we no longer include the price on the paperwork in the parcel so you can keep how much you’ve spent a complete secret. Why not make it the perfect gift and add on an illustrated gift note and gold embossed gift box? Simply add at the checkout.",
+              "question4": "How long does shipping take?",
+              "answer4": "All UK orders are processed on a Standard Delivery service and sent via a Royal Mail Tracked 48 service - that said, to allow for any postal delays, we advise your order will be delivered to you within 3 working days from the date the order was placed. If you’ve added personalisation, we advise to allow 7 working days for your order to be delivered.",
+              "sec-img": "shopify:\/\/shop_images\/safariclassicshomepgabe_600x_1.png"
+            }
+          }
+        },
+        "block_order": [
+          "1867d312-6fc6-4855-a6eb-0d9fcd2d02a6"
+        ],
+        "settings": {}
+      },
+      "product-script": {
+        "type": "product-script",
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "16308337681265915a",
+      "16308361902181eab5",
+      "16308339283fccca8a",
+      "16316920075c089f98",
+      "16308356908985abe5",
+      "1630833925bd0803a9",
+      "1648121015e7e41f2f",
+      "1630836229a1f7adc9",
+      "163647597830bb9818",
+      "163083643515a1d887"
+    ],
+    "blocks": {
+      "7570552984445421165": {
+        "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {}
+      },
+      "8962992520437913685": {
+        "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/loader-app-embed-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+        "disabled": false,
+        "settings": {
+          "inject_modules_loader": true,
+          "inject_sdk_loader": true
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  }
+}

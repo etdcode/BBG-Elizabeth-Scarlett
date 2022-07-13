@@ -1,0 +1,75 @@
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+  <nav class="breadcrumbs--inner">
+    <div {% unless template == 'product' %}class="container"{% endunless %}>
+      <div class="row">
+        <div class="col-12">
+          <ol class="breadcrumb mb-0 font-size-xs text-decoration-none">
+            <li class="breadcrumb-item">
+              <a class="text-decoration-none" href="/">Home</a>
+            </li>
+
+            {% if template contains 'page' %}
+            <li class="breadcrumb-item">
+              <span class="text-decoration-none">{{ page.title }}</span>
+            </li>
+
+            {% elsif template contains 'product' %}
+              {% if collection.url %}
+                <li class="breadcrumb-item">
+                  <a class="text-decoration-none" href="{{ collection.url }}">{{ collection.title }}</a>
+                </li>
+              {% endif %}
+              <li class="breadcrumb-item">
+                  <span class="text-decoration-none">{{ product.title }}</span>
+              </li>
+
+            {% elsif template contains 'collection' and collection.handle %}
+              {% if current_tags %}
+                {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+                <li class="breadcrumb-item">
+                  <a class="text-decoration-none" href="{{ url }}">{{ collection.title }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-decoration-none">{{ current_tags | join: " + " }}</span>
+                </li>
+              {% else %}
+                <li class="breadcrumb-item">
+                  <span class="text-decoration-none">{{ collection.title }}</span>
+                </li>
+              {% endif %}
+
+            {% elsif template == 'blog' %}
+              {% if current_tags %}
+                <li class="breadcrumb-item">
+                  <a class="text-decoration-none" href="{{ blog.url }}">{{ blog.title }}</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="text-decoration-none">{{ current_tags | join: " + " }}</span>
+                </li>
+              {% else %}
+                <li class="breadcrumb-item">
+                  <span class="text-decoration-none">{{ blog.title }}</span>
+                </li>
+              {% endif %}
+
+            {% elsif template == 'article' %}
+              <li class="breadcrumb-item">
+                <a class="text-decoration-none" href="{{ blog.url }}">{{ blog.title }}</a>
+              </li>
+              <li class="breadcrumb-item">
+                <span class="text-decoration-none">{{ article.title }}</span>
+              </li>
+
+            {% else %}
+              <li class="breadcrumb-item">
+                <span class="text-decoration-none">{{ page_title }}</span>
+              </li>
+
+            {% endif %}
+
+          </ol>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% endunless %}

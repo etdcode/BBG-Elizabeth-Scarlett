@@ -1,0 +1,63 @@
+<div class="monogram-banner">
+  <div class="monogram-banner__container">
+    <img src="{{ section.settings.image | img_url: 'master' }}" loading="lazy" alt="Banner Image" class="monogram-banner__image">
+    <div class="monogram-banner__content">
+      <p class="monogram-banner__subtitle">{{ section.settings.subtitle }}</p>
+      <p class="monogram-banner__title">{{ section.settings.title }}</p>
+      <span class="monogram-banner__border">&nbsp;</span>
+      <p class="monogram-banner__text">{{ section.settings.text }}</p>
+      <a href="{{ section.settings.url }}" class="monogram-banner__cta">{{ section.settings.cta_text }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="monogram-banner__section-border">
+  <div class="monogram-banner__section-border-line">&nbsp;</div>
+  <div class="monogram-banner__section-border-icon-container">
+    <img src="{{ 'bee.svg' | asset_url }}" loading="lazy" alt="Icon" class="monogram-banner__section-border-icon">
+  </div>
+  <div class="monogram-banner__section-border-line"></div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "class": "monogram-banner-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "subtitle",
+        "default": "Meet the maker"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Emroidery & Cottons"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "Our family has worked with Susan and her team for generations. We cut and finish all our embroidered textile products here, and work closely with Karen, Wendy and Susan to source new fabrics, packaging and techniques to improve each of our products."
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "CTA URL"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Discover More"
+      }
+    ]
+  }
+{% endschema %}

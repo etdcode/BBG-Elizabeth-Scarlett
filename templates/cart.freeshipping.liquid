@@ -1,0 +1,33 @@
+<!-- templates/cart.freeshipping.liquid -->
+{% comment %}
+  * The purpose of this file is to render the free shipping bar in the minicart.
+  *     We use the fetch api to request the contents of this page and place it in the minicart drawer.
+{% endcomment %}
+
+{% layout none %}
+
+{% if settings.minicart_free_shipping %}
+
+  {% assign free_shipping_threshold = settings.minicart_free_shipping_threshold | times: 100 %}
+  {% assign free_shipping_remainder = free_shipping_threshold | minus: cart.total_price %}
+  {% assign free_shipping_remainder_money = free_shipping_remainder | money %}
+  {% assign free_shipping_under_message = settings.minicart_free_shipping_under | replace: "{{ amount }}", "<span class='free_shipping_remainder'>{{ amount }}</span>" | replace: "{{ amount }}", free_shipping_remainder_money %}
+  {% assign free_shipping_qualified_message = settings.minicart_free_shipping_qualified %}
+  {% assign free_shipping_percentage = cart.total_price | divided_by: free_shipping_threshold | times: 100 %}
+
+  <div class="minicart__free-shipping" data-price-freeshiping="{{free_shipping_threshold}}">
+    <p class="message-freeshipping">
+      <span class="not-freeshipping" {% if free_shipping_remainder <= 0 %}hidden{% endif %}>{{ free_shipping_under_message }}</span>
+      <span class="freeshipping" {% if free_shipping_remainder > 0 %}hidden{% endif %}>{{ free_shipping_qualified_message }}</span>
+    </p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: {{ free_shipping_percentage }}%" aria-valuenow="{{ free_shipping_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="process-money d-flex">
+      <div class="col-4">£0</div>
+      <div class="col-4 text-center">{{ free_shipping_threshold | divided_by: 2 | round | money }}</div>
+      <div class="col-4 text-end">{{ free_shipping_threshold | money }}</div>
+    </div>
+  </div>
+
+{% endif %}

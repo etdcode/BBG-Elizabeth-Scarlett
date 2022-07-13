@@ -1,0 +1,64 @@
+{% layout none %}
+
+<div class="gift-note__canvas-container" style="background-color: #F5F5F5;">
+  <canvas class="gift-note__canvas" width="740" height="525"></canvas>
+</div>
+
+<style>
+  .gift-note__canvas-container {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 740px;
+    height: 525px;
+  }
+</style>
+
+<script>
+  (function() {
+    var frankRuhlLibre = new FontFace(
+      "FrankRuhlLibre",
+      "url(https://fonts.gstatic.com/s/frankruhllibre/v6/j8_36_fAw7jrcalD7oKYNX0QfAnPU0PG9JfGhKWLDw4.woff2)"
+    );
+    frankRuhlLibre.load().then(font => {
+      document.fonts.add(font)
+      
+      var charsPerLine = 80
+      var lineOffset = 0
+
+      var params = new URLSearchParams(window.location.search);
+      var text = atob(params.get("data")).toUpperCase()
+      text = splitText(text, charsPerLine)
+      var totalLines = Math.min(10, text.length)
+
+      var canvas = document.querySelector(".gift-note__canvas")
+      var context = canvas.getContext("2d")
+      context.clearRect(0, 0, canvas.width, canvas.height)
+      context.font = "11px Frank Ruhl Libre"
+      context.textAlign = "center"
+      context.fillStyle = "#000000"
+      
+      for (var i = 0; i < totalLines; i++) {
+        var thisLine = text[i]
+        var yPosition = 175 + lineOffset
+        context.fillText(thisLine, 370, yPosition)
+        lineOffset += 25
+      } 
+    })
+
+    function splitText(text, charsPerLine) {
+      var newlineSplit = text.split("\n")
+      var newTextArray = []
+      for (var i = 0; i < newlineSplit.length; i++) {
+        var thisElement = newlineSplit[i]
+        if (thisElement.length > charsPerLine) {
+          var thisLines = thisElement.match(new RegExp('.{1,' + charsPerLine + '} ', 'g'))
+          newTextArray = newTextArray.concat(thisLines)
+        } else {
+          newTextArray.push(thisElement)
+        }
+      }
+      return newTextArray
+    }
+  })();
+</script>

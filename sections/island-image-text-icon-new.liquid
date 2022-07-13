@@ -1,0 +1,121 @@
+{% if section.settings.maininfotext != blank or section.blocks.size > 0 or section.settings.mainbtntext != blank %}
+  <div class="island_image_text_icon_main_new" style="background: {{ section.settings.background-color}};">
+    <div class="page-wrapper">
+      <div class="island_image_text_icon_inner_new">
+
+        {% if section.settings.maininfotext != blank %}
+          <div class="island_image_text_icon_maininfotext_new">
+            {{ section.settings.maininfotext }}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="island_image_text_icon_mainallloops_new">
+            {% for block in section.blocks %}
+              {% if block.settings.fullimage != blank or block.settings.infotext != blank or block.settings.svgiconpath != blank %}
+                <div class="island_image_text_icon_mainallloops_boxs_new">
+                  <div class="island_image_text_icon_mainallloops_boxs_in_new">
+                    {% if block.settings.fullimage != blank %}
+                      <div class="island_image_text_icon_mainallloops_imageboxs_new">
+                        <img src="{{ block.settings.fullimage | img_url: 'master' }}" alt="{{ block.settings.fullimage.alt }}" />
+                      </div>
+                    {% endif %}
+                    {% if block.settings.infotext != blank %}
+                      <div class="island_image_text_icon_mainallloops_textsboxs_new">
+                        {{ block.settings.infotext }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.svgiconpath != blank %}
+                      <div class="island_image_text_icon_mainallloops_iconsboxs_new">
+                        {{ block.settings.svgiconpath }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>  
+        {% endif %}
+
+        {% if section.settings.mainbtntext != blank and section.settings.mainbtnlink != blank %}
+          <div class="island_image_text_icon_mainbuttons_new">
+            <a href="{{ section.settings.mainbtnlink }}" class="btn">
+              {{ section.settings.mainbtntext }}
+            </a>
+          </div>
+        {% endif %}
+
+      </div>  
+    </div>
+  </div>     
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Island Image Text Icon",
+	"class": "island_image_text_icon_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background-color",
+        "label": "Background Color",
+        "default": "#FFFEF8"
+      },
+      {
+		"type": "richtext",
+        "id": "maininfotext",
+        "label": "Add Main Information Text",
+        "default": "<p>Only 1% of hatchlings in the Dutch Caribbean live to adulthood due to human impacts such as ocean pollution and beach disturbance.</p><p>Every order placed helps protect a turtle hatchling…</p>"
+      },
+      {
+		"type": "text",
+        "id": "mainbtntext",
+        "label": "Add Main Button Text",
+        "default": "SHOP THE COLLECTION"
+      },
+      {
+		"type": "url",
+        "id": "mainbtnlink",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+	"blocks" : [
+      {
+        "type": "image-text-svg-icon",
+        "name": "Image Text SVG Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "fullimage",
+            "label": "Add Full Image Display"
+          },
+          {
+            "type": "richtext",
+            "id": "infotext",
+            "label": "Add Information Text",
+            "default": "<p>PROTECTS 1 TURTLE HATCHING:</p><p>POUCH, COSMETICS CASE, WASHBAG</p>"
+          },
+          {
+            "type": "textarea",
+            "id": "svgiconpath",
+            "label": "Add SVG Icon Path Display"
+          }
+        ]
+      }
+	],
+    "presets": [
+      {
+        "name": "Island Image Text Icon",
+		"blocks": [
+          {
+            "type": "image-text-svg-icon"
+          },
+          {
+            "type": "image-text-svg-icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

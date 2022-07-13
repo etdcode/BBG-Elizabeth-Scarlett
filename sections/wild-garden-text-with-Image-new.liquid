@@ -1,0 +1,137 @@
+<div class="wild_garden_text_with_Image_main_new" style="background: {{ section.settings.backcolor }};">
+  <div class="page-wrapper">
+    <div class="wild_garden_text_with_Image_inner_new">
+      <div class="wild_garden_text_with_Image_leftright_new">
+        {% if section.settings.subheading != blank or section.settings.heading != blank or section.settings.desc != blank or section.settings.button_text != blank %}
+          <div class="wild_garden_text_with_Image_leftside_new">
+            <div class="section__info_new">
+              {% if section.settings.subheading != blank %}
+                <div class="section__subheading">
+                  {{ section.settings.subheading }}
+                </div>
+              {% endif %}
+              {% if section.settings.heading != blank %}
+                <h3 class="section__heading">
+                  {{ section.settings.heading }}
+                </h3>
+              {% endif %}
+              {% if section.settings.desc != blank %}
+                <div class="section__desc">
+                  {{ section.settings.desc }}
+                </div>
+              {% endif %}
+              {% if section.settings.button_text != blank %}
+                <a class="section__subheading section__link" href="{{ section.settings.button_url }}">
+                  {{ section.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if section.settings.desktopimage != blank %}
+          <div class="wild_garden_text_with_Image_rightside_new">
+            {% if section.settings.desktopimage != blank %}
+              <div class="wild_garden_text_with_Image_rightside_rightImage_new">
+                <img src="{{ section.settings.desktopimage | img_url: 'master' }}" alt="{{ section.settings.desktopimage.alt }}" />
+              </div>
+            {% endif %}
+            {% if section.settings.leftcustomimage != blank or section.settings.leftcustomimagemobile != blank %}
+              <div class="wild_garden_text_with_Image_rightside_customImage_1_new">
+                <img src="{{ section.settings.leftcustomimage | img_url: 'master' }}" alt="{{ section.settings.leftcustomimage.alt }}" class="dekstop_icon_img" />
+                <img src="{{ section.settings.leftcustomimagemobile | img_url: 'master' }}" alt="{{ section.settings.leftcustomimagemobile.alt }}" class="mobile_icon_img" />
+              </div>
+            {% endif %}
+            {% if section.settings.rightcustomimage != blank or section.settings.rightcustomimagemobile != blank %}
+              <div class="wild_garden_text_with_Image_rightside_customImage_2_new">
+                <img src="{{ section.settings.rightcustomimage | img_url: 'master' }}" alt="{{ section.settings.rightcustomimage.alt }}" class="dekstop_icon_img" />
+                <img src="{{ section.settings.rightcustomimagemobile | img_url: 'master' }}" alt="{{ section.settings.rightcustomimagemobile.alt }}" class="mobile_icon_img" />
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Text With Image New",
+	"class": "wild_garden_text_with_Image_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#fffef9"
+      },
+      {
+        "type": "header",
+        "content": "Left Information Details"
+      },
+      {
+		"type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Heading"
+      },
+      {
+		"type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Subheading"
+      },
+      {
+		"type": "richtext",
+        "id": "desc",
+        "label": "Description",
+        "default": "<p>Some descriptions go here...</p>"
+      },
+      {
+		"type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Discover more"
+      },
+      {
+		"type": "url",
+        "id": "button_url",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Right Image Details"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktopimage",
+        "label": "Add Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "leftcustomimage",
+        "label": "Add Left Custom Image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "leftcustomimagemobile",
+        "label": "Add Left Custom Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "rightcustomimage",
+        "label": "Add Right Custom Image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "rightcustomimagemobile",
+        "label": "Add Right Custom Mobile Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text With Image New"
+      }
+    ]
+  }
+{% endschema %}

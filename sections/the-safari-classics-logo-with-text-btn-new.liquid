@@ -1,0 +1,74 @@
+{% if section.settings.logoimage != blank or section.settings.infotext != blank or section.settings.mainbtntext != blank %}
+  <div class="page_logo_with_text_btn_main_new" style="background: {{ section.settings.backcolor }};">
+    <div class="container page_width_new">
+      <div class="page_logo_with_text_btn_inner_new">
+        {% if section.settings.logoimage != blank %}
+          <div class="page_logo_with_text_btn_logoimage_new">
+            <img src="{{ section.settings.logoimage | img_url: '400x' }}" alt="{{ section.settings.logoimage.alt }}" />
+          </div>
+        {% endif %}
+        {% if section.settings.infotext != blank %}
+          <div class="page_logo_with_text_btn_infotexts_new" style="color: {{ section.settings.textcolor }};">
+            {{ section.settings.infotext }}
+          </div>
+        {% endif %}
+        {% if section.settings.mainbtntext != blank %}
+          <div class="page_logo_with_text_btn_buttons_new">
+            <a href="{{ section.settings.mainbtnlink }}" class="btn overlay_btn_new">
+              {{ section.settings.mainbtntext }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Logo With Text Btn",
+	"class": "the_safari_classics_logo_with_text_btn_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#8F9686"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Select Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "image_picker",
+        "id": "logoimage",
+        "label": "Add Logo Image"
+      },
+      {
+		"type": "richtext",
+        "id": "infotext",
+        "label": "Add Information Text",
+        "default": "<p>We pledge 2% of our annual sales to the preservation of keystone species; animals that help define entire ecosystems.</p><p>This means that, whether we make money or not, we tax ourselves for using earth’s resources and honour the animals that embellish our much-loved textiles.</p>"
+      },
+      {
+		"type": "text",
+        "id": "mainbtntext",
+        "label": "Add Main Button Text",
+        "default": "DISCOVER THE INITIATIVE"
+      },
+      {
+		"type": "url",
+        "id": "mainbtnlink",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Logo With Text Btn"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,196 @@
+
+
+{% schema %} 
+{
+    "name": "Section 1 Header",
+    "blocks": [{
+        "name" : "Section 1 header",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline1",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "text",
+            "id": "section-subhead1",
+            "label": "Enter the Section sub title"
+        },
+		{
+            "type": "image_picker",
+            "id": "rev-img",
+            "label": "Upload Rev Star Image"
+        },
+		{
+            "type": "text",
+            "id": "score1",
+            "label": "Enter review Score text"
+        },
+		{
+            "type": "textarea",
+            "id": "body1",
+            "label": "Enter body 1 Text"
+        },
+		{
+            "type": "text",
+            "id": "check1",
+            "label": "Enter 1st Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check2",
+            "label": "Enter 2nd Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check3",
+            "label": "Enter 3rd Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "but-txt",
+            "label": "Enter button text"
+        },
+		{
+            "type": "text",
+            "id": "but-url",
+            "label": "Enter button URL"
+        },
+		{
+            "type": "image_picker",
+            "id": "sec-img",
+            "label": "Upload section Image"
+        },
+		{
+            "type": "image_picker",
+            "id": "sec-imgmob",
+            "label": "Upload mobile section Image"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+
+
+<div class="section1-header">
+		<div class="container">
+			<img class="page-logo" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Elizabeth_Scarlett_Main_Logo_RichBlack-01_1.png?v=1655986444">
+			<div class="row">
+				<div class="head-block">
+                  <div class="star-rate-cont-mob">
+						<img class="rev-stars1" src="{{b.rev-img | img_url: 'master' }}">
+						<p class="sec1-rev-txt">{{ b.score1 | p_url }}</p>
+					</div>
+					<h1 class="section1-title">{{ b.section-headline1 | p_url }}</h1>
+					<p class="section1-body">{{ b.section-subhead1 | p_url }}</p>
+					<hr class="section1-hr">
+                  <img class="sec1-mob-img" src="{{b.sec-imgmob | img_url: 'master' }}">
+					<div class="star-rate-cont">
+						<img class="rev-stars1" src="{{b.rev-img | img_url: 'master' }}">
+						<p class="sec1-rev-txt">{{ b.score1 | p_url }}</p>
+					</div>
+					<p class="section1-body2">{{ b.body1 | p_url }}</p>
+					<div class="check-cont-1">
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point1">{{ b.check1 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point1">{{ b.check2 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point1">{{ b.check3 | p_url }}</p>
+						</div>
+                  </div><a href="{{ b.but-url | p_url }}"><button class="sec1-but">{{ b.but-txt | p_url }}</button></a>
+					<div class="shipping-cont">
+						<img class="ship-img" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Local_shipping.svg?v=1655986444">
+						<p class="ship-txt">Free UK shipping over £50</p>
+                      
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<style>
+  
+   .section1-header {
+    background: #FAF4EC;
+   
+}
+  
+  .sec1-rev-txt {
+  
+    margin-bottom: 1px!important;
+}
+  
+  @media only screen and (min-width: 768px) {
+  .section1-header {
+    background: #FAF4EC;
+    background-image: url("");
+background-size:contain;
+    background-position-x: 100%;
+}
+     .sec1-rev-txt {
+  
+    margin-bottom: 10px!important;
+}
+  
+    
+  }
+  
+   @media only screen and (min-width: 992px) {
+  .section1-header {
+    background: #FAF4EC;
+    background-image: url("https://cdn.shopify.com/s/files/1/1957/2463/files/992.jpg?v=1656407182");
+background-size:contain;
+    background-position-x: 100%;
+}
+    
+  }
+  
+   @media only screen and (min-width: 1200px) {
+  .section1-header {
+    background: #FAF4EC;
+    background-image: url("https://cdn.shopify.com/s/files/1/1957/2463/files/1200.jpg?v=1656407182");
+background-size: 126%;
+    background-position-x: 52%;
+}
+    
+  }
+  
+   @media only screen and (min-width: 1400px) {
+  .section1-header {
+    background: #FAF4EC;
+    background-image: url("https://cdn.shopify.com/s/files/1/1957/2463/files/1400.jpg?v=1656407183");
+background-size: 95%;
+    background-position-x: 100%;
+}
+    
+  }
+</style>

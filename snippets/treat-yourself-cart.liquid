@@ -1,0 +1,97 @@
+{% if type and type == "product" %}
+  <div class="item d-flex " data-handle="{{ product.handle }}">
+    <div class="img">
+      <a href="{{ product.url }}">
+        <img loading="lazy" class="treat-yourself-img" src="{{ product.featured_image | img_url: '500x' }}" alt="{{ product.title }}" />
+      </a>
+    </div>
+
+    <div class="prod position-relative">
+      <div class="title"><a href="{{ product.url }}">{{ product.title }}</a></div>
+      <div class="price">
+        <span class="original {% unless product.variants[0].available %}out-of-stock{% endunless %}">{{ product.price | money }}</span>
+
+        {% if product.compare_at_price_min > product_variant.price %}
+          <span class="price-compare">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+
+        <span class="sold-out">
+          {%- unless product.variants[0].available -%}
+            Out of stock
+          {%- endunless -%}
+        </span>
+      </div>
+
+      {%- unless product.has_only_default_variant -%}
+        <p class="variant">
+          {%- for product_option in product.options_with_values -%}
+            {{ product_option.name }}: {{ product_option.values[0] }}<br>
+          {%- endfor -%}
+        </p>
+      {%- endunless -%}
+
+      {%- if product.variants.size <= 1 -%}
+        <div class="add form-ATC">
+          <input type="hidden" class="minicart-item-id" name="" value="{{ product.first_available_variant.id }}">
+          <a href="#" onclick="Minicart.submitAtcForm(this.closest('.form-ATC'))" data-id="{{ product.first_available_variant.id }}">ADD+</a>
+        </div>
+      {% else %}
+        <div class="add">
+          <a href="{{ product.url }}">VIEW</a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{% elsif type and type == "variant" %}
+  <div class="item d-flex " data-handle="{{ product.handle }}">
+    <div class="img">
+      <a href="{{ product.url }}">
+        {% if variant.image %}
+          {% assign image = variant.image | img_url: 'master' %}
+        {% else %}
+          {% assign image = product.featured_image | img_url: 'master' %}
+        {% endif %}
+        <img loading="lazy" class="treat-yourself-img" src="{{ image }}" alt="{{ variant.title }}" />
+      </a>
+    </div>
+
+    <div class="prod position-relative">
+      <div class="title"><a href="{{ product.url }}">{{ product.title }}</a></div>
+      <div class="price">
+        <span class="original {% unless variant.available %}out-of-stock{% endunless %}">{{ variant.price | money }}</span>
+
+        {% if variant.compare_at_price_min > variant.price %}
+          <span class="price-compare">{{ variant.compare_at_price | money }}</span>
+        {% endif %}
+
+        <span class="sold-out">
+          {%- unless variant.available -%}
+            Out of stock
+          {%- endunless -%}
+        </span>
+      </div>
+
+      {%- unless product.has_only_default_variant -%}
+        <p class="variant">
+          {%- for product_option in product.options_with_values -%}
+            {{ product_option.name }}: {{ variant.option1 }}<br>
+          {%- endfor -%}
+        </p>
+      {%- endunless -%}
+
+      {%- if variant.available -%}
+        <div class="add">
+          {% assign title_downcase = product.title | downcase %}
+          {% if title_downcase contains "gift note" %}
+            <a href="#" onclick="GiftNotes.launchModal({{ variant.id }}, '{{ product.handle }}')" data-id="{{ variant.id }}">ADD+</a>
+          {% else %}
+            <div class="add form-ATC">
+              <input type="hidden" class="minicart-item-id" name="" value="{{ variant.id }}">
+              <a href="#" onclick="Minicart.submitAtcForm(this.closest('.form-ATC'))" data-id="{{ variant.id }}">ADD+</a>
+            </div>
+          {% endif %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{% endif %}

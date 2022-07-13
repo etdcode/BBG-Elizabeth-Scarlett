@@ -1,0 +1,67 @@
+{%- assign readtime = '' -%}
+{%- if article.content != blank -%}
+  {%- assign words = article.content | strip_html | split:' ' -%}
+  {%- assign readtime = words.size | divided_by: 200 | round | at_least: 1 -%}
+{%- endif -%}
+
+<div class="article-template position-relative">
+  <div class="article-bg bg-beige"></div>
+  <div class="page-wrapper article-wrapper">
+    {% assign number_of_comments = article.comments_count %}
+    {% if comment and comment.created_at %}
+      {% assign number_of_comments = article.comments_count %}
+    {% endif %}
+  
+    <div class="text-center">
+      <div class="article__meta">
+        <span>{{ readtime }} min read</span>
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | default: "today" | date: '%dth %b %Y' }}</time>
+        <a href="{{ blog.url }}" class="link">{{ blog.title }}</a>
+      </div>
+      <h1 class="article__title">{{ article.title }}</h1>
+    </div>
+  
+    {% if article.image %}
+      <div class="article__img-wrapper">
+        <img src="{{ article.image | img_url: '1000x' }}">
+      </div>
+    {% endif %}
+  
+    <div class="article__content">{{ article.content }}</div>
+    
+    {% if blog.comments_enabled? %}
+      <h2>{{ number_of_comments }} comments</h2>
+      {% paginate article.comments by 5 %}
+        {% for comment in article.comments %}
+          <div>
+            <div>{{ comment.content }}</div>
+            {{ comment.author }} @ {{ comment.created_at }}
+          </div>
+        {% endfor %}
+        {% if paginate.pages > 1 %}
+          {{ paginate | default_pagination }}
+        {% endif %}
+      {% endpaginate %}
+  
+      <div class="form">
+        {% form 'new_comment', article %}
+          {{ form.errors | default_errors }}
+          <label for="CommentAuthor">Name</label>
+          <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="{{ form.author }}" autocapitalize="words">
+  
+          <label for="CommentEmail">Email</label>
+          <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+  
+          <label for="CommentBody">Message</label>
+          <textarea name="comment[body]" id="CommentBody" placeholder="message">{{ form.body }}</textarea>
+  
+          <input type="submit" value="post">
+        {% endform %}
+      </div>
+    {% endif %}
+
+    {% render 'include-social-share' %}
+  </div>
+
+  {% section 'recent-articles' %}
+</div>

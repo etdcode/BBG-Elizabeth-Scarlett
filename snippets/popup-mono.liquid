@@ -1,0 +1,57 @@
+{% assign product_mono = all_products['item-personalization'] %}
+
+<div class="popup-mono" hidden id="popup-mono">
+  <div class="popup--inner d-flex">
+    <div class="left align-items-center d-flex col-md-6 col-12">
+      <div class="left--inner">
+        <h1 class="title">Bespoke Monogramming</h1>
+        <div class="label-price-mono d-flex">
+          <div class="col-8 label">Add up to three initials</div>
+          <div class="price-mono col-4">+{{ product_mono.price | money | append: '.00' }}</div>
+        </div>
+        <div class="type-letter position-relative">
+          <input type="text" class="js-type-text" name="" maxlength="3" placeholder="Type your initials here" value="">
+          <span class="note-limit">3 character remaining</span>
+        </div>
+        <div class="description">
+          All monogrammed products are made to order with care and love, and will be dispatched as soon as they’re ready. Our current delivery time is 10-14 days. Please note, monogrammed items cannot be returned unless faulty.
+        </div>
+        <div class="term">
+          <label for="tern-mono" class="align-items-center d-flex position-relative">
+            <input type="checkbox" id="tern-mono" name="tern-mono" value="">
+            <span class="checkbox"></span>
+            I agree to monogramming delivery times.
+          </label>
+        </div>
+        <div class="total">
+          Total: <span class="price">{{ product.price | plus: 1400 | money | append: ".00" }}</span>
+        </div>
+
+        <button type="button" class="js-addToCartMono btn disable" data-id="{{ product_mono.variants[0].id }}" name="button">ADD TO BAG</button>
+        <div class="skip-mono">
+          <a href="#popup-mono" class="btnClose">skip monogramming</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right col-md-6 col-12 position-relative">
+      <a href="#popup-mono" class="close btnClose"><img src="{{ 'cancel.svg' | asset_url }}" alt=""></a>
+      <div class="text-mono"></div>
+      {% assign arrayVariant = '' %}
+      {%- unless product.has_only_default_variant -%}
+      {%- for variant in product.variants -%}
+        {%- unless arrayVariant contains variant.option1 -%}
+            {% assign arrayVariant = arrayVariant | append: variant.option1 | append: ',' %}
+            <div class="img-mono" hidden data-variant="{{ variant.option1 | handle }}" style="background-image: url({{ variant.image | img_url: '1200x' }});">
+              <img src="{{ variant.image | img_url: '1200x' }}" class="d-md-none"  alt="">
+            </div>
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- else -%}
+        <div class="img-mono"  style="background-image: url({{ product.featured_image | img_url: '1200x' }});">
+          <img src="{{ product.featured_image | img_url: '1200x' }}" class="d-md-none"  alt="">
+        </div>
+      {%- endunless -%}
+    </div>
+  </div>
+</div>

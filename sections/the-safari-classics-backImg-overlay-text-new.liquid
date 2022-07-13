@@ -1,0 +1,64 @@
+{% if section.settings.headingtext != blank or section.settings.addinfotext != blank or section.settings.btntext != blank %}
+  <div class="page_backImg_overlay_text_main_new" style="{% if section.settings.deskbackimage != blank %}background: url({{ section.settings.deskbackimage | img_url: '1920x' }}) no-repeat center center; background-size: cover;{% else %}background: #cccccc;{% endif %}">
+    <div class="container page_width_new">
+      <div class="page_backImg_overlay_text_inner_new">
+        <div class="page_backImg_overlay_text_infotext_new">
+          {% if section.settings.headingtext != blank %}
+            <h2>{{ section.settings.headingtext }}</h2>
+          {% endif %}
+          {% if section.settings.addinfotext != blank %}
+            {{ section.settings.addinfotext }}
+          {% endif %}
+          {% if section.settings.btntext != blank %}
+            <a href="{{ section.settings.btnlink }}" class="btn overlay_btn_new">
+              {{ section.settings.btntext }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page BackImg Overlay Text",
+	"class": "the_safari_classics_backImg_overlay_text_new",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "deskbackimage",
+        "label": "Add Desktop Background Image"
+      },
+      {
+        "type": "text",
+        "id": "headingtext",
+        "label": "Add Heading Text",
+        "default": "Monogramming"
+      },
+      {
+        "type": "richtext",
+        "id": "addinfotext",
+        "label": "Add Informations Texts",
+        "default": "<p>Whether it’s a thoughtful gift or indulgent treat, make it memorable with our personalisation service.</p>"
+      },
+      {
+        "type": "text",
+        "id": "btntext",
+        "label": "Add Button Text",
+        "default": "DISCOVER MONOGRAMMING"
+      },
+      {
+        "type": "url",
+        "id": "btnlink",
+        "label": "Add Button Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page BackImg Overlay Text"
+      }
+    ]
+  }
+{% endschema %}

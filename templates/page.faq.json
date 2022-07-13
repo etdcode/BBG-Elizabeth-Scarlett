@@ -1,0 +1,506 @@
+{
+  "sections": {
+    "main": {
+      "type": "faq-page",
+      "blocks": {
+        "a2efe7da-78dd-40a8-8246-2121718a11ce": {
+          "type": "rich-text",
+          "settings": {
+            "title": "PRODUCT AND STOCK",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "29ba0588-58ba-46d2-92d3-74a6a1df8e86": {
+          "type": "question",
+          "settings": {
+            "title": "When are you restocking your collections?",
+            "text": "<p>All of our collections are limited edition but we always try our best to bring these back - so do keep your eyes peeled! If there is a particular item that you are after, do sign up to the restock notification on the product page and we will send you an email once it is available to buy. Signing up to our newsletter is the best way to be notified of all new releases and restocks.<\/p>"
+          }
+        },
+        "8d90726f-012f-4345-a948-36ff2cb4c787": {
+          "type": "question",
+          "settings": {
+            "title": "How do I review one of the products I’ve purchased?",
+            "text": "<p>We absolutely love receiving feedback about our products, along with your thoughts on your overall shopping experience with us - whether this be positive or developmental. We’ll be in touch via email 2 weeks after your order has been placed, with the opportunity to leave us a review.<\/p><p>Where are your products made?Are your products sustainable?How can I wash my products?<\/p>"
+          }
+        },
+        "001de299-23fc-4b15-a39b-73fc3dd3eed1": {
+          "type": "question",
+          "settings": {
+            "title": "Where are your products made?",
+            "text": "<p>All our textile-based accessories are made in Qingdao, China by Susan and her team. It’s a socially-forward, family-run company that we've visited multiple times over the past few years and we fully trust the way they operate. We’ve explored producing in Portugal, China, Poland, and the UK, but haven’t yet found a supplier who can offer us the same quality of the product, price point, and reliability.<\/p><p>Our new pyjamas are made in Northern India in a SMETA-audited factory - this audit assesses a site based on their organisation's standards of labour, health and safety, environment and business ethics. India is world renowned for their soft cottons and bold printing techniques, and we're currently exploring more manufacturing here.<\/p>"
+          }
+        },
+        "58bb7fc0-12b2-4673-836a-9a29aa4214f6": {
+          "type": "question",
+          "settings": {
+            "title": "Are your products sustainable?",
+            "text": "<p>We’re making big strides towards improving our understanding of the fabrics we’re using and ultimately designing<br\/>products that are made to last. Over the past year we’ve moved from PP-single-use bags to using reusable fabric slips to package our products - as well as making all our cushion fillers vegan-friendly to stop needless and destructive reliance on animal agriculture, and using BCI approved cotton which means we’re supporting more sustainable cotton farming.<\/p><p>While we do transport our products from China and India, we’re careful to prioritise shipping over air freighting, and as a small team of 12, we’re continuously improving our approach to product, packaging and process.<\/p>"
+          }
+        },
+        "daec3e55-cf42-49e7-a4b3-939d18819883": {
+          "type": "question",
+          "settings": {
+            "title": "How can I wash my products?",
+            "text": "<p>Absolutely - all of our Pouches, Bags and Purses are machine washable. To keep these as soft and luxurious for many years to come, we advise you wash at a cool 30 degrees turned inside out, and then lay flat to dry - if necessary, you can iron out any creases.<\/p><p>Our Bedding Sets and Pyjamas can also be machine washed at 30 degrees - any bedding items can be tumble dried on a low setting yet we’d recommend our Pyjamas to be air-dried which can then be ironed on a cool setting.<\/p><p>As our Eye Masks contain lavender, we don’t recommend machine washing these - clean the surface with a damp cloth and lay flat to dry in a warm room.<\/p>"
+          }
+        },
+        "8c1c910c-1567-4e25-95a3-46554713e5da": {
+          "type": "rich-text",
+          "settings": {
+            "title": "PROMO AND PAYMENT",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "5f3249f4-2227-4e95-a2d3-774144b6af63": {
+          "type": "question",
+          "settings": {
+            "title": "What payment methods do you accept?",
+            "text": "<p>We currently accept all major debit and credit cards - you can also use PayPal, Shop Pay or Google Pay to pay for your order.<\/p>"
+          }
+        },
+        "1df6a18e-2774-4f9d-a500-307fe8b549b3": {
+          "type": "question",
+          "settings": {
+            "title": "How do I purchase a gift card?",
+            "text": "<p>Gift cards are available in denominations of £10, £25, £50 and £100.<\/p><p>Select your required amount and click ‘add to bag’ - once the gift card is in your basket you can amend the quantity to suit the final gift card amount. From here you can checkout your order, follow through with your billing and shipping address, and pay for the order as normal.<\/p>"
+          }
+        },
+        "f2136fa3-4c2b-450d-a3d7-e0f3e0a66df2": {
+          "type": "question",
+          "settings": {
+            "title": "How do I use a gift card?",
+            "text": "<p>When you get to the checkout page, there will be a box on your left-hand side where you can enter in your gift card number. Click ‘apply’ and the relevant discount will be deducted from all eligible items in your basket.<\/p><p>How do I use a promo code?I haven’t received my welcome discount code?Can I get a VAT receipt?I’m still confused or my question is not on this list?<\/p>"
+          }
+        },
+        "591ce7de-572f-4db2-b998-3ef0416644b6": {
+          "type": "question",
+          "settings": {
+            "title": "How do I use a promo code?",
+            "text": "<p>At the checkout we have a ‘discount code’ box, pop your code in here and hit ‘Add’, we’ll do the rest. Please note, discount codes cannot be redeemed on sale items, charity collections, or in conjunction with any other offer.<\/p>"
+          }
+        },
+        "dc92fc7c-ca58-465d-8ad5-37fc33d81d13": {
+          "type": "question",
+          "settings": {
+            "title": "I haven’t received my welcome discount code?",
+            "text": "<p>We’re sorry you’ve not received this! It’s always worth checking your junk\/spam folder in case the email has routed here automatically. If you’re still unable to locate this, pop us an email on <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> so we can get this sorted for you.<\/p>"
+          }
+        },
+        "b470a86d-c8d8-405e-b022-1bd805de04a9": {
+          "type": "question",
+          "settings": {
+            "title": "Can I get a VAT receipt?",
+            "text": "<p>We’re more than happy to supply you with a VAT receipt - just pop an email to us at <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> and we can look into this for you<\/p>"
+          }
+        },
+        "c0011c7b-525a-444b-954c-af61995e1186": {
+          "type": "question",
+          "settings": {
+            "title": "I’m still confused or my question is not on this list?",
+            "text": "<p>Feel free to drop us an email at <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> and one of our team will be happy to help!<\/p>"
+          }
+        },
+        "3c90c82c-3165-4c35-b391-c2b0f9f801a6": {
+          "type": "rich-text",
+          "settings": {
+            "title": "DELIVERY",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "5ce2fd19-a7f3-4f56-8a2c-3985c2ba071a": {
+          "type": "question",
+          "settings": {
+            "title": "Can I have items sent to someone as a gift?",
+            "text": "<p>If you’d like to send a gift to someone, you can use their address for delivery when you’re checking out. Don’t worry, we no longer include the price on the paperwork in the parcel so you can keep how much you’ve spent a complete secret. Why not make it the perfect gift and add on an illustrated gift noted and gold embossed gift box? Simply add at the checkout.<\/p>"
+          }
+        },
+        "f19279dd-7f6c-4984-8df4-711bb3c6399d": {
+          "type": "question",
+          "settings": {
+            "title": "How much is shipping in the UK?",
+            "text": "<p>We ship throughout the UK at a cost of £5.00 - we offer free delivery for all orders over £50.00 which is automatically applied at checkout.<\/p>"
+          }
+        },
+        "130ebf3f-ff7a-45b8-9f21-b2166f3880a3": {
+          "type": "question",
+          "settings": {
+            "title": "How long will my order take?",
+            "text": "<p>All UK orders are processed on a Standard Delivery service and sent via a Royal Mail Tracked 48 service - that said, to allow for any postal delays, we advise your order will be delivered to you within 3 working days from the date the order was placed. If you’ve added personalisation, we advise to allow 7 working days for your order to be delivered.<\/p>"
+          }
+        },
+        "9ca23dac-29aa-4f1d-86be-cb46982f1508": {
+          "type": "question",
+          "settings": {
+            "title": "Do you offer Next Day Delivery\/Express Shipping?",
+            "text": "<p>At the moment we’re only offering a Standard Delivery service so your order will be delivered within 3 working days. <\/p>"
+          }
+        },
+        "ca7dae88-1e8f-4d53-9cd3-36219a46fa51": {
+          "type": "question",
+          "settings": {
+            "title": "Can you speed up delivery?",
+            "text": "<p>Your order will be dispatched from our warehouse via a Standard delivery service, whereby we advise this can take up to 3 working days to be with you. As much as we’d love to, we’re unable to speed up the delivery process and kindly ask you to allow this timeframe for your order to be delivered to you. <\/p>"
+          }
+        },
+        "0b5195d2-9eaf-4ff6-a900-b83153170d1b": {
+          "type": "question",
+          "settings": {
+            "title": "Do you offer International Delivery?",
+            "text": "<p>Absolutely! We currently ship to the USA, Australia and Canada. We use Royal Mail as we really trust their service in getting your parcel to you nice and safely. The cost of shipping depends on the destination and weight.<\/p>"
+          }
+        },
+        "367b152a-8d60-4699-95f3-6faaa017cb20": {
+          "type": "question",
+          "settings": {
+            "title": "Do you ship to Europe?",
+            "text": "<p>We’ve temporarily suspended shipping to Europe due to issues arising from Brexit. Apologies for any inconvenience caused and we’re working hard to get this up and running as soon as we can!<\/p>"
+          }
+        },
+        "a243b93d-4370-47b6-934c-23390a6a289c": {
+          "type": "question",
+          "settings": {
+            "title": "Where is my delivery?",
+            "text": "<p>We’re sorry to hear you’ve yet to receive your order!<\/p><p>We advise personalised orders can take up to 7 working days, with any non-personalised orders being delivered in 3 working days. It’s always worth checking your parcels tracking link (which can be found in your dispatch email), as any delivery scans will automatically update here.<\/p><p>We kindly ask you to allow these delivery times to pass before popping us a message - if for any reason this hasn’t reached you by the estimated delivery date, do let us know as we’d love to look further into this for you.<\/p>"
+          }
+        },
+        "dffb9c03-f2ac-4ccc-b253-f16cfc67f29f": {
+          "type": "question",
+          "settings": {
+            "title": "My tracking says that the order has been delivered, but I haven't received it?",
+            "text": "<p>We are so sorry if your tracking is saying “delivered” but you can’t find the parcel! Royal Mail are usually very accurate, so please double check the following:<\/p><p>- Is the address on your order confirmation the correct address?<\/p><p>- Has it been left in  a safe place where the postman usually leaves parcels?<\/p><p>- Has one of your neighbours accepted the delivery for you?<\/p><p>- Is there a calling card tucked anywhere?<\/p><p>Once you have been through all of these options, please do get in touch with us with your order number where we can advise further.<\/p>"
+          }
+        },
+        "0638df89-14a7-420c-bdd8-4763345d4713": {
+          "type": "question",
+          "settings": {
+            "title": "My parcel has been returned to sender?",
+            "text": "<p>We’re sorry to hear your order is on its way back to us! Once an order has been declared as ‘return to sender’, your order will make its way back to our warehouse and a refund will be processed - as much as we’d love to, we’re unable to send it back out but you’re most welcome to pop in a new order. Do follow the tracking link where you’ll be able to follow its journey back to us.<\/p>"
+          }
+        },
+        "18b7d8b6-c924-46b4-9d38-404d9748ce48": {
+          "type": "rich-text",
+          "settings": {
+            "title": "ORDER ISSUES",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "d286ec53-bb8e-4ef1-9a65-39ec5bc2e708": {
+          "type": "question",
+          "settings": {
+            "title": "Why didn't I receive confirmation of my order?",
+            "text": "<p>Once you’ve completed your order, you’ll receive a confirmation email from us. If this doesn’t arrive, please do check your junk or spam folder as sometimes they can be automatically routed here. If you’re unable to locate the email, it may be that there was a slight typo in the email address! Just get in contact with us and we’ll be able to update your email address and resend the email.<\/p>"
+          }
+        },
+        "2b24c0cf-4740-48be-932f-4df3fdbd72b6": {
+          "type": "question",
+          "settings": {
+            "title": "Can I amend or cancel my order?",
+            "text": "<p>Once an order is placed, it is sent straight to our warehouse for fulfilment and our team gets to work picking, packing and personalising. For this reason, we’re unable to cancel or make any changes - including removing, adding, amending any products within the order, it is just impossible to go through all of our orders to pull one out.<\/p>"
+          }
+        },
+        "f59595d0-e756-4f51-bfc6-ec05677d379d": {
+          "type": "question",
+          "settings": {
+            "title": "Can I change the delivery address?",
+            "text": "<p>We’re unable to amend any part of an order once placed, whether this be the products, or shipping address, so we do ask that you double check all  details before you confirm your order. Once your order has been dispatched, you’ll receive an email with a Royal Mail tracking link to follow its journey - at this point, you’re more than welcome to reach out to Royal Mail directly to understand whether or not they’re able to redirect your parcel for you.<\/p>"
+          }
+        },
+        "dbfc5169-9d00-4034-80c5-c812361e1b75": {
+          "type": "question",
+          "settings": {
+            "title": "Do you offer gift wrap or gift notes?",
+            "text": "<p>You can make your purchase the perfect gift by adding a Gold Embossed Gift Box and\/or Illustrated Gift Note to your order at checkout for a small fee. Rest assured, no prices will be included on the delivery note in your parcel.<\/p>"
+          }
+        },
+        "b24f1d51-542e-4e01-9d4b-9ff421ec8012": {
+          "type": "question",
+          "settings": {
+            "title": "Can I preorder or be put on a waiting list?",
+            "text": "<p>We’re not able to accept orders in advance, or place you on a waiting list for out of stock items or new collections. Our newsletter subscribers are the first to hear about new launches and restocks, so do make sure you’re signed up!<\/p>"
+          }
+        },
+        "94fe2be9-8020-4fb2-8ea5-371e2fa7ecae": {
+          "type": "question",
+          "settings": {
+            "title": "My item has arrived creased - what can I do?",
+            "text": "<p>We have a number of measures in place to ensure that all Elizabeth Scarlett orders arrive in pristine condition. As our products are 100% cotton there is a chance that they can become creased during transit, like any other clothing or soft textile item. These creases will drop out naturally with use of your new accessory, but if you are concerned we recommend giving your pouch a steam or an iron on a low setting, inside out.<\/p>"
+          }
+        },
+        "06e37c0f-9988-49a8-9b3a-6f1f41e4ecfb": {
+          "type": "question",
+          "settings": {
+            "title": "I’ve received a faulty item?",
+            "text": "<p>We are so sorry to hear you have received a faulty item. We take great pride in the quality of our product, so we are disappointed to hear that a faulty item has slipped through. Please email <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> with a photo and description of your issue, and we can take a look at this for you.<\/p>"
+          }
+        },
+        "93582247-2b65-4202-ba1f-5e0f3ba77d89": {
+          "type": "question",
+          "settings": {
+            "title": "I’ve received an incorrect item?",
+            "text": "<p>We’re really sorry you’ve received an incorrect item! We’d love to look into this and kindly ask you send us an email on <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> confirming the item you’ve received along with the item that is missing. <\/p>"
+          }
+        },
+        "76420fe0-8863-4c2d-9ec0-b0ee72b32aed": {
+          "type": "question",
+          "settings": {
+            "title": "I’m missing an item?",
+            "text": "<p>We’re so sorry to hear this! Please email us on <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> with the item\/s missing from your parcel as we’d love to get this sorted for you.<\/p>"
+          }
+        },
+        "0654d7d1-1b58-4fd8-93be-813142e15c21": {
+          "type": "rich-text",
+          "settings": {
+            "title": "RETURNS",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "89682492-6b28-4415-80d1-3683e9f684a2": {
+          "type": "question",
+          "settings": {
+            "title": "How do I return my item?",
+            "text": "<p>You can find all the information you need to return your order on our Delivery and Returns page <a href=\"https:\/\/elizabethScarlett.com\/pages\/delivery-returns\">here<\/a>.<\/p>"
+          }
+        },
+        "da8ed8af-eee2-4c3a-9daa-5cd5540972d6": {
+          "type": "question",
+          "settings": {
+            "title": "How do I exchange my item?",
+            "text": "<p>We don’t currently offer an exchange service, so ask the original item to be returned back to us for a refund and a new order is placed. To read more about our returns policy, please click<a href=\"https:\/\/elizabethScarlett.com\/pages\/delivery-returns\"> here<\/a>.<\/p>"
+          }
+        },
+        "5abcab49-a739-4248-afd4-991018b0ab8a": {
+          "type": "question",
+          "settings": {
+            "title": "I’ve received a gift which isn’t suitable - how can I exchange this?",
+            "text": "<p>As we don’t offer an exchange service, we do ask for the order to be sent back and a new order placed. If you wish to speak with the person who gifted it to you, please do let them know to get in touch should the order have been placed with us directly. Please note, if purchased with one of our stockists we're unable to advise further, and kindly ask they reach out to the stockist they purchased the product from.<\/p>"
+          }
+        },
+        "799e5420-68b7-4efe-b5c6-2adf622c5eaa": {
+          "type": "question",
+          "settings": {
+            "title": "Have you received my return?",
+            "text": "<p>If you’ve returned your parcel via a tracked service, do feel free to check the tracking to see if it’s been delivered back to us yet. Once your order has reached us, we kindly ask you to allow 10 working days for your order to be refunded - once this has been processed on our end, we’ll send you an email to confirm.<\/p>"
+          }
+        },
+        "6062658a-d510-4202-ad14-1c2a4b255d56": {
+          "type": "question",
+          "settings": {
+            "title": "My return has been delivered but I’ve not received a refund?",
+            "text": "<p>We’re pleased your parcel has reached us nice and safely. Rest assured, your parcel will be processed by our lovely warehouse team within 10 working days of your order being delivered back to us - we’ll be sure to pop you an email to let you know when this has happened.<\/p>"
+          }
+        },
+        "c0f3c57c-b0ed-4277-8655-205686157f64": {
+          "type": "rich-text",
+          "settings": {
+            "title": "MONOGRAMMING",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "a40deb89-70af-44d4-9b0d-01752561fa7f": {
+          "type": "question",
+          "settings": {
+            "title": "What can I have monogrammed?",
+            "text": "<p>We are so glad you love the look of our monogramming service! We offer personalisation on most products, but do keep your eyes peeled for the ‘MONOGRAM ME’ logo in the top right hand corner of the product photo. Happy shopping! <\/p>"
+          }
+        },
+        "16636a61-15e4-4080-a9e6-735d46e704d5": {
+          "type": "question",
+          "settings": {
+            "title": "How long does your monogramming take?",
+            "text": "<p>We work with a lovely local team to personalise your products and we aim to deliver monogrammed products within 5 - 7 days from your order date. This time frame allows our team to ensure your products are perfectly personalised for you on arrival - whether that be a special gift for someone or a treat just for you.<\/p>"
+          }
+        },
+        "ffa5006c-f689-4817-ab82-176f3d8e20d8": {
+          "type": "rich-text",
+          "settings": {
+            "title": "TECHNICAL",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "f2b296c6-d903-45a0-8e4a-377d68325c7d": {
+          "type": "question",
+          "settings": {
+            "title": "How can I sign up to your newsletter?",
+            "text": "<p>We’re so excited for you to join the Elizabeth Scarlett community! If you head over to our website, a pop up box should appear where you can enter your email address. Not to worry if this doesn't appear, and if you head to the bottom of any page on the site, you’ll see a box to submit your email address to sign up.<\/p>"
+          }
+        },
+        "7ed76a59-baa0-4280-836c-e562db3f0dbb": {
+          "type": "question",
+          "settings": {
+            "title": "How do I unsubscribe from your mailing list?",
+            "text": "<p>We’re sorry to see you go! Do pop us an email at <a href=\"mailto:customerservices@elizabethscarlett.com\" title=\"mailto:customerservices@elizabethscarlett.com\">customerservices@elizabethscarlett.com<\/a> and we’ll be sure to unsubscribe you from all marketing emails. If you change your mind at any point, just let us know and we can sign you back up.<\/p>"
+          }
+        },
+        "88272091-f004-40f2-b2d9-3c50787bba30": {
+          "type": "question",
+          "settings": {
+            "title": "I’m having trouble accessing your website or checking out. What should I do?",
+            "text": "<p>If you’re having trouble with our website, there’s a few things we’d recommend doing:<\/p><p>- Delete your cookies - on most internet browsers you can do this using ‘Tools’ or ‘History<\/p><p>- Fully close and restart your browser<\/p><p>- Ensure you’re using the most up to date operating system<\/p><p>If after these steps, you’re still having trouble then please do let us know and we can take a look into this for you.<\/p>"
+          }
+        },
+        "9c80398b-079b-4707-9029-86b9d7a2c42e": {
+          "type": "rich-text",
+          "settings": {
+            "title": "STOCKISTS",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "493e39a6-f9f0-4772-9b1a-b953b413a8ec": {
+          "type": "question",
+          "settings": {
+            "title": "I’d love to stock your products - how do I do this?",
+            "text": "<p>We’re always on the lookout for stores to stock our beautiful products. If you’d love to be a stockist of Elizabeth Scarlett, you can apply by popping an email across to our Sales Team, on <a href=\"mailto:hannah@elizabethScarlett.com\">sales@elizabethScarlett.com<\/a>. Please include a brief description of your store concept, location and whether you’re interested in our accessories, bedding collections or both.<br\/>We look forward to hearing from you!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a2efe7da-78dd-40a8-8246-2121718a11ce",
+        "29ba0588-58ba-46d2-92d3-74a6a1df8e86",
+        "8d90726f-012f-4345-a948-36ff2cb4c787",
+        "001de299-23fc-4b15-a39b-73fc3dd3eed1",
+        "58bb7fc0-12b2-4673-836a-9a29aa4214f6",
+        "daec3e55-cf42-49e7-a4b3-939d18819883",
+        "8c1c910c-1567-4e25-95a3-46554713e5da",
+        "5f3249f4-2227-4e95-a2d3-774144b6af63",
+        "1df6a18e-2774-4f9d-a500-307fe8b549b3",
+        "f2136fa3-4c2b-450d-a3d7-e0f3e0a66df2",
+        "591ce7de-572f-4db2-b998-3ef0416644b6",
+        "dc92fc7c-ca58-465d-8ad5-37fc33d81d13",
+        "b470a86d-c8d8-405e-b022-1bd805de04a9",
+        "c0011c7b-525a-444b-954c-af61995e1186",
+        "3c90c82c-3165-4c35-b391-c2b0f9f801a6",
+        "5ce2fd19-a7f3-4f56-8a2c-3985c2ba071a",
+        "f19279dd-7f6c-4984-8df4-711bb3c6399d",
+        "130ebf3f-ff7a-45b8-9f21-b2166f3880a3",
+        "9ca23dac-29aa-4f1d-86be-cb46982f1508",
+        "ca7dae88-1e8f-4d53-9cd3-36219a46fa51",
+        "0b5195d2-9eaf-4ff6-a900-b83153170d1b",
+        "367b152a-8d60-4699-95f3-6faaa017cb20",
+        "a243b93d-4370-47b6-934c-23390a6a289c",
+        "dffb9c03-f2ac-4ccc-b253-f16cfc67f29f",
+        "0638df89-14a7-420c-bdd8-4763345d4713",
+        "18b7d8b6-c924-46b4-9d38-404d9748ce48",
+        "d286ec53-bb8e-4ef1-9a65-39ec5bc2e708",
+        "2b24c0cf-4740-48be-932f-4df3fdbd72b6",
+        "f59595d0-e756-4f51-bfc6-ec05677d379d",
+        "dbfc5169-9d00-4034-80c5-c812361e1b75",
+        "b24f1d51-542e-4e01-9d4b-9ff421ec8012",
+        "94fe2be9-8020-4fb2-8ea5-371e2fa7ecae",
+        "06e37c0f-9988-49a8-9b3a-6f1f41e4ecfb",
+        "93582247-2b65-4202-ba1f-5e0f3ba77d89",
+        "76420fe0-8863-4c2d-9ec0-b0ee72b32aed",
+        "0654d7d1-1b58-4fd8-93be-813142e15c21",
+        "89682492-6b28-4415-80d1-3683e9f684a2",
+        "da8ed8af-eee2-4c3a-9daa-5cd5540972d6",
+        "5abcab49-a739-4248-afd4-991018b0ab8a",
+        "799e5420-68b7-4efe-b5c6-2adf622c5eaa",
+        "6062658a-d510-4202-ad14-1c2a4b255d56",
+        "c0f3c57c-b0ed-4277-8655-205686157f64",
+        "a40deb89-70af-44d4-9b0d-01752561fa7f",
+        "16636a61-15e4-4080-a9e6-735d46e704d5",
+        "ffa5006c-f689-4817-ab82-176f3d8e20d8",
+        "f2b296c6-d903-45a0-8e4a-377d68325c7d",
+        "7ed76a59-baa0-4280-836c-e562db3f0dbb",
+        "88272091-f004-40f2-b2d9-3c50787bba30",
+        "9c80398b-079b-4707-9029-86b9d7a2c42e",
+        "493e39a6-f9f0-4772-9b1a-b953b413a8ec"
+      ],
+      "settings": {
+        "classname": "padding_top_faq",
+        "faq-title": "FAQS",
+        "faq-desc": "<p>If you’re not able to find the answer you’re looking for here, please do get in touch with a member of our lovely customer service team by following this link -<a href=\"https:\/\/www.elizabethscarlett.com\/pages\/contact-us\">Contact Us.<\/a><\/p>"
+      }
+    },
+    "16494075123a30f4e0": {
+      "type": "faq-page",
+      "blocks": {
+        "e6dd9741-84c2-4adf-a7ef-9a8bda90b008": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I find a list of all your stockists?",
+            "text": "<p>We have a number of stockists all over the world that offer Elizabeth Scarlett products both online and in retail shops - to check out a list of them just click <a href=\"https:\/\/elizabethScarlett.com\/pages\/stockists\">here<\/a>.<\/p>"
+          }
+        },
+        "f9c1995f-90e5-442a-8179-ee25349a6cee": {
+          "type": "rich-text",
+          "settings": {
+            "title": "MARKETING & PR",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "2be1ce06-7a7a-4f74-933c-b161697fb9af": {
+          "type": "question",
+          "settings": {
+            "title": "I have a marketing or PR query?",
+            "text": "<p>Thank you so much for thinking of us. Please could you kindly email our marketing team at <a href=\"mailto:marketing@elizabethScarlett.com\" title=\"mailto:marketing@elizabethScarlett.com\">marketing@elizabethscarlett.com<\/a> to discuss this further. We look forward to hearing from you!<\/p>"
+          }
+        },
+        "4434d061-d3ed-460e-b4d5-9e00af6dbc66": {
+          "type": "rich-text",
+          "settings": {
+            "title": "COVID-19",
+            "text": "",
+            "align_text": "left"
+          }
+        },
+        "1b665749-4a7f-4ae9-8415-83de268f43f9": {
+          "type": "question",
+          "settings": {
+            "title": "Can I still order online as normal?",
+            "text": "<p>Yes, we are very pleased to say that we are still taking your online orders! For the safety of our team and our lovely monogramming team, we are unable to take bespoke orders at this time.<\/p>"
+          }
+        },
+        "97e2f6f6-fc17-4b23-9eca-62bed0c00f76": {
+          "type": "question",
+          "settings": {
+            "title": "How long will my delivery take?",
+            "text": "<p>We are processing your orders as quickly as possible but we’re experiencing slower delivery times than normal because we have a reduced warehouse team. We are currently estimating a 3 working day delivery time. Please note, this doesn't include the weekends or Bank Holidays. Unfortunately there is currently no UK Next Day Delivery available.<\/p>"
+          }
+        },
+        "e14cc2f3-0a8b-487e-ad86-56f8b8e2c411": {
+          "type": "question",
+          "settings": {
+            "title": "Is your warehouse following safety precautions?",
+            "text": "<p>Our warehouse team is following all recommended measures when packaging your orders to ensure the safety of our customers and our team. These measures include a lot of handwashing, stringent cleaning of all shared areas and the option to use a facemask if the team feels comfortable. Our team in the warehouse have also reworked their rota to work in shifts, so they overlap as little as they possible and are safe. <\/p>"
+          }
+        },
+        "8b29fc08-b77a-4e72-9305-272921ffd3ae": {
+          "type": "question",
+          "settings": {
+            "title": "What if I’m self-isolating and I can’t return an item?",
+            "text": "<p>We have extended our returns period to 60 days to give you more time to send orders back, and to encourage you all to stay safe and stay at home! We are still processing returns, however these may take a little longer than usual. Please bear with us. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e6dd9741-84c2-4adf-a7ef-9a8bda90b008",
+        "f9c1995f-90e5-442a-8179-ee25349a6cee",
+        "2be1ce06-7a7a-4f74-933c-b161697fb9af",
+        "4434d061-d3ed-460e-b4d5-9e00af6dbc66",
+        "1b665749-4a7f-4ae9-8415-83de268f43f9",
+        "97e2f6f6-fc17-4b23-9eca-62bed0c00f76",
+        "e14cc2f3-0a8b-487e-ad86-56f8b8e2c411",
+        "8b29fc08-b77a-4e72-9305-272921ffd3ae"
+      ],
+      "settings": {
+        "classname": "padding_btm_faq",
+        "faq-title": "",
+        "faq-desc": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16494075123a30f4e0"
+  ]
+}

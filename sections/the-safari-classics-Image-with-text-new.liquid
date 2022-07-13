@@ -1,0 +1,55 @@
+{% if section.settings.leftimage != blank or section.settings.addinfotext != blank %}
+  <div class="page_Image_with_text_main_new" style="background: {{ section.settings.backcolor }};">
+    <div class="container page_width_new">
+      <div class="page_Image_with_text_inner_new">
+        {% if section.settings.leftimage != blank %}
+          <div class="page_Image_with_text_left_new">
+            <img src="{{ section.settings.leftimage | img_url: '900x' }}" alt="{{ section.settings.leftimage.alt }}" />
+          </div>
+        {% endif %}
+        {% if section.settings.addinfotext != blank %}
+          <div class="page_Image_with_text_right_new">
+            <div class="page_Image_with_text_Image_top_star_new">
+            	<img src="{{ 'star_1.png' | asset_url }}" alt="Image" />
+            </div>
+            {{ section.settings.addinfotext }}
+            <div class="page_Image_with_text_Image_bottom_star_new">
+            	<img src="{{ 'star_3.png' | asset_url }}" alt="Image" />
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Image With Text New",
+	"class": "the_safari_classics_Image_with_text_new",
+    "settings": [
+	  {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#FFFEF9"
+      },
+      {
+        "type": "image_picker",
+        "id": "leftimage",
+        "label": "Add Image Left"
+      },
+      {
+        "type": "richtext",
+        "id": "addinfotext",
+        "label": "Add Informations Texts",
+        "default": "<p>Treating someone special? <br>Our gold-foiled gift boxes <br>and hand-illustrated note <br>cards make it easy to create <br>a unique and extra special <br>gifting experience. Simply <br>add at the checkout</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Image With Text New"
+      }
+    ]
+  }
+{% endschema %}

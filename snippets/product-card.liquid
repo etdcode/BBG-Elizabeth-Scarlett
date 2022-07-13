@@ -1,0 +1,14 @@
+<!-- snippets/product-card.liquid -->
+
+<div class="col-6 col-md-3 mb-3">
+  <div class="card h-100">
+    <img src="{{ product.featured_image | img_url: '500x' }}" class="card-img-top" alt="{{ product.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title | link_to: product.url }}</h5>
+      <p class="card-text">{{ product.description | strip_html | truncatewords: 10, '...' }}</p>
+    </div>
+    <div class="card-footer">
+      <a href="{{ product.url }}" class="text-muted text-decoration-none small">View product ></a>
+    </div>
+  </div>
+</div>

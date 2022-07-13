@@ -1,0 +1,33 @@
+<section class="about-us_vision-statement">
+  <div class="background-wrapper" style="background: {{ section.settings.background-color}};">
+    <div class="page-width">
+      <div class="content-wrapper">
+        <div class="icon-bee-wrapper">
+          {% render 'icon-bee' %}
+        </div>
+        {% if section.settings.statement != blank %}
+          <div class="statement vision-statement">{{ section.settings.statement }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+      "name": "Mission/Vision Statement",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "statement",
+          "label": "Statement"
+        },
+        {
+          "type": "color",
+          "id": "background-color",
+          "label": "Background Color",
+          "default": "#FFFEF9"
+        }
+      ]
+  }
+{% endschema %}

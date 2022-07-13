@@ -1,0 +1,158 @@
+
+
+{% schema %} 
+{
+    "name": "Section 9 FAQs",
+    "blocks": [{
+        "name" : "Section 9 FAQs",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline7",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "text",
+            "id": "question1",
+            "label": "Enter the Question 1"
+        },
+		{
+            "type": "textarea",
+            "id": "answer1",
+            "label": "Enter the Answer 1"
+        },
+		{
+            "type": "text",
+            "id": "question2",
+            "label": "Enter the Question 2"
+        },
+		{
+            "type": "textarea",
+            "id": "answer2",
+            "label": "Enter the Answer 2"
+        },
+		{
+            "type": "text",
+            "id": "question3",
+            "label": "Enter the Question 3"
+        },
+		{
+            "type": "textarea",
+            "id": "answer3",
+            "label": "Enter the Answer 3"
+        },
+		{
+            "type": "text",
+            "id": "question4",
+            "label": "Enter the Question 4"
+        },
+		{
+            "type": "textarea",
+            "id": "answer4",
+            "label": "Enter the Answer 4"
+        },
+		{
+            "type": "image_picker",
+            "id": "sec-img",
+            "label": "Upload Section Image"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+	
+<div class="section9-faqs">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<h2 class="sec9-title">{{ b.section-headline7 | p_url }}</h2><img class="sec9-mob" src=
+				"{{b.sec-img | img_url: 'master' }}">
+				<div class="accordion accordion-flush" id="accordionFlushExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingOne"><button aria-controls="flush-collapseOne"
+						aria-expanded="false" class="accordion-button collapsed" data-bs-target="#flush-collapseOne"
+						data-bs-toggle="collapse" type="button">{{ b.question1| p_url }}</button></h2>
+						<div aria-labelledby="flush-headingOne" class="accordion-collapse collapse" data-bs-parent=
+						"#accordionFlushExample" id="flush-collapseOne">
+							<div class="accordion-body">
+								{{ b.answer1 | p_url }}
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingTwo"><button aria-controls="flush-collapseTwo"
+						aria-expanded="false" class="accordion-button collapsed" data-bs-target="#flush-collapseTwo"
+						data-bs-toggle="collapse" type="button">{{ b.question2| p_url }}</button></h2>
+						<div aria-labelledby="flush-headingTwo" class="accordion-collapse collapse" data-bs-parent=
+						"#accordionFlushExample" id="flush-collapseTwo">
+							<div class="accordion-body">
+								{{ b.answer2 | p_url }}
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingThree"><button aria-controls=
+						"flush-collapseThree" aria-expanded="false" class="accordion-button collapsed"
+						data-bs-target="#flush-collapseThree" data-bs-toggle="collapse" type="button">{{ b.question3| p_url }}</button></h2>
+						<div aria-labelledby="flush-headingThree" class="accordion-collapse collapse" data-bs-parent=
+						"#accordionFlushExample" id="flush-collapseThree">
+							<div class="accordion-body">
+								{{ b.answer3 | p_url }}
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingFour"><button aria-controls=
+						"flush-collapseFour" aria-expanded="false" class="accordion-button collapsed" data-bs-target=
+						"#flush-collapseFour" data-bs-toggle="collapse" type="button">{{ b.question4| p_url }}</button></h2>
+						<div aria-labelledby="flush-headingFour" class="accordion-collapse collapse" data-bs-parent=
+						"#accordionFlushExample" id="flush-collapseFour">
+							<div class="accordion-body">
+								{{ b.answer4 | p_url }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm"><img class="sec9-img" src="{{b.sec-img | img_url: 'master' }}"></div>
+		</div>
+	</div>
+	<style>
+	   .section9-faqs {
+	   background: url("");
+	   background-repeat: no-repeat;
+	}
+	   
+	     @media only screen and (min-width: 768px) {
+	   .section9-faqs {
+	   background: url("");
+	   background-repeat: no-repeat;
+	}
+	   }
+
+	</style>
+</div>
+  
+

@@ -1,0 +1,248 @@
+{{ 'product-tab.css' | asset_url | stylesheet_tag }}
+
+{% assign metafield = product.metafields %}
+{% assign product_size = false %}
+
+{%- unless product.has_only_default_variant -%}
+  {% for product_option in product.options_with_values %}
+    {% assign check_variant_size = product_option.name | handle %}
+    {%- if check_variant_size == 'size' -%}
+      {% assign product_size = true %}
+    {%- endif -%}
+  {% endfor %}
+{%- endunless -%}
+
+
+<div class="section--product-tab">
+  <div class="page-wrapper">
+    <div class="d-flex">
+      <div class="left col-md-6 col-12">
+        <div class="tab tab-design">
+          
+          {% if product.metafields.custom.how_this != blank %}
+            <div class="accordion gifts active">
+              <div class="accordion-header js-accordion position-relative">
+                How This Product Helps Elephants
+                <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+              </div>
+              <div class="accordion-content" style="height:auto;">
+                <div class="content--inner">
+                  <span class="check-element" hidden></span>
+                  <p class="content"></p>
+                  {{ product.metafields.custom.how_this }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          
+          {% if product.metafields.custom.how_this_generic != blank %}
+            <div class="accordion gifts active">
+              <div class="accordion-header js-accordion position-relative">
+                How This Product Helps
+                <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+              </div>
+              <div class="accordion-content" style="height:auto;">
+                <div class="content--inner">
+                  <span class="check-element" hidden></span>
+                  <p class="content"></p>
+                  {{ product.metafields.custom.how_this_generic }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          
+          {% for block in section.blocks %}
+              {% if block.settings.accordion_title != blank %}
+              {% assign accordionTitle = block.settings.accordion_title | handleize %}
+              <div class="accordion {{ accordionTitle }}_new {% if template contains 'product.pyjamas' and accordionTitle == 'size-guide' %} active {% endif %}">
+                <div class="accordion-header js-accordion position-relative">
+                  {{ block.settings.accordion_title }}
+                  <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                  <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+                </div>
+                <div class="accordion-content" {% if template contains 'product.pyjamas' and accordionTitle == 'size-guide' %} style="height:auto;" {% endif %}>
+                  <div class="content--inner">
+                    <span class="check-element" hidden></span>
+                    {%- if block.settings.img != blank -%}
+                      <img src="{{ block.settings.img | img_url: 'master' }}" class="icon-img" alt="">
+                    {%- endif -%}
+
+                    {%- if block.settings.title != blank -%}
+                      <h2 class="title">{{  block.settings.title }}</h2>
+                    {%- endif -%}
+
+                    {%- if block.settings.metafield_content != blank -%}
+                      <p>{{ block.settings.metafield_content }}</p>
+                    {%- elsif block.settings.content != blank -%}
+                      <p class="content">{{ block.settings.content }}</p>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <div class="accordion gifts">
+                <div class="accordion-header js-accordion position-relative">
+                 Gift Boxes & Gift Notes
+                  <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                  <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+                </div>
+                <div class="accordion-content">
+                  <div class="content--inner">
+                    <span class="check-element" hidden></span>
+                    {%- if section.settings.img_nh != blank -%}
+                      <img src="{{ section.settings.img_nh | img_url: 'master' }}" class="icon-img" alt="">
+                    {%- endif -%}
+
+                    {%- if section.settings.title_dr != blank -%}
+                      <h2 class="title">{{  section.settings.title_nh }}</h2>
+                    {%- endif -%}
+
+                   
+                    <p class="content"></p> <ul>
+<li>Our Small Box is ideally sized to fit an Everyday Pouch or 1-2 smaller accessories.</li>
+<li>Our Medium Box is ideally sized to fit an Everyday Pouch or 2-3 smaller accessories.</li>
+<li>Our Large Box fits our bigger items and is the perfect finishing touch to Pyjamas or Wash Bags.</li>
+</ul>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="accordion delivery-returns">
+                <div class="accordion-header js-accordion position-relative">
+                  delivery & returns
+                  <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                  <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+                </div>
+                <div class="accordion-content">
+                  <div class="content--inner">
+                    <span class="check-element" hidden></span>
+                    {%- if section.settings.img_dr != blank -%}
+                      <img src="{{ section.settings.img_dr | img_url: 'master' }}" class="icon-img" alt="">
+                    {%- endif -%}
+
+                    {%- if section.settings.title_dr != blank -%}
+                      <h2 class="title">{{  section.settings.title_dr }}</h2>
+                    {%- endif -%}
+
+                    
+                      <p class="content"></p><p>We offer free shipping on all orders over &pound;50.<br />More information about Delivery &amp; Returns can be found&nbsp;<a href="https://www.elizabethscarlett.com/pages/delivery-returns">HERE</a></p>
+                   
+                  </div>
+                </div>
+              </div>
+          
+           <div class="accordion need-help">
+                <div class="accordion-header js-accordion position-relative">
+                  NEED HELP?
+                  <img src="{{ 'icon-plus.svg' | asset_url }}" class="icon plus" alt="">
+                  <img src="{{ 'icon-remove.svg' | asset_url }}" class="icon minus" alt="">
+                </div>
+                <div class="accordion-content">
+                  <div class="content--inner">
+                    <span class="check-element" hidden></span>
+                    {%- if section.settings.img_nh != blank -%}
+                      <img src="{{ section.settings.img_nh | img_url: 'master' }}" class="icon-img" alt="">
+                    {%- endif -%}
+
+                    {%- if section.settings.title_dr != blank -%}
+                      <h2 class="title">{{  section.settings.title_nh }}</h2>
+                    {%- endif -%}
+
+                   
+                    <p class="content"></p><p>Our FAQs can be found&nbsp;<a  href="https://www.elizabethscarlett.com/pages/faqs">HERE</a><br />If you&rsquo;re not able to find the answer you&rsquo;re looking for here, please do get in touch with a member of our lovely customer service team by following this link -&nbsp;<a  href="https://www.elizabethscarlett.com/pages/contact-us">Contact Us.</a></p>
+                    
+                  </div>
+                </div>
+              </div>
+         
+           
+        </div>
+
+        <div class="social">
+          {% capture shareUrl %}{{request.host}}{{product.url }}{% endcapture %}
+          <ul>
+            <li>SHARE:</li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | url_encode }}&amp;src=sdkpreparse"><img src="{{ 'facebook.svg' | asset_url }}" /></a></li>
+            <li><a href="https://twitter.com/intent/tweet?url={{ shareUrl | url_encode }}"><img src="{{ 'twitter.svg' | asset_url }}" /></a></li>
+            <li><a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-custom="true" style="cursor: pointer;" data-pin-media="{{ product.featured_image | img_url: "300x"}}"><img src="{{ 'pinterest.svg' | asset_url }}" /></a></li>
+          </ul>
+        </div>
+      </div>
+
+      {%- if section.settings.img != blank -%}
+        <div class="right col-md-6 col-12">
+          <img src="{{ section.settings.img | img_url: 'master' }}" alt="">
+          {% if section.settings.description != blank %}
+            <div class="rte img_details_new">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+<style>
+  .accordion li{list-style:disc;}
+  .accordion ul{padding-left:15px;}
+  @media(max-width:768px){
+  .section--product-tab .accordion-content li{font-size: 14px;}
+  }
+</style>
+
+{% schema %}
+{
+	"name": "Section product tab",
+	"class": "section--list-icon-product-tab",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+	{
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+    }
+  ],
+	"blocks": [
+		{
+			"type": "accordion",
+			"name": "Accordion",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "img",
+					"label": "Image"
+				},
+				{
+					"type": "text",
+					"id": "accordion_title",
+					"label": "Accordion Title"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title"
+				},
+				{
+					"type": "liquid",
+					"id": "content",
+					"label": "Content"
+				},
+				{
+					"type": "liquid",
+					"id": "metafield_content",
+					"label": "Metafield Content"
+				}
+			]
+		}
+		
+	]
+}
+{% endschema %}
+

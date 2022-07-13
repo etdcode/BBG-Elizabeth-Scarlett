@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row">
+{% paginate collection.products by 20 %}
+  <h1 class="text-center">{{ collection.title }}</h1>
+  {% for product in collection.products %}
+    <div class="col-md-3 col-sm-6 mb-4 mt-4">
+      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+      <a href="{{ product.url | within: collection }}">
+        <img class="" src="{{ product.featured_image.src | img_url: '350x350', crop: 'center' }}" alt="{{ product.featured_image.alt | escape }}">
+      </a>
+      
+      <div class="card-body px-0">
+
+        <!-- Category -->
+        <div class="font-size-xs">
+          <a class="text-muted text-decoration-none" href="{{ product.url | within: collection }}">{{ product.type }}</a>
+        </div>
+
+        <!-- Title -->
+        <div class="fw-bold">
+          <a class="text-body text-decoration-none" href="{{ product.url | within: collection }}">
+            {{ product.title }}
+          </a>
+        </div>
+
+        <!-- Price -->
+        <div class="">
+          {{ product.price | money }}
+        </div>
+
+      </div>
+    </div>
+  {% else %}
+    <p>no matches</p>
+  {% endfor %}
+  {% if paginate.pages > 1 %}
+    {{ paginate | default_pagination }}
+  {% endif %}
+{% endpaginate %}
+  </div>
+</div>

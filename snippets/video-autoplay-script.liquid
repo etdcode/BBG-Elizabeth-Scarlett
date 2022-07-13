@@ -1,0 +1,9 @@
+<script> 
+	window.addEventListener('load', function(){ 
+		let player = document.querySelectorAll('.js-player'); 
+		player.forEach(item => { 
+			item.contentWindow.postMessage(JSON.stringify( 
+			{ event: 'command', func: 'playVideo' }), 'https://www.youtube.com'); 
+		}); 
+	}); 
+</script>

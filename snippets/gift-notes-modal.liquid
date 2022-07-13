@@ -1,0 +1,42 @@
+<script id="giftnotesJsonData" type="appliation/json">
+  {
+    "variants": {{ product.variants | json }},
+    "metafields": {
+      {%- for metafield in product.metafields.giftnotes -%}
+        "{{ metafield | first }}": "{{ metafield | last }}"{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    }
+  }
+</script>
+
+<div class="gn-modal">
+  <div class="gn-modal__background" onclick="GiftNotes.destroyModal()"></div>
+  <div class="gn-modal__main">
+
+    {% comment %} Close {% endcomment %}
+    <img src="{{ 'cancel.svg' | asset_url }}" alt="Close Modal" onclick="GiftNotes.destroyModal()" class="gn-modal__close">
+
+    {% comment %} Preview {% endcomment %}
+    <div class="gn-modal__canvas-container">
+      <canvas class="gn-modal__canvas" width="500" height="500"></canvas>
+    </div>
+
+    {% comment %} Details {% endcomment %}
+    <div class="gn-modal__inner">
+      <div class="gn-modal__inner-content">
+        <p class="gn-modal__subtitle">{{ product.title }}</p>
+        <p class="gn-modal__title"></p>
+        <p class="gn-modal__price" data-currency="{{ cart.currency.symbol }}"></p>
+        <form action="/giftnote" class="gn-modal__form">      
+          <label for="giftnoteInput" class="gn-modal__label">Add up to 300 characters. Max 10 rows.</label>
+          <div class="gn-modal__textbox-container">
+            <textarea name="text" rows="10" cols="80" id="giftnoteInput" class="gn-modal__textbox" oninput="GiftNotes.updatePreview(this)" maxlength="300" placeholder="Type your message just how you'd like it to appear"></textarea>
+            <span class="gn-modal__char-count"><span class="gn-modal__char-count__remaining">300</span>&nbsp;characters remaining</span>
+          </div>
+          <input type="submit" value="Add to bag" class="gn-modal__button" disabled>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

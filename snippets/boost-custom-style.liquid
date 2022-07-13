@@ -1,0 +1,95 @@
+<style>
+   #boost-pfs-search-box-mobile {
+      border: none !important;
+      background-color: #FFFEF9 !important;
+      font-size: 12px !important;
+      line-height: 18px !important;
+      letter-spacing: 0.03em;
+      color: #080C22;
+   }
+   #boost-pfs-search-box-mobile::placeholder {
+      color: #080C22;
+   }
+   .boost-pfs-search-suggestion-mobile-overlay {
+      z-index: 99;
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel {
+      position: absolute;
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel .boost-pfs-search-btn-close-suggestion {
+      float: right;
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel .boost-pfs-search-btn-close-suggestion svg {
+      width: 12px;
+      height: 12px;
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel .boost-pfs-search-btn-close-suggestion:before {
+      content: none;
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel #boost-pfs-search-box-mobile {
+      height: unset;
+      margin: 0;
+      padding: 14px 16px;
+   }
+   .boost-pfs-search-suggestion-mobile-top-panel form, .boost-pfs-search-suggestion-mobile-top-panel {
+      height: unset;
+   }
+   .boost-pfs-search-btn-clear-suggestion {
+      display: none !important;
+   }
+   .boost-pfs-search-btn-close-suggestion {
+      background-image: url("{{ 'cancel_grey.svg' | asset_url }}") !important;
+      background-size: cover !important;
+      background-color: transparent !important;
+   }
+   .boost-pfs-search-suggestion, .boost-pfs-search-suggestion-header-view-all {
+      background-color: #fffef9;
+   }
+   .boost-pfs-search-suggestion-item, .boost-pfs-search-suggestion-item>a, .boost-pfs-search-suggestion-product-title {
+      color: #080C22;
+      font-size: 14px;
+      line-height: 26px;
+      letter-spacing: 0.03em;
+   }
+   .boost-pfs-search-suggestion-product-price, .boost-pfs-search-suggestion-product-vendor {
+      color: #080C22;
+   }
+   .boost-pfs-search-suggestion-product-sku {
+      color: #BEB9B1;
+   }
+   .boost-pfs-search-suggestion-product-price .boost-pfs-search-suggestion-product-sale-price {
+      color: #986473;
+   }
+   @media only screen and (min-width: 767px) {
+      .boost-pfs-search-suggestion-mobile-top-panel #boost-pfs-search-box-mobile {
+         transform: none;
+         top: calc(100% + .5px);
+      }
+      .boost-pfs-search-suggestion {
+         max-height: 500px;
+      }
+   }
+   @media only screen and (min-width: 768px) and (max-width: 1200px) {
+      .boost-pfs-search-suggestion-wrapper-style2-width-fullwidth {
+         max-width: unset;
+      }
+   }
+   @media only screen and (max-width: 767px) {
+      .boost-pfs-search-suggestion-mobile.boost-pfs-search-suggestion-wrapper {
+         position: absolute;
+         top: 97px !important;
+         height: unset;
+         max-height: calc(100vh - 97px);
+      }
+      .boost-pfs-search-suggestion-mobile-top-panel #boost-pfs-search-box-mobile {
+         font-size: 16px !important;
+      }
+   }
+</style>

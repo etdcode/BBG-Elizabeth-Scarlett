@@ -1,0 +1,33 @@
+{% assign blog_handle = article.handle | split: "/" | first %}
+{% assign blog = blogs[blog_handle] %}
+
+{%- assign readtime = '' -%}
+{%- if article.content != blank -%}
+  {%- assign words = article.content | strip_html | split:' ' -%}
+  {%- assign readtime = words.size | divided_by: 200 | round | at_least: 1 -%}
+{%- endif -%}
+
+<div class="bg-beige">
+   <div class="page-wrapper featured-article-section align-items-center">
+      <div class="featured-article__info">
+         <div class="article__meta">
+            <span>{{ readtime }} min read</span>
+            <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | default: "today" | date: '%dth %b %Y' }}</time>
+            <a href="{{ blog.url }}" class="link">{{ blog.title }}</a>
+         </div>
+         <a href="{{ article.url }}" class="no-text-decoration">
+            <h3 class="section__heading">{{ article.title }}</h3>
+         </a>
+         <div class="article__content">
+            <div class="p">{{ article.excerpt_or_content | strip_html | truncate: 140 }}</div>
+         </div>
+         <a href="{{ article.url }}" class="section__subheading section__link">Read more</a>
+      </div>
+
+      <a href="{{ article.url }}">
+         <div class="article-card__image">
+            <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}" loading="lazy" class="fixed-ratio">
+         </div>
+      </a>
+   </div>
+</div>

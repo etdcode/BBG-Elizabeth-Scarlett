@@ -1,0 +1,350 @@
+{{ 'main-product.css' | asset_url | stylesheet_tag }}
+
+<!-- sections/product.liquid -->
+
+{% render 'product-lightbox-gallery', images: product.images %}
+
+{% comment %}
+  The product option type will default to the global theme setting.
+    Dropdown selects and swatches separate the product options into multiple selectors
+    Single select instead provides one dropdown based on variants (NOT options)
+
+  You can set a per product option type by setting the product metafield: options.option_type
+  Valid option types are "dropdowns" "swatches" "single"
+
+  To add a colour or an image to a swatch, set the shop metafield: swatch_asset.<< swatch handle >>
+  Swatch handle should always be a handlized version of the option value e.g. blue, forest-green, etc.
+  The value of the swatch asset metafield can be one of:
+    - A full URL to an image for the swatch e.g. https://mysite.com/my_image.png
+    - A valid css background colour e.g. #0088CC
+{% endcomment %}
+{% assign option_type = settings.product_default_option_type %}
+{% if product.metafields.options.option_type != blank %}
+  {% assign option_type = product.metafields.options.option_type %}
+{% endif %}
+
+{% comment %} Used to render the recommended products {% endcomment %}
+{% assign recommended_collection = product.collections | first %}
+
+<div class="page-wrapper section-product"  {% if product.media[0].alt contains 'color_' or product.media[0].alt contains 'alphabet_' %} id="group-image-pdp" {% endif %} >
+  <div class="d-md-flex">
+
+    {% comment %} Product imagery, left column {% endcomment %}
+    
+    <div class="mobile_breadcrumbs_new">
+      {% render 'breadcrumbs' %}
+    </div>
+    
+    <div class="col-12 col-md-6 product-image">
+      {% if product.media[0].alt contains 'color_' or product.media[0].alt contains 'alphabet_' %}
+        {% render 'product-group-images', product: product %}
+      {% else %}
+        {% render 'product-images', product: product %}
+      {% endif %}
+    </div>
+
+    {% comment %} Product info, right column {% endcomment %}
+    <div class="col-12 col-md-6 pl-lg-10 product-info">
+      <div class="desktop_breadcrumbs_new">
+      	{% render 'breadcrumbs' %}
+      </div>
+
+      {% comment %} Product title {% endcomment %}
+      <div class="col-12 desktop_product_title_new">
+        <div class="row position-relative">
+          <h3 class="title col-md-10 col-12">{{ product.title }}</h3>
+          {% render 'swym-product-view', product: product %}
+          <div class="swym-wishlist-button-bar icon-wishlist"></div>
+        </div>
+
+      </div>
+
+      <div class="product_price_mobile_new">
+        {% comment %}review stars {% endcomment %}
+        <div class="review-stars row col-12 position-relative">
+          <div class="col-12 d-inline-flex">
+
+            <div class="yotpo bottomLine"
+                data-appkey="Jt3RjoAxKNCh52N3ZQigD75VUxK6qWDZTXpmMB1J" 
+                data-domain="{{shop.permanent_domain | escape }}"
+                data-product-id="{{ product.id }}"
+                data-product-models="{{ product.id }}"
+                data-name="{{ product.title | escape }}"
+                data-url="{{ shop.url }}{{ product.url }}"
+                data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                data-description="{{ product.description | escape }}"
+                data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+            </div>
+          </div>
+        </div>
+
+        {% comment %} Price, compare at price, in stock marker {% endcomment %}
+        <div class="price price_new">
+          <span class="price-original {% unless product.available %}out-of-stock{% endunless %}">{{ product.price | money }}</span>
+          {% if product.available == true %}
+            {% if product.compare_at_price_min > product.price %}
+              <span class="price-compare">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      
+      {% comment %} Product title {% endcomment %}
+      <div class="col-12 mobile_product_title_new">
+        <div class="row position-relative">
+          <h3 class="title col-md-10 col-12">{{ product.title }}</h3>
+          {% comment %}
+            {% render 'swym-product-view', product: product %}
+            <div class="swym-wishlist-button-bar icon-wishlist"></div>
+          {% endcomment %}
+        </div>
+
+      </div>
+      
+      
+      <div class="price price_description_top">
+        <span class="status-qty" {% if product.available %}hidden style="display: none"{% endif %}>Out of Stock</span>
+        <div class="message-out-of-stock" {% if product.available %}hidden style="display: none" {% endif %}>
+          Unfortunately, this <span class="name-variant">colour</span> is currently out of stock.<br>
+          We’ll let you know when it’s back in stock.
+        </div>
+        
+        {% comment %}
+          <div class="description">
+            {{ product.description }}
+          </div>
+        {% endcomment %}
+        
+        
+        {% comment %} PDP form {% endcomment %}
+        {% render 'product-form', product: product, option_type: option_type %}
+
+        {% comment %} list icon product {% endcomment %}
+        {%- section 'list-icon-product' -%}
+      </div>
+      
+        {% if product.metafields.custom.product_short_description != blank %}
+          <div class="description product_custom_description_new">
+            {{ product.metafields.custom.product_short_description }}
+          </div>
+        {% elsif section.settings.customdescription != blank %}
+          <div class="description product_custom_description_new">
+            {{ section.settings.customdescription }}
+          </div>
+        {% endif %}
+      
+      <div class="icons-block">
+        
+        {% if product.metafields.custom.icon_image_1 != blank or product.metafields.custom.icon_text_1 != blank %}
+          <div class="icon-item">
+            {% if product.metafields.custom.icon_image_1 != blank %}
+              <div class="icon">
+                <img src="{{ product.metafields.custom.icon_image_1 | img_url: 'master' }}" alt="">
+              </div>
+            {% endif %}
+            {% if product.metafields.custom.icon_text_1 != blank %}
+              <span class="text">{{ product.metafields.custom.icon_text_1 }}</span>
+            {% endif %}
+          </div>
+        {% else %}
+          {% for block in section.blocks limit:1 %}
+            <div class="icon-item">
+              {% if block.settings.icon != blank %}
+                <div class="icon">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% if product.metafields.custom.icon_image_2 != blank or product.metafields.custom.icon_text_2 != blank %}
+          <div class="icon-item">
+            {% if product.metafields.custom.icon_image_2 != blank %}
+              <div class="icon">
+                <img src="{{ product.metafields.custom.icon_image_2 | img_url: 'master' }}" alt="">
+              </div>
+            {% endif %}
+            {% if product.metafields.custom.icon_text_2 != blank %}
+              <span class="text">{{ product.metafields.custom.icon_text_2 }}</span>
+            {% endif %}
+          </div>
+        {% else %}
+          {% for block in section.blocks limit:1 offset:1 %}
+            <div class="icon-item">
+              {% if block.settings.icon != blank %}
+                <div class="icon">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% if product.metafields.custom.icon_image_3 != blank or product.metafields.custom.icon_text_3 != blank %}
+          <div class="icon-item">
+            {% if product.metafields.custom.icon_image_3 != blank %}
+              <div class="icon">
+                <img src="{{ product.metafields.custom.icon_image_3 | img_url: 'master' }}" alt="">
+              </div>
+            {% endif %}
+            {% if product.metafields.custom.icon_text_3 != blank %}
+              <span class="text">{{ product.metafields.custom.icon_text_3 }}</span>
+            {% endif %}
+          </div>
+        {% else %}
+          {% for block in section.blocks limit:1 offset:2 %}
+            <div class="icon-item">
+              {% if block.settings.icon != blank %}
+                <div class="icon">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% if product.metafields.custom.icon_image_4 != blank or product.metafields.custom.icon_text_4 != blank %}
+          <div class="icon-item">
+            {% if product.metafields.custom.icon_image_4 != blank %}
+              <div class="icon">
+                <img src="{{ product.metafields.custom.icon_image_4 | img_url: 'master' }}" alt="">
+              </div>
+            {% endif %}
+            {% if product.metafields.custom.icon_text_4 != blank %}
+              <span class="text">{{ product.metafields.custom.icon_text_4 }}</span>
+            {% endif %}
+          </div>
+        {% else %}
+          {% for block in section.blocks limit:1 offset:3 %}
+            <div class="icon-item">
+              {% if block.settings.icon != blank %}
+                <div class="icon">
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                </div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% for block in section.blocks offset:4 %}
+          <div class="icon-item">
+            {% if block.settings.icon != blank %}
+              <div class="icon">
+                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+              </div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <span class="text">{{ block.settings.text }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% assign count_option = 0 %}
+
+{%- if product.options.size > 1 -%}
+  {%- for product_option in product.options_with_values -%}
+    {%- if forloop.first -%}
+      {% assign count_option = product_option.values.size %}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <style>
+    @media (min-width: 1201px){
+      {%- if count_option < 3 -%}
+        .variant-option--2{ width: calc(100% - 150px ); }
+      {%- elsif count_option < 4 -%}
+        .variant-option--2{ width: calc(100% - 160px ); }
+      {%- elsif count_option < 5 -%}
+        .variant-option--2{ width: calc(100% - 200px ); }
+      {%- else -%}
+        .variant-option--2{ width: calc(100% - 220px ); }
+      {%- endif -%}
+    }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "customdescription",
+      "label": "Add Custom Description Text",
+      "default": "<p>Our Gift Cards allow you to spread joy to those you love the most, treating them to whichever Elizabeth Scarlett treasure they have their eye on. Available in £10, £25, £50 and £100 denominations, the cards are the perfect way to show you care from afar, delivered instantly by email to the recipient of your choosing.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon With Text",
+      "type": "icon_with_text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .index__image-with-text,.mobile_version{display:none;}
+  
+  .desk_version{display:block;}
+  @media(max-width:767px){
+    .prod-img-main .slick-dots li button:before{opacity:0 !important;}
+    .desk_version{display:none;}
+    .mobile_version{display:block;}
+    .section--list-icon-product-tab .section--product-tab .right{
+    display:none;
+    }
+    .section-review{padding-top: 30px;}
+    .section-product .icons-block .icon {
+    max-width: 60px;
+}
+    .section-product .icons-block .text {
+    font-size: 12px;
+    padding: 0 12px;
+}
+    .section-product .icons-block .icon{    margin: 0 auto 0px;}
+    .section-product .icons-block .icon-item{margin-bottom: 6px;}
+    .section--product-list-gift {display:flex;flex-direction:column;}
+    .section--product-list-gift .container-half-left{order:2;}
+    .section--product-list-gift .line-bee{order:1;margin-top: 35px;
+    margin-bottom: 13px;}
+    .section-review{position:relative;}
+    .section-review:before{content:'';position:absolute;width:100%;height:100px;
+      background:url({{ 'linebee.png' | asset_url }}) center no-repeat;margin:0 auto;left:0;right:0;
+        background-size: 100%;top: -90px;}
+    .index__image-with-text .cp-carousel__block:nth-child(2){display:none;}
+    .index__image-with-text .cp-carousel__slide{grid-template-columns: auto;}
+    .index__image-with-text{padding-bottom: 40px;margin-top: 5px;margin-bottom: 0;display:block;}
+  }
+  
+</style>

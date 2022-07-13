@@ -1,0 +1,58 @@
+{% assign count = 0 %}
+
+<div class="col-12">
+	<div class="d-flex flex-wrap">
+
+		{%- for block in section.blocks -%}
+			{% assign tag_cms = block.settings.name_tag %}
+
+			{%- for tag in product.tags -%}
+				{%- if count < 6 -%}
+					{%- if tag contains tag_cms -%}
+						{% assign count = count | plus: 1 %}
+
+						<div class="item col-4">
+							<div class="item--inner">
+								<img src="{{ block.settings.icon | img_url: '51x' }}" alt="">
+								<div class="content">
+									{{ block.settings.content }}
+								</div>
+							</div>
+						</div>
+					{%- endif -%}
+				{%- endif -%}
+			{%- endfor -%}
+		{%- endfor -%}
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Section list icon",
+	"class": "section--list-icon",
+	"blocks": [
+		{
+			"type": "icon",
+			"name": "Icon",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "icon",
+					"label": "Icon"
+				},
+				{
+					"type": "text",
+					"id": "name_tag",
+					"label": "Name tag",
+					"info": "This is the tag will use for product when you want to show icon"
+				},
+        {
+					"type": "textarea",
+					"id": "content",
+					"label": "Content"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

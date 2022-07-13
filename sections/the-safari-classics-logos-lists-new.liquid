@@ -1,0 +1,95 @@
+{% if section.settings.mainheadingtext != blank or section.blocks.size > 0 %}
+  <div class="page_logos_lists_main_new" style="background: {{ section.settings.backcolor }};">
+    <div class="container page_width_new">
+      <div class="page_logos_lists_inner_new">
+        {% if section.settings.mainheadingtext != blank %}
+          <div class="page_logos_lists_headingtext_new common_title_new" style="color: {{ section.settings.textcolor }};">
+            <h2>{{ section.settings.mainheadingtext }}</h2>
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="page_logos_lists_allloops_new">
+            {% for block in section.blocks %}
+              {% if block.settings.logoimage != blank %}
+                <div class="page_logos_lists_allloops_boxs_new">
+                  {% if block.settings.logolink != blank %}
+                    <a href="{{ block.settings.logolink }}">
+                  {% endif %}
+                      <img src="{{ block.settings.logoimage | img_url: '300x' }}" alt="{{ block.settings.logoimage.alt }}" />
+                  {% if block.settings.logolink != blank %}
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>  
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Logos Lists New",
+	"class": "the_safari_classics_logos_lists_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#c75c1b"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Select Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+		"type": "text",
+        "id": "mainheadingtext",
+        "label": "Add Main Heading Text",
+        "default": "As Seen In"
+      }
+    ],
+	"blocks" : [
+      {
+        "type": "logo_list",
+        "name": "Logo List",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logoimage",
+            "label": "Add Logo Image"
+          },
+          {
+            "type": "url",
+            "id": "logolink",
+            "label": "Add Logo Link"
+          }
+        ]
+      }
+	],
+    "presets": [
+      {
+        "name": "Page Logos Lists New",
+		"blocks": [
+          {
+            "type": "logo_list"
+          },
+          {
+            "type": "logo_list"
+          },
+          {
+            "type": "logo_list"
+          },
+          {
+            "type": "logo_list"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

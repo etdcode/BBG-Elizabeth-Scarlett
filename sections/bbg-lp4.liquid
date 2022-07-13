@@ -1,0 +1,189 @@
+{% schema %} 
+{
+    "name": "Section 4 Gallery/Sale",
+    "blocks": [{
+        "name" : "Section 4 Gallery/Sale",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "gallery-headline1",
+            "label": "Enter the Gallery Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "gallery-img1",
+            "label": "Upload gallery image 1"
+        },
+		{
+            "type": "image_picker",
+            "id": "gallery-img2",
+            "label": "Upload gallery image 2"
+        },
+		{
+            "type": "image_picker",
+            "id": "gallery-img3",
+            "label": "Upload gallery image 3"
+        },
+		{
+            "type": "image_picker",
+            "id": "gallery-img4",
+            "label": "Upload gallery image 4"
+        },
+		{
+            "type": "text",
+            "id": "section-headline1",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "textarea",
+            "id": "body1",
+            "label": "Enter body 1 Text"
+        },
+		{
+            "type": "text",
+            "id": "check1",
+            "label": "Enter 1st Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check2",
+            "label": "Enter 2nd Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check3",
+            "label": "Enter 3rd Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check4",
+            "label": "Enter 4th Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check5",
+            "label": "Enter 5th Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "check6",
+            "label": "Enter 6th Bullet Point"
+        },
+		{
+            "type": "text",
+            "id": "body2",
+            "label": "Enter lower text"
+        },
+		{
+            "type": "text",
+            "id": "but-txt",
+            "label": "Enter button text"
+        },
+		{
+            "type": "text",
+            "id": "but-url",
+            "label": "Enter button URL"
+        },
+		{
+            "type": "image_picker",
+            "id": "sec-img",
+            "label": "Upload section Image"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+
+<div class="section4-sales-block">
+		<div class="container">
+			<h3 class="see-in-action">{{ b.gallery-headline1 | p_url }}</h3>
+		<div class="row" id="mobile-imggal">
+          <div class="owl-carousel owl-theme" id="owl-demo4">
+					<div class="item">
+                      <img class="sec-4-mini-img" src="{{b.gallery-img1 | img_url: 'master' }}">
+                      </div>
+            		<div class="item">
+                      <img class="sec-4-mini-img" src="{{b.gallery-img2 | img_url: 'master' }}">
+                      </div>
+            <div class="item">
+                      <img class="sec-4-mini-img" src="{{b.gallery-img3 | img_url: 'master' }}">
+                      </div>
+            <div class="item">
+                      <img class="sec-4-mini-img" src="{{b.gallery-img4 | img_url: 'master' }}">
+                      </div>
+            </div>
+          </div>
+          <div class="row" id="desktop-imggal">
+				<div class="col-sm"><img class="sec-4-mini-img" src="{{b.gallery-img1 | img_url: 'master' }}"></div>
+				<div class="col-sm"><img class="sec-4-mini-img" src="{{b.gallery-img2 | img_url: 'master' }}"></div>
+				<div class="col-sm"><img class="sec-4-mini-img" src="{{b.gallery-img3 | img_url: 'master' }}"></div>
+				<div class="col-sm"><img class="sec-4-mini-img" src="{{b.gallery-img4 | img_url: 'master' }}"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm"><img class="sec-4-mini-img2" src=
+				"{{b.sec-img | img_url: 'master' }}"></div>
+				<div class="col-sm">
+                  <div class="sec-4-block">
+					<h2 class="sec4-header">{{ b.section-headline1 | p_url }}</h2>
+                  <img class="sec-4-mini-img2mob" src=
+				"{{b.sec-img | img_url: 'master' }}">
+					<p class="sec4-body">{{ b.body1 | p_url }}</p>
+					<div class="check-cont-4">
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check1 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check2 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check3 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check4 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check5 | p_url }}</p>
+						</div>
+						<div class="checkmrk-point-cont">
+							<img class="check1" id="checkmob2" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Check.svg?v=1655986444">
+							<p class="check-point2">{{ b.check6 | p_url }}</p>
+						</div>
+					</div>
+					<p class="sec4-body">{{ b.body2 | p_url }}</p><a href="{{ b.but-url | p_url }}"><button class="sec4-but">{{ b.but-txt | p_url }}</button></a>
+					<div class="shipping-cont">
+						<img class="ship-img" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Local_shipping.svg?v=1655986444">
+						<p class="ship-txt">Free UK shipping over £50</p>
+					</div>
+				</div>
+                  </div>
+			</div>
+		</div>
+	</div>
+<div id="shop"></div>

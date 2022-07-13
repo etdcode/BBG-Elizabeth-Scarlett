@@ -1,0 +1,125 @@
+  <!-- snippets/product-form.liquid -->
+  <form enctype="multipart/form-data" class="form-ATC">
+
+    
+    
+    {% comment %} Variant selectors {% endcomment %}
+    <div class="form-group">
+      {% if option_type == "single" %}
+        <p class="mb-3">
+          <p class="mb-2">Select an option: </p>
+            <select name="id" class="pdp-option-select form-select" id="pdp-variant-id" required>
+              <option value="" disabled selected>Please select an option</option>
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+          </p>
+        </p>
+      {% else %}
+        <input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}" id="pdp-variant-id">
+        {% for option in product.options %}
+          {% render 'product-options', product: product, option_type: option_type, option_name: option %}
+        {% endfor %}
+      {% endif %}
+    </div>
+
+	
+
+    {% comment %} Quantity selector {% endcomment %}
+    <input type="hidden" name="quantity" value="1">
+
+    {% comment %} ATC button {% endcomment %}
+	<div class="stickySubmit_new">
+      <div class="col-12 btn-action section-submit mb-4 stickySubmit {% unless product.available %}d-none{% endunless %}">
+        {%- if product.tags contains "monogram" -%}
+          <button type="button" class="btn-mono btn-block" onclick="Monogram.launchModal(document.querySelector('#pdp-variant-id').value, '{{ product.handle }}');">Personalise</button>
+        {%- endif -%}
+
+        {% assign downcase_title = product.title | downcase %}
+          {% if downcase_title contains "gift note" %}
+            <button type="button" class="btn-addtocart btn-block{% unless product.tags contains "monogram" %} col-12{% endunless %}" onclick="GiftNotes.launchModal(document.querySelector('#pdp-variant-id').value, '{{ product.handle }}')">Add your message</button>
+          {% else %}
+            <button type="submit" class="js-add-to-cart js-distanceElement btn-addtocart btn-block{% unless product.tags contains "monogram" %} col-12{% endunless %}">Add to Bag</button>
+          {% endif %}
+      </div>
+	</div>
+
+    <div class="section-button-ATC--sold-out" hidden>
+      <div class="col-12 btn-action section-submit mb-4">
+        {%- if product.tags contains "monogram" -%}
+          <button type="button" class="js-popup-mono btn-mono btn-block">Personalise</button>
+        {%- endif -%}
+
+        <button type="submit" class="js-add-to-cart btn-addtocart btn-block{% unless product.tags contains "monogram" %} col-12{% endunless %}">Add to Bag</button>
+      </div>
+
+    {% comment %} <div class="btn-out-of-stock js-distanceElement" hidden>
+        {% form 'contact', id: 'form-notify-me' %}
+          {%- if form.posted_successfully? -%}
+            <span class="message-form-notify-me">Thank you, I will let you know soon.</span>
+          {%- endif -%}
+          <div class="form--inner d-md-flex">
+            <input type="hidden" class="js-title-field" name="contact[title_product]" value="{{ product.title }}">
+            <input type="hidden" class="js-variant-field" name="contact[variant_product]" value="">
+            <input type="email" required name="contact[email]" placeholder="Email Address" value="">
+            <button type="submit" class="btn" name="button">notify me</button>
+          </div>
+        {% endform %}
+      </div> 
+    {% endcomment %}
+    </div>
+  </form>
+    {% if product.selected_or_first_available_variant.available == true %}
+    <form class="notify-me-form d-none">
+      <input type="email" class="notify-me-email" placeholder="Email Address" required>
+      <button class="btn notify-me" type="submit">Notify Me</button>
+    </form>
+    {% else %}
+    <form class="notify-me-form">
+      <input type="email" class="notify-me-email" placeholder="Email Address" required>
+      <button class="btn notify-me" type="submit">Notify Me</button>
+    </form>
+    {% endif %}
+</div>
+
+
+<script>
+  const notifyForm = document.querySelector('.notify-me-form');
+  notifyForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const emailValue = document.querySelector('.notify-me-email').value;
+      const formData = new FormData(notifyForm).entries()
+      const currentVariant = document.querySelector('#pdp-variant-id').getAttribute('value');
+      const response = await fetch('https://a.klaviyo.com/onsite/components/back-in-stock/subscribe', {
+        method: 'POST',
+        headers: { 
+          "accept": "application/json",
+          "content-type": "application/x-www-form-urlencoded;charset=UTF-8" 
+        },
+        body: new URLSearchParams({
+          "a": "Hqr8HK",
+          "email": emailValue,
+          "variant": currentVariant,
+          "platform": "shopify"
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        document.querySelector(".notify-me-form").innerHTML = "<p>Thanks! We'll let you know when this item is back in stock.</p>"
+      } else {
+        document.querySelector(".notify-me-form").innerHTML = "<p>An unknown error occurred. Please reload the page and try again.</p>"
+      }
+  });
+  window.setTimeout(function() {
+    if(document.querySelectorAll('.option-variant.fabric label').length > 1) {
+      console.log(1)
+      if (document.querySelector('.option-variant.fabric .selected-option').classList.contains('disabled-option')) {
+        document.querySelector('.option-variant.fabric .pdp-option-swatch:not(.disabled-option)').click();
+        console.log(document.querySelector('.option-variant.fabric .pdp-option-swatch:not(.disabled-option)'))
+      }
+    }
+  }, 700)
+</script

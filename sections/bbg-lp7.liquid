@@ -1,0 +1,70 @@
+
+
+{% schema %} 
+{
+    "name": "Section 7 copy & Image",
+    "blocks": [{
+        "name" : "Section 7 copy & Image",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline7",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "textarea",
+            "id": "rev-body1",
+            "label": "Enter the Section text"
+        },
+		{
+            "type": "image_picker",
+            "id": "sec-img",
+            "label": "Upload Section Image"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+	
+
+<div class="section7">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+                      <div class="sec7-block">
+						<h2 class="sec-7-title">{{ b.section-headline7 | p_url }}</h2>
+                      <img class="sec7-img-mob" src=
+					"{{b.sec-img | img_url: 'master' }}">
+						<p class="sec-7-body">{{ b.rev-body1 | p_url }}</p>
+					 </div>
+                      </div>
+					<div class="col-sm"><img class="sec7-img" src=
+					"{{b.sec-img | img_url: 'master' }}"></div>
+                        
+				</div>
+			</div>
+		</div>
+       
+

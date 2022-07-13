@@ -1,0 +1,84 @@
+<section class="fdb-block bg-dark" style="background-image: url(imgs/hero/purple.svg);">
+    <div class="container">
+      <div class="row p-5">
+        <div class="col text-center text-white">
+          <h2>Design Blocks</h2>
+        </div>
+      </div>
+  
+      <div class="row-70"></div>
+  
+      <div class="row text-center justify-content-sm-center no-gutters p-5 pt-0">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-3 m-auto pt-5 pt-xl-0 bg-white">
+          <div class="">
+            <h2>Feature 1</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <p class="mt-4"><a href="#">Learn More <i class="fas fa-angle-right"></i></a></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-3 m-auto pt-5 pt-xl-0 bg-white">
+          <div class="">
+            <h2>Feature 2</h2>
+            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            <p class="mt-4"><a href="#">Learn More <i class="fas fa-angle-right"></i></a></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-3 m-auto pt-5 pt-xl-0 bg-white">
+          <div class="">
+            <h2>Feature 3</h2>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p class="mt-4"><a href="#">Learn More <i class="fas fa-angle-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% schema %}
+{
+  "name": "Content Cards",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Colour",
+      "default": "#fdd045"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    },
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "How do we work?"
+    },
+    {
+      "id": "content",
+      "label": "Text",
+      "type": "textarea",
+      "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."
+    },
+    {
+      "id": "button_text",
+      "label": "Button Text",
+      "type": "text",
+      "default": "See Our Story"
+    },
+    {
+      "id": "button_url",
+      "label": "Button Link",
+      "type": "url"
+    }
+    
+  ],
+  "presets": [
+    {
+      "category": "Homepage Sections",
+      "name": "Content Cards"
+    }
+  ]
+}
+{% endschema %}

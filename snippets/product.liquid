@@ -1,0 +1,130 @@
+<!-- sections/product.liquid -->
+
+{% render 'product-lightbox-gallery', images: product.images %}
+
+{% comment %}
+  The product option type will default to the global theme setting.
+    Dropdown selects and swatches separate the product options into multiple selectors
+    Single select instead provides one dropdown based on variants (NOT options)
+
+  You can set a per product option type by setting the product metafield: options.option_type
+  Valid option types are "dropdowns" "swatches" "single"
+
+  To add a colour or an image to a swatch, set the shop metafield: swatch_asset.<< swatch handle >>
+  Swatch handle should always be a handlized version of the option value e.g. blue, forest-green, etc.
+  The value of the swatch asset metafield can be one of:
+    - A full URL to an image for the swatch e.g. https://mysite.com/my_image.png
+    - A valid css background colour e.g. #0088CC
+{% endcomment %}
+{% assign option_type = settings.product_default_option_type %}
+{% if product.metafields.options.option_type != blank %}
+  {% assign option_type = product.metafields.options.option_type %}
+{% endif %}
+
+{% comment %} Used to render the recommended products {% endcomment %}
+{% assign recommended_collection = product.collections | first %}
+
+<div class="page-wrapper section-product">
+  <div class="d-md-flex">
+
+    {% comment %} Product imagery, left column {% endcomment %}
+    <div class="col-12 col-md-6 product-image">
+      {% render 'product-images', product: product %}
+    </div>
+
+    {% comment %} Product info, right column {% endcomment %}
+    <div class="col-12 col-md-6 pl-lg-10 product-info">
+      {% render 'breadcrumbs' %}
+
+      {% comment %} Product title {% endcomment %}
+      <div class="col-12">
+        <div class="row position-relative">
+          <h3 class="title col-md-10 col-12">{{ product.title }}</h3>
+          {% render 'swym-product-view', product: product %}
+          <div class="swym-wishlist-button-bar icon-wishlist"></div>
+        </div>
+
+      </div>
+
+      {% comment %}review stars {% endcomment %}
+      <div class="review-stars row col-12 position-relative">
+        <div class="col-12 d-inline-flex">
+         
+          <div class="yotpo bottomLine"
+              data-appkey="Jt3RjoAxKNCh52N3ZQigD75VUxK6qWDZTXpmMB1J" 
+              data-domain="{{shop.permanent_domain | escape }}"
+              data-product-id="{{ product.id }}"
+              data-product-models="{{ product.id }}"
+              data-name="{{ product.title | escape }}"
+              data-url="{{ shop.url }}{{ product.url }}"
+              data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+              data-description="{{ product.description | escape }}"
+              data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+          </div>
+        </div>
+      </div>
+
+      {% comment %} Price, compare at price, in stock marker {% endcomment %}
+      <div class="price">
+          <span class="price-original {% unless product.available %}out-of-stock{% endunless %}">{{ product.price | money }}</span>
+          {% if product.available == true %}
+            {% if product.compare_at_price_min > product.price %}
+              <span class="price-compare">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+          {% endif %}
+          <span class="status-qty" {% if product.available %}hidden{% endif %}>Out of Stock</span>
+          <div class="message-out-of-stock" {% if product.available %}hidden{% endif %}>
+            Unfortunately, this <span class="name-variant">colour</span> is currently out of stock.<br>
+            We’ll let you know when it’s back in stock.
+          </div>
+
+        
+
+        <div class="description">
+          {{ product.description }}
+        </div>
+
+        {% comment %} PDP form {% endcomment %}
+        {% render 'product-form', product: product, option_type: option_type %}
+
+        {% comment %} list icon product {% endcomment %}
+        {%- section 'list-icon-product' -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% section 'list-gift' %}
+{% render 'product-tab' %}
+{% section 'list-product' %}
+{% render 'product-reviews', product: product %}
+{%- if settings.show_recommended -%}
+  {% render 'product-recommended-products', recommended_collection: recommended_collection %}
+{%- endif -%}
+
+{% assign count_option = 0 %}
+
+{%- if product.options.size > 1 -%}
+  {%- for product_option in product.options_with_values -%}
+    {%- if forloop.first -%}
+      {% assign count_option = product_option.values.size %}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <style>
+    @media (min-width: 1201px){
+      {%- if count_option < 3 -%}
+        .variant-option--2{ width: calc(100% - 150px ); }
+      {%- elsif count_option < 4 -%}
+        .variant-option--2{ width: calc(100% - 160px ); }
+      {%- elsif count_option < 5 -%}
+        .variant-option--2{ width: calc(100% - 200px ); }
+      {%- else -%}
+        .variant-option--2{ width: calc(100% - 220px ); }
+      {%- endif -%}
+    }
+  </style>
+{%- endif -%}
+
+
+

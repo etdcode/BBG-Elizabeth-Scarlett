@@ -1,0 +1,36 @@
+<div class="shipping_offer_new">
+  <div class="">
+    {% if section.settings.caption_1 != blank %}
+      <div class="shipping_offer_text_new">
+        {{ section.settings.caption_1 }}
+      </div>
+    {% endif %}
+    <div class="shipping_offer_img_new">
+      <img src="{{ section.settings.image_1 | img_url: 'master' }}">
+    </div>
+  </div>
+</div>
+{% schema %}
+   {
+      "name": "Product Shipping Offer",
+      "settings": [
+		 {
+            "id": "image_1",
+            "type": "image_picker",
+            "label": "Image"
+         },
+         {
+            "id": "caption_1",
+            "type": "text",
+            "label": "Caption",
+            "default": "Free UK delivery on orders over £50"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Product Shipping Offer",
+            "category": "Image"
+         }
+      ]
+   }
+{% endschema %}

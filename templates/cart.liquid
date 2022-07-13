@@ -1,0 +1,109 @@
+<div class="position-relative cart-template">
+  <img src="{{ 'olives.png' | asset_img_url: 'master' }}" class="cart__left-corner">
+  <img src="{{ 'cart-flower.png' | asset_img_url: 'master' }}" class="cart__right-corner">
+
+  <div class="page-wrapper">
+    {% comment %} Cart main {% endcomment %}
+    <form action="/cart" method="post" novalidate class="row mt-3">
+      {% comment %} Title bar {% endcomment %}
+      <div class="text-center">
+        <h3 class="section__heading">Make it the perfect gift!</h3>
+        <div class="cart__text">Our illustrated gift notes, gift boxes and totes help turn your beautiful order into a wonderful gift.</div>
+        <button type="submit" name="checkout" class="transparent-btn section__subheading section__link">no thanks, continue to checkout</button>
+      </div>
+    </form>
+
+    {% section 'cart--gift-products' %}
+  </div>
+</div>
+
+<div class="cart-alert">
+  <p>Added to cart</p>
+</div>
+
+{%- comment -%}
+  {% if settings.cart_free_shipping %}
+
+    {% assign free_shipping_threshold = settings.cart_free_shipping_threshold | times: 100.0 %}
+    {% assign free_shipping_remainder = free_shipping_threshold | minus: cart.total_price %}
+    {% assign free_shipping_remainder_money = free_shipping_remainder | money %}
+    {% assign free_shipping_under_message = settings.cart_free_shipping_under | replace: "{{ amount }}", free_shipping_remainder_money %}
+    {% assign free_shipping_qualified_message = settings.cart_free_shipping_qualified %}
+    {% assign free_shipping_percentage = cart.total_price | divided_by: free_shipping_threshold | times: 100 %}
+
+    <div class="cart__free-shipping mt-3 mb-4">
+      <p class="mb-1 text-dark text-center">
+        {% if free_shipping_remainder > 0 %}
+          {{ free_shipping_under_message }}
+        {% else %}
+          {{ free_shipping_qualified_message }}
+        {% endif %}
+      </p>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: {{ free_shipping_percentage }}%" aria-valuenow="{{ free_shipping_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if cart.item_count > 0 %}
+    <div class="col-12 col-md-7">
+      <ul class="list-group list-group-lg list-group-flush-x mb-3">
+
+        {% for item in cart.items %}
+          <li class="list-group-item mb-3 border">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <a href="{{ item.url | within: collections.all }}">
+                  <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" class="img-fluid img-thumbnail">
+                </a>
+              </div>
+              <div class="col">
+                <div class="d-flex mb-2 font-weight-bold">
+                  <a class="lead text-dark fw-bold text-decoration-none" href="{{ item.url | within: collections.all }}">{{ item.product.title }}</a> <span class="ms-auto">{{ item.final_price | money }}</span>
+                </div>
+                <p class="mb-3 small text-muted">{{ item.variant.title }}</p>
+                <div class="d-flex align-items-center">
+                  <div class="btn-group" role="group" >
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | minus: 1 }}" type="button" class="btn btn-secondary">-</a>
+                    <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" class="text-center ps-3 border" readonly="readonly">
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity={{ item.quantity | plus: 1 }}" type="button" class="btn btn-secondary">+</a>
+                  </div>
+                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="small text-muted ms-auto">
+                    <i class="fas fa-times"></i> Remove
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+
+      </ul>
+    </div>
+
+    <div class="col-12 col-md-5 col-lg-4 offset-lg-1">
+      <div class="card mb-5 bg-light">
+        <div class="card-body">
+          <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
+            <li class="list-group-item d-flex bg-transparent border-0 py-3">
+              <span>Subtotal</span> <span class="ms-auto font-size-sm">{{ cart.total_price | money }}</span>
+            </li>
+            <li class="list-group-item d-flex bg-transparent border-0 py-3">
+              <span>Tax</span> <span class="ms-auto font-size-sm">{{ tax_line.price | money }}</span>
+            </li>
+            <li class="list-group-item d-flex bg-transparent border-0 py-3 font-size-lg font-weight-bold">
+              <span>Total</span> <span class="ms-auto font-size-sm">{{ cart.total_price | money }}</span>
+            </li>
+            <li class="list-group-item bg-transparent border-0 py-3 font-size-sm text-center text-gray-500">
+              Shipping cost calculated at Checkout *
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  {% else %}
+    <div class="text-center">
+      <small>Cart is empty</small>
+    </div>
+  {% endif %}
+{%- endcomment -%}

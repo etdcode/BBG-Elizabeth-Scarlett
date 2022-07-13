@@ -1,0 +1,226 @@
+<!-- Footer -->
+<footer id="Footer">
+  <div class="bg-beige">
+    <div class="footer__newsletter position-relative">
+      <img src="{{ 'footer-label.png' | asset_img_url: 'master' }}" class="footer-label">
+  
+      <div class="page-wrapper footer__newsletter-content text-center">
+        <div>
+          <p class="section__subheading">{{ section.settings.newsletter_subheading }}</p>
+          <h2 class="section__heading">{{ section.settings.newsletter_heading }}</h2>
+        </div>
+    
+        <div class="input-group newsletter-input-group">
+          {%- assign formId = 'Contact_' | append: section.id -%}
+          {% form 'customer', id: formId, class: 'contact-form form-single-field' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+              <input type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="form-control newsletter-form{% if form.errors %} input--error{% endif %}"
+                value="{{ form.email }}"
+                placeholder="{{ 'footer.newsletter.placeholder' | t }}"
+                aria-label="{{ 'footer.newsletter.placeholder' | t }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                required
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="{{ formId }}-email-error"
+                  data-form-status
+                {% endif %}
+                >
+              <div class="input-group-append">
+                <button type="submit" class="btn-secondary" name="commit">
+                  <span>{{ 'footer.newsletter.submit' | t }}</span>
+                </button>
+              </div>
+            </div>
+            {%- if form.posted_successfully? -%}
+              <script>window.location.hash = 'Footer';</script>
+              <p class="form-message form-message--success footer__text py-3" tabindex="-1" data-form-status>
+                {{ 'footer.newsletter.confirmation' | t }}
+              </p>
+            {%- endif -%}
+            {%- if form.errors contains 'email' -%}
+              <span id="{{ formId }}-email-error" class="input-error-message">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                <span class="footer__text">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              </span>
+            {%- endif -%}
+          {% endform %}
+        </div>
+  
+        <div class="footer__text">By signing up you agree with our <a href="{{ pages.terms-conditions.url }}">Terms & Conditions.</a></div>
+      </div>
+  
+      <img src="{{ 'footer-flower.png' | asset_img_url: '300x' }}" class="newsletter__left-corner pc" alt="flower">
+      <img src="{{ 'footer-floral.png' | asset_img_url: '200x' }}" class="newsletter__right-corner" alt="flower">
+    </div>
+  
+    <div class="page-wrapper footer-wrapper">
+      <div class="is-flex align-items-top">
+        {% if section.settings.footer_logo or section.settings.footer_logo_svg %}
+          <div class="footer-logo">
+            {% if section.settings.footer_logo_svg %}
+              <img src="{{ section.settings.footer_logo_svg }}">
+            {% else %}
+              <img src="{{ section.settings.footer_logo | img_url: '200x' }}">        
+            {% endif %}
+          </div>
+        {% endif %}
+  
+        <div class="footer__row {% if section.blocks.size > 3 %}row--spacing{% endif %}">
+          {% for block in section.blocks %}
+            {% if block.type == 'list' %}
+              <div class="footer__col footer__accordion">
+                <div class="is-flex justify-space-between align-items-center">
+                  <div class="section__subheading">{{ block.settings.title}}</div>
+                  <span class="collapse-icon">{% render 'icon-minus' %}</span>
+                  <span class="expand-icon">{% render 'icon-plus' %}</span>
+                </div>
+
+                <div class="footer__accordion-content">
+                  <nav class="is-flex flex-column">
+                    {% for link in linklists[block.settings.linklist].links %}
+                      <a class="footer__text no-text-decoration" href="{{ link.url }}">{{ link.title }}</a>
+                    {% endfor %}
+                  </nav>
+                </div>
+              </div>
+            {% endif %}
+  
+            {% if block.type == 'help' %}
+              <div class="footer__accordion">
+                <div class="is-flex justify-space-between align-items-center">
+                  <div class="section__subheading is-uppercase">{{ 'footer.general.help' | t }}</div>
+                  <span class="collapse-icon">{% render 'icon-minus' %}</span>
+                  <span class="expand-icon">{% render 'icon-plus' %}</span>
+                </div>
+                <div class="footer__accordion-content">
+                  <div class="nav-item__row is-flex align-items-center">
+                    <span class="nav-item__icon">{% render 'icon-location' %}</span>
+                    <a href="{{ block.settings.link_stockist }}" class="nav-item__detail">
+                      <div class="nav-item__title">Find a stockist</div>
+                      <div class="nav-item__subtitle">Shop in-store & online</div>
+                    </a>
+                  </div>
+    
+                  <div class="nav-item__row is-flex align-items-center">
+                    <span class="nav-item__icon">{% render 'icon-mail' %}</span>
+                    <a href="{{ block.settings.link_contact }}" class="nav-item__detail">
+                      <div class="nav-item__title">Contact Us</div>
+                      <div class="nav-item__subtitle">We love to hear from you</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-off-white">
+    <div class="page-wrapper footer-copyright is-flex justify-space-between align-items-center">
+      <div class="footer__text">&copy; 2022, {{ shop.name }}</div>
+
+      {% if section.settings.show_payment %}
+        {% unless shop.enabled_payment_types == empty %}
+          <ul class="footer__payment is-flex">
+            {% for type in shop.enabled_payment_types %}
+              <li>{{ type | payment_type_svg_tag: class:'payment-icon' }}</li>
+            {% endfor %}
+          </ul>
+        {% endunless %}
+      {% endif %}
+    </div>
+  </div>
+</footer>
+<!-- ./Footer -->
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Newsletter"
+      },
+      {
+        "id": "newsletter_heading",
+        "type": "text",
+        "label": "Newsletter heading",
+        "default": "Get 10% off your first order"
+      },
+      {
+        "id": "newsletter_subheading",
+        "type": "text",
+        "label": "Newsletter subheading",
+        "default": "Sign up to our newsletter"
+      },
+      {
+        "id": "footer_logo",
+        "type": "image_picker",
+        "label": "Footer logo"
+      },
+      {
+        "id": "footer_logo_svg",
+        "type": "url",
+        "label": "Logo SVG link",
+        "info": "Link to hosted SVG logo."
+      },
+      {
+        "id": "show_payment",
+        "type": "checkbox",
+        "label": "Show payment methods",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "list",
+        "name": "Linklist",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Title"
+          },
+          {
+            "id": "linklist",
+            "type": "link_list",
+            "label": "Linklist"
+          }
+        ]
+      },
+      {
+        "type": "help",
+        "name": "Help",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "link_stockist",
+            "type": "url",
+            "label": "Stockist link"
+          },
+          {
+            "id": "link_contact",
+            "type": "url",
+            "label": "Contact link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Homepage Sections",
+        "name": "Footer"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,89 @@
+<div class="bg-beige" style="background:{{section.settings.background_color}}">
+   <div class="page-wrapper wrapper--slider">
+      <div class="index-section index__recommendations">
+         <div class="section__info">
+            <div class="section__subheading">{{ section.settings.subheading }}</div>
+            <h3 class="section__heading">{{ section.settings.heading }}</h3>
+            <div class="section__desc">{{ section.settings.desc }}</div>
+            <a class="section__subheading section__link" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+         </div>
+      
+         <div class="recommendations__content section__content">
+            {% assign collection = collections[section.settings.collection] %}
+            
+            <div class="swiper recommendations-slider__outer" index-slider-wrapper>
+               <div class="recommendations-slider swiper-wrapper">
+                  {% for product in collection.products %}
+                     <a href="{{ product.url }}" class="index__product-card text-center swiper-slide">
+                        <div class="index__product-image">
+                           <img src="{{ product.images[0] | img_url: '600x' }}" {% if product.images[1] %}class="product__first-img"{% endif %}>
+                           {% if product.images[1] %}
+                              <img src="{{ product.images[1] | img_url: '600x' }}" class="product__second-img">             
+                           {% endif %}
+                        </div>
+                        <div class="section__subheading recommendations__product-title">{{ product.title }}</div>
+                        <div class="section__subheading recommendations__product-price">{{ product.price | money }}</div>
+                     </a>
+                  {% endfor %}
+               </div>
+
+               <div class="next-icon">{% render 'icon-carousel-arrow' %}</div>
+               <div class="prev-icon">{% render 'icon-carousel-arrow' %}</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Product Recommendations",
+      "settings": [
+         {
+            "id": "collection",
+            "type": "collection",
+            "label": "Collection"
+         },
+         {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Heading"
+         },
+         {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading",
+            "default": "Subheading"
+         },
+         {
+            "id": "desc",
+            "type": "richtext",
+            "label": "Description",
+            "default": "<p>Some descriptions go here...</p>"
+         },
+         {
+            "id": "button_text",
+            "label": "Button Text",
+            "type": "text",
+            "default": "Shop new"
+         },
+         {
+            "id": "button_url",
+            "label": "Button Link",
+            "type": "url"
+         },
+         {
+            "id": "background_color",
+            "type": "color",
+            "label": "Background color"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Product Recommendations",
+            "category": "Homepage Sections"
+         }
+      ]
+   }
+{% endschema %}

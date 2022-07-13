@@ -1,0 +1,108 @@
+{% assign enable_video = collection.metafields.collection.video_backgound_enable %}
+{% assign layout_type = section.settings.layout_type %}
+
+<style>
+    {% if section.settings.collection_header_text_color != blank %}
+    .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description,
+    .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description p,
+    .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-header {
+          color: {{ section.settings.collection_header_text_color }};
+    }
+    {% endif %}
+    {% if section.settings.collection_header_bg_color != blank %}
+    .boost-pfs-filter-collection-header-wrapper {
+          background-color: {{ section.settings.collection_header_bg_color }};
+    }
+    {% endif %}
+</style>
+<div class="filter-customize" data-url="{{ collection.url }}">
+    <div class="boost-pfs-filter-collection-header-wrapper boost-pfs-filter-collection-image {% if section.settings.show_collection_image and collection.image %}boost-pfs-filter-collection-has-image{% endif %}" {% if section.settings.show_collection_image and collection.image and enable_video != 'true' %} style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});" {% endif %}>
+
+        {% if enable_video == 'true' %}
+        <video autoplay="" muted="" loop="" playsinline="" class="video--self-host" style="width: 100%; height: 400px;">
+            <source src="{{collection.metafields.collection.video_background}}" type="video/mp4">
+        </video>
+        {% endif %}
+        <div class="boost-pfs-container-default-{{ layout_type }}">
+            <div class="boost-pfs-section-header">
+                {%- if section.settings.show_collection_des and collection.description != blank -%}
+                <div class="boost-pfs-filter-collection-description rte">
+                    {% if collection.metafields.collection.subtitle.size > 0 %}
+                        {{ collection.metafields.collection.subtitle }}
+                    {% else %}
+                        {{ collection.description }}
+                    {% endif %}
+                </div>
+                {%- endif -%}
+                <h1 class="boost-pfs-filter-collection-header">
+                    <span role="text">
+                        {{ collection.title }}
+                    </span>
+                </h1>
+                
+            </div>
+        </div>
+        <div class="overbg"></div> 
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Collection Banner",
+    "settings": [
+        {
+            "type": "color",
+            "id": "collection_header_bg_color",
+            "label": "Collection Header Background Color"
+        },
+        {
+            "type": "color",
+            "id": "collection_header_text_color",
+            "label": "Collection Header Text Color"
+        },
+        {
+            "type": "header",
+            "content": "For Layout Page"
+        },
+        {
+            "type": "radio",
+            "id": "layout_type",
+            "label": "Layout Type",
+            "options": [
+                {
+                "value": "box",
+                "label": "Box"
+                },
+                {
+                "value": "fullwidth",
+                "label": "Full Width"
+                }
+            ],
+            "default": "box"
+        },
+        {
+			"type": "header",
+			"content": "Collection Header"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_collection_image",
+			"label": "Show Collection Image",
+			"default": true
+		},
+        {
+			"type": "checkbox",
+			"id": "show_collection_des",
+			"label": "Show Collection Description",
+			"default": true
+		}
+    ],
+    "presets": [
+      {
+        "category": "Alternate Collection Banner",
+        "name": "Alternate Collection Banner"
+      }
+    ]
+}
+{% endschema %}
+

@@ -1,0 +1,228 @@
+<div id="carousel{{ section.id }}" class="carousel slide" data-bs-ride="carousel">
+    {% if section.blocks.size > 1 %}  
+      <ol class="carousel-indicators">
+        {% for block in section.blocks %}
+          <li data-bs-target="#carousel{{ section.id}}" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0 %}class="active"{% endif %}></li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+    <div class="carousel-inner">
+      {% for block in section.blocks %}
+        <div class="carousel-item block_{{ block.id }}_new {% if block.settings.use_video and block.settings.video_type != 'self_host' %}carousel-item--video{% endif %} 
+          {% if forloop.index0 == 0 %}active{% endif %}" data-bs-interval="{{ section.settings.speed }}">
+          {% if block.settings.use_video and block.settings.video_url != blank %}
+            <div class="carousel__video video-wrapper" video-wrapper data-video-type="{{ block.settings.video_type }}">
+              {% if block.settings.video_type == 'self_host' %}
+                {% assign video_url = block.settings.video_self_host %}
+              {% else %}
+                {% assign video_url = block.settings.video_url %}
+              {% endif %}
+              {% render 'video', video_type: block.settings.video_type, video_url: video_url %}
+              <button class="video-mute-icon" video-sound-toggle>
+                <span class="mute-icon">{% render 'icon-mute' %}</span>
+                <span class="unmute-icon">{% render 'icon-unmute' %}</span>
+              </button>
+            </div>
+          {% elsif block.settings.image %}
+            <img src="{{ block.settings.image | img_url: 'master' }}" class="slider_desktop_img_new">
+            {% if block.settings.mobileimage != blank %}
+              <img src="{{ block.settings.mobileimage | img_url: 'master' }}" class="slider_mobile_img_new">
+          	
+           	  <style>
+                @media(min-width:0px) and (max-width:899px){
+                  #carousel{{ section.id }} .block_{{ block.id }}_new .slider_desktop_img_new {
+                    display:none;
+                  }
+                  #carousel{{ section.id }} .block_{{ block.id }}_new .slider_mobile_img_new {
+                    display:block;
+                  }
+                }
+              </style>
+          
+            {% endif %}
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'img-placeholder--abs' }}
+          {% endif %}
+
+          <div class="carousel__content">
+            {% if block.settings.subheading != blank %}
+              <div class="section__subheading carousel__subheading">{{ block.settings.subheading }}</div>
+            {% endif %}
+
+            {% if block.settings.heading != blank %}
+              <h2 class="carousel__heading">{{ block.settings.heading }}</h2>
+            {% endif %}
+            
+            {% if block.settings.button_text != blank %}
+              <a href="{{ block.settings.button_url }}" class="btn carousel__button" style="background-color: {{ block.settings.button_color }}; color: {{ block.settings.button_text_color }}">{{ block.settings.button_text }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  {% if section.blocks.size > 1 %}  
+    <a class="carousel-control-prev" href="#carousel{{ section.id }}" role="button" data-bs-slide="prev">
+      <span class="prev-icon" aria-hidden="true">{% render 'icon-carousel-arrow' %}</span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+
+    <a class="carousel-control-next" href="#carousel{{ section.id }}" role="button" data-bs-slide="next">
+      <span class="next-icon" aria-hidden="true">{% render 'icon-carousel-arrow' %}</span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  {% endif %}
+</div>
+
+<style>
+  #carousel{{ section.id }} .next-icon svg *, #carousel{{ section.id }} .prev-icon svg * {
+    stroke: {{ section.settings.arrow_color }};
+  }
+  #carousel{{ section.id }} .carousel-indicators [data-bs-target] {
+    border-color: {{ section.settings.dot_color }};
+  }
+  #carousel{{ section.id }} .carousel-indicators [data-bs-target].active {
+    background-color: {{ section.settings.dot_color }};
+  }
+</style>
+
+{% render 'video-autoplay-script' %}
+
+{% schema %}
+{
+  "name": "Carousel",
+  "settings": [
+    {
+      "id": "arrow_color",
+      "type": "color",
+      "label": "Arrows color",
+      "default": "#080C22"
+    },
+    {
+      "id": "dot_color",
+      "type": "color",
+      "label": "Dots color",
+      "default": "#FFFEF9"
+    },
+    {
+      "id": "speed",
+      "type": "range",
+      "label": "Autoplay speed",
+      "min": 2000,
+      "max": 9000,
+      "step": 1000,
+      "unit": "ms",
+      "default": 2000
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+		{
+          "id": "mobileimage",
+          "label": "Mobile Image",
+          "type": "image_picker"
+        },
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "id": "use_video",
+          "type": "checkbox",
+          "label": "Use video",
+          "default": false
+        },
+        {
+          "id": "video_type",
+          "type": "select",
+          "label": "Video type",
+          "options": [
+            {
+              "value": "youtube",
+              "label": "Youtube"
+            },
+            {
+              "value": "vimeo",
+              "label": "Vimeo"
+            },
+            {
+              "value": "self_host",
+              "label": "Self host"
+            }
+          ]
+        },
+        { 
+          "type": "video_url", 
+          "id": "video_url", 
+          "label": "Video", 
+          "accept": ["youtube", "vimeo"], 
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc", 
+          "info": "Add the video URL (YouTube and Video only)." 
+        },
+        {
+          "id": "video_self_host",
+          "type": "url",
+          "label": "Video self-hosted link"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "id": "subheading",
+          "type": "text",
+          "label": "Subheading",
+          "default": "Subheading"
+        },
+        {
+          "id": "button_color",
+          "label": "Button background color",
+          "type": "color",
+          "default": "#fffef9"
+        },
+        {
+          "id": "button_text_color",
+          "label": "Button text color",
+          "type": "color",
+          "default": "#986473"
+        },
+        {
+          "id": "button_text",
+          "label": "Button Text",
+          "type": "text",
+          "default": "See Our Story"
+        },
+        {
+          "id": "button_url",
+          "label": "Button Link",
+          "type": "url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Homepage Sections",
+      "name": "Carousel"
+    }
+  ]
+}
+{% endschema %}

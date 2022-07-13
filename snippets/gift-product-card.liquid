@@ -1,0 +1,47 @@
+{% if type and type == "product" %}
+  <div class="index__product-card gift-card">
+
+    <div class="index__product-image">
+      <img src="{{ product.featured_image | img_url: '320x' }}" class="fixed-ratio">
+    </div>
+    <div class="gift__title">{{ product.title }}</div>
+    <div class="cart__text">{{ product.price | money }}</div>
+
+    {% assign title_downcase = product.title | downcase %}
+    {% if title_downcase contains "gift note" %}
+      <a class="btn-secondary" onclick="GiftNotes.launchModal({{ variant.id }}, '{{ product.handle }}')" data-id="{{ product.first_available_variant.id }}">Add your message</a>
+    {% else %}
+      <div class="add form-ATC">
+        <input type="hidden" class="minicart-item-id" name="" value="{{ product.first_available_variant.id }}">
+        <a class="btn-secondary" onclick="Minicart.submitAtcForm(this.closest('.form-ATC'))" data-id="{{ product.first_available_variant.id}}">Add to cart</a>
+      </div>
+    {% endif %}
+
+  </div>
+{% elsif type and type == "variant" %}
+  <div class="index__product-card gift-card">
+
+
+    <div class="index__product-image">
+      {% if variant.image %}
+        {% assign image = variant.image | img_url: 'master' %}
+      {% else %}
+        {% assign image = product.featured_image | img_url: 'master' %}
+      {% endif %}
+      <img src="{{ image }}" loading="lazy" class="fixed-ratio">
+    </div>
+    <div class="gift__title">{{ product.title }}</div>
+    <div class="cart__text">{{ variant.price | money }}</div>
+
+    {% assign title_downcase = product.title | downcase %}
+    {% if title_downcase contains "gift note" %}
+      <a class="btn-secondary" onclick="GiftNotes.launchModal({{ variant.id }}, '{{ product.handle }}')" data-id="{{ variant.id }}">Add your message</a>
+    {% else %}
+      <div class="add form-ATC">
+        <input type="hidden" class="minicart-item-id" name="" value="{{ variant.id }}">
+        <a class="btn-secondary" onclick="Minicart.submitAtcForm(this.closest('.form-ATC'))" data-id="{{ variant.id }}">Add to cart</a>
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

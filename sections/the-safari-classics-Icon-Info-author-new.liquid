@@ -1,0 +1,56 @@
+{% if section.settings.iconimage != blank or section.settings.addinfotext != blank or section.settings.authortext != blank %}
+  <div class="page_Icon_Info_author_main_new" style="background:{{ section.settings.backcolor }};">
+    <div class="container page_width_new">
+      <div class="page_Icon_Info_author_inner_new">
+        {% if section.settings.iconimage != blank %}
+          <div class="page_Icon_Info_author_innerimage_new">
+            <img src="{{ section.settings.iconimage | img_url: 'master' }}" alt="{{ section.settings.iconimage.alt }}" />
+          </div>
+        {% endif %}
+        {% if section.settings.addinfotext != blank %}
+          {{ section.settings.addinfotext }}
+        {% endif %}
+        {% if section.settings.authortext != blank %}
+          <h3>{{ section.settings.authortext }}</h3>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Icon Info Author New",
+	"class": "the_safari_classics_Icon_Info_author_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#fffef9"
+      },
+      {
+        "type": "image_picker",
+        "id": "iconimage",
+        "label": "Add Icon Image"
+      },
+      {
+        "type": "richtext",
+        "id": "addinfotext",
+        "label": "Add Informations Texts",
+        "default": "<p>I have never been disappointed in anything I have bought from Elizabeth Scarlet. Beautiful rich colour, sumptuous velvet and wonderful design</p>"
+      },
+      {
+        "type": "text",
+        "id": "authortext",
+        "label": "Add Author Text",
+        "default": "Tanya N"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Icon Info Author New"
+      }
+    ]
+  }
+{% endschema %}

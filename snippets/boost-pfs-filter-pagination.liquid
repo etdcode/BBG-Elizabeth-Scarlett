@@ -1,0 +1,35 @@
+{%- comment -%} VERSION: 0.0.3 Please do not delete this line. {%- endcomment -%}
+<ul>
+  {%- if paginate.previous -%}
+    <li class="previous-pagination"><a href="{{ paginate.previous.url }}">
+      <svg width="11" height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.86499 17.9601L1.28136 9.37645" stroke="#BEB9B1" stroke-width="1.57111" stroke-linecap="round"/>
+      <path d="M1.28198 9.37646L9.86561 0.792838" stroke="#BEB9B1" stroke-width="1.57111" stroke-linecap="round"/>
+      </svg> 
+    </a></li>
+  {%- else -%}
+    <li class="boost-pfs-filter-pagination-disabled"><span>←</span></li>
+  {%- endif -%}
+
+  {%- for part in paginate.parts -%}
+    {%- if part.is_link -%}
+      <li><a href="{{ part.url }}">{{ part.title }}</a></li>
+    {%- elsif part.title == '&hellip;' -%}
+      <li><span>...</span></li>
+    {%- else -%}
+      <li><span class="boost-pfs-filter-pagination-active">{{ part.title }}</span></li>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if paginate.next -%}
+    <li class="nex-pagination"><a href="{{ paginate.next.url }}">
+      <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.44983 1.24011L10.0335 9.82374" stroke="#986473" stroke-width="1.57111" stroke-linecap="round"/>
+      <path d="M10.0331 9.82373L1.44945 18.4074" stroke="#986473" stroke-width="1.57111" stroke-linecap="round"/>
+      </svg>
+
+    </a></li>
+  {%- else -%}
+    <li class="boost-pfs-filter-pagination-disabled"><span>→</span></li>
+  {%- endif -%}
+</ul>

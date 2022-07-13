@@ -1,0 +1,129 @@
+<div class="popupk" id="popupk">
+ <div class="monogram-modal__main">
+
+    
+    <img src="//cdn.shopify.com/s/files/1/1957/2463/t/167/assets/cancel.svg?v=74640567618130202111654874822" alt="Close Modal" onclick="Monogram.destroyModal()" class="monogram-modal__close">
+
+    
+    <div class="monogram-modal__inner">
+      <p class="monogram-modal__title">Bespoke Monogramming</p>
+      <form action="/monogram" class="monogram-modal__form">
+
+        <label for="monogramInput" class="monogram-modal__label">
+          <span class="monogram-modal__label-text">Add up to three letters</span>
+          <span class="monogram-modal__price">+£14.00</span>
+        </label>
+
+        <div class="monogram-modal__input-container">
+          <input type="text" name="initials" pattern="^[a-zA-Z]+" id="monogramInput" class="monogram-modal__input" placeholder="Type your initials here" oninput="Monogram.updatePreview(this)" maxlength="3">
+          <span class="monogram-modal__char-count"><span id="charUpdate" style="margin-right: 3px;">3</span> character(s) remaining</span>
+        </div>
+
+        <p class="monogram-modal__info">All monogrammed products are made to order with care and love, and will be dispatched as soon as they’re ready. Our current delivery time is 5-7 days. Please note, monogrammed items cannot be returned unless faulty. 
+<br>
+*We are currently experiencing some technical issues with the placement of initials on the website preview but rest assured, your product will be monogrammed correctly.</p>
+        
+        <div class="monogram-modal__checkbox-container">
+          <div class="monogram-modal__checkbox">
+            <input type="checkbox" name="checkbox" id="monogramCheckbox" class="monogram-modal__checkbox-input" onchange="Monogram.maybeEnableButton()">
+            <div class="monogram-modal__checkbox-display"></div>
+          </div>
+          <label for="monogramCheckbox" class="monogram-modal__checkbox-label">I agree to monogramming delivery times.</label>
+        </div>
+
+        <div class="monogram-modal__meta">
+          <p class="monogram-modal__meta-title">Total:</p>
+          <p class="monogram-modal__meta-total">£49.00</p>
+        </div>
+
+        <input type="submit" value="Add to bag" class="monogram-modal__button" disabled="">
+
+      </form>
+      <div class="d-flex justify-content-center"><span class="monogram-modal__skip" onclick="Monogram.destroyModal()">Skip monogramming</span></div>
+    </div>
+
+    
+    <div class="monogram-modal__canvas-container">
+      
+          <canvas class="monogram-modal__canvas" width="512" height="512"></canvas>
+      
+    </div>
+
+  </div>
+  <a href="#" onclick="hide('popupk')">Close</a>
+</div>
+<style>
+  .popupk {
+  display: none;
+  position: fixed;
+  padding: 10px;
+  width: 280px;
+  left: 50%;
+  margin-left: -150px;
+  height: 180px;
+  top: 50%;
+  margin-top: -100px;
+  background: #FFF;
+  border: 3px solid #F04A49;
+  z-index: 20;
+}
+
+#popupk:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -2;
+}
+
+#popupk:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFF;
+  z-index: -1;
+}
+
+/* Styling buttons & webpage */
+
+
+#popupk button {
+    margin-top: 50px;
+    background-color: rgba(255,255,255,0.3);
+    border: 3px solid #F04A49;
+    color: #F04A49;
+    font-size: 25px;
+    padding: 10px 20px;
+    
+}
+
+#popupk button:hover {
+    background-color: #F04A49;
+    color: #FFF;
+    border: 3px solid #F04A49;
+    transition: all 0.3s ease 0s;
+}
+
+#popupk p {
+	margin: 1em 0;
+  font-size: 16px;
+}
+</style>
+<script>
+  $ = function(id) {
+  return document.getElementById(id);
+}
+
+var show = function(id) {
+	$(id).style.display ='block';
+}
+var hide = function(id) {
+	$(id).style.display ='none';
+}
+</script>

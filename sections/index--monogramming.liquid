@@ -1,0 +1,63 @@
+<div class="index__monogramming">
+   {% if section.settings.background_image %}
+   <img src="{{ section.settings.background_image | img_url: 'master' }}" class="fixed-ratio">
+      {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'img-placeholder--abs' }}
+   {% endif %}
+
+   <div class="carousel__content">
+      {% if section.settings.subheading != blank %}
+         <div class="section__subheading carousel__subheading">{{ section.settings.subheading }}</div>         
+      {% endif %}
+   
+      {% if section.settings.heading != blank %}
+         <h2 class="carousel__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+   
+      {% if section.settings.button_text != blank %}
+         <a href="{{ section.settings.button_url }}" class="btn">{{ section.settings.button_text }}</a>
+      {% endif %}
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Monogramming",
+      "settings": [
+         {
+            "id": "background_image",
+            "type": "image_picker",
+            "label": "Background image"
+         },
+         {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Heading"
+         },
+         {
+            "id": "subheading",
+            "type": "text",
+            "label": "Subheading",
+            "default": "Subheading"
+         },
+         {
+            "id": "button_text",
+            "label": "Button Text",
+            "type": "text",
+            "default": "See Our Story"
+         },
+         {
+            "id": "button_url",
+            "label": "Button Link",
+            "type": "url"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Monogramming",
+            "category": "Image"
+         }
+      ]
+   }
+{% endschema %}

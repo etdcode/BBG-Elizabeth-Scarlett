@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "main": {
+      "type": "the-safari-classics-page-new",
+      "disabled": true,
+      "settings": {}
+    },
+    "164924873747cfd64d": {
+      "type": "the-safari-classics-top-banner-new",
+      "settings": {
+        "desktopimage": "shopify:\/\/shop_images\/25_GIRRAFFE_GROUP_1384_RT_1.jpg",
+        "mobileimage": "shopify:\/\/shop_images\/SC_Header_Mob-min_33e025d1-68e3-498f-9c48-87b9cad04c47.jpg",
+        "mainheading": "THE SAFARI CLASSICS<br>COLLECTION",
+        "mainbtntext": "START SHOPPING",
+        "mainbtnlink": "shopify:\/\/collections\/safari-classics"
+      }
+    },
+    "16492519178947da6d": {
+      "type": "the-safari-classics-featured-collection-new",
+      "settings": {
+        "backcolor": "#234959",
+        "textcolor": "#ffffff",
+        "mainheadingtext": "Your Favourites Reimagined",
+        "maininfotext": "<p>Our Safari Classics collection is a celebration of our bold, bright and beautiful natural world. These motifs pay homage to the planet’s most majestic creatures, while also giving back to animal conservation through our 2% to the Wild Pledge.<\/p>",
+        "selectcollection": "bags",
+        "mainbtntext": "EXPLORE THE FULL COLLECTION",
+        "mainbtnlink": "\/"
+      }
+    },
+    "1649325700b75d8ed7": {
+      "type": "the-safari-classics-collection-lists-new",
+      "blocks": {
+        "16493257008e0082bd-0": {
+          "type": "collection_lists",
+          "settings": {
+            "selectcollection": "pouches",
+            "desktopImage": "shopify:\/\/shop_images\/alphabet_f22170a0-608e-4db3-a3df-6caabfe3b3b5.jpg",
+            "mobileImage": "shopify:\/\/shop_images\/Pouches_Mob-min.jpg"
+          }
+        },
+        "16493257008e0082bd-1": {
+          "type": "collection_lists",
+          "settings": {
+            "selectcollection": "cosmetic-bags",
+            "desktopImage": "shopify:\/\/shop_images\/SC_Cosmetics_Bags_DT-min.jpg",
+            "mobileImage": "shopify:\/\/shop_images\/Cosmetics_Bags_Mob-min.jpg"
+          }
+        },
+        "16493257008e0082bd-2": {
+          "type": "collection_lists",
+          "settings": {
+            "selectcollection": "wash-bags",
+            "desktopImage": "shopify:\/\/shop_images\/zebrawashbag.jpg",
+            "mobileImage": "shopify:\/\/shop_images\/Wash_Bags_Mob-min.jpg"
+          }
+        },
+        "16493257008e0082bd-3": {
+          "type": "collection_lists",
+          "settings": {
+            "selectcollection": "laptop-cases",
+            "desktopImage": "shopify:\/\/shop_images\/Laptop_DT-min.jpg",
+            "mobileImage": "shopify:\/\/shop_images\/Laptop_Cases_Mob-min.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16493257008e0082bd-0",
+        "16493257008e0082bd-1",
+        "16493257008e0082bd-2",
+        "16493257008e0082bd-3"
+      ],
+      "settings": {
+        "backcolor": "#f4efeb",
+        "mainheadingtext": "Organisation for Every Occasion"
+      }
+    },
+    "16493189786dbba16e": {
+      "type": "the-safari-classics-Icon-Info-author-new",
+      "settings": {
+        "backcolor": "#fffef9",
+        "iconimage": "shopify:\/\/shop_images\/5Stars_c997d954-eebe-4c15-8057-8ea91973a1b9.png",
+        "addinfotext": "<p>“I have never been disappointed in anything I have bought from Elizabeth Scarlet. Beautiful rich colour, sumptuous velvet and wonderful design”<\/p>",
+        "authortext": "Tanya N"
+      }
+    },
+    "16492564306f697e1a": {
+      "type": "the-safari-classics-featured-collection-new",
+      "settings": {
+        "backcolor": "#f4efeb",
+        "textcolor": "#000000",
+        "mainheadingtext": "Alphabet",
+        "maininfotext": "<p>The ultimate personalised gift, our best selling Alphabet pouch is back for spring, with two bright new colourways; lush green and vivid orange.<\/p>",
+        "selectcollection": "alphabet-pouches",
+        "mainbtntext": "SHOP ALPHABET",
+        "mainbtnlink": "shopify:\/\/collections\/alphabet-pouches"
+      }
+    },
+    "1649317778d0735563": {
+      "type": "the-safari-classics-backImg-overlay-text-new",
+      "settings": {
+        "deskbackimage": "shopify:\/\/shop_images\/Mono_DT-min.jpg",
+        "headingtext": "Monogramming",
+        "addinfotext": "<p>Whether it’s a thoughtful gift or indulgent treat, make it memorable with our personalisation service.<\/p>",
+        "btntext": "DISCOVER MONOGRAMMING",
+        "btnlink": "shopify:\/\/pages\/monogramming-old"
+      }
+    },
+    "1649256628c4e5b2dc": {
+      "type": "the-safari-classics-featured-collection-new",
+      "settings": {
+        "backcolor": "#477b3e",
+        "textcolor": "#ffffff",
+        "mainheadingtext": "Giraffe",
+        "maininfotext": "<p>Reimagined for spring, this sell out design features detailed embroidery inspired by vibrants scenes from the plains of Kenya.<\/p>",
+        "selectcollection": "savanna-giraffe",
+        "mainbtntext": "SHOP GIRAFFE",
+        "mainbtnlink": "shopify:\/\/collections\/savanna-giraffe"
+      }
+    },
+    "1649316267b24b8e14": {
+      "type": "the-safari-classics-Image-text-Infotext-new",
+      "settings": {
+        "backcolor": "#fffef9",
+        "mainheadingtext": "",
+        "topinfotext": "",
+        "topdeskimg": "shopify:\/\/shop_images\/Lizzie_Polaroids_DT-min.png",
+        "topmobimg": "shopify:\/\/shop_images\/Lizzie_Quote_Mob-min.png",
+        "bottomdeskimg": "shopify:\/\/shop_images\/Lizzie_Quote_DT-min.jpg",
+        "bottommobimg": "shopify:\/\/shop_images\/Lizzie_Polaroids_Mob-min.png",
+        "quoteimg": "shopify:\/\/shop_images\/quote_cb795707-f758-43b8-a69a-dcc8b8d4cd50.png",
+        "bottoninfotext": "This collection is made up of some of our most loved designs. It’s so exciting to see what started as rough honeymoon inspired sketches all the years ago go on to live a life of their own, adding a touch of the wild to our lovely communities’ homes, travels and wardrobes while also raising money for vital wildlife conservation projects.",
+        "bottommaintext": "Elizabeth"
+      }
+    },
+    "16492567580b0428e5": {
+      "type": "the-safari-classics-featured-collection-new",
+      "settings": {
+        "backcolor": "#f4efeb",
+        "textcolor": "#080c22",
+        "mainheadingtext": "Zebra",
+        "maininfotext": "<p>Enchanted by these striking creatures, Elizabeth has captured the zebra’s quirky character and dazzling stripes, with twinkling threads on soft velvet bases to re-imagine our signature motif for the new season.<\/p>",
+        "selectcollection": "zebra",
+        "mainbtntext": "SHOP ZEBRA",
+        "mainbtnlink": "shopify:\/\/collections\/zebra"
+      }
+    },
+    "16492568827ace2d8b": {
+      "type": "the-safari-classics-featured-collection-new",
+      "settings": {
+        "backcolor": "#c75c1b",
+        "textcolor": "#ffffff",
+        "mainheadingtext": "Tiger",
+        "maininfotext": "<p>Slinking through the jungle with personality and power, this signature design captures characterful cubs in vibrant embroidery threads on luxurious velvet bases.<\/p>",
+        "selectcollection": "wild-tigers-collection",
+        "mainbtntext": "SHOP TIGER",
+        "mainbtnlink": "shopify:\/\/collections\/wild-tigers-collection"
+      }
+    },
+    "164931388581f5085c": {
+      "type": "the-safari-classics-Image-with-text-new",
+      "settings": {
+        "backcolor": "#fffef9",
+        "leftimage": "shopify:\/\/shop_images\/Gifting_Mob-min.png",
+        "addinfotext": "<p>Treating someone special? <br\/>Our gold-foiled gift boxes <br\/>and hand-illustrated note <br\/>cards make it easy to create <br\/>a unique and extra special <br\/>gifting experience. Simply <br\/>add at the checkout <\/p>"
+      }
+    },
+    "164925885778a0edd4": {
+      "type": "the-safari-classics-logos-lists-new",
+      "blocks": {
+        "164925885788c6a667-0": {
+          "type": "logo_list",
+          "settings": {
+            "logoimage": "shopify:\/\/shop_images\/Glamour_OffWhite-01.png",
+            "logolink": ""
+          }
+        },
+        "164925885788c6a667-1": {
+          "type": "logo_list",
+          "settings": {
+            "logoimage": "shopify:\/\/shop_images\/Independent_OffWhite.png",
+            "logolink": ""
+          }
+        },
+        "164925885788c6a667-2": {
+          "type": "logo_list",
+          "settings": {
+            "logoimage": "shopify:\/\/shop_images\/Tatler_OffWhite.png",
+            "logolink": ""
+          }
+        },
+        "164925885788c6a667-3": {
+          "type": "logo_list",
+          "settings": {
+            "logoimage": "shopify:\/\/shop_images\/VOGUE_LOGO_OffWhite.png",
+            "logolink": ""
+          }
+        }
+      },
+      "block_order": [
+        "164925885788c6a667-0",
+        "164925885788c6a667-1",
+        "164925885788c6a667-2",
+        "164925885788c6a667-3"
+      ],
+      "settings": {
+        "backcolor": "#c75c1b",
+        "textcolor": "#ffffff",
+        "mainheadingtext": "As Seen In"
+      }
+    },
+    "1649312153595d96c3": {
+      "type": "the-safari-classics-logo-with-text-btn-new",
+      "settings": {
+        "backcolor": "#8f9686",
+        "textcolor": "#ffffff",
+        "logoimage": "shopify:\/\/shop_images\/2__to_the_wild_logo_-_rich_black.png",
+        "infotext": "<p>We pledge 2% of our annual sales to the preservation of keystone species; animals that help define entire ecosystems.<br\/><br\/>This means that, whether we make money or not, we tax ourselves for using earth’s resources and honour the animals that embellish our much-loved textiles.<\/p>",
+        "mainbtntext": "DISCOVER THE INITIATIVE",
+        "mainbtnlink": "shopify:\/\/pages\/about-us"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164924873747cfd64d",
+    "16492519178947da6d",
+    "1649325700b75d8ed7",
+    "16493189786dbba16e",
+    "16492564306f697e1a",
+    "1649317778d0735563",
+    "1649256628c4e5b2dc",
+    "1649316267b24b8e14",
+    "16492567580b0428e5",
+    "16492568827ace2d8b",
+    "164931388581f5085c",
+    "164925885778a0edd4",
+    "1649312153595d96c3"
+  ]
+}

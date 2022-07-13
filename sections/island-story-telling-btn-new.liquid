@@ -1,0 +1,271 @@
+<div class="bg-beige Index_story_telling_main_new island_story_telling_btn_main_new" style="background: {{ section.settings.backcolor }};">
+   <div class="page-wrapper index__storytelling">
+      <div class="storytelling__top">
+         <div class="section__info">
+            <div class="section__subheading">{{ section.settings.subheading }}</div>
+            <h3 class="section__heading">{{ section.settings.heading }}</h3>
+            <div class="section__desc">{{ section.settings.desc }}</div>
+            <a class="section__subheading section__link" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+         </div>
+      
+         <div class="storytelling__block {% if section.settings.use_video_1 and section.settings.video_type_1 != 'self_host' %}carousel-item--video{% endif %}">
+            {% if section.settings.use_video_1 and section.settings.video_url_1 != blank %}
+               <div class="storytelling__video video-wrapper" video-wrapper data-video-type="{{ section.settings.video_type_1 }}">
+                  {% if section.settings.video_type_1 == 'self_host' %}
+                     {% assign video_url = section.settings.video_self_host_1 %}
+                  {% else %}
+                     {% assign video_url = section.settings.video_url_1 %}
+                  {% endif %}
+                  {% render 'video', video_type: section.settings.video_type_1, video_url: video_url %}
+                  <button class="video-mute-icon" video-sound-toggle>
+                     <span class="mute-icon">{% render 'icon-mute' %}</span>
+                     <span class="unmute-icon">{% render 'icon-unmute' %}</span>
+                  </button>               </div>
+            {% elsif section.settings.image_1 %}
+               <img src="{{ section.settings.image_1 | img_url: '600x' }}" class="fixed-ratio">
+            {% else %}
+               {{ 'image' | placeholder_svg_tag: 'img-placeholder' }}
+            {% endif %}
+           
+            {% if section.settings.iconcustomleft != blank %}
+              <img src="{{ section.settings.iconcustomleft | img_url: '200x' }}" alt="{{ section.settings.iconcustomleft.alt }}" class="Index_story_telling_left_customicon_onlyfor_mobile_new" />
+            {% endif %}
+         </div> 
+         
+         <div class="storytelling__block {% if section.settings.use_video_1 and section.settings.video_type_2 != 'self_host' %}carousel-item--video{% endif %}">
+           {% if section.settings.icon != blank %}
+              <img src="{{ section.settings.icon | img_url: '200x' }}" alt="{{ section.settings.icon.alt }}" class="storytelling__img-icon Index_story_telling_right_customicon_new" />
+           {% endif %}
+           
+           {% if section.settings.use_video_2 == true and section.settings.video_url_2 != blank %}
+           <div class="storytelling__video video-wrapper" video-wrapper data-video-type="{{ section.settings.video_type_2 }}">
+             {% if section.settings.video_type_2 == 'self_host' %}
+               {% assign video_url = section.settings.video_self_host_2 %}
+             {% else %}
+               {% assign video_url = section.settings.video_url_2 %}
+             {% endif %}
+             {% render 'video', video_type: section.settings.video_type_2, video_url: video_url %}
+             <button class="video-mute-icon" video-sound-toggle>
+               <span class="mute-icon">{% render 'icon-mute' %}</span>
+               <span class="unmute-icon">{% render 'icon-unmute' %}</span>
+             </button>               
+           </div>
+           {% elsif section.settings.image_2 %}
+             <img src="{{ section.settings.image_2 | img_url: '600x' }}">
+           {% else %}
+             {{ 'image' | placeholder_svg_tag: 'img-placeholder' }}
+           {% endif %}
+         </div> 
+      </div>
+   
+      <div class="storytelling__bottom">
+        {% if section.settings.iconcustomleft != blank %}
+          <img src="{{ section.settings.iconcustomleft | img_url: '200x' }}" alt="{{ section.settings.iconcustomleft.alt }}" class="Index_story_telling_left_customicon_new" />
+        {% endif %}
+        
+         <div class="storytelling__bot-img">
+            <img src="{{ section.settings.image_3 | img_url: '600x' }}" class="fixed-ratio">
+         </div>
+         <div>
+            {% if section.settings.story != blank %}
+              <div class="cp-carousel__caption storytelling__text">
+                {{ section.settings.story }}
+              </div>
+            {% endif %}
+            {% if section.settings.mainbtntext != blank and section.settings.mainbtnlink != blank %}
+              <div class="island_story_telling_btn_mainbutton_new">
+                <a href="{{ section.settings.mainbtnlink }}">
+                  {{ section.settings.mainbtntext }}
+                </a>
+              </div>
+           	{% endif %}
+         </div>
+      </div>
+   </div>
+</div>
+
+{% render 'video-autoplay-script' %}
+
+{% schema %}
+   {
+      "name": "Island Story Telling Btn",
+      "class": "Index_story_telling_new island_story_telling_btn_new",
+      "settings": [
+        {
+          "type": "color",
+          "id": "backcolor",
+          "label": "Select Background Color"
+        },
+        {
+          "type": "header",
+          "content": "General"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "id": "subheading",
+          "type": "text",
+          "label": "Subheading",
+          "default": "Subheading"
+        },
+        {
+          "id": "desc",
+          "type": "richtext",
+          "label": "Description",
+          "default": "<p>Some descriptions go here...</p>"
+        },
+        {
+          "id": "button_text",
+          "label": "Button Text",
+          "type": "text",
+          "default": "Discover more"
+        },
+        {
+          "id": "button_url",
+          "label": "Button Link",
+          "type": "url"
+        },
+        {
+          "type": "header",
+          "content": "Left block"
+        },
+        {
+          "id": "image_1",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "use_video_1",
+          "type": "checkbox",
+          "label": "Use video",
+          "default": false
+        },
+        {
+          "id": "video_type_1",
+          "type": "select",
+          "label": "Video type",
+          "options": [
+             {
+                "value": "youtube",
+                "label": "Yotube"
+             },
+             {
+                "value": "vimeo",
+                "label": "Vimeo"
+             },
+             {
+                "value": "self_host",
+                "label": "Self host"
+             }
+          ]
+        },
+        { 
+          "id": "video_url_1", 
+          "type": "video_url", 
+          "label": "Video", 
+          "accept": ["youtube", "vimeo"], 
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc", 
+          "info": "Add the video URL (YouTube and Video only)." 
+        },
+        {
+          "id": "video_self_host_1",
+          "type": "url",
+          "label": "Video self-hosted link"
+        },
+        {
+          "type": "header",
+          "content": "Right block"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Add Right Custom Icon Image"
+        },
+        {
+          "id": "image_2",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "use_video_2",
+          "type": "checkbox",
+          "label": "Use video",
+          "default": false
+        },
+        {
+          "id": "video_type_2",
+          "type": "select",
+          "label": "Video type",
+          "options": [
+             {
+                "value": "youtube",
+                "label": "Yotube"
+             },
+             {
+                "value": "vimeo",
+                "label": "Vimeo"
+             },
+             {
+                "value": "self_host",
+                "label": "Self host"
+             }
+          ]
+        },
+        { 
+          "id": "video_url_2", 
+          "type": "video_url", 
+          "label": "Video", 
+          "accept": ["youtube", "vimeo"], 
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc", 
+          "info": "Add the video URL (YouTube and Video only)." 
+        },
+        {
+          "id": "video_self_host_2",
+          "type": "url",
+          "label": "Video self-hosted link"
+        },
+        {
+          "type": "header",
+          "content": "Bottom block"
+        },
+        {
+          "id": "image_3",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "iconcustomleft",
+          "label": "Add Left Custom Icon Image"
+        },
+        {          
+          "type": "richtext",
+          "id": "story",
+          "label": "Text",
+          "default": "<p>Tell your brand story...</p>"
+        },
+        {
+          "type": "text",
+          "id": "mainbtntext",
+          "label": "Add Main Button Text",
+          "default": "DONATE DIRECTLY"
+        },
+        {
+          "type": "url",
+          "id": "mainbtnlink",
+          "label": "Add Main Button Link",
+          "default": "/"
+        }
+      ],
+      "presets": [
+         {
+            "name": "Island Story Telling Btn",
+            "category": "Storytelling"
+         }
+      ]
+   }
+{% endschema %}

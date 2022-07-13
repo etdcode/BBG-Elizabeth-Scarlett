@@ -1,0 +1,142 @@
+
+
+{% schema %} 
+{
+    "name": "Section 3 Review Slider",
+    "blocks": [{
+        "name" : "Section 3 Review Slider",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline3",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "text",
+            "id": "rev-body1",
+            "label": "Enter the 1st review"
+        },
+		{
+            "type": "text",
+            "id": "score1",
+            "label": "Enter enter the 1st name"
+        },
+		{
+            "type": "text",
+            "id": "rev-body2",
+            "label": "Enter the 2nd review"
+        },
+		{
+            "type": "text",
+            "id": "score2",
+            "label": "Enter enter the 2nd name"
+        },
+		{
+            "type": "text",
+            "id": "rev-body3",
+            "label": "Enter the 3rd review"
+        },
+		{
+            "type": "text",
+            "id": "score3",
+            "label": "Enter enter the 3rd name"
+        },
+		{
+            "type": "text",
+            "id": "rev-body4",
+            "label": "Enter the 4th review"
+        },
+		{
+            "type": "text",
+            "id": "score4",
+            "label": "Enter enter the 4th name"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+
+<div class="section3-review-slider">
+		<h2 class="sec-3-title">{{ b.section-headline3 | p_url }}</h2>
+		<div class="full-w-carousel">
+			<div class="owl-cont">
+				<div class="owl-carousel owl-theme" id="owl-demo">
+					<div class="item">
+						<div class="rev-box1">
+							<img class="rev-icn1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Format_quote.svg?v=1655986444">
+							<p class="sec3-rev-body">{{ b.rev-body1 | p_url }}</p>
+							<div class="rev-lower">
+								<h4 class="sec3-rev-name">{{ b.score1 | p_url }}</h4>
+								<div class="veri-buy-box">
+									<img class="rev-chk-mrk" src="https://cdn.shopify.com/s/files/1/1957/2463/files/check-mark_2.svg?v=1655986444">
+									<p class="veri-text">Verified Buyer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="rev-box1">
+							<img class="rev-icn1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Format_quote.svg?v=1655986444">
+							<p class="sec3-rev-body">{{ b.rev-body2 | p_url }}</p>
+							<div class="rev-lower">
+								<h4 class="sec3-rev-name">{{ b.score2 | p_url }}</h4>
+								<div class="veri-buy-box">
+									<img class="rev-chk-mrk" src="https://cdn.shopify.com/s/files/1/1957/2463/files/check-mark_2.svg?v=1655986444">
+									<p class="veri-text">Verified Buyer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="rev-box1">
+							<img class="rev-icn1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Format_quote.svg?v=1655986444">
+							<p class="sec3-rev-body">{{ b.rev-body3 | p_url }}</p>
+							<div class="rev-lower">
+								<h4 class="sec3-rev-name">{{ b.score3 | p_url }}</h4>
+								<div class="veri-buy-box">
+									<img class="rev-chk-mrk" src="https://cdn.shopify.com/s/files/1/1957/2463/files/check-mark_2.svg?v=1655986444">
+									<p class="veri-text">Verified Buyer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="rev-box1">
+							<img class="rev-icn1" src="https://cdn.shopify.com/s/files/1/1957/2463/files/Format_quote.svg?v=1655986444">
+							<p class="sec3-rev-body">{{ b.rev-body4 | p_url }}</p>
+							<div class="rev-lower">
+								<h4 class="sec3-rev-name">{{ b.score4 | p_url }}</h4>
+								<div class="veri-buy-box">
+									<img class="rev-chk-mrk" src="https://cdn.shopify.com/s/files/1/1957/2463/files/check-mark_2.svg?v=1655986444">
+									<p class="veri-text">Verified Buyer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+

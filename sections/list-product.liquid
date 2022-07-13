@@ -1,0 +1,144 @@
+<div class="container-half-left">
+	<div class="d-md-flex d-block align-items-center">
+		<div class="left col-md-3 col-12">
+			{%- if section.settings.sub_heading != blank -%}
+				<div class="sub-heading">{{ section.settings.sub_heading }}</div>
+			{%- endif -%}
+
+			{%- if section.settings.heading != blank -%}
+				<h1 class="heading">{{ section.settings.heading }}</h1>
+			{%- endif -%}
+
+			{%- if section.settings.description != blank -%}
+				<div class="description">{{ section.settings.description }}</div>
+			{%- endif -%}
+
+			{%- if section.settings.link_txt != blank -%}
+				<a href="{{ section.settings.link }}" class="link">{{ section.settings.link_txt }}</a>
+			{%- endif -%}
+		</div>
+		<div class="right col-md-9 col-12">
+			<div class="swiper listProductSlider">
+				<div class="swiper-wrapper">
+					{%- for block in section.blocks -%}
+						{%- case block.type -%}
+							{%- when 'products' -%}
+								{% assign product = all_products[block.settings.featured_product] %}
+
+								<div class="swiper-slide item">
+									<div class="img position-relative">
+										<a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: '700x' }}" alt=""></a>
+										<div class="badge d-flex">
+											{% if product.compare_at_price_min > product_variant.price %}
+												<div class="sale">SALE</div>
+					            {% endif %}
+
+											{% if product.tags contains "new-in" %}
+												<div class="new-in">NEW IN</div>
+					            {% endif %}
+										</div>
+
+										{% if product.tags contains "monogram" %}
+											<div class="label-monogram">Monogram Me</div>
+										{% endif %}
+									</div>
+									<div class="info">
+										<h2 class="title"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+										<div class="price">
+											<span class="original">{{ product.price | money }}</span>
+											{% if product.compare_at_price_min > product_variant.price %}
+												<span class="price-compare">{{ product.compare_at_price | money }}</span>
+					            {% endif %}
+										</div>
+										<div class="label-color">+ Colours</div>
+									</div>
+								</div>
+
+							{%- when 'img-text' -%}
+								<div class="swiper-slide item img-with-txt">
+									<div class="img position-relative">
+										<a href="{{ block.settings.link }}"><img src="{{ block.settings.img | img_url: '1000x' }}" alt=""></a>
+									</div>
+									<div class="content">
+										<a href="{{ block.settings.link }}">
+											{{ block.settings.text }}
+										</a>
+									</div>
+								</div>
+						{%- endcase -%}
+					{%- endfor -%}
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Section list product",
+	"class": "section--list-product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "link_txt",
+      "label": "Text link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+	],
+	"blocks": [
+		{
+			"type": "products",
+			"name": "Products",
+			"settings": [
+        {
+          "type": "product",
+          "id": "featured_product",
+          "label": "Product"
+        }
+			]
+		},
+		{
+			"type": "img-text",
+			"name": "Image with text",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "img",
+					"label": "Image"
+				},
+				{
+				  "type": "textarea",
+				  "id": "text",
+				  "label": "text"
+				},
+				{
+				  "type": "url",
+				  "id": "link",
+				  "label": "Link"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

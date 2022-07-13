@@ -1,0 +1,101 @@
+<!-- snippets/product-lightbox-gallery.liquid -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">  
+  <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides. 
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Controls : These have custom styling and functionality -->
+      <div class="uwp-pswp__controls">
+        <button class="uwp-pswp__prev" title="Previous (arrow left)"><i class="fas fa-chevron-left"></i></button>
+        <button class="uwp-pswp__close" title="Close (Esc)"><i class="fas fa-times"></i></button>
+        <button class="uwp-pswp__next" title="Next (arrow right)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * Preserves aspect ratio and scales down passed in image dimensions to fit within either:
+   *    94% of window width or 
+   *    98% of window height
+   * Param imageWidth {Integer} - The pixel width of the original image
+   * Param imageHeight {Integer} - The pixel height of the original image
+   */
+  function getImageDimensions(imageWidth, imageHeight) {
+    // Get original aspect ratio
+    var aspectRatio = imageWidth / imageHeight
+
+    // Decide whether to scale on width or height (depends which one is bigger)
+    var scaleOn = "width"
+    if (aspectRatio < 1) {
+      scaleOn = "height"
+    }
+
+    // Set default image dimensions
+    var dimensions = {
+      width: imageWidth,
+      height: imageHeight
+    }
+
+    // Scale width to fit in viewport and scales height to aspect ratio
+    if (scaleOn == "width") {
+      dimensions.width = dimensions.width < (window.innerWidth * 0.94) ? dimensions.width : (window.innerWidth * 0.94)
+      dimensions.height = dimensions.width / aspectRatio
+
+    // Scale height to fit in viewport and scale width to aspect ratio
+    } else {
+      dimensions.height = dimensions.height < (window.innerHeight * 0.98) ? dimensions.height : (window.innerHeight * 0.94)
+      dimensions.width = dimensions.height * aspectRatio
+    }
+
+    return dimensions
+  }
+
+  /** 
+   * Opens a Photo Swipe gallery 
+   */
+  function openPhotoSwipe() {
+    // Get the main pswp container
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // Create an array of the images in the gallery (pass these in with liquid)
+    var pswpImages = [];
+    {% for image in images %}
+      var imageDimensions = getImageDimensions({{ image.width }}, {{ image.height }})
+      pswpImages.push({
+        src: "{{ image | img_url: 'master' }}",
+        w: imageDimensions.width,
+        h: imageDimensions.height
+      })
+    {% endfor %}
+
+    // Set options (optional)
+    //    Here we are starting the gallery at the current index from the Product state (so that the current active image is shown first)
+    //    We also set closeOnScroll to false (on desktop devices, touch devices can still swipe up to close)
+    var pswpOptions = {
+      index: parseInt(Product.state.activeImageIndex) || 0,
+      closeOnScroll: false
+    }
+
+    // Set and initialize the gallery
+    var pswpGallery = new PhotoSwipe(pswpElement, false, pswpImages, pswpOptions);
+    pswpGallery.init();
+
+    // Activate controls
+    document.querySelector(".uwp-pswp__prev").addEventListener("click", function() { pswpGallery.prev() })
+    document.querySelector(".uwp-pswp__next").addEventListener("click", function() { pswpGallery.next() })
+    document.querySelector(".uwp-pswp__close").addEventListener("click", function() { pswpGallery.close() })
+  }
+</script>

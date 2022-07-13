@@ -1,0 +1,33 @@
+<div class="monogram-hero__container">
+  <img src="{{ section.settings.image | img_url: 'master' }}" loading="lazy" alt="Hero Image" class="monogram-hero__image">
+  <div class="monogram-hero__content-container">
+    <p class="monogram-hero__subtitle">{{ section.settings.subtitle }}</p>
+    <p class="monogram-hero__title">{{ section.settings.title }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "class": "monogram-hero-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Discover"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Bespoke Monogramming"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,133 @@
+<!-- snippets/product-options.liquid -->
+{% assign this_option_set = product.options_by_name[option_name] %}
+{% assign option_name_handle = option_name | handle %}
+{% assign variant_size = false %}
+{% assign count_variant = this_option_set.values | size %}
+
+<div class="option-variant variant-option--{{this_option_set.position}} {{option_name_handle}}" {% if count_variant < 2 %}hidden{% endif %}>
+  <p class="label-variant">{{ option_name }}: &nbsp;<span class="name-option">{{ this_option_set.values[0] }}</span></p>
+
+  <div class="d-flex flex-wrap align-items-baseline section--variants">
+    {% if option_type == "dropdowns" %}
+      <select name="option{{ this_option_set.position }}" data-option="option{{ this_option_set.position }}" class="pdp-option-select form-select" required>
+        <option value="" disabled selected>Please select a {{ option_name }}</option>
+        {%- for option in this_option_set.values -%}
+          <option value="{{ option }}">{{ option }}</option>
+        {%- endfor -%}
+      </select>
+
+    {% elsif option_type == "swatches" %}
+      {% assign option_selected = false %}
+      {%- for option in this_option_set.values -%}
+        {% assign swatch_asset = option %}
+        {% assign swatch_handle = option | handleize %}
+
+        {% if shop.metafields.swatch_asset[swatch_handle] != blank %}
+          {% assign swatch_asset_metafield = shop.metafields.swatch_asset[swatch_handle] %}
+          {% if swatch_asset_metafield contains "://" %}
+            {% capture this_swatch_asset %}<img src="{{ swatch_asset_metafield }}" style="width: 50px; height: 50px; object-fit: cover;"/>{% endcapture %}
+          {% else %}
+            {% capture this_swatch_asset %}<div style="width: 30px; height: 30px; background-color: {{ swatch_asset_metafield }};"></div>{% endcapture %}
+          {% endif %}
+          {% assign swatch_asset = this_swatch_asset %}
+        {% endif %}
+
+        {%- if option_name_handle == 'colour' or option_name_handle == 'color'  -%}
+          {%- capture link_img_variant -%}
+            {% assign stop_print_link = 0 %}
+            {%- for variant in product.variants -%}
+              {%- if variant.title contains swatch_asset and stop_print_link < 1 -%}
+                {% assign stop_print_link = stop_print_link | plus: 1 %}
+                {{ variant.image.src }}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {% liquid
+            assign colour_metafield = false
+            assign colour_key = option | downcase
+            if shop.metafields.pfs-swatch-settings[colour_key] != blank
+              assign colour_metafield = shop.metafields.pfs-swatch-settings[colour_key].colorCodes[0]
+            endif
+          %}
+
+       
+        {% if product.variants[forloop.index0].available %}
+    		{% if product.variants[forloop.index0].metafields.my_fields.variant_hide == blank or product.variants[forloop.index0].metafields.my_fields.variant_hide == false %}
+    
+            <label data-hcm="{{ has_colour_metafield }}" for="{{ this_option_set.position }}_{{ option }}" class="pdp-option-swatch option-color position-relative color-{{ option | handle }} {% unless option_selected %}selected-option{% endunless %}" style="cursor: pointer;">
+              <input type="radio"
+              value="{{ option }}"
+              name="option{{ this_option_set.position }}"
+              id="{{ this_option_set.position }}_{{ option }}"
+              data-option="option{{ this_option_set.position }}"
+              data-option-name="{{ option_name_handle }}"
+              data-img="{{ link_img_variant | strip }}"
+              data-available="{{ product.variants[forloop.index0].available }}"
+              class="pdp-option-select btn-check"
+              required {% unless option_selected %}checked{% endunless %}>
+              {% comment %} <img src="{{ swatch_handle | append: '.png' | file_url }}" alt=""> {% endcomment %}
+            </label>
+            {% unless option_selected %}
+              <script>
+                let thisSwatchGroup = document.querySelector(`div.option-variant.variant-option--{{ this_option_set.position }}`);
+                let thisSwatchSelection = thisSwatchGroup.querySelector(".name-option");
+                if (thisSwatchSelection) {
+                  thisSwatchSelection.innerText = `{{ option }}`;
+                }
+              </script>
+            {% endunless %}
+            {% assign option_selected = true %}
+    
+    		{% endif %}
+    		{% endif %}
+
+          <style media="screen">
+            label.color-{{ option | handle }}:before{
+              content: '';
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              background: {{ colour_metafield }};
+              width: 22px;
+              height: 22px;
+              z-index: 0;
+              border-radius: 100%;
+            }
+            label.color-cream:before {
+              border: 1px solid #bfbaba;
+            }
+          </style>
+        {%- else -%}
+          <label for="{{ this_option_set.position }}_{{ option }}" class="pdp-option-swatch option-{{option_name_handle}} {% if forloop.first %}selected-option{% endif %}" style="cursor: pointer;">
+            <input type="radio"
+              value="{{ option }}"
+              name="option{{ this_option_set.position }}"
+              id="{{ this_option_set.position }}_{{ option }}"
+              data-option="option{{ this_option_set.position }}"
+              class="pdp-option-select btn-check"
+              data-img="{{ product.variants[forloop.index0].image.src }}"
+              data-option-name="{{ option_name_handle }}"
+              data-available="{{ product.variants[forloop.index0].available }}"
+              required {% if forloop.first %}checked{% endif %}>{{ swatch_asset }}
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+    {% endif %}
+
+    {%- if option_name_handle == 'size' -%}
+      {% assign variant_size = true %}
+    {%- endif -%}
+
+    <a href="#" class="size-guide js-sizeGuide" {% if variant_size == false or product.metafields.product.size_guide == blank %}hidden{% endif %}>Size Guide</a>
+
+  </div>
+</div>
+
+
+<style>
+  .section-product .btn-action .disabled {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  } 
+</style>

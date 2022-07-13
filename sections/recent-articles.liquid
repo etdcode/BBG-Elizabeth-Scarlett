@@ -1,0 +1,36 @@
+{% if blog.articles.size > 0 %}
+   <div class="recent-articles-section">
+      <div class="pressl__sep">
+         <span>{% render 'icon-bee' %}</span>
+      </div>
+      
+      <div class="page-wrapper">
+         <div class="is-flex align-items-center section__header">
+            <h3 class="section__heading">{{ section.settings.title }}</h3>
+            <a href="{{ blog.url }}" class="section__subheading section__link pc">View all</a>
+         </div>
+         <div class="article__grid">
+            {% assign articles = blog.articles | sort: "created_at" | reverse %}
+            {% for article in articles limit: 3 %}
+               {% render 'article-card', article: article %}
+            {% endfor %}
+
+            <a href="{{ blog.url }}" class="section__subheading section__link sp">View all</a>
+         </div>
+      </div>
+   </div>
+{% endif %}
+
+{% schema %}   
+   {
+      "name": "Recent articles",
+      "settings": [
+         {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Discover more story"
+         }
+      ]
+   }
+{% endschema %}

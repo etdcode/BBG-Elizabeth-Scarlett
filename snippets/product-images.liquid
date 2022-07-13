@@ -1,0 +1,58 @@
+<div class="product-img--inner d-flex">
+  <div class="prod-img-thumb">
+    <div class="sliderThumb{% if product.media.size > 5 %} active-thumb{% endif %}">
+      {%- for media in product.media -%}
+        {%- case media.media_type -%}
+          {%- when 'image' -%}
+            <div class="swiper-slide">
+              <img src="{{ media | img_url: '700x' }}" loading="lazy" alt="{{ image.alt }}">
+            </div>
+          {%- when 'video' -%}
+            <div class="swiper-slide position-relative slider-video">
+              <img src="{{ 'icon-play-video.png' | asset_url }}" class="play-video" alt="">
+              <img src="{{ media.preview_image | img_url: '700x' }}" loading="lazy" class="preview-img-video" alt="{{ image.alt }}">
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="prod-img-main">
+    <div class="sliderMain position-relative">
+      {%- for media in product.media -%}
+        {%- case media.media_type -%}
+          {%- when 'image' -%}
+            <div class="swiper-slide">
+              <img src="{{ 'icon-zoom.svg' | asset_url }}" class="icon-zoom js-zoom" alt="">
+              <img src="{{ media | img_url: 'master' }}" class="img-prod" data-index="{{ forloop.index0 }}" loading="lazy" alt="{{ media.alt }}">
+            </div>
+          {%- when 'video' -%}
+            <div class="swiper-slide position-relative slider-video">
+              {% assign html_video = media | video_tag %}
+              {% assign link_video = html_video | split: 'type="application/x-mpegURL">' | last | split: 'type="video/mp4">' | first | split: '<source' %}
+              <div class="js-playVideos">
+                <img src="{{ 'icon-play-video.png' | asset_url }}" class="play-video" alt="">
+              </div>
+              <video width="100%" preload="metadata" loop class="video">
+                <source {{ link_video }} type="video/mp4">
+              </video>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{%- if product.media.size < 6 -%}
+  <style media="screen">
+    .section-product .product-image .sliderThumb .slick-list:before{
+      display: none;
+    }
+
+    .sliderThumb .slick-track{
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+
+    /* .sliderThumb .slick-list{ height: auto !important} */
+  </style>
+{%- endif -%}

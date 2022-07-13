@@ -1,0 +1,191 @@
+<div class="monogram-demo">
+  <div class="monogram-demo__container">
+
+    <div class="monogram-demo__title-bar">
+      {% for block in section.blocks %}
+        <p class="monogram-demo__title {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">{{ block.settings.tab_name }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="monogram-demo__swiper">
+      <div class="monogram-demo__swiper-wrapper swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="monogram-demo__swiper-slide swiper-slide">
+            <div class="monogram-demo__slide-content">
+              <div class="monogram-demo__preview">
+                <div class="monogram-demo__image-container">
+                  <img src="{{ block.settings.image | img_url: 'master' }}'" loading="lazy" alt="Preview Image" class="monogram-demo__image">
+                  <canvas class="monogram-demo__canvas" data-preview-target="{{ forloop.index0 }}" width="1000" height="550"></canvas>
+                </div>
+              </div>
+              <div class="monogram-demo__info">
+                <div class="monogram-demo__info-container">
+                  <p class="monogram-demo__subtitle">{{ block.settings.subtitle }}</p>
+                  <p class="monogram-demo__demo-title">{{ block.settings.title }}</p>
+                  <p class="monogram-demo__text">{{ block.settings.text }}</p>
+                  <label for="monogramInput_{{ forloop.index0 }}" class="monogram-demo__label">{{ block.settings.label }}</label>
+                  <div class="monogram-demo__input-container">
+                    <input type="text" 
+                      pattern="[a-zA-Z]+"
+                      name="initials" 
+                      id="monogramInput_{{ forloop.index0 }}" 
+                      class="monogram-demo__input" 
+                      placeholder="Type your initials here" 
+                      oninput="updateDemo(this)" 
+                      maxlength="{{ block.settings.char_limit }}" 
+                      data-index="{{ forloop.index0 }}" 
+                      data-xpos="{{ block.settings.xpos }}" 
+                      data-ypos="{{ block.settings.ypos }}" 
+                      data-max="{{ block.settings.char_limit }}"
+                      data-font-size="{{ block.settings.font_size }}"
+                      data-font-colour="{{ block.settings.font_colour }}"
+                    >
+                    <span class="monogram-demo__char-count"><span id="charUpdate" style="margin-right: 3px;" data-char-index="{{ forloop.index0 }}">{{ block.settings.char_limit }}</span> character(s) remaining</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Init slider
+
+  var monogramDemoSwiper = new Swiper(".monogram-demo__swiper", {
+    direction: "horizontal",
+    loop: false,
+    centeredSlides: false,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    noSwiping: true,
+    noSwipingClass: "monogram-demo__swiper-slide"
+  })
+
+  var monogramDemoTitles = document.querySelectorAll(".monogram-demo__title");
+  for (var i = 0; i < monogramDemoTitles.length; i++) {
+    var thisDemoTitle = monogramDemoTitles[i];
+    thisDemoTitle.addEventListener("click", function(clickEvent) {
+      monogramDemoSwiper.slideTo(clickEvent.target.dataset.index, 300);
+      for (var j = 0; j < monogramDemoTitles.length; j++) {
+        monogramDemoTitles[j].classList.remove("active");
+      }
+      clickEvent.target.classList.add("active");
+    })
+  }
+
+  function updateDemo(input) {
+    var inputIndex = input.dataset.index;
+    var preview = document.querySelector("canvas[data-preview-target='" + inputIndex + "']");
+    var context = preview.getContext("2d");
+    context.clearRect(0, 0, preview.width, preview.height);
+    context.font = `${input.dataset.fontSize}px serif`;
+    context.textBaseline = "top";
+    context.fillStyle = input.dataset.fontColour;
+    var text = input.value.toUpperCase();
+    context.fillText(text, input.dataset.xpos, input.dataset.ypos);
+    var charSpace = parseInt(input.dataset.max) - text.length;
+    document.querySelector("span[data-char-index='" + inputIndex + "']").innerHTML = charSpace;
+  }
+
+</script>
+
+{% schema %}
+  {
+    "name": "Demo",
+    "class": "monogram-demo-section",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "product-demo",
+        "name": "Product Demo",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tab_name",
+            "label": "Demo Name",
+            "default": "Product Demo"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Try it out"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Personalise your Pouch"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "default": "Our pouches are your new everyday essential, ideally sized to fit in your handbag, suitcase or to use as a clutch. You can have many of them monogrammed with up to three initials, from A-Z, so they're the perfect personalised gift. They make life a little more organised and a lot more luxurious."
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label Text",
+            "default": "Add up to three initials"
+          },
+          {
+            "type": "range",
+            "id": "char_limit",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "label": "Character Limit",
+            "default": 3
+          },
+          {
+            "type": "range",
+            "id": "xpos",
+            "min": 0,
+            "max": 500,
+            "step": 5,
+            "label": "X Position",
+            "default": 250,
+            "info": "Use values as if the canvas was 1000x550 pixels."
+          },
+          {
+            "type": "range",
+            "id": "ypos",
+            "min": 0,
+            "max": 500,
+            "step": 5,
+            "label": "Y Position",
+            "default": 150,
+            "info": "Use values as if the canvas was 1000x550 pixels."
+          },
+          {
+            "type": "range",
+            "id": "font_size",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "label": "Font Size",
+            "default": 40
+          },
+          {
+            "type": "color",
+            "id": "font_colour",
+            "label": "Font Colour",
+            "default": "#000000"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Preview Image"
+          }
+        ]
+      }
+    ]    
+  }
+{% endschema %}

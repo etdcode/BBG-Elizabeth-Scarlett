@@ -1,0 +1,75 @@
+<section class="about-us_text-banner">
+    <div class="page-width">
+        <div class="content-container" style="background: {{ section.settings.background-color }};">
+            <div class="content-wrapper">
+                {% if section.settings.sub-title != blank %}
+                    <p class="sub-title">{{ section.settings.sub-title }}</p>
+                {% endif %}
+                {% if section.settings.title != blank %}
+                    <p class="title">{{ section.settings.title }}</p>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <p class="description">{{ section.settings.description }}</p>
+                {% endif %}
+                {% if section.settings.cta-text %}
+                    <a href="{{section.settings.cta-link}}" class="cta-text" style="color: {{ section.settings.color }}; background: {{ section.settings.btn-color }};">{{section.settings.cta-text}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Text Banner",
+    "settings": [
+        {
+            "type": "text",
+            "id": "sub-title",
+            "label": "Sub Title",
+            "default": "Add title here"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Add title here"
+        },
+        {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default": "Add description here"
+        },
+        {
+            "type": "text",
+            "id": "cta-text",
+            "label": "CTA Text",
+            "default": "apply for funding"
+        }, 
+        {
+            "type": "url",
+            "id": "cta-link",
+            "label": "CTA Link"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#929C6F"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "CTA Text Color",
+            "default": "#929C6F"
+        },
+        {
+            "type": "color",
+            "id": "btn-color",
+            "label": "CTA Text Color",
+            "default": "#FFFEF9"
+        }
+    ]
+}
+{% endschema %}

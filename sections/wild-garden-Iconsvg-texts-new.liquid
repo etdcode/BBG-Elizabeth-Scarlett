@@ -1,0 +1,66 @@
+{% if section.settings.svgiconpath != blank or section.settings.infotext != blank or section.settings.logoimage != blank %}
+  <section class="about-us_vision-statement {{ section.settings.customClass }}">
+    <div class="background-wrapper" style="background: {{ section.settings.background-color}};">
+      <div class="page-wrapper">
+        <div class="content-wrapper">
+          {% if section.settings.svgiconpath != blank %}
+            <div class="svg_icon_new">
+              {{ section.settings.svgiconpath }}
+            </div>
+          {% endif %}
+          {% if section.settings.infotext != blank %}
+            <div class="statement vision-statement">
+              {{ section.settings.infotext }}
+            </div>
+          {% endif %}
+          {% if section.settings.logoimage != blank %}
+            <div class="wild_garden_Iconsvg_texts_logoimage_new">
+              <img src="{{ section.settings.logoimage | img_url: 'master' }}" alt="{{ section.settings.logoimage.alt }}" />
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Wild Garden Iconsvg Texts",
+	"class": "wild_garden_Iconsvg_texts_new",
+    "settings": [ 
+	  {
+        "type": "text",
+        "id": "customClass",
+        "label": "Custom Class"
+      },
+	  {
+        "type": "color",
+        "id": "background-color",
+        "label": "Background Color",
+        "default": "#FFFEF8"
+      },
+      {
+        "type": "textarea",
+        "id": "svgiconpath",
+        "label": "Add SVG Icon Path"
+      },
+      {
+        "type": "richtext",
+        "id": "infotext",
+        "label": "Add Information Text",
+        "default": "<p>Inspired by sweet summer evenings, wide-open meadows and the magical feeling of freedom that the new season brings, the new Wild Garden collection is a celebration of our beautiful natural world.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "logoimage",
+        "label": "Add Logo Image Display"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Wild Garden Iconsvg Texts"
+      }
+    ]
+  }
+{% endschema %}

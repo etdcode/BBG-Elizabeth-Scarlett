@@ -1,0 +1,107 @@
+<section class="about-us_featured-articles">
+    <div class="icon-bee-wrapper">
+        {% render 'icon-bee' %}
+    </div>
+    <div class="page-width">
+        <div class="top-wrapper">
+            {% if section.settings.title != blank %}
+                    <p class="title">{{ section.settings.title }}</p>
+                {% endif %}
+            {% if section.settings.view-all != blank %}
+                <a href="{{section.settings.view-all-link}}" class="view-all cta-text">{{ section.settings.view-all }}</a>
+            {% endif %}
+        </div>
+
+        {% if section.blocks.size > 0 %}
+            <div class="articles-wrapper">
+                {% for block in section.blocks %}
+                {% assign article = block.settings.article %}
+                {% if article != blank %}
+                    {% assign handle = article.handle | split: "/"  %}
+                    {% assign blog = handle | first | replace: '-', ' ' %}
+                    {% assign seperated_words = article.content | strip_html | replace: '&nbsp;', ' ' | split: ' ' %}
+                    {% if seperated_words.size < 200 %}
+                        {% assign min_read = 1 %}
+                    {% else %}
+                        {% assign min_read = seperated_words.size | divided_by: 200 %}
+                    {% endif %}
+                    {% case article.published_at | date: '%d' %}
+                        {% when 1 %}
+                            {% assign time_format = "st"  %}
+                        {% when 2 %}
+                            {% assign time_format = "nd"  %}
+                        {% when 3 %}
+                            {% assign time_format = "rd"  %}
+                        {% else %}
+                            {% assign time_format = "th"  %}
+                    {% endcase %}
+
+                    {% assign date_format = value %}
+                        <a href="{{ article.url }}" class="article-wrapper" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ article.image.src | img_url: '500x' }}" alt="{{ article.image.alt }}">
+                            </div>
+                            <div class="info-wrapper">
+                                <span class="min-read">{{ min_read }} min read</span>
+                                <span class="published-at">{{ article.published_at | date: '%d' }}{{time_format}} {{ article.published_at | date: '%b %Y' }}</span>
+                                <span class="blog">{{ blog }}</span>
+                            </div>
+                            <p class="title">{{ article.title }}</p>
+                        </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="view-all-mobile">
+            {% if section.settings.view-all != blank %}
+                <a href="{{section.settings.view-all-link}}" class="view-all cta-text">{{ section.settings.view-all }}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Featured Articles",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Our Proudest Achievements"
+            },
+            {
+                "type": "text",
+                "id": "view-all",
+                "label": "'View all' label",
+                "default": "view all"
+            },
+            {
+                "type": "url",
+                "id": "view-all-link",
+                "label": "Link to all articles"
+            }
+        ],
+        "blocks": [
+        {
+            "type": "featured-article",
+            "name": "Featured Article",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "article",
+                    "label": "Featured Article"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 3,
+        "presets": [
+            {
+                "category": "About Us",
+                "name": "Featured Articles"
+            }
+        ]
+    }
+{% endschema %}

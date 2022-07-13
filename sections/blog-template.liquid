@@ -1,0 +1,43 @@
+{% paginate blog.articles by 6 %}
+
+{%- comment -%}
+{% assign sorted_articles = blog.articles | sort: 'created_at' | reverse %}
+{%- endcomment -%}
+{% render 'featured-article', article: blog.articles[0] %}
+
+<div class="bg-off-white">
+  <div class="page-wrapper blog-list-section" no-page="{{ paginate.pages }}" tag-index="{{ tag_index }}">
+    <div class="blog-list__nav-list">
+      <a class="blog-list__nav-item selected">All</a>
+      {% for tag in blog.all_tags %}
+        <a tag="{{ tag | handleize }}" class="blog-list__nav-item">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  
+    <div class="is-flex blog-list__blog {% if blog.articles.size > 2 %}hide-first{% endif %}">
+      {% for article in blog.articles %}
+        <div class="blog-list__article">
+          {% render 'article-card', article: article %}
+        </div>
+      {% endfor %}
+    </div>
+  
+    <button href="{{ blog.url }}" class="btn-secondary center js-blog-loadmore">{{ section.settings.more_text | default: "Load more" }}</button>
+  </div>
+</div>
+
+{% endpaginate %}
+
+{% schema %}   
+   {
+      "name": "Blog",
+      "settings": [
+         {
+            "id": "more_text",
+            "type": "text",
+            "label": "More text",
+            "default": "Load more"
+         }
+      ]
+   }
+{% endschema %}

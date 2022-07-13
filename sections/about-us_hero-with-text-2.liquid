@@ -1,0 +1,154 @@
+<section class="about-us_hero-with-text">
+    <div class="content-wrapper">
+        <div class="background-wrapper {% if section.settings.background-height == "medium" %}
+            medium-height    
+        {% endif %}">
+            {% if section.settings.background-type == "image" and section.settings.image != blank %}
+                <img src="{{ section.settings.image | img_url: "master" }}" alt="{{ section.settings.image.alt }}" loading="lazy">
+            {% elsif section.settings.background-type == "video" %}
+                {% if section.settings.video-type == "own" and section.settings.own-url != blank %}
+                    {% render 'about-us_video' with section.settings.own-url as video-url%}
+                {% elsif section.settings.video-type == "external" and section.settings.external-url != blank %}
+                    {% render 'about-us_video' with section.settings.external-url as video-url %}
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <div class="text-wrapper">
+            {% if section.settings.sub-title != blank %}
+                <p class="sub-title">{{ section.settings.sub-title }}</p>
+            {% endif %}
+            {% if section.settings.title != blank %}
+                <h1 class="title">{{ section.settings.title }}</h1>
+            {% endif %}
+            {% if section.settings.cta-text != blank %}
+                <a href="{{ section.settings.cta-url }}" class="cta-wrapper">
+                    <p class="cta-text" style="color: {{ section.settings.color }}; background: {{ section.settings.btn-color }};">{{ section.settings.cta-text }}</p>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Image/Video With Text",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Background"
+            },
+            {
+                "type": "radio",
+                "id": "background-height",
+                "label": "Background Height",
+                "default": "medium",
+                "options": [
+                    {
+                        "value": "large",
+                        "label": "Large"
+                    },
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }
+                ]
+            },
+            {
+                "type": "radio",
+                "id": "background-type",
+                "label": "Choose media type for background",
+                "default": "image",
+                "options": [
+                    {
+                        "value": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "value": "video",
+                        "label": "Video"
+                    }
+                ]
+            },
+            {
+                "type": "header",
+                "content": "Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Background Image"
+            }, 
+            {
+                "type": "header",
+                "content": "Video url",
+                "info": "You can embed your own video URL or use external URL (from Youtube or Vimeo only)."
+            },
+            {
+                "type": "radio",
+                "id": "video-type",
+                "label": "Choose video URL type",
+                "default": "own",
+                "options": [
+                    {
+                        "value": "own",
+                        "label": "Own"
+                    },
+                    {
+                        "value": "external",
+                        "label": "External"
+                    }
+                ]
+            },
+            {
+                "type": "url",
+                "id": "own-url",
+                "label": "Your Own Video URL"
+            },
+            {
+                "type": "video_url",
+                "id": "external-url",
+                "accept": [
+                    "youtube",
+                    "vimeo"
+                ],
+                "label": "Youtube/Vimeo Video URL", 
+                "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+            },
+            {
+                "type": "text",
+                "id": "sub-title",
+                "label": "Sub Title",
+                "default": "Welcome to Our Purpose"
+            },
+            {
+                "type": "richtext",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "cta-text",
+                "label": "CTA Button Text",
+                "default": "Donate now"
+            },
+            {
+                "type": "url",
+                "id": "cta-url",
+                "label": "CTA Link"
+            },
+            {
+                "type": "color",
+                "id": "color",
+                "label": "CTA Text Color",
+                "default": "#986473"
+            },
+            {
+                "type": "color",
+                "id": "btn-color",
+                "label": "CTA Text Color",
+                "default": "#FFFEF9"
+            }
+        ]
+    }
+{% endschema %}

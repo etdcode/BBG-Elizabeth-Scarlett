@@ -1,0 +1,107 @@
+<section class="about-us_image-with-accordion">
+    <div class="background-wrapper" style="background: {{ section.settings.background-color}};">
+        <div class="page-width">
+            <div class="content-grid">
+                <div class="content-wrapper">
+                    {% if section.settings.sub-title != blank %}
+                        <p class="sub-title">{{ section.settings.sub-title }}</p>
+                    {% endif %}
+                    {% if section.settings.title != blank %}
+                        <p class="title">{{ section.settings.title }}</p>
+                    {% endif %}
+    
+                    {% if section.blocks.size > 0 %}
+                    <div class="accordion accordion-flush" id="accordion-{{section.id}}">
+                        {% for item in section.blocks %}
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="heading{{forloop.index}}">
+                                    <button class="accordion-button  sub-title  {% unless forloop.first == true %}collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{forloop.index}}">
+                                    {{ item.settings.title }}
+                                    </button>
+                                </div>
+                                <div id="collapse{{forloop.index}}" class="accordion-collapse {% unless forloop.first == true %}collapse{% endunless %}" data-bs-parent="#accordion-{{section.id}}">
+                                    <div class="accordion-body description">
+                                        {{ item.settings.description }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                </div>
+    
+                <div class="content-wrapper-mobile">
+                    {% if section.settings.sub-title != blank %}
+                        <p class="sub-title">{{ section.settings.sub-title }}</p>
+                    {% endif %}
+                    {% if section.settings.title != blank %}
+                        <p class="title">{{ section.settings.title }}</p>
+                    {% endif %}
+                </div>
+    
+                <div class="img-wrapper">
+                    {% if section.settings.image != blank %}
+                        <img src="{{section.settings.image | img_url: '700x'}}" alt="{{section.settings.image.alt}}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Image With Accordion",
+    "settings": [
+        {
+            "type": "text",
+            "id": "sub-title",
+            "label": "Sub Title",
+            "default": "Add title here"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Add title here"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "background-color",
+          "label": "Background Color",
+          "default": "#FAF4EC"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "accordion-item",
+            "name": "Accordion Item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Add title here"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 3,
+    "presets": [
+    {
+        "category": "About Us",
+        "name": "Image With Accordion"
+    }
+    ]
+}
+{% endschema %}

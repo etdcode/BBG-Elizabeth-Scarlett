@@ -1,0 +1,116 @@
+<div class="boost-pfs-filter-product-item boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_item rich-text-and-image card-{{ block.settings.card_width }}" js-product-card data-product-card-position="{{ block.settings.card_position }}" data-mobile-card-position="{{ block.settings.mobile_card_position }}" id="{{ block.id }}">
+    <div class="boost-pfs-filter-product-item-inner {% if block.settings.img != blank %}forward-image{% endif %}" style="
+        {% if block.settings.background_color != blank %}
+          background-color: {{ block.settings.background_color }}; 
+        {% endif %}
+        {% if  block.settings.background_image != blank %}
+            background-image: url({{ block.settings.background_image | img_url: 'master' }});
+        {% endif %}
+        {% if block.settings.show_star %}
+            display: block;
+        {% endif %}
+        ">
+        <div class="wrapper-flex content-{{ block.settings.content_alignment }}">
+            {% if block.settings.img != blank %}
+                <div class="img-wrap">
+                    <img src="{{ block.settings.img | img_url: 'master' }}" alt="" class="image">
+                </div>
+            {% endif %}
+            {% if block.settings.show_star %}
+            {% assign numberOfStar = block.settings.number_star %}
+                <div class="icon-star">
+                    {% for i in (1..numberOfStar) %}
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.4752 5.37758L10.6811 4.68084L8.538 0.336105C8.47947 0.217149 8.38317 0.120851 8.26421 0.0623173C7.96588 -0.0849617 7.60334 0.0377708 7.45418 0.336105L5.31108 4.68084L0.516958 5.37758C0.384784 5.39646 0.26394 5.45877 0.171418 5.55318C0.0595651 5.66815 -0.00207117 5.82281 5.31449e-05 5.9832C0.00217746 6.14359 0.0678885 6.29657 0.182747 6.40853L3.65136 9.79028L2.83188 14.5655C2.81266 14.6766 2.82496 14.7908 2.86736 14.8953C2.90977 14.9998 2.9806 15.0902 3.07181 15.1565C3.16302 15.2227 3.27097 15.2621 3.38342 15.2701C3.49587 15.2781 3.60831 15.2545 3.708 15.2018L7.99609 12.9473L12.2842 15.2018C12.4012 15.2642 12.5372 15.2849 12.6675 15.2623C12.996 15.2056 13.2169 14.8941 13.1603 14.5655L12.3408 9.79028L15.8094 6.40853C15.9038 6.31601 15.9661 6.19517 15.985 6.06299C16.036 5.73256 15.8057 5.42667 15.4752 5.37758Z" fill="#CEA56C"/>
+                        </svg>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if block.settings.subtitle != blank %}
+                <div class="subtitle" {% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};" {% endif %}>
+                    {{  block.settings.subtitle }}
+                </div>
+            {% endif %}
+           {% if block.settings.title != blank %}
+                <h3 class="title" {% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};" {% endif %}>
+                    {{ block.settings.title }}
+                </h3>
+                {% if block.settings.line_position == 'under_title' %}
+                    <div class="line {% if block.settings.show_line == false %}hide-line{% endif %}" {% if block.settings.text_color != blank  %} style="background: {{ block.settings.text_color }};" {% endif %}></div>
+                {% endif %}
+            {% endif %}
+            {% if block.settings.content != blank %}
+                <div class="content" {% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};" {% endif %}>
+                    {{ block.settings.content }}
+                </div>
+            {% endif %}
+            {% if block.settings.line_position == 'under_text' %}
+                    <div class="line {% if block.settings.show_line == false %}hide-line{% endif %}" {% if block.settings.text_color != blank  %} style="background: {{ block.settings.text_color }};" {% endif %}></div>
+                {% endif %}
+            {% if block.settings.date != blank and block.settings.author != blank  %}
+                <div class="card-info">
+                    <div class="date">
+                    {{ block.settings.date }}
+                    </div>
+                    <div class="author">
+                    {{ block.settings.author }}
+                    </div>
+                </div>
+            {% endif %}
+            {% if block.settings.button_title != blank %}
+                <div class="btn" {% if block.settings.button_bg_color != blank %} style="background: {{ block.settings.button_bg_color }};" {% endif %}>
+                        <a href="{{ block.settings.button_url }}" {% if block.settings.button_title_color != blank %} style="color: {{ block.settings.button_title_color }};" {% endif %}>
+                            {{ block.settings.button_title }}
+                        </a>
+                </div>
+            {% endif %}
+            {% if block.settings.signature_img != blank %}
+                <div class="signature-img">
+                    <img src="{{ block.settings.signature_img | img_url: 'master' }}" alt="" class="signature">
+                </div>
+            {% endif %}
+            {% if block.settings.show_newsletter %}
+                <div class="card-form">
+                    <div class="input-group newsletter-input-group">
+                    <form method="post" action="/contact#Contact_footer" id="Contact_footer" accept-charset="UTF-8" class="contact-form form-single-field"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                        <div class="input-group ">
+                        <input type="email" name="contact[email]" id="Contact_footer-email" class="form-control newsletter-form" value="" placeholder="Email address" aria-label="Email address" aria-required="true" autocorrect="off" autocapitalize="off" required="">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn-secondary" name="commit">
+                            <span>notify them</span>
+                            </button>
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+    #{{ block.id }}.rich-text-and-image .title {
+        font-size: {{ block.settings.font_size_title }}px;
+    }
+    
+    #{{ block.id }}.rich-text-and-image .img-wrap {
+        height: 100%;
+        max-height: {{ block.settings.desk_image_height }}px;
+    }
+    #{{ block.id }}.rich-text-and-image .content{
+        max-width: {{ block.settings.content_width_desk }}px;
+    }
+    @media screen and (max-width: 767px) {
+        #{{ block.id }}.rich-text-and-image .title {
+            font-size: {{ block.settings.mob_font_size_title }}px;
+        }
+        #{{ block.id }}.rich-text-and-image .img-wrap {
+            max-height: {{ block.settings.mob_image_height }}px;
+        }
+        #{{ block.id }}.rich-text-and-image .content{
+            max-width: {{ block.settings.content_width_mob }}px;
+        }
+    }
+</style>

@@ -1,0 +1,30 @@
+{% assign collection = section.settings.collection %}
+<div class="gift__grid">
+  {% for product in collection.products %}
+    {% assign downcase_title = product.title | downcase %}
+    {% if downcase_title contains "gift note" %}
+      {% for variant in product.variants %}
+        {% if variant.available %}
+          {% render "gift-product-card", type: "variant". product: product, variant: variant %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% if product.available %}
+        {% render 'gift-product-card', type: "product", product: product %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Gift products",
+    "settings": [
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ]
+  }
+{% endschema %}

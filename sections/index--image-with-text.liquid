@@ -1,0 +1,93 @@
+<div style="background:{{ section.settings.background-color }};">
+  <div class="page-wrapper index__image-with-text">
+     <div class="cp-carousel__slide">   
+        {% for i in (1..2) %}
+           {% capture slide_img %}image_{{ i }}{% endcapture %}
+           {% capture slide_caption %}caption_{{ i }}{% endcapture %}
+           {% capture slide_link %}link_{{ i }}{% endcapture %}
+
+           <div class="cp-carousel__block">
+              <div class="cp-carousel__img-wrapper">
+                 <img src="{{ section.settings[slide_img] | img_url: '600x' }}" class="fixed-ratio">
+              </div>
+
+              {% if section.settings[slide_caption] != blank or section.settings.button_text != blank %}
+                 <div class="cp-carousel__info">
+                    {% if section.settings[slide_caption] != blank %}
+                       <div class="cp-carousel__caption">{{ section.settings[slide_caption] }}</div>                     
+                    {% endif %}
+
+                    {% if section.settings.button_text != blank %}
+                       <a href="{{ section.settings[slide_link] }}" class="section__subheading section__link cp-carousel__link">{{ section.settings.button_text }}</a>                  
+                    {% endif %}
+                 </div>
+              {% endif %}
+           </div>            
+        {% endfor %}
+     </div> 
+  </div>
+</div>
+{% schema %}
+   {
+      "name": "Image with text",
+      "settings": [
+		 {
+          "type": "color",
+          "id": "background-color",
+          "label": "Background Color"
+         }, 
+         {
+            "id": "button_text",
+            "type": "text",
+            "label": "Button text",
+            "default": "Shop now"
+         },
+         {
+            "type": "header",
+            "content": "Left block"
+         },
+         {
+            "id": "image_1",
+            "type": "image_picker",
+            "label": "Image"
+         },
+         {
+            "id": "caption_1",
+            "type": "text",
+            "label": "Caption",
+            "default": "Caption 1"
+         },
+         {
+            "id": "link_1",
+            "type": "url",
+            "label": "Link"
+         },
+         {
+            "type": "header",
+            "content": "Right block"
+         },
+         {
+            "id": "image_2",
+            "type": "image_picker",
+            "label": "Image"
+         },
+         {
+            "id": "caption_2",
+            "type": "text",
+            "label": "Caption",
+            "default": "Caption 2"
+         },
+         {
+            "id": "link_2",
+            "type": "url",
+            "label": "Link"
+         }
+      ],
+      "presets": [
+         {
+            "name": "Image with text",
+            "category": "Image"
+         }
+      ]
+   }
+{% endschema %}

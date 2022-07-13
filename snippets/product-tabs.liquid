@@ -1,0 +1,37 @@
+<!-- snippets/product-tabs.liquid -->
+
+{% comment %} 
+  This section controls the tabbed content on a PDP
+
+      - To add tabs to a product use the product metafields
+      - Set the namespace for the metafield as "product_tab" and the key for the metafield to whatever you want the tab title to be
+      - The tab title will be automagically capitalized and any underscores will be replaced with spaces
+      - For example, if i want to add a Product specifications tab, i would add the metafield product_tab.product_specifications
+      - The value of the metafield is the tab's content
+
+{% endcomment %}
+
+{% if product.metafields.product_tabs != blank %}
+
+  {% comment %} Tab headers {% endcomment %}
+  <div class="container tabbed-headers">
+    <ul class="nav nav-tabs">
+      {% for tab_field in product.metafields.product_tabs %}
+        <li class="nav-item">
+          <label class="nav-link cursor-pointer {% if forloop.first %}text-primary active{% endif %}" for="tab{{ forloop.index0 }}">{{ tab_field | first | replace: "_", " " | capitalize }}</label>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% comment %} Tab content {% endcomment %}
+  <div class="container mb-5 tabbed-content">
+    {% for tab_field in product.metafields.product_tabs %}
+      <section>
+        <input type="radio" name="active_tab" id="tab{{ forloop.index0 }}" hidden aria-hidden="true" {% if forloop.first %}checked{% endif %}>
+        <div class="p-3 border border-top-0 tabbed-content__content">{{ tab_field | last }}</div>
+      </section>
+    {% endfor %}
+  </div>
+
+{% endif  %}

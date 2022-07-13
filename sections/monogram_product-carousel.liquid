@@ -1,0 +1,181 @@
+<div class="monogram-products">
+  <div class="monogram-products__container">
+
+    <div class="monogram-products__title-bar">
+      {% for block in section.blocks %}
+        <p class="monogram-products__title {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">{{ block.settings.tab_title }}</p>
+      {% endfor %}
+    </div>
+
+    <div class="monogram-products__swiper">
+      <div class="monogram-products__swiper-wrapper swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.collection] %}
+          <div class="monogram-products__swiper-slide swiper-slide">
+
+            <div class="monogram-products__collection-container">
+              <div class="monogram-products__collection-info-container">
+                <div class="monogram-products__collection-info">
+                  <p class="monogram-products__collection-subtitle">{{ block.settings.subtitle }}</p>
+                  <p class="monogram-products__collection-title">{{ block.settings.title }}</p>
+                  <p class="monogram-products__collection-text">{{ block.settings.text }}</p>
+                  <a href="{{ collection.url }}" class="monogram-products__collection-cta">{{ block.settings.cta_text }}</a>
+                </div>
+              </div>
+              <div class="monogram-products__collection">
+                <div class="monogram-products__collection-swiper" id="collectionSwiper_{{ forloop.index0 }}">
+                  <div class="monogram-products__collection-swiper-wrapper swiper-wrapper">
+                    {% for product in collection.products %}
+                      <div class="monogram-products__collection-swiper-slide swiper-slide">
+                        <a class="monogram-products__card" href="{{ product.url }}">
+                          <div class="monogram-products__image-wrapper">
+                            <div class="monogram-products__image-container">
+                              <img src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" alt="{{ product.title }}" class="monogram-products__image">
+                              {% liquid
+                                assign has_monogram = false
+                                for tag in product.tags
+                                  if tag contains "monogram"
+                                    assign has_monogram = true
+                                  endif
+                                endfor
+                              %}
+                              {% if has_monogram %}
+                                <p class="monogram-products__banner">Monogram Me</p>
+                              {% endif %}
+                            </div>
+                          </div>
+                          <p class="monogram-products__product-title">{{ product.title }}</p>
+                            <div class="monogram-products__price-container">
+                              <p class="monogram-products__product-price">{{ product.price | money }}</p>
+                              {% if product.compare_at_price > 0 %}
+                                <p class="monogram-products__product-compare-at">{{ product.compare_at_price | money }}</p>
+                              {% endif %}
+                            </div>
+                          {% liquid
+                            assign has_colour = false
+                            for option in product.options
+                              assign option_downcase = option | downcase
+                              if option_downcase == "colour" or option_downcase == "color"
+                                assign has_colour = true
+                              endif
+                            endfor
+                          %}
+                          {% if has_colour %}
+                            <p class="monogram-products__colours">+ Colours</p>
+                          {% endif %}
+                        </a>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="monogram-products__arrows left" id="left_arrow_{{ forloop.index0 }}">{% render 'icon-carousel-arrow' %}</div>
+            <div class="monogram-products__arrows right" id="right_arrow_{{ forloop.index0 }}">{% render 'icon-carousel-arrow' %}</div>
+              </div>
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Init slider
+
+  var monogramProductsSwiper = new Swiper(".monogram-products__swiper", {
+    direction: "horizontal",
+    loop: false,
+    centeredSlides: false,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    noSwiping: true,
+    noSwipingClass: "monogram-products__swiper-slide",
+  })
+
+  var monogramProductsTitles = document.querySelectorAll(".monogram-products__title");
+  for (var i = 0; i < monogramProductsTitles.length; i++) {
+    var thisproductsTitle = monogramProductsTitles[i];
+    thisproductsTitle.addEventListener("click", function(clickEvent) {
+      monogramProductsSwiper.slideTo(clickEvent.target.dataset.index, 300);
+      for (var j = 0; j < monogramProductsTitles.length; j++) {
+        monogramProductsTitles[j].classList.remove("active");
+      }
+      clickEvent.target.classList.add("active");
+    })
+  }
+
+  {% for block in section.blocks %}
+    var collectionSwiper_{{ forloop.index0 }} = new Swiper("#collectionSwiper_{{ forloop.index0 }}", {
+      direction: "horizontal",
+      loop: false,
+      centeredSlides: false,
+      slidesPerView: 2.3,
+      spaceBetween: 16,
+      slidesOffsetAfter: 32,
+      breakpoints: {
+        768: {
+          slidesPerView: 3.3
+        },
+      },
+      navigation: {
+        prevEl: '#left_arrow_{{ forloop.index0 }}',
+        nextEl: '#right_arrow_{{ forloop.index0 }}',
+      }
+    })
+  {% endfor %}
+
+</script>
+
+{% schema %}
+  {
+    "name": "Product Carousel",
+    "class": "monogram-product-carousel-section",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection Slider",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tab_title",
+            "label": "Tab Title",
+            "default": "Collection Tab"
+          },   
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Monogram me"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Collection"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "default": "Embroidered with Elizabeth's hand-painted designs from her travels, every limited-edition collections is designed to bring a little more luxury to the every day."
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA Text",
+            "default": "Shop Collection"
+          }
+        ]
+      }
+    ]    
+  }
+{% endschema %}

@@ -1,0 +1,31 @@
+{% if block.settings.video_url != blank %}
+    <div data-custom-block="8" class="boost-pfs-filter-product-item card_video boost-pfs-action-list-enabled boost-pfs-action-list-enabled card-{{ block.settings.card_width }}" js-product-card data-product-card-position="{{ block.settings.card_position }}" data-mobile-card-position="{{ block.settings.mobile_card_position }}">  
+        <div class="boost-pfs-filter-product-item-inner">
+        <div class="card_video_wrap video-wrapper-collection">
+
+            <video autoplay="" muted="" loop="" playsinline="" class="video--self-host">
+            <source src="{{ block.settings.video_url }}" type="video/mp4">
+            </video>
+        
+            <div class="mute-button-btn">
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.80952 9.16667H0V18.3333H6.28571L13.881 25.9286V16.2381L19.9048 22.5238C19.6429 22.7857 17.7222 23.8333 16.7619 24.0952V26.9762C18.2286 26.9762 21.2143 25.6667 22.5238 24.619L25.4048 27.5L27.5 25.4048L2.09524 0L0 2.09524L6.80952 9.16667Z" fill="#FFFEF9"></path>
+                <path d="M13.881 7.33333L11 4.45238L13.881 1.57143V7.33333Z" fill="#FFFEF9"></path>
+                <path d="M16.7619 10.4762V7.59524C20.1667 8.11905 20.8651 12.1349 20.6905 13.881L16.7619 10.4762Z" fill="#FFFEF9"></path>
+                <path d="M23.0476 8.38095C21.3714 5.44762 18.1587 3.84127 16.7619 3.40476V0C20.1667 0.785714 22.5238 2.35714 23.5714 3.40476C24.619 4.45238 26.1905 6.28571 27.2381 10.4762C28.0762 13.8286 27.1508 17.9841 26.4524 19.6429L23.8333 17.5476C24.1825 15.7143 24.7238 11.3143 23.0476 8.38095Z" fill="#FFFEF9"></path>
+            </svg>
+            </div>
+            
+            <div class="unmute-button-btn">
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.75 14.1293C21.75 11.2857 20.1067 8.8287 17.7223 7.64453V20.622C20.1067 19.4299 21.75 16.9729 21.75 14.1293Z" fill="#FFFEF9"></path>
+                <path d="M0 9.29606V18.9627H6.44442L14.5 27.0183V1.24048L6.44442 9.29606H0Z" fill="#FFFEF9"></path>
+                <path d="M17.7223 0V3.32692C22.3784 4.7125 25.7778 9.02217 25.7778 14.1294C25.7778 19.2367 22.3784 23.5463 17.7223 24.9319V28.2588C24.1748 26.7928 29 21.033 29 14.1294C29 7.22583 24.1748 1.46609 17.7223 0Z" fill="#FFFEF9"></path>
+            </svg>
+            </div>
+        
+        </div>
+        </div>
+    </div>
+{% endif %}
+

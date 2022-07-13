@@ -1,0 +1,111 @@
+<script type="text/javascript">
+  (function e(){var e=document.createElement("script");
+  e.type="text/javascript",e.async=true,
+  e.src="//staticw2.yotpo.com/Jt3RjoAxKNCh52N3ZQigD75VUxK6qWDZTXpmMB1J/widget.js";
+  var t=document.getElementsByTagName("script")[0];
+  t.parentNode.insertBefore(e,t)})();</script>
+<div class="instagram-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12">
+        <div class="section__subheading">{{ section.settings.label }}</div>
+        <h3 class="section__heading">{{ section.settings.title }}</h3>
+        <p class="section__desc">{{ section.settings.text }}</p>
+        <a class="section__subheading section__link" target="_blank" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+      </div>
+      <div class="col-12">
+        <div
+        class="yotpo yotpo-pictures-widget"
+        data-gallery-id="618a9a69fd96506cb1ab7a6c">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ {% schema %}
+ {
+   "name": "Instagram Gallery",
+   "settings": [
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Discover"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Our Community"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Share your #ElizabethScarlett haul and tag @elizabethscarlett for a chance to be featured!"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Follow Us"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      }
+   ],
+   "presets": [
+     {
+       "category": "Image",
+       "name": "Instagram Gallery"
+     }
+   ]
+ }
+{% endschema %}
+
+<style>
+  .instagram-section {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .instagram-section .section__link {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .instagram-section .gallery-618a9a69fd96506cb1ab7a6c .yotpo-load-more-button * {
+    display: block !important;
+    color: #fffef9 !important;
+    font-size: 12px !important;
+    line-height: 12px !important;
+    text-align: center !important;
+    letter-spacing: .19em !important;
+    text-transform: uppercase !important;
+    padding: 15px !important;
+    border-radius: 0 !important;
+    border: 1px solid transparent !important;
+    background-color: #986473 !important;
+    transition: .3s background-color ease-out !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .yotpo-pictures-gallery .load-btn-white, .yotpo-pictures-widget .load-btn-white {
+    border: 0px !important;
+    padding: 0px !important;
+    border: none !important; 
+  }
+  .yotpo-pictures-gallery-title-wrapper  {
+    display: none !important;
+  }
+  @media (max-width: 768px) {
+    .instagram-section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+</style>

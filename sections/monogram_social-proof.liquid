@@ -1,0 +1,115 @@
+<div class="monogram-social">
+  <div class="monogram-social__container">
+    <div class="monogram-social__content">
+      <p class="monogram-social__subtitle">{{ section.settings.subtitle }}</p>
+      <p class="monogram-social__title">{{ section.settings.title }}</p>
+      <p class="monogram-social__text">{{ section.settings.text }}</p>
+      <a href="{{ section.settings.url }}" class="monogram-social__cta">{{ section.settings.cta_text }}</a>
+    </div>
+    <div class="monogram-social__images">
+      <ul class="monogram-social__mosaic-container">
+        {% for block in section.blocks %}
+          <li class="monogram-social__mosaic-item">
+            {% comment %} Don't lazy load these images {% endcomment %}
+            <img draggable="false" src="{{ block.settings.image | img_url: 'master' }}" alt="User Content" class="monogram-social__mosaic-image">
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Enables horizontal scroll and drag
+  (function() {
+
+    // Scroll
+    var thisScrollContainer = document.querySelector(".monogram-social__images");
+    thisScrollContainer.addEventListener("wheel", function(event) {
+      event.preventDefault();
+      thisScrollContainer.scrollLeft += event.deltaY;
+    });
+
+    // Drag
+    var thisScrollContainerPosition = {left: 0, x: 0};
+    function handleMouseDown(event) {
+      thisScrollContainerPosition = {
+        left: thisScrollContainer.scrollLeft,
+        x: event.clientX,
+      };
+      thisScrollContainer.style.cursor = "grabbing";
+      thisScrollContainer.style.userSelect = "none";
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    } 
+    function handleMouseMove(event) {
+      var directionX = event.clientX - thisScrollContainerPosition.x;
+      thisScrollContainer.scrollLeft = thisScrollContainerPosition.left - directionX;
+    }
+    function handleMouseUp() {
+      thisScrollContainer.style.cursor = "grab";
+      thisScrollContainer.style.removeProperty("user-select");
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    }
+    thisScrollContainer.addEventListener("mousedown", handleMouseDown);
+
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "UGC",
+    "class": "monogram-social-section",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Monogrammed by ES"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "Forever Yours!"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "Share your #MonogrammedbyES haul and tag @elizabethscarlett for a chance to be featured!"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "CTA URL"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Follow Us"
+      },
+      {
+        "type": "header",
+        "content": "Images",
+        "info": "Add images to this section by adding up to 12 image blocks. To get the full effect of this section you should upload exactly 12 images."
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Image Block",
+        "type": "image_block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

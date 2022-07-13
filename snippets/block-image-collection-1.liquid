@@ -1,0 +1,32 @@
+<div class="boost-pfs-filter-product-item-inner" style="
+   {% if background_color.size > 0 %}
+      background-color:  {{ background_color }}; 
+      
+      {% endif %}
+      {% if background_image.size > 0 %}
+      background-image: url({{ background_image }});
+      {% endif %}
+      
+      ">
+    <div class="wrapper-flex">
+        <div class="subtitle" style="  {% if text_color.size > 0 %} color: {{ text_color }}; {% endif %} ">
+          {% if subtitle.size > 0 %}
+          {{ subtitle }}
+         {% endif %}
+       </div>
+       <div class="title" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}  ">
+        {% if title.size > 0 %}
+        {{ title }}
+       {% endif %}
+      </div>
+      <div class="line" style="{% if text_color.size > 0  %}background: {{ text_color }};  {% endif %}"></div>
+      <div class="content" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}">
+        {% if content.size > 0 %}
+        {{ content }}
+       {% endif %}
+       </div>
+       <div class="btn" {% if button_bg_color.size > 0 %} style="background: {{ button_bg_color }};" {% endif %}>
+       <a href="{{ button_url }}" {% if button_title_color.size > 0 %} style="color: {{ button_title_color }};" {% endif %}>{{ button_title }}</a>
+      </div>
+    </div>
+</div>

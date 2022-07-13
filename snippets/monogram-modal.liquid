@@ -1,0 +1,77 @@
+{% liquid 
+  assign monogramCharge = product.metafields.monograms.charge | times: 1
+  assign totalCharge = product.price | plus: monogramCharge | money
+  unless totalCharge contains "."
+    assign totalCharge = totalCharge | append: ".00"
+  endunless 
+  assign monogramMoney = monogramCharge | money
+  unless monogramMoney contains "."
+    assign monogramMoney = monogramMoney | append: ".00"
+  endunless 
+%}
+
+<script id="monogramJsonData" type="appliation/json">
+  {
+    "variants": {{ product.variants | json }},
+    "metafields": {
+      {%- for metafield in product.metafields.monograms -%}
+        "{{ metafield | first }}": "{{ metafield | last }}"{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    }
+  }
+</script>
+
+<div class="monogram-modal">
+  <div class="monogram-modal__background" onclick="Monogram.destroyModal()"></div>
+  <div class="monogram-modal__main">
+
+    {% comment %} Close {% endcomment %}
+    <img src="{{ 'cancel.svg' | asset_url }}" alt="Close Modal" onclick="Monogram.destroyModal()" class="monogram-modal__close">
+
+    {% comment %} Details {% endcomment %}
+    <div class="monogram-modal__inner">
+      <p class="monogram-modal__title">Bespoke Monogramming</p>
+      <form action="/monogram" class="monogram-modal__form">
+
+        <label for="monogramInput" class="monogram-modal__label">
+          <span class="monogram-modal__label-text">Add up to {{ product.metafields.monograms.maxCharsText }}</span>
+          <span class="monogram-modal__price">+{{ monogramMoney }}</span>
+        </label>
+
+        <div class="monogram-modal__input-container">
+          <input type="text" name="initials" pattern="^[a-zA-Z]+" id="monogramInput" class="monogram-modal__input" placeholder="Type your initials here" oninput="Monogram.updatePreview(this)" maxlength="{{ product.metafields.monograms.maxChars }}">
+          <span class="monogram-modal__char-count"><span id="charUpdate" style="margin-right: 3px;">{{ product.metafields.monograms.maxChars }}</span> character(s) remaining</span>
+        </div>
+
+        <p class="monogram-modal__info">All monogrammed products are made to order with care and love, and will be dispatched as soon as they’re ready. Our current delivery time is 5-7 days. Please note, monogrammed items cannot be returned unless faulty. Monogram placement might vary slightly from the preview to best suit the product.</p>        
+        <div class="monogram-modal__checkbox-container">
+          <div class="monogram-modal__checkbox">
+            <input type="checkbox" name="checkbox" id="monogramCheckbox" class="monogram-modal__checkbox-input" onchange="Monogram.maybeEnableButton()">
+            <div class="monogram-modal__checkbox-display"></div>
+          </div>
+          <label for="monogramCheckbox" class="monogram-modal__checkbox-label">I agree to monogramming delivery times.</label>
+        </div>
+
+        <div class="monogram-modal__meta">
+          <p class="monogram-modal__meta-title">Total:</p>
+          <p class="monogram-modal__meta-total">{{ totalCharge }}</p>
+        </div>
+
+        <input type="submit" value="Add to bag" class="monogram-modal__button" disabled>
+
+      </form>
+      <div class="d-flex justify-content-center"><span class="monogram-modal__skip" onclick="Monogram.destroyModal()">Skip monogramming</span></div>
+    </div>
+
+    {% comment %} Preview {% endcomment %}
+    <div class="monogram-modal__canvas-container">
+      {% unless product.metafields.monograms.customFeatureImage %}
+          <canvas class="monogram-modal__canvas" width="512" height="512"></canvas>
+      {% else %}
+        <canvas style="display: none" class="monogram-modal__canvas" width="512" height="512"></canvas>
+        <img class="custom_feature-image" src="{{product.metafields.monograms.customFeatureImage}}">
+      {% endunless %}
+    </div>
+
+  </div>
+</div>

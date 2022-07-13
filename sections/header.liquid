@@ -1,0 +1,356 @@
+<!-- sections/header.liquid -->
+{% if section.settings.show_announcement %}
+  <div class="announcement-wrapper">
+    <div class="page-wrapper announcement-bar text-center" id="AnnouncementBar" data-speed="{{ section.settings.announcement_speed }}">
+      {% for block in section.blocks %}
+        {% if block.type == 'announcement' %}
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="announcement">
+          {% else %}
+            <div class="announcement">
+          {% endif %}
+            {{ block.settings.message }}
+          {% if block.settings.link != blank %}</a>{% else %}</div>{% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<header class="header-outer">
+  <div class="header-wrapper">
+    <div class="page-wrapper header" id="Header">
+      <nav class="navbar align-items-center py-0">
+  
+        {% comment %} Mobile menu {% endcomment %}
+        {% render 'mobile-megamenu', hide_on_desktop: true, section:section, menu: section.settings.main_menu_mobile, menu2: section.settings.main_menu_mobile_2, link_stockist: section.settings.link_stockist, link_contact: section.settings.link_contact %}
+  
+        {% comment %} Desktop menu {% endcomment %}
+        {% render 'desktop-megamenu', hide_on_mobile: true, menu: section.settings.main_menu %}
+        
+        {% comment %} Site icon {% endcomment %}
+        <a href="{{ shop.url }}">
+          {% if section.settings.logo_svg %}
+            <img src="{{ section.settings.logo_svg }}" class="header__logo" alt="logo">
+          {% else %}
+            <img src="{{ section.settings.logo | img_url: 'master'}}" class="header__logo" alt="logo">
+          {% endif %}
+          {% if section.settings.logo_mobile_svg %}
+            <img src="{{ section.settings.logo_mobile_svg }}" class="header__logo--sticky" alt="logo">
+          {% else %}
+            <img src="{{ section.settings.logo_mobile | img_url: 'master'}}" class="header__logo--sticky" alt="logo">
+          {% endif %}
+        </a>
+  
+        <ul class="is-flex align-items-center header__ancillary-links px-0">
+          <div class="about-menu"> {% render 'desktop_dropdown', hide_on_mobile: true, menu: section.settings.about_menu %}
+          </div>
+          <button class="search-btn h-mobile" id="SearchToggle">{% render 'icon-search' %}</button>
+          <span class="is-flex align-items-center">{% render 'header-ancillary-links' %}</span>
+   
+          {% comment %} Cart button {% endcomment %}
+          <li class="nav__btn">
+            <a class="ml-md-3 header-cart-icon" href="javascript: Minicart.toggleDrawer('open');">
+              {% render 'icon-cart' %}
+              <span id="CartCount">{{ cart.item_count }}</span>
+            </a>
+          </li>
+        </ul>
+  
+      </nav>
+    </div>
+  </div>
+</header>
+
+{% comment %} This is rendering the minicart markdown and script {% endcomment %}
+{% include 'minicart' %}
+
+{% if section.settings.enable_sticky %}
+  <style>
+    .shopify-section-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    .hide-announce-bar {
+      top: -31px;
+    }
+    .header-outer {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "shopify-section-header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "id": "enable_sticky",
+      "type": "checkbox",
+      "label": "Enable sticky header",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main menu"
+    },
+	{
+      "type": "link_list",
+      "id": "main_menu_mobile",
+      "label": "Main mobile menu"
+    },
+	{
+      "type": "link_list",
+      "id": "main_menu_mobile_2",
+      "label": "Secondary mobile menu"
+    },
+    {
+      "id": "logo",
+      "type": "image_picker",
+      "label": "Logo"
+    },
+    {
+      "id": "logo_svg",
+      "type": "url",
+      "label": "Logo SVG link",
+      "info": "Link to hosted SVG logo."
+    },
+    {
+      "id": "logo_mobile",
+      "type": "image_picker",
+      "label": "Alternative logo"
+    },
+    {
+      "id": "logo_mobile_svg",
+      "type": "url",
+      "label": "Alternative logo SVG link",
+      "info": "Link to hosted SVG logo."
+    },
+    {
+      "type": "link_list",
+      "id": "about_menu",
+      "label": "About menu"
+    },
+    {
+      "id": "link_stockist",
+      "type": "url",
+      "label": "Stockist link"
+    },
+    {
+      "id": "link_contact",
+      "type": "url",
+      "label": "Contact link"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Secondary Buttons"
+    },
+	{
+      "type": "text",
+      "id": "button_1",
+      "label": "Button 1"
+    },
+    {
+      "type": "url",
+	  "id": "button_url_1",
+      "label": "Button Url 1"
+    },
+	{
+      "type": "text",
+      "id": "button_2",
+      "label": "Button 2"
+    },
+    {
+      "type": "url",
+	  "id": "button_url_2",
+      "label": "Button Url 2"
+    },
+	{
+      "type": "text",
+      "id": "delivery_info",
+      "label": "Delivery Info"
+    },
+	{
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "id": "show_announcement",
+      "type": "checkbox",
+      "label": "Show announcement bar",
+      "default": true
+    },
+    {
+      "id": "announcement_speed",
+      "type": "range",
+      "label": "Time between announcements",
+      "min": 2000,
+      "max": 9000,
+      "step": 1000,
+      "unit": "ms",
+      "default": 5000
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Announcement",
+      "type": "announcement",
+      "limit": 3,
+      "settings": [
+        {
+          "id": "message",
+          "type": "richtext",
+          "label": "Message",
+          "default": "<p>Announce something here...</p>"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Corner image",
+      "type": "corner_image",
+      "settings": [
+        {
+          "id": "parent",
+          "type": "text",
+          "label": "Parent",
+          "info": "The title must be written in lowercase."
+        },
+        {
+          "id": "corner_image_pos",
+          "type": "select",
+          "label": "Megamenu corner image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "id": "corner_image",
+          "type": "image_picker",
+          "label": "Megamenu corner image"
+        }
+      ]
+    },
+    {
+      "name": "Megamenu links",
+      "type": "megamenu_links",
+      "settings": [
+        {
+          "id": "parent",
+          "type": "text",
+          "label": "Parent",
+          "info": "The title must be written in lowercase."
+        },
+        {
+          "type": "header",
+          "content": "Row 1"
+        },
+        {
+          "id": "title_1",
+          "type": "text",
+          "label": "Title"
+        },
+		{
+          "id": "title_link_1",
+          "type": "url",
+          "label": "Title Link"
+        },
+        {
+          "id": "link_list_1",
+          "type": "link_list",
+          "label": "Link list"
+        },
+        {
+          "type": "header",
+          "content": "Row 2"
+        },
+        {
+          "id": "title_2",
+          "type": "text",
+          "label": "Title"
+        },
+		{
+          "id": "title_link_2",
+          "type": "url",
+          "label": "Title Link"
+        },
+        {
+          "id": "link_list_2",
+          "type": "link_list",
+          "label": "Link list"
+        }
+      ]
+    },
+    {
+      "name": "Megamenu product",
+      "type": "megamenu_product",
+      "settings": [
+        {
+          "id": "parent",
+          "type": "text",
+          "label": "Parent",
+          "info": "The title must be written in lowercase."
+        },
+        {
+          "type": "header",
+          "content": "Product 1"
+        },
+        {
+          "id": "product_1",
+          "type": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Product 2"
+        },
+        {
+          "id": "product_2",
+          "type": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Product 3"
+        },
+        {
+          "id": "product_3",
+          "type": "product",
+          "label": "Product"
+        },
+        {
+          "type": "header",
+          "content": "Product 4"
+        },
+        {
+          "id": "product_4",
+          "type": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,227 @@
+/* quote block css start */
+    .filter-customize .card_item.qoute-block {
+        width: 100%;
+    }
+    .filter-customize .card_item.qoute-block .boost-pfs-filter-product-item-inner {
+        height: auto;
+    }
+    .filter-customize .card_item.qoute-block .wrapper-flex {
+        padding: 20px 0;
+    }
+    .filter-customize .card_item.qoute-block .icon {
+        max-width: 96px;
+        margin: 0 auto 10px;
+    }
+    .filter-customize .card_item.qoute-block .signature {
+        width: 100%;
+        object-fit: contain;
+        display: block;
+    }
+    .filter-customize .card_item.qoute-block .title {
+        font-size: 26px;
+        font-family: Frank Ruhl Libre,serif;
+        text-align: center;
+        font-weight: 400;
+    }
+    @media screen and (max-width: 767px) {
+        .filter-customize .card_item.qoute-block .title {
+            font-size: 17px;
+        }
+        .filter-customize .card_item.qoute-block .icon {
+            max-width: 60px;
+            margin: 0 auto 8px;
+        }
+    }
+/* quote block css end */
+
+
+/* video block css start */
+    .filter-customize .card_video .card_video_wrap {
+        height: 100%;
+    }
+    .filter-customize .card_video .video--self-host {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .filter-customize .card_video.card-small {
+        width: 25%;
+    }
+    .filter-customize .card_video.card-medium {
+        width: 50%;
+    }
+    .filter-customize .card_video.card-large {
+        width: 75%;
+    }
+    .filter-customize .card_video.card-full {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+        .filter-customize .boost-pfs-filter-product-item.card_video {
+            width: 100%;
+        }
+    }
+/* video block css end */
+
+/* rich-text-and-image block css start */
+    .filter-customize .card_item.rich-text-and-image .boost-pfs-filter-product-item-inner {
+        padding: 26px;
+        align-items: center;
+        display: flex;
+    }
+    .filter-customize .card_item.rich-text-and-image .content {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+    .filter-customize .card_item.rich-text-and-image .title {
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+    .filter-customize .card_item.rich-text-and-image .subtitle {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .filter-customize .card_item.rich-text-and-image .icon-star {
+        margin-bottom: 5px;
+    }
+    .filter-customize .card_item.rich-text-and-image .card-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        font-size: 12px;
+        color: #beb9b1;
+    }
+    .filter-customize .card_item.rich-text-and-image .card-form {
+        max-width: 543px;
+        margin: 30px auto 0;
+    }
+    .filter-customize .card_item.rich-text-and-image #Contact_footer-email {
+        flex: 1;
+    }
+    .filter-customize .card_item.rich-text-and-image .input-group-append {
+        max-width: 194px;
+        flex: 194px;
+    }
+    .filter-customize .card_item.rich-text-and-image .input-group-append button {
+        width: 100%;
+    }
+    .filter-customize .card_item.rich-text-and-image .newsletter-input-group {
+        margin-bottom: 0;
+    }
+    .filter-customize .card_item.rich-text-and-image .btn {
+        margin-top: 16px;
+    }
+    .filter-customize .card_item.rich-text-and-image .image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    .filter-customize .card_item.rich-text-and-image .signature-img {
+        max-width: 132px;
+    }
+    .filter-customize .card_item.rich-text-and-image .signature {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+    }
+    .filter-customize .card_item.rich-text-and-image .forward-image {
+        padding: 0 !important;
+        display: unset;
+    }
+    .filter-customize .card_item.rich-text-and-image .forward-image .wrapper-flex {
+        height: 100%;
+    }
+    .filter-customize .card_item.rich-text-and-image .hide-line {
+        display: none;
+    }
+    .filter-customize .rich-text-and-image.card-small {
+        width: 25%;
+    }
+    .filter-customize .rich-text-and-image.card-medium {
+        width: 50%;
+    }
+    .filter-customize .rich-text-and-image.card-large {
+        width: 75%;
+    }
+    .filter-customize .rich-text-and-image.card-full {
+        width: 100%;
+    }
+    .filter-customize .card_item.rich-text-and-image .wrapper-flex {
+        width: 100%;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-left {
+        text-align: left;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-left .line,
+    .filter-customize .card_item.rich-text-and-image .content-left .btn,
+    .filter-customize .card_item.rich-text-and-image .content-left .signature-img,
+    .filter-customize .card_item.rich-text-and-image .content-left .content {
+        margin-right: auto;
+        margin-left: unset;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-center {
+        text-align: center;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-center .line,
+    .filter-customize .card_item.rich-text-and-image .content-center .btn,
+    .filter-customize .card_item.rich-text-and-image .content-center .signature-img,
+    .filter-customize .card_item.rich-text-and-image .content-center .content {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-right {
+        text-align: right;
+    }
+    .filter-customize .card_item.rich-text-and-image .content-right .line,
+    .filter-customize .card_item.rich-text-and-image .content-right .btn,
+    .filter-customize .card_item.rich-text-and-image .content-right .signature-img,
+    .filter-customize .card_item.rich-text-and-image .content-right .content {
+        margin-left: auto;
+        margin-right: unset;
+    }
+    @media screen and (max-width: 1024px) {
+        .filter-customize .rich-text-and-image.card-small {
+            width: 50%;
+        }
+        .filter-customize .card_item.rich-text-and-image .boost-pfs-filter-product-item-inner {
+            padding: 30px 15px!important;
+        }
+        .filter-customize .card_item.rich-text-and-image .forward-image {
+            padding: 0 !important;
+        }
+    }
+	@media screen and (min-width: 1200px) and (max-width: 1365px) {
+		.filter-customize .card_item.rich-text-and-image .boost-pfs-filter-product-item-inner {
+            height: 100% !important;
+        }
+	}
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .filter-customize .card_item.rich-text-and-image .boost-pfs-filter-product-item-inner {
+            height: 100%;
+        }
+    }
+    @media screen and (max-width: 899px) {
+        .filter-customize .card_item.rich-text-and-image .newsletter-input-group .input-group {
+            flex-direction: unset;
+            grid-gap: unset;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .filter-customize .rich-text-and-image.card_item {
+            width: 100%;
+        }
+        .filter-customize .card_item.rich-text-and-image .newsletter-input-group .input-group {
+            flex-direction: column;
+        }
+        .filter-customize .card_item.rich-text-and-image #Contact_footer-email {
+            margin-bottom: 7px;
+        }
+        .filter-customize .card_item.rich-text-and-image .input-group-append {
+            max-width: 100%;
+            flex: 100%;
+        }
+    }
+/* rich-text-and-image block css start */

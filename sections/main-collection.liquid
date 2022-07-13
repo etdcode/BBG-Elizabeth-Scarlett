@@ -1,0 +1,1001 @@
+<div class="hid" style="display: none;">
+    {% assign block_ = collection.metafields.block_ %}
+    {% for i in (1..14) %}
+      {% assign value = 'card_' | append: i %}
+      {% assign data = collection.metafields[value] %}
+      
+      {%- liquid     
+        assign background_color = data.background_color
+        assign background_image = data.background_image
+        assign text_color = data.text_color
+        assign subtitle = data.subtitle
+        assign title = data.title
+        assign content = data.content
+        assign button_url = data.button_url
+        assign button_title = data.button_title
+        assign button_title_color = data.button_title_color
+        assign button_bg_color = data.button_bg_color
+        assign signature = data.signature
+      %}
+  
+      {% if i == 1 %}
+        {% if data.enable == 'true' %} 
+          <div data-custom-block="1" class="boost-pfs-filter-product-item card_item  boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_1" >
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+            -%} 
+          </div>
+        {% endif %}
+        
+      {% elsif i == 2 %}
+        {% if data.enable == 'true' %}
+          
+          {% unless button_title.size > 0 %}
+            {% assign button_title = 'Discover more' %}
+          {% endunless %}
+  
+          <div data-custom-block="2" class="boost-pfs-filter-product-item card_item flex-item boost-pfs-filter-grid-width-2  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_2" >
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+              button_title: button_title,
+              button_title_color: button_title_color,
+              button_bg_color: button_bg_color
+            -%} 
+          </div>
+        
+        {% endif %}
+        
+      {% elsif i == 3 %}
+        {% if data.enable == 'true' %}
+          
+          {% unless button_title.size > 0 %}
+            {% assign button_title = 'Discover more' %}
+          {% endunless %}
+          
+          <div data-custom-block="3" class="boost-pfs-filter-product-item card_item flex-item boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_3" >
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+              button_title: button_title,
+              button_title_color: button_title_color,
+              button_bg_color: button_bg_color
+            -%} 
+          </div>
+  
+        {% endif %}
+        
+      {% elsif i == 4 %}
+        {% if data.enable == 'true' %}
+          
+          {% unless button_title.size > 0 %}
+            {% assign button_title = 'Discover more' %}
+          {% endunless %}
+          
+          <div data-custom-block="4" class="boost-pfs-filter-product-item card_item flex-item  boost-pfs-filter-grid-width-2  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_4" >
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+              button_title: button_title,
+              button_title_color: button_title_color,
+              button_bg_color: button_bg_color
+            -%} 
+          </div>
+  
+        {% endif %}
+        
+      {% elsif i == 5 %}
+        {% if data.enable == 'true' %} 
+        
+          <div data-custom-block="5" class="boost-pfs-filter-product-item card_item flex-item  boost-pfs-filter-grid-width-1  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_5">
+          
+            {% unless button_title.size > 0 %}
+              {% assign button_title = 'Discover more' %}
+            {% endunless %}
+  
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+              button_title: button_title,
+              button_title_color: button_title_color,
+              button_bg_color: button_bg_color
+            -%} 
+  
+          </div> 
+          
+        {% endif %}
+  
+        
+      {% elsif i == 6 %}
+        {% if data.enable == 'true'  %}    
+          <div data-custom-block="6" class="boost-pfs-filter-product-item card_item  boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_6">
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url
+            -%}  
+          </div>
+        {% endif %}
+  
+      {% elsif i == 7 %}
+        {% if data.enable == 'true' %}
+          <div data-custom-block="7" class="boost-pfs-filter-product-item  card_item boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_7"> 
+            {% render 'block-image-collection-2', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              signature: signature
+            -%} 
+          </div>
+        {% endif %}
+  
+      {% elsif i == 8 %}
+        {% if data.enable == 'true' %}
+            
+          <div data-custom-block="8" class="boost-pfs-filter-product-item card_video boost-pfs-filter-grid-width-2 boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_8">  
+            <div class="boost-pfs-filter-product-item-inner">
+              <div class="card_video_wrap video-wrapper-collection">
+  
+                <video autoplay="" muted="" loop="" playsinline="" class="video--self-host" style="width: 100%; height: 400px;">
+                  <source src="{{ data.video_link }}" type="video/mp4">
+                </video>
+            
+                <div class="mute-button-btn">
+                  <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.80952 9.16667H0V18.3333H6.28571L13.881 25.9286V16.2381L19.9048 22.5238C19.6429 22.7857 17.7222 23.8333 16.7619 24.0952V26.9762C18.2286 26.9762 21.2143 25.6667 22.5238 24.619L25.4048 27.5L27.5 25.4048L2.09524 0L0 2.09524L6.80952 9.16667Z" fill="#FFFEF9"></path>
+                    <path d="M13.881 7.33333L11 4.45238L13.881 1.57143V7.33333Z" fill="#FFFEF9"></path>
+                    <path d="M16.7619 10.4762V7.59524C20.1667 8.11905 20.8651 12.1349 20.6905 13.881L16.7619 10.4762Z" fill="#FFFEF9"></path>
+                    <path d="M23.0476 8.38095C21.3714 5.44762 18.1587 3.84127 16.7619 3.40476V0C20.1667 0.785714 22.5238 2.35714 23.5714 3.40476C24.619 4.45238 26.1905 6.28571 27.2381 10.4762C28.0762 13.8286 27.1508 17.9841 26.4524 19.6429L23.8333 17.5476C24.1825 15.7143 24.7238 11.3143 23.0476 8.38095Z" fill="#FFFEF9"></path>
+                  </svg>
+                </div>
+                
+                <div class="unmute-button-btn">
+                  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.75 14.1293C21.75 11.2857 20.1067 8.8287 17.7223 7.64453V20.622C20.1067 19.4299 21.75 16.9729 21.75 14.1293Z" fill="#FFFEF9"></path>
+                    <path d="M0 9.29606V18.9627H6.44442L14.5 27.0183V1.24048L6.44442 9.29606H0Z" fill="#FFFEF9"></path>
+                    <path d="M17.7223 0V3.32692C22.3784 4.7125 25.7778 9.02217 25.7778 14.1294C25.7778 19.2367 22.3784 23.5463 17.7223 24.9319V28.2588C24.1748 26.7928 29 21.033 29 14.1294C29 7.22583 24.1748 1.46609 17.7223 0Z" fill="#FFFEF9"></path>
+                  </svg>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+  
+        {% endif %}
+      
+      {% elsif i == 9 %}
+        {% if data.enable == 'true' %}
+          <div data-custom-block="9" class="boost-pfs-filter-product-item  card_item boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_9" >
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url
+            -%} 
+          </div>
+        {% endif %}
+        
+      {% elsif i == 10 %}
+        {% if data.enable == 'true' %}
+          <div data-custom-block="10" class="boost-pfs-filter-product-item card_item flex-item card_item  boost-pfs-filter-grid-width-1  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_10">
+  
+            <div class="boost-pfs-filter-product-item-inner" style="
+              {% if background_color.size > 0 %}
+                background-color:  {{ background_color }}; 
+              {% endif %}
+              {% if background_image.size > 0 %}
+                background-image: url({{ background_image }});
+              {% endif %}         
+            ">
+      
+              <div class="wrapper-flex"> 
+                <div class="icon">
+                  {% if data.icon contains '</svg>' %}
+                    {{ data.icon }}
+                  {% elsif data.icon.size > 0%}
+                    <img src="{{ data.icon }}" alt="signature">
+                  {% endif %}
+                </div>
+                <div class="title" style="{% if text_color.size > 0 %}color: {{ text_color }};{% endif %}">{{ title }}</div> 
+              </div>
+  
+            </div>
+  
+          </div>
+        {% endif %}
+        
+      {% elsif i == 11 %}
+        {% if data.enable == 'true' %}
+          <div data-custom-block="11" class="boost-pfs-filter-product-item  card_item boost-pfs-filter-grid-width-3 boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_11">
+          
+            <div class="boost-pfs-filter-product-item-inner" style="
+              {% if background_color.size > 0 %}
+                background-color: {{ background_color }}; 
+              {% endif %}
+              {% if background_image.size > 0 %}
+                background-image: url({{ background_image }});
+              {% endif %}
+            ">
+        
+              <div class="wrapper-flex"> 
+  
+                <div class="icon-star">
+                  {% assign number_star = data.number_star %}
+                  {% assign last_number_star = 5 |  minus: number_star  %}
+                  {% for i in (1..number_star) %}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15.4752 5.37758L10.6811 4.68084L8.538 0.336105C8.47947 0.217149 8.38317 0.120851 8.26421 0.0623173C7.96588 -0.0849617 7.60334 0.0377708 7.45418 0.336105L5.31108 4.68084L0.516958 5.37758C0.384784 5.39646 0.26394 5.45877 0.171418 5.55318C0.0595651 5.66815 -0.00207117 5.82281 5.31449e-05 5.9832C0.00217746 6.14359 0.0678885 6.29657 0.182747 6.40853L3.65136 9.79028L2.83188 14.5655C2.81266 14.6766 2.82496 14.7908 2.86736 14.8953C2.90977 14.9998 2.9806 15.0902 3.07181 15.1565C3.16302 15.2227 3.27097 15.2621 3.38342 15.2701C3.49587 15.2781 3.60831 15.2545 3.708 15.2018L7.99609 12.9473L12.2842 15.2018C12.4012 15.2642 12.5372 15.2849 12.6675 15.2623C12.996 15.2056 13.2169 14.8941 13.1603 14.5655L12.3408 9.79028L15.8094 6.40853C15.9038 6.31601 15.9661 6.19517 15.985 6.06299C16.036 5.73256 15.8057 5.42667 15.4752 5.37758Z" fill="#CEA56C"/>
+                    </svg>
+                  {% endfor %}
+                  {% for i in (1..last_number_star) %}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.2405 4.90202L10.3568 5.13782L10.617 5.17564L15.4096 5.87215C15.4097 5.87218 15.4099 5.8722 15.4101 5.87223C15.4718 5.88167 15.5065 5.93627 15.4987 5.98675L15.4987 5.98675L15.4979 5.99228C15.4948 6.01344 15.4848 6.03411 15.4676 6.05113C15.4675 6.05123 15.4674 6.05133 15.4673 6.05142L11.9996 9.43228L11.8114 9.61578L11.8558 9.87485L12.6753 14.6501L12.6754 14.6505C12.6849 14.7057 12.648 14.7596 12.5903 14.7695L12.5896 14.7697C12.5666 14.7737 12.5437 14.7694 12.5269 14.7605L12.5247 14.7593L8.23658 12.5048L8.0039 12.3824L7.77122 12.5048L3.48313 14.7593L3.48236 14.7597C3.46529 14.7687 3.44604 14.7727 3.4268 14.7714C3.40755 14.77 3.38907 14.7633 3.37345 14.7519L3.07962 15.1565L3.37345 14.7519C3.35784 14.7406 3.34571 14.7251 3.33845 14.7072C3.33119 14.6893 3.32909 14.6698 3.33238 14.6508L3.33249 14.6501L4.15197 9.87485L4.19643 9.61578L4.00821 9.43228L0.539603 6.05052L0.53957 6.05049C0.51961 6.03104 0.508191 6.00445 0.507822 5.97658C0.507457 5.94901 0.517936 5.9224 0.53698 5.90249C0.553938 5.88546 0.574473 5.87555 0.595481 5.87255L0.596681 5.87238L5.3908 5.17564L5.65099 5.13782L5.76731 4.90202L7.90957 0.558981C7.93666 0.505781 8.00083 0.486045 8.05069 0.510661L8.05127 0.510946C8.0712 0.520754 8.08738 0.53693 8.09718 0.556858L8.0974 0.557292L10.2405 4.90202Z" stroke="#CEA56C"/>
+                    </svg>
+                  {% endfor %}
+                </div>
+  
+                <div class="title" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}">{% if title.size > 0 %}{{ title }}{% endif %}</div>
+  
+                <div class="content" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}">{% if content.size > 0 %}{{ content }}{% endif %}</div>
+  
+                <div class="card-info">
+                  <div class="date">
+                    {{ data.date }}
+                  </div>
+                  <div class="author">
+                    {{ data.author }}
+                  </div>
+                </div>
+              
+              </div>
+  
+            </div>
+          
+          </div>
+        {% endif %} 
+  
+      {% elsif i == 12 %}
+        {% if data.enable == 'true' %}
+          <div data-custom-block="12" class="boost-pfs-filter-product-item card_item flex-item boost-pfs-filter-grid-width-1  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_12" >
+  
+            {% unless button_title.size > 0 %}
+              {% assign button_title = 'SHOP NOW' %}
+            {% endunless %}
+  
+            {% render 'block-image-collection-1', background_color: background_color, 
+              background_image: background_image,
+              text_color: text_color,
+              subtitle: subtitle,
+              title: title,
+              content: content,
+              button_url: button_url,
+              button_title: button_title,
+              button_title_color: button_title_color,
+              button_bg_color: button_bg_color
+            -%} 
+          
+          </div>
+        {% endif %} 
+        
+      {% elsif i == 13 %}
+        {% if data.enable == 'true'  %}
+          <div data-custom-block="13" class="boost-pfs-filter-product-item card_item flex-item  boost-pfs-filter-grid-width-3  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_13" >
+  
+            <div class="boost-pfs-filter-product-item-inner" style="
+              {% if background_color.size > 0 %}
+                background-color:  {{ background_color }}; 
+              {% endif %}
+              {% if background_image.size > 0 %}
+                background-image: url({{ background_image }});
+              {% endif %}
+            ">       
+              <div class="wrapper-flex">
+                <div class="title" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}  ">{% if title.size > 0 %}{{ title }}{% endif %}</div>
+              </div>          
+            </div>
+  
+          </div>
+        {% endif %}
+        
+      {% elsif i == 14 %}
+        {% if data.enable == 'true' %}  
+          <div data-custom-block="14" class="boost-pfs-filter-product-item card_item flex-item  boost-pfs-filter-grid-width-1  boost-pfs-action-list-enabled boost-pfs-action-list-enabled card_14" >
+          
+            <div class="boost-pfs-filter-product-item-inner" style="
+              {% if background_color.size > 0 %}
+                background-color:  {{background_color}}; 
+              {% endif %}
+              {% if background_image.size > 0 %}
+                background-image: url({{ background_image }});
+              {% endif %}
+            ">
+        
+              <div class="wrapper-flex"> 
+                <div class="subtitle" style="  {% if text_color.size > 0 %} color: {{ text_color }}; {% endif %} ">{% if subtitle.size > 0 %}{{ subtitle }}{% endif %}</div>
+                <div class="title" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}  ">{% if title.size > 0 %}{{ title }}{% endif %}</div>
+                <div class="line" style="{% if text_color.size > 0 %}background: {{ text_color }};  {% endif %}"></div>
+                <div class="content" style="{% if text_color.size > 0 %} color: {{ text_color }}; {% endif %}">{% if content.size > 0  %}{{ content }}{% endif %}</div>
+                <div class="card-form">
+                  <div class="input-group newsletter-input-group">
+                    <form method="post" action="/contact#Contact_footer" id="Contact_footer" accept-charset="UTF-8" class="contact-form form-single-field"><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+                      <input type="hidden" name="contact[tags]" value="newsletter">
+                      <div class="input-group ">
+                        <input type="email" name="contact[email]" id="Contact_footer-email" class="form-control newsletter-form" value="" placeholder="Email address" aria-label="Email address" aria-required="true" autocorrect="off" autocapitalize="off" required="">
+                        <div class="input-group-append">
+                          <button type="submit" class="btn-secondary" name="commit">
+                            <span>notify them</span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+        {% endif %}
+          
+      {% endif %}  
+    {% endfor %}
+  </div>
+  
+<div class="filter-customize" data-url="{{ collection.url }}">
+    {% render 'collection-template' with section %}
+</div>
+
+{% schema %}
+ {
+	"name": "Collection pages",
+	"settings": [
+		{
+			"type": "header",
+			"content": "For Filter"
+		},
+		{
+			"type": "radio",
+			"id": "switch_layout_filter",
+			"label": "Switch Layout Filter",
+			"options": [
+				{
+					"value": "switch_layout_filter_vertical",
+					"label": "Vertical Filter"
+				},
+				{
+					"value": "switch_layout_filter_horizontal",
+					"label": "Horizonal Filter"
+				}
+			],
+			"default": "switch_layout_filter_vertical"
+		},
+    	{
+			"type": "checkbox",
+			"id": "enable_filter_sticky",
+			"label": "Enable Filter Sticky on Desktop",
+			"default": false
+		},
+    	{
+			"type": "checkbox",
+			"id": "toolbar_filter_sticky_mobile",
+			"label": "Enable Filter Toolbar Sticky on Mobile",
+			"default": true
+		},
+    	{
+			"type": "radio",
+			"id": "filter_layout",
+			"label": "Filter Layout",
+			"options": [
+				{
+					"value": "filter_layout_default",
+					"label": "Filter Layout Default"
+				},
+				{
+					"value": "filter_layout_collapse",
+					"label": "Filter Layout Collapse"
+				},
+				{
+					"value": "filter_layout_slide",
+					"label": "Filter Layout Slide (Only work on Vertical Layout)"
+				}
+			],
+			"default": "filter_layout_default"
+		},
+    	{
+			"type": "header",
+			"content": "For Layout Page"
+		},
+		{
+			"type": "radio",
+			"id": "layout_type",
+			"label": "Layout Type",
+			"options": [
+				{
+				"value": "box",
+				"label": "Box"
+				},
+				{
+				"value": "fullwidth",
+				"label": "Full Width"
+				}
+			],
+			"default": "box"
+		},
+    	{
+			"type": "header",
+			"content": "Toolbar"
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_view_as",
+			"label": "Show - View As",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_product_count",
+			"label": "Show - Product Count",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_sort_by",
+			"label": "Show - Sort By",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_view_as_mobile",
+			"label": "Show - View As - Mobile",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_product_count_mobile",
+			"label": "Show - Product Count - Mobile",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_sort_by_mobile",
+			"label": "Show - Sort By - Mobile",
+			"default": true
+		},
+		{
+			"type": "radio",
+			"id": "view_as_type",
+			"label": "View As Type",
+			"options": [
+				{
+				"value": "view_as_type_grid_list",
+				"label": "Grid/List"
+				},
+				{
+				"value": "view_as_type_list_grid_multi_col",
+				"label": "List/Grid Multi Column (Only works on Desktop)"
+				}
+			],
+			"default": "view_as_type_grid_list"
+		},
+		{
+			"type": "header",
+			"content": "Product List"
+		},
+		{
+			"type": "range",
+			"id": "products_per_page",
+			"label": "Products per page",
+			"min": 2,
+			"max": 50,
+			"step": 1,
+			"default": 24
+		},
+		{
+			"type": "range",
+			"id": "products_per_row",
+			"label": "Products per row on Desktop",
+			"min": 2,
+			"max": 6,
+			"step": 1,
+			"default": 3
+		},
+		{
+			"type": "range",
+			"id": "products_per_row_mobile",
+			"label": "Products per row on Mobile",
+			"min": 1,
+			"max": 3,
+			"step": 1,
+			"default": 2
+		},
+		{
+			"type": "header",
+			"content": "Product Item"
+		},
+		{
+			"type": "select",
+			"id": "product_item_type",
+			"label": "Product Item Type",
+			"options": [
+			{
+				"value": "grid",
+				"label": "Grid"
+			},
+			{
+				"value": "list",
+				"label": "List"
+			}],
+			"default": "grid"
+		},
+		{
+			"type": "select",
+			"id": "product_item_layout",
+			"label": "Product Item Layout",
+			"options": [
+				{
+					"value": "no-border",
+					"label": "No Border (Default)"
+				},
+				{
+					"value": "border-no-padding",
+					"label": "Border No Padding"
+				},
+				{
+					"value": "border-no-padding-img",
+					"label": "Border No Padding Image"
+				},
+				{
+					"value": "border-has-padding",
+					"label": "Border Has Padding"
+				}
+			],
+			"default": "no-border"
+		},
+		{
+			"type": "select",
+			"id": "text_alignment",
+			"label": "Text alignment",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "left",
+			"info": "Use this setting for Product type Grid"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_details_when_hovering",
+			"label": "Show details when hovering",
+			"default": false,
+			"info": "This setting only works on Desktop"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_vendor",
+			"label": "Show product vendor",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_price",
+			"label": "Show price",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "active_image_swap",
+			"label": "Active image swap",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_product_review",
+			"label": "Show product review",
+			"default": false,
+			"info": "Use this setting when store has product reviews integration"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Label"
+		},
+		
+		{
+			"type": "checkbox",
+			"id": "show_sold_out_label",
+			"label": "Show sold out label",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_sale_label",
+			"label": "Show sale label",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_sale_percent",
+			"label": "Show sale Percent",
+			"default": false
+		},
+		{
+			"type": "checkbox",
+			"id": "product_label_has_border_radius",
+			"label": "Has Border Radius",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_label_by_tag",
+			"label": "Enable the Custom Label By Tag",
+			"default": false,
+			"info": "Please refer [this link](https:\/\/help.boostcommerce.net\/article\/475-how-to-create-custom-label-by-tag-in-the-default-theme) to create a Custom Label By Tag!"
+		},
+		{
+			"type": "select",
+			"id": "product_item_label_position",
+			"label": "Product Label Position",
+			"default": "center",
+			"options": [
+			{
+				"value": "top_left",
+				"label": "Top Left"
+			},
+			{
+				"value": "top_right",
+				"label": "Top Right"
+			},
+			{
+				"value": "bottom_left",
+				"label": "Bottom Left"
+			},
+			{
+				"value": "bottom_right",
+				"label": "Bottom Right"
+			}],
+			"default": "top_left"
+		},
+		{
+			"type": "select",
+			"id": "product_label_type",
+			"label": "Product Label Type",
+			"options": [
+				{
+					"value": "rectangle",
+					"label": "Rectangle"
+				},
+				{
+					"value": "circle",
+					"label": "Circle"
+				}
+			],
+			"default": "rectangle"
+		},
+		{
+			"type": "color",
+			"id": "product_item_label_bg_color",
+			"label": "Background Color"
+		},
+		{
+			"type": "color",
+			"id": "product_item_label_text_color",
+			"label": "Text Color"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_product_label_image",
+			"label": "Use Product Label Image",
+			"default": false
+		},
+	 	{
+			"type": "image_picker",
+			"id": "product_label_image_sale",
+			"label": "Upload Product Label Sale"
+		},
+		{
+			"type": "image_picker",
+			"id": "product_label_image_sold_out",
+			"label": "Upload Product Label Sold Out "
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Title"
+		},
+		{
+			"type": "color",
+			"id": "product_item_title_color",
+			"label": "Title",
+			"default": "#3d4246"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_title_font",
+			"label": "Font",
+			"default": "poppins_n6"
+		},
+		{
+			"type": "range",
+			"id": "product_item_title_font_size",
+			"label": "Product Item Title - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Vendor"
+		},
+		{
+			"type": "color",
+			"id": "product_item_vendor_color",
+			"label": "Vendor",
+			"default": "#969595"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_vendor_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_vendor_font_size",
+			"label": "Product Item Vendor - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 12,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Price"
+		},
+		{
+			"type": "color",
+			"id": "product_item_price_color",
+			"label": "Price",
+			"default": "#222"
+		},
+		{
+			"type": "color",
+			"id": "product_item_old_price_color",
+			"label": "Old Price",
+			"default": "#969595"
+		},
+		{
+			"type": "color",
+			"id": "product_item_sale_price_color",
+			"label": "Sale Price",
+			"default": "#f30000"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_price_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_price_font_size",
+			"label": "Product Item Price - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Description"
+		},
+		{
+			"type": "color",
+			"id": "product_item_des_color",
+			"label": "Description Color",
+			"default": "#3a3a3a"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_des_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_des_font_size",
+			"label": "Product Item Description - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Swatch Color"
+		},
+		{
+			"type": "checkbox",
+			"id": "display_item_swatch",
+			"label": "Enable Display Item Swatch",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_item_swatch_tooltip",
+			"label": "Show Item Swatch Tooltip",
+			"default": true
+		},
+		{
+			"type": "radio",
+			"id": "swatch_color_display_type",
+			"label": "Display Type",
+			"options": [
+				{
+					"value": "swatch_color_display_type_color",
+					"label": "Color"
+				},
+				{
+					"value": "swatch_color_display_type_image_color",
+					"label": "Color Image"
+				},
+				{
+					"value": "swatch_color_display_type_image_product",
+					"label": "Product Image"
+				}
+			],
+			"default": "swatch_color_display_type_image_product",
+			"info": "Please refer [this link](https:\/\/help.boostcommerce.net\/article\/417-how-to-config-the-product-item-layout-in-our-default-theme#a5) about 3 display types of Color swatches!"
+		},
+		{
+			"type": "radio",
+			"id": "swatch_color_event_change_image",
+			"label": "Change Image When Hovering swatch icon",
+			"options": [
+				{
+					"value": "none",
+					"label": "None"
+				},
+				{
+					"value": "hover",
+					"label": "Hover"
+				},
+				{
+					"value": "click",
+					"label": "Click"
+				}
+			],
+			"default": "hover"
+		},
+		{
+			"type": "radio",
+			"id": "swatches_color_shape",
+			"label": "Swatch shape",
+			"options": [
+				{
+					"value": "circle",
+					"label": "Circle"
+				},
+				{
+					"value": "square",
+					"label": "Square"
+				}
+			],
+			"default": "circle"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Swatch Size"
+		},
+		{
+			"type": "checkbox",
+			"id": "display_item_swatch_size",
+			"label": "Display Swatch Size",
+			"default": false
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Equal Height"
+		},
+		{
+			"type": "select",
+			"id": "equal_height",
+			"label": "Product image aspect ratio (Width x Height)",
+			"options": [
+        {
+          "value": "false",
+          "label": "Disabled"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        },
+        {
+          "value": "1:1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "2:3",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "4:3",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "other",
+          "label": "Manual ratio below"
+        }
+			],
+			"default": "auto",
+			"info": "For best results [all product photos should be the same ratio](https:\/\/help.shopify.com\/manual\/productivity-tools\/image-editor#image-aspect-ratio)"
+		},
+		{
+			"type": "text",
+			"id": "ratio_width_height_other",
+			"label": "Example: 6:7",
+			"info": "If the ratios above is not suitable for your store, could you please enter your aspect ratio (Width x Height) in the form below?"
+		},
+		{
+			"type": "select",
+			"id": "equal_height_crop_image_position",
+			"label": "Equal Height Crop Image Position",
+			"options": [
+				{
+					"value": "top",
+					"label": "Top"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "bottom",
+					"label": "Bottom"
+				}
+			],
+			"default": "center"
+		}
+	]
+}
+{% endschema %}

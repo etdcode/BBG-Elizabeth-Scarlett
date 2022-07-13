@@ -1,0 +1,153 @@
+<section class="about-us_image-with-text {% if section.settings.image-mobile-position == "lower" %}
+lower-mobile
+{% endif %}">
+    <div class="page-width">
+        <div class="content-grid {% if section.settings.image-position == "left" %}
+        image-left
+        {% endif %}">
+            <div class="content-wrapper">
+                {% if section.settings.thumbnail != blank %}
+                    <div class="thumnail-wrapper">
+                        <img src="{{ section.settings.thumbnail | img_url: 'small' }}" alt="{{section.settings.thumbnail.alt}}" class="thumbnail">
+                    </div>
+                {% endif %}
+                {% if section.settings.sub-title != blank %}
+                    <p class="sub-title">{{section.settings.sub-title}}</p>
+                {% endif %}
+                {% if section.settings.title != blank %}
+                    <p class="title">{{section.settings.title}}</p>
+                {% endif %}
+                {% if section.settings.description != blank %}
+                    <div class="description">{{section.settings.description}}</div>
+                {% endif %}
+                {% if section.settings.cta-text != blank %}
+                    <a href="{{section.settings.cta-link}}" class="cta-text">{{section.settings.cta-text}}</a>
+                {% endif %}
+            </div>
+    
+            {% if section.settings.image-1 != blank and section.settings.image-2 != blank %}
+                <div class="images-wrapper {% if section.settings.image-mobile-position == "lower" %}
+                    lower-mobile
+                {% endif %}">
+                    <div class="image1-wrapper">
+                        <img src="{{ section.settings.image-1 | img_url: 'master' }}" alt="{{section.settings.image-1.alt}}" class="image-1">
+                    </div>
+                    <div class="image2-wrapper">
+                        <img src="{{ section.settings.image-2 | img_url: 'master' }}" alt="{{section.settings.image-2.alt}}" class="image-2">
+                    </div>
+                </div>
+            {% endif %}
+    
+            {% if section.settings.image-1 != blank and section.settings.image-2 == blank %}
+                <div class="images-wrapper {% if section.settings.image-mobile-position == "lower" %}
+                lower-mobile
+            {% endif %}">
+                    <div class="image-wrapper">
+                        <img src="{{ section.settings.image-1 | img_url: 'master' }}" alt="{{section.settings.image-1.alt}}" class="image-1">
+                    </div>
+                </div>
+            {% endif %}
+    
+            {% if section.settings.image-1 == blank and section.settings.image-2 != blank %}
+                <div class="images-wrapper {% if section.settings.image-mobile-position == "lower" %}
+                lower-mobile
+            {% endif %}">
+                    <div class="image-wrapper">
+                        <img src="{{ section.settings.image-2 | img_url: 'master' }}" alt="{{section.settings.image-2.alt}}" class="image-2">
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Image With Text",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "type": "text",
+            "id": "sub-title",
+            "label": "Sub Title",
+            "default": "Our Pledge"
+        },  
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "2% To The Wild"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "cta-text",
+            "label": "CTA Text",
+            "default": "Donate now"
+        }, 
+        {
+            "type": "url",
+            "id": "cta-link",
+            "label": "CTA Link"
+        },
+        {
+            "type": "image_picker",
+            "id": "thumbnail",
+            "label": "Thumbnail"
+        },    
+        {
+            "type": "header",
+            "content": "Images"
+        },
+        {
+            "type": "radio",
+            "id": "image-position",
+            "label": "Image Position",
+            "default": "right",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+               }
+            ]
+        },
+        {
+            "type": "image_picker",
+            "id": "image-1",
+            "label": "Image 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "image-2",
+            "label": "Image 2"
+        },
+        {
+            "type": "radio",
+            "id": "image-mobile-position",
+            "label": "Image position in mobile view",
+            "default": "upper",
+            "options": [
+                {
+                    "value": "upper",
+                    "label": "Upper"
+                },
+                {
+                    "value": "lower",
+                    "label": "Lower"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

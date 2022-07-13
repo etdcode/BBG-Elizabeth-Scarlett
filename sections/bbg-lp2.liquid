@@ -1,0 +1,167 @@
+
+{% schema %} 
+{
+    "name": "Section 2 Feature Blocks",
+    "blocks": [{
+        "name" : "Section 2 Feature Blocks",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline2",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "text",
+            "id": "section-subhead2",
+            "label": "Enter the Section sub title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block1-img",
+            "label": "Upload 1st Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle1",
+            "label": "Enter 1st Block Title"
+        },
+		{
+            "type": "text",
+            "id": "blockbody1",
+            "label": "Enter 1st Block Body"
+        },
+		{
+            "type": "image_picker",
+            "id": "block2-img",
+            "label": "Upload 2nd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle2",
+            "label": "Enter 2nd Block Title"
+        },
+		{
+            "type": "text",
+            "id": "blockbody2",
+            "label": "Enter 2nd Block Body"
+        },
+		{
+            "type": "image_picker",
+            "id": "block3-img",
+            "label": "Upload 3rd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle3",
+            "label": "Enter 3rd Block Title"
+        },
+		{
+            "type": "text",
+            "id": "blockbody3",
+            "label": "Enter 3rd Block Body"
+        },
+		{
+            "type": "image_picker",
+            "id": "block4-img",
+            "label": "Upload 4th Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle4",
+            "label": "Enter 4th Block Title"
+        },
+		{
+            "type": "text",
+            "id": "blockbody4",
+            "label": "Enter 4th Block Body"
+        },
+		{
+            "type": "image_picker",
+            "id": "lrg-img",
+            "label": "Upload large Image"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+
+
+<div class="section2-key-features">
+		<div class="container">
+			<h2 class="sec2-title">{{ b.section-headline2 | p_url }}</h2>
+			<p class=" sec-2-body">{{ b.section-subhead2 | p_url }}</p>
+			<div class="row">
+				<div class="col-sm">
+					<div class="sales-point-block">
+						<img class="sales-point-img" src="{{b.block1-img | img_url: 'master' }}">
+						<div class="sales-point-text-cont">
+							<h3 class="sales-point-sub-title">{{ b.blocktitle1 | p_url }}</h3>
+							<p class="sdales-point-sub">{{ b.blockbody1 | p_url }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="sales-point-block">
+						<img class="sales-point-img" src="{{b.block2-img | img_url: 'master' }}">
+						<div class="sales-point-text-cont">
+							<h3 class="sales-point-sub-title">{{ b.blocktitle2 | p_url }}</h3>
+							<p class="sdales-point-sub">{{ b.blockbody2 | p_url }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="sales-point-block">
+						<img class="sales-point-img" src="{{b.block3-img | img_url: 'master' }}">
+						<div class="sales-point-text-cont">
+							<h3 class="sales-point-sub-title">{{ b.blocktitle3 | p_url }}</h3>
+							<p class="sdales-point-sub">{{ b.blockbody3 | p_url }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="second-row">
+				<div class="big-img-ban"></div>
+				<div class="col-sm">
+					<div class="sales-point-block">
+						<img class="sales-point-img" src="{{b.block4-img | img_url: 'master' }}">
+						<div class="sales-point-text-cont">
+							<h3 class="sales-point-sub-title">{{ b.blocktitle4 | p_url }}</h3>
+							<p class="sdales-point-sub">{{ b.blockbody4 | p_url }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<style>
+  .big-img-ban {
+
+    background-image: url("{{b.lrg-img | img_url: 'master' }}");
+
+}
+</style>
+
+

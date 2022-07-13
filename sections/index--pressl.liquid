@@ -1,0 +1,80 @@
+<div
+	class="yotpo yotpo-pictures-widget"
+	data-gallery-id="624c1ffe86d192068fb3d0f4" style="padding-bottom:80px">
+</div>
+<div class="index__pressl bg-off-white" tab-wrapper {% if section.settings.enable_autoplay %}autoplay="true" speed="{{ section.settings.autoplay_speed }}"{% endif %}>
+   <div class="pressl__sep">
+      <span>{% render 'icon-bee' %}</span>
+   </div>
+
+   <div class="pressl__content-wrapper page-wrapper">
+      <div class="press__content-slider" tab-content>
+         {% for block in section.blocks %}
+            <div class="press__content text-center {% if forloop.index == 1 %}active{% endif %}" id="block_{{ block.id }}">
+               <div class="section__desc">{{ block.settings.text }}</div>
+            </div>
+         {% endfor %}
+      </div>
+   
+      <div class="row justify-content-center text-center">
+         <div class="short-sep"></div>
+      </div>
+
+      <div class="press__nav-slider" tab-navigators>
+         {% for block in section.blocks %}
+            <a target="block_{{ block.id }}" {% if forloop.index == 1 %}class="active"{% endif %}>
+               <img src="{{ block.settings.logo | img_url: '200x' }}">
+            </a>
+         {% endfor %}
+      </div>
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Pressl",
+      "presets": [
+         {
+            "name": "Pressl",
+            "category": "Testimonials" 
+         }
+      ],
+      "settings": [
+         {
+            "id": "enable_autoplay",
+            "type": "checkbox",
+            "label": "Enable autoplay",
+            "default": true
+         },
+         {
+            "id": "autoplay_speed",
+            "type": "range",
+            "label": "Autoplay speed",
+            "min": 1000,
+            "max": 9000,
+            "step": 1000,
+            "unit": "ms",
+            "default": 5000
+         }
+      ],
+      "blocks": [
+         {
+            "name": "Press",
+            "type": "press",
+            "settings": [
+               {
+                  "id": "logo",
+                  "type": "image_picker",
+                  "label": "Logo"
+               },
+               {
+                  "id": "text",
+                  "type": "richtext",
+                  "label": "Text",
+                  "default": "<p>Some text goes here...</p>"
+               }
+            ]
+         }
+      ]
+   }
+{% endschema %}

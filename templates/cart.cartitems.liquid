@@ -1,0 +1,213 @@
+<!-- templates/cart.cartitems.liquid -->
+{% comment %}
+  * The purpose of this file is to render the cart items in a file where liquid is usable.
+  *     We use the fetch api to request the contents of this page and place them in the minicart drawer.
+{% endcomment %}
+
+{% layout none %}
+
+<div class="cart-null" {% if cart.item_count > 0 %}hidden{% endif %}>Bag Empty</div>
+
+<div class="wrap-inner">
+  {% for item in cart.items %}
+    {% if item.product.title contains "monogram" or item.product.title contains "Monogram" or item.product.title contains "MONOGRAM"
+        or item.product.title contains "personalisation" or item.product.title contains "Personalisation" or item.product.title contains "PERSONALISATION" %}
+      {% continue %}
+    {% endif %}
+    <div class="item" data-gn-text="{{ item.properties.text }}">
+      <div class="info d-flex">
+        <div class="img">
+          <img src="{{ item.image | img_url: '500x' }}" alt="{{ item.title }}" loading="lazy">
+        </div>
+        <div class="prod position-relative">
+          <h6 class="title">{{ item.product.title }}</h6>
+
+          <div class="price">
+            <span class="original">{{ item.variant.price | money }}</span>
+            {% if item.variant.product.compare_at_price_min > item.variant.product.price %}
+              <span class="compare">{{ item.variant.product.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+
+          {%- unless item.product.has_only_default_variant -%}
+            <p class="variant">
+              {%- for product_option in item.product.options_with_values -%}
+                {{ product_option.name }}:
+
+                {% for value in product_option.values %}
+                  {% if item.variant.title contains value %}
+                    {{ value }}<br>
+                  {%- endif %}
+                {% endfor %}
+              {%- endfor -%}
+            </p>
+          {%- endunless -%}
+{% assign property_size = item.properties | size %}
+{% if property_size > 0 %}
+  {% for p in item.properties %}
+    {% assign first_character_in_key = p.first | truncate: 1, '' %}
+    {% unless p.last == blank or first_character_in_key == '_' %}
+      {{ p.first }}:
+      {% if p.last contains '/uploads/' %}
+        <a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+      {% else %}
+        {{ p.last }}
+      {% endif %}
+      <br>
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+          {% if item.properties.text != blank %}
+            <p class="variant">Message: {{ item.properties.text | truncate: 20, '...' }}</p>
+          {% endif %}
+
+          <div class="qty d-flex">
+            <div class="col-8">
+              <button type="button" class="btnQty {% if item.properties["_monoProduct"] != blank %} monoProductDesc{% elsif item.properties["_mainProduct"] != blank %} mainProductDesc{% endif %}" data-key="{{item.key}}" data-code='{% if item.properties["_monoProduct"] != blank %}{{item.properties["_monoProduct"]}}{% elsif item.properties["_mainProduct"] != blank %}{{item.properties["_mainProduct"]}}{% endif %}' onclick="Minicart.decreaseQty(this)">
+                <img src="{{ "icon-remove.svg" | asset_url }}" alt="">
+              </button>
+              <input type="text" class="qty-product" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" class="w-100 text-center ps-3 border" readonly="readonly">
+              <button type="button" class="btnQty" data-key="{{item.key}}" onclick="Minicart.increaseQty(this)">
+                <img src="{{ "icon-plus.svg" | asset_url }}" alt="">
+              </button>
+            </div>
+
+            <div class="col-4 text-end">
+              <a class='remove {% if item.properties["_monoProduct"] != blank %} monoProduct{% elsif item.properties["_mainProduct"] != blank %} mainProduct{% endif %}' data-key="{{item.key}}" data-code='{% if item.properties["_monoProduct"] != blank %}{{item.properties["_monoProduct"]}}{% elsif item.properties["_mainProduct"] != blank %}{{item.properties["_mainProduct"]}}{% endif %}' onclick="Minicart.setLineitemQuantity(0, this, '{{- item.properties['_pc_pricing_ref'] | default: 'na' -}}')">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {%- if item.product.tags contains 'monogram' -%}
+        {% unless item.product.title contains "monogram" or item.product.title contains "Monogram" or item.product.title contains "MONOGRAM" %}
+          {% liquid 
+            assign has_monogram = false
+            assign monogram_item = false
+            assign monogram_text = ""
+            assign monogram_charge = "£0"
+            if item.properties['_pc_pricing_ref'] != blank
+              for sub_item in cart.items
+                if sub_item.properties['_pc_pricing_ref'] == item.properties['_pc_pricing_ref'] and sub_item != item
+                  assign has_monogram = true
+                  assign monogram_item = sub_item
+                  for property in item.properties
+                    assign prop_first = property.first | downcase
+                    if prop_first contains "add up to"
+                      assign monogram_text = property.last
+                    endif
+                  endfor
+                  assign monogram_charge = sub_item.final_price | money
+                  break
+                endif
+              endfor
+            endif        
+          %}
+          {% if has_monogram %}
+            <div class="cart-item-monogram__product-card">
+              <div class="cart-item-monogram__details">
+                <div class="cart-item-monogram__details-container">
+                  <p class="cart-item-monogram__title">Monogrammed</p>
+                  <p class="cart-item-monogram__subtitle">Your Text: {{ monogram_text }}</p>
+                  <p class="cart-item-monogram__price">+ {{ monogram_charge }}</p>
+                </div>
+              </div>
+              <div class="cart-item-monogram__cta-wrapper">
+                <button type="button" onclick="Minicart.setLineitemQuantity(0, this, '{{- item.properties['_pc_pricing_ref'] -}}', {{ item.variant.id }})" class="cart-item-monogram__cta">Remove</button>
+              </div>
+            </div>
+          {% else %}
+            <div class="monogram-cart">
+              <span class="txt">Personalise with a bespoke monogram</span>
+              <a data-key="{{ item.key }}" data-code='{% if item.properties["_monoProduct"] != blank %}{{item.properties["_monoProduct"]}}{% elsif item.properties["_mainProduct"] != blank %}{{item.properties["_mainProduct"]}}{% endif %}' onclick="Monogram.launchModal({{ item.variant.id }}, '{{ item.product.handle }}', true, this);">ADD+</a>
+            </div>
+          {% endif %}
+        {% endunless %}
+      {%- endif -%}
+    </div>
+  {% endfor %}
+</div>
+
+{% assign upsell_collection = collections[settings.collection_treat_yourself] %}
+{% assign used_products = "" %}
+
+{% capture related_products %}
+  {% for product in upsell_collection.products | limit: 3 %}
+    {% assign title_downcase = product.title | downcase %}
+
+    {% if title_downcase contains "gift" and product.handle != "gift-card" %}
+      {% for variant in product.variants %}
+        {% unless used_products contains variant.id %}
+          {% if variant.available %}
+            {% render 'treat-yourself-cart', type: "variant", product: product, variant: variant %}
+          {% endif %}
+          {% assign used_products = used_products | append: variant.id | append: ", " %}
+        {% endunless %}
+      {% endfor %}
+    {% else %}
+      {% unless used_products contains product.handle or product.title == "Monogramming" or product.handle == "gift-card" %}
+        {% if product.available %}
+          {%- render 'treat-yourself-cart', type: "product", product: product -%}
+        {% endif %}
+        {% assign used_products = used_products | append: product.handle | append: ", "  %}
+        {% break %}
+      {% endunless %}
+    {% endif %}
+
+  {% endfor %}
+
+  {% comment %}
+  {% for item in cart.items %}
+    {% for collection in item.product.collections %}
+      {% for product in collection.products | limit: 3 %}
+        {% assign title_downcase = product.title | downcase %}
+
+        {% if title_downcase contains "gift" and product.handle != "gift-card" %}
+          {% for variant in product.variants %}
+            {% unless used_products contains variant.id %}
+              {% if variant.available %}
+                {% render 'treat-yourself-cart', type: "variant", product: product, variant: variant %}
+              {% endif %}
+              {% assign used_products = used_products | append: variant.id | append: ", " %}
+            {% endunless %}
+          {% endfor %}
+        {% else %}
+          {% unless used_products contains product.handle or product.title == "Monogramming" or product.handle == "gift-card" %}
+            {% if product.available %}
+              {%- render 'treat-yourself-cart', type: "product", product: product -%}
+            {% endif %}
+            {% assign used_products = used_products | append: product.handle | append: ", "  %}
+            {% break %}
+          {% endunless %}
+        {% endif %}
+
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+  {% endcomment %}
+{% endcapture %}
+
+<div class="section--treat-yourself">
+  <h2 class="heading">{{ settings.heading_treat_yourself }}</h2>
+  <div class="items--inner">{{ related_products }}</div>
+</div>
+        
+<style>
+  .section--treat-yourself .items--inner .item:nth-child(n + {{ settings.number_product | plus: 1 }}) {
+    display: none !important;
+  }
+</style>
+
+<script id="monogramCartData" type="appliation/json">
+  {
+    "items": [
+      {% for item in cart.items %}
+        {
+          "key": "{{ item.key }}",
+          "quantity": {{ item.quantity }},
+          "pricingRef": {{ item.properties["_pc_pricing_ref"] | default: "null" }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+</script>

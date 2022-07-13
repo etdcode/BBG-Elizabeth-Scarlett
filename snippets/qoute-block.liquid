@@ -1,0 +1,22 @@
+<div class="boost-pfs-filter-product-item card_item flex-item card_item boost-pfs-action-list-enabled boost-pfs-action-list-enabled qoute-block" js-product-card data-product-card-position="{{ block.settings.card_position }}" data-mobile-card-position="{{ block.settings.mobile_card_position }}">
+  
+    <div class="boost-pfs-filter-product-item-inner" style="
+        {% if block.settings.background_color != blank %}
+          background-color: {{ block.settings.background_color }}; 
+        {% endif %}     
+    ">
+
+      <div class="wrapper-flex"> 
+        {% if block.settings.img != blank %}
+            <div class="icon">
+                <img src="{{ block.settings.img | img_url: 'master' }}" alt="signature">
+            </div>
+        {% endif %}
+        {% if block.settings.text != blank %}
+            <div class="title" {% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};" {% endif %}>{{ block.settings.text }}</div> 
+        {% endif %}
+      </div>
+
+    </div>
+</div>
+

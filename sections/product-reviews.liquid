@@ -1,0 +1,29 @@
+<!-- snippets/product-reviews.liquid -->
+
+<div class="page-wrapper mb-5 section-review">
+    <div class="row text-center">
+      <header class="section-review__header col-12 d-md-flex align-items-center justify-content-center">
+        <h3 class="title">In Our Customers Words</h3>
+          <div class="yotpo bottomLine review-stars review-stars--card"
+            data-appkey="Jt3RjoAxKNCh52N3ZQigD75VUxK6qWDZTXpmMB1J" 
+            data-domain="{{shop.permanent_domain | escape }}"
+            data-product-id="{{ product.id }}"
+            data-product-models="{{ product.id }}"
+            data-name="{{ product.title | escape }}"
+            data-url="{{ shop.url }}{{ product.url }}"
+            data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+            data-description="{{ product.description | escape }}"
+            data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+          </div>
+       {%- comment -%}
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+       {%- endcomment -%}
+      </header>
+    </div>
+    <div class="product--reviews row text-center justify-content-center mt-12">
+      {%- comment -%}
+        <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+      {%- endcomment -%}
+      <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}"></div>
+    </div>
+</div>

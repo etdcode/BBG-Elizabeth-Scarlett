@@ -1,0 +1,325 @@
+<!-- snippets/mobile-megamenu.liquid -->
+
+{% assign this_menu = linklists[menu] %}
+{% assign this_menu_mobile = linklists[menu2] %}
+
+<div class="mobile-megamenu {% if hide_on_desktop %}h-mobile{% endif %}">
+
+  {% comment %} Burger icon {% endcomment %}
+  <button class="
+    navbar-toggler 
+    d-flex align-items-center justify-content-center" 
+    type="button" 
+    data-trigger="#MobileNav">
+    {% render 'icon-burger' %}
+  </button>
+
+  {% comment %} Mobile nav menu {% endcomment %}
+  <div class="navbar-collapse page-wrapper bg-off-white zindex-popover" id="MobileNav" style="z-index: 5;">
+
+    {% comment %} Header contianing menu title and close button {% endcomment %}
+    <div class="offcanvas-header is-flex align-items-center justify-space-between">  
+      <a href="{{ shop.url }}" class="header__logo-mobile">
+        {% if section.settings.logo_mobile_svg %}
+          <img src="{{ section.settings.logo_mobile_svg }}">
+        {% elsif section.settings.logo_mobile %}
+          <img src="{{ section.settings.logo_mobile | img_url: '100x' }}">
+        {% else %}
+          <img src="{{ section.settings.logo | img_url: '100x' }}">
+        {% endif %}
+      </a>
+
+      <button class="transparent-btn nav__back-btn">
+        {% render 'icon-carousel-arrow' %}
+        <span class="nav__back-txt">Back</span>
+      </button>
+
+      <button class="transparent-btn mobile-close-btn close-mobile-menu">
+        {% render 'icon-close' %}
+      </button>
+    </div>
+
+    {% comment %} Mobile nav links {% endcomment %}
+    <ul class="navbar-nav navbar-nav-main-new" mobile-nav-wrapper>
+      {% for link in this_menu.links %}
+        {% assign link_title = link.title | downcase %}
+
+        {%- comment -%} Check if the link has child {%- endcomment -%}
+        {% assign is_child = false %}
+        {% for block in section.blocks %}
+          {% if block.type != 'announcement' and block.settings.parent == link_title %}
+            {% assign is_child = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      
+        {% comment %} This top level link does not have children {% endcomment %}
+        {% if is_child == false %}
+          <li class="nav-item">
+            <a href="{{ link.url }}" class="nav-link megamenu__link-title is-uppercase {% if link.active %}active{% endif %}">
+              {% assign icon_name = link.title | downcase | replace: ' ', '-' | replace: '&', '' | replace: ':', '' | append: '-icon.png' %}
+              <span class="mobile-nav_icon-wrapper">
+                <img src="{{ icon_name | asset_img_url: '60x' }}">
+              </span>
+              {{ link.title }}
+            </a>
+          </li>
+
+        {% comment %} This top level link does have children {% endcomment %}
+        {% else %}
+          <li class="nav-item dropdown has-megamenu position-static item_level_1">
+            <a class="nav-link is-flex align-items-center dropdown-toggle {% if link.active %}active{% endif %}">
+              {% assign icon_name = link.title | downcase | replace: ' ', '-' | replace: '&', '' | replace: ':', '' | append: '-icon.png' %}
+              <span class="mobile-nav_icon-wrapper">
+                <img src="{{ icon_name | asset_img_url: '60x' }}">
+              </span>
+              <span class="megamenu__link-title is-uppercase">{{ link.title }}</span>
+              <span class="megamenu__arrow">{% render 'icon-carousel-arrow' %}</span>
+            </a>
+
+            <div class="bg-transparent border-0 dropdown-menu megamenu p-0 item_level_2">
+              {% for block in section.blocks %}
+                {% if block.type != 'announcement' and block.settings.parent == link_title %}
+              
+                  {% if block.type == 'megamenu_links' %}
+                    {% for i in (1..2) %}
+                      {% capture title %}title_{{ i }}{% endcapture %}
+                      {% capture list %}link_list_{{ i }}{% endcapture %}
+
+                      {% if block.settings[list] != empty %}
+
+                        {% if block.settings[title] != blank%}
+                        <a class="nav-link is-flex align-items-center justify-space-between dropdown-toggle mobile-child-toggle item_level_3_link">
+                          <span class="megamenu__link-title is-uppercase">{{ block.settings[title] }}</span>
+                          <span class="megamenu__arrow">{% render 'icon-carousel-arrow' %}</span>
+                        </a>
+                        {% endif %}
+                        
+                        <div class="bg-transparent border-0 dropdown-menu megamenu p-0 item_level_3">
+                          {% for grandchild_link in linklists[block.settings[list]].links %}
+                            <a href="{{ grandchild_link.url }}" class="nav-link megamenu__link-title megamenu__link--third-level">
+                              {% assign icon_name = grandchild_link.title | downcase | replace: ' ', '-' | replace: '&', '' | replace: ':', '' | append: '-icon.png' %}
+                              <span class="mobile-nav_icon-wrapper">
+                                <img src="{{ icon_name | asset_img_url: '60x' }}">
+                              </span>
+                              {{ grandchild_link.title }}
+                            </a>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if block.type == 'megamenu_product' %}
+                    {% for i in (1..4) %}
+                      {% capture product_handle %}product_{{ i }}{% endcapture %}
+                      {% if block.settings[product_handle] != empty %}
+                        {% assign product = block.settings[product_handle] %}
+                        <div class="index__product-card megamenu__product">
+                          <a href="{{ product.url }}" class="index__product-image">
+                            <img src="{{ product.images[0] | img_url: '600x' }}" {% if product.images[1] %}class="product__first-img"{% endif %}>
+                            {% if product.images[1] %}
+                              <img src="{{ product.images[1] | img_url: '600x' }}" class="product__second-img">             
+                            {% endif %}
+                          </a>
+                          <a href="{{ product.url }}">
+                            <div class="megamenu__product-title">{{ product.title }}</div>                              
+                          </a>
+                          <a class="megamenu__product-link is-uppercase" href="{{ product.url }}">Shop now</a>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+              
+                  {% if block.type == 'mobile_megamenu_links' %}
+                    {% for i in (1..2) %}
+                      {% capture title %}title_{{ i }}{% endcapture %}
+                      {% capture list %}link_list_{{ i }}{% endcapture %}
+
+                      {% if block.settings[list] != empty %}
+                        {% comment %}
+                          <a class="nav-link is-flex align-items-center justify-space-between dropdown-toggle mobile-child-toggle">
+                            <span class="megamenu__link-title is-uppercase">{{ block.settings[title] }}</span>
+                            <span class="megamenu__arrow">{% render 'icon-carousel-arrow' %}</span>
+                          </a>
+
+                          <div class="bg-transparent border-0 dropdown-menu megamenu p-0">
+                        {% endcomment %}
+                            {% for grandchild_link in linklists[block.settings[list]].links %}
+                              <a href="{{ grandchild_link.url }}" class="nav-link megamenu__link-title megamenu__link--third-level">{{ grandchild_link.title }}</a>
+                            {% endfor %}
+                        {% comment %}
+                          </div>
+                        {% endcomment %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+
+                  {% if block.type == 'mobile_megamenu_product' %}
+                    {% for i in (1..4) %}
+                      {% capture product_handle %}product_{{ i }}{% endcapture %}
+                      {% if block.settings[product_handle] != empty %}
+                        {% assign product = block.settings[product_handle] %}
+                        <div class="index__product-card megamenu__product">
+                          <a href="{{ product.url }}" class="index__product-image">
+                            <img src="{{ product.images[0] | img_url: '600x' }}" {% if product.images[1] %}class="product__first-img"{% endif %}>
+                            {% if product.images[1] %}
+                              <img src="{{ product.images[1] | img_url: '600x' }}" class="product__second-img">             
+                            {% endif %}
+                          </a>
+                          <a href="{{ product.url }}">
+                            <div class="megamenu__product-title">{{ product.title }}</div>                              
+                          </a>
+                          <a class="megamenu__product-link is-uppercase" href="{{ product.url }}">Shop now</a>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+              
+                {% endif %}
+              {% endfor %}
+            </div>
+          </li>        
+        {% endif %}
+
+      {% endfor %}
+	</ul>
+    <!-- <div class="long-sep header-sep"></div> -->
+    <ul class="navbar-nav navbar-nav-2-new">
+      {%- comment -%} Ancillary links {%- endcomment -%}
+      {% for link2 in this_menu_mobile.links %}
+        <li class="nav-item">
+          <a href="{{ link2.url }}" class="nav-link megamenu__link-title is-uppercase">{{ link2.title }}</a>
+        </li>
+      {% endfor %}
+      
+      {% comment %}
+      <li class="nav-item">
+        <a href="/pages/about-us" class="nav-link megamenu__link-title is-uppercase">ABOUT US</a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/faqs" class="nav-link megamenu__link-title is-uppercase">FAQS</a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/monogramming" class="nav-link megamenu__link-title is-uppercase">MONOGRAMMING </a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/contact-us" class="nav-link megamenu__link-title is-uppercase">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a href="#swym-wishlist" class="nav-link megamenu__link-title is-uppercase">Wishlist</a>
+      </li>
+      <li class="nav-item">
+        <a href="/account" class="nav-link megamenu__link-title is-uppercase">ACCOUNT</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ routes.cart_url }}" class="nav-link megamenu__link-title is-uppercase">Your bag</a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/rewards" class="nav-link megamenu__link-title is-uppercase">LOYALTY SCHEME</a>
+      </li>
+      <li class="nav-item">
+        <a href="/pages/refer" class="nav-link megamenu__link-title is-uppercase">REFERRALS - EARN £10</a>
+      </li>
+      {% endcomment %}
+	</ul>
+    <div class="long-sep header-sep"></div>
+    
+    {% comment %}
+    <div class="long-sep header-sep"></div>
+	<ul class="navbar-nav">
+      {%- comment -%} Help {%- endcomment -%}
+      <li class="nav-item__row megamenu__link-title is-uppercase">Need help?</li>
+      <div class="nav-item__row is-flex align-items-center">
+        <span class="nav-item__icon">{% render 'icon-location' %}</span>
+        <a href="{{ link_stockist }}" class="nav-item__detail">
+          <div class="nav-item__title">FAQs</div>
+        </a>
+      </div>
+      <div class="nav-item__row is-flex align-items-center">
+        <span class="nav-item__icon">{% render 'icon-mail' %}</span>
+        <a href="{{ link_contact }}" class="nav-item__detail">
+          <div class="nav-item__title">Contact Us</div>
+          <div class="nav-item__subtitle">We love to hear from you</div>
+        </a>
+      </div>
+    </ul>
+    {% endcomment %}
+    
+    <div class="menu_custom_btns_new">
+      {% if section.settings.button_1 != blank %}
+        <div class="menu_custom_btns_in_new">
+          <a href="{{ section.settings.button_url_1 }}" class="btn-block">{{ section.settings.button_1 }}</a>
+        </div>
+      {% endif %}
+      {% if section.settings.button_2 != blank %}
+        <div class="menu_custom_btns_in_new menu_custom_btns_in_2_new">
+          <a href="{{ section.settings.button_url_2 }}" class="btn-block">{{ section.settings.button_2 }}</a>
+        </div>
+      {% endif %}
+      {% if section.settings.delivery_info != blank %}
+      	<div class="menu_custom_btns_details_new">{{ section.settings.delivery_info }}</div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<style>
+  #MobileNav {
+    position: fixed;
+    top:0; 
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    overflow-y: auto;
+    visibility: hidden;
+    box-shadow: 5px 0px 20px 0px #0000004a;
+    transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  }
+
+  #MobileNav.show {
+    visibility: visible;
+    transform: translateX(100%);
+  }
+</style>
+
+{%- comment -%}
+This top level link does not have children
+{% if link.links == blank %}
+<li class="nav-item">
+  <a href="{{ link.url }}" class="nav-link megamenu__link-title is-uppercase {% if link.active %}active{% endif %}">{{ link.title }}</a>
+</li>
+
+This top level link does have children
+{% else %}
+<li class="nav-item dropdown has-megamenu position-static">
+  <a class="nav-link is-flex align-items-center justify-space-between dropdown-toggle {% if link.active %}active{% endif %}">
+    <span class="megamenu__link-title is-uppercase">{{ link.title }}</span>
+    <span class="megamenu__arrow">{% render 'icon-carousel-arrow' %}</span>
+  </a>
+  <div class="bg-transparent border-0 dropdown-menu megamenu p-0">
+    {% for child_link in link.links %}
+
+      This child link does not have children
+      {% if child_link.links == blank %}
+        <a href="{{ child_link.url }}" class="nav-link megamenu__link-title is-uppercase">{{ child_link.title }}</a>
+        
+      This child link does have children
+      {% else %}
+        <div class="p-0 m-0">
+          <a class="nav-link py-3 ps-3 dropdown-toggle {% if link.active %}active{% endif %} mobile-child-toggle">{{ child_link.title }}</a>
+          <div class="bg-transparent border-0 dropdown-menu animated-dropdown megamenu p-0">
+            {% for grandchild_link in child_link.links %}
+              <a href="{{ grandchild_link.url }}" class="nav-link py-3 ps-5">{{ grandchild_link.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+
+</li>        
+{% endif %}
+{%- endcomment -%}

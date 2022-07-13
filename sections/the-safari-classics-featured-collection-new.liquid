@@ -1,0 +1,119 @@
+<div class="page_featured_collection_main_new" style="background: {{ section.settings.backcolor }};">
+  <div class="container page_width_new">
+    <div class="page_featured_collection_inner_new">
+
+      {% if section.settings.mainheadingtext != blank or section.settings.maininfotext != blank %}
+        <div class="page_featured_collection_headingtext_new common_title_new" style="color: {{ section.settings.textcolor }};">
+          {% if section.settings.mainheadingtext != blank %}
+            <h2>{{ section.settings.mainheadingtext }}</h2>
+          {% endif %}
+          {% if section.settings.maininfotext != blank %}
+            {{ section.settings.maininfotext }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.selectcollection != blank %}
+        <div class="page_featured_collection_allproduct_new">
+          <div class="page_featured_collection_allproduct_loops_new product_slider {% if collections[section.settings.selectcollection].products.size <= 3 %} product_slider_lessthan_3 {% endif %}">
+            {% for product in collections[section.settings.selectcollection].products %}
+              <div class="page_featured_collection_allproduct_boxs_new">
+                <a href="{{ product.url }}">
+
+                  {% if product.images.size > 0 %}
+                    <div class="page_featured_collection_allproduct_boxsimages_new">
+                      {% if product.images.size > 0 %}
+                        <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.featured_image.alt }}" class="first_image_new" />
+                      {% endif %}
+
+                      {% if product.images.size > 1 %}
+                        <img src="{{ product.images[1] | img_url: '600x' }}" alt="{{ product.images[1].alt }}" class="second_image_new" />
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
+                  <div class="page_featured_collection_allproduct_boxstexts_new">
+                    <h3>{{ product.title }}</h3>
+                    <div class="page_featured_collection_allproduct_boxstexts_bottom_new">
+                      <div class="page_featured_collection_allproduct_boxstexts_bottom_button_new">
+                        SHOP NOW
+                      </div>
+                      <div class="page_featured_collection_allproduct_boxstexts_bottom_price_new">
+                        {{ product.price | money }}
+                      </div>
+                    </div>
+                  </div>
+
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.mainbtntext != blank %}
+        <div class="page_featured_collection_allbuttons_new"> 
+          <a href="{{ section.settings.mainbtnlink }}" class="btn collection_btn_new">
+            {{ section.settings.mainbtntext }}
+          </a>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page Featured Collection",
+	"class": "the_safari_classics_featured_collection_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#234959"
+      },
+      {
+        "type": "color",
+        "id": "textcolor",
+        "label": "Select Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+		"type": "text",
+        "id": "mainheadingtext",
+        "label": "Add Main Heading Text",
+        "default": "Your Favourites Reimagined"
+      },
+      {
+		"type": "richtext",
+        "id": "maininfotext",
+        "label": "Add Main Information Text",
+        "default": "<p>Our Safari Classics collection is a celebration of our bold, bright and beautiful natural world. These motifs pay homage to the planet’s most majestic creatures, while also giving back to animal conservation through our 2% to the Wild Pledge.</p>"
+      },
+      {
+        "type": "collection",
+        "id": "selectcollection",
+        "label": "Select Collection Display"
+      },
+      {
+		"type": "text",
+        "id": "mainbtntext",
+        "label": "Add Main Button Text",
+        "default": "EXPLORE THE FULL COLLECTION"
+      },
+      {
+		"type": "url",
+        "id": "mainbtnlink",
+        "label": "Add Main Button link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Featured Collection"
+      }
+    ]
+  }
+{% endschema %}

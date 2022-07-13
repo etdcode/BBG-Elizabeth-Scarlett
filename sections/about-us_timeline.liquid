@@ -1,0 +1,128 @@
+<section class="about-us_timeline">
+    <div class="background-wrapper">
+        <div class="decoration">
+            <img src="{{ 'footer-floral.png' | asset_img_url: '181x' }}" alt="">
+        </div>
+        <div class="page-width">
+            <div class="content-wrapper">
+                <div class="upper-wrapper">
+                    <div class="text-wrapper">
+                        {% if section.settings.sub-title != blank %}
+                            <p class="sub-title">{{ section.settings.sub-title }}</p>
+                        {% endif %}
+                        {% if section.settings.title != blank %}
+                            <p class="title">{{ section.settings.title }}</p>
+                        {% endif %}     
+                        {% if section.settings.content1 != blank %}
+                            <div class="upper-content description">
+                                {{ section.settings.content1 }}
+                            </div>
+                        {% endif %}     
+                    </div>
+                    <div class="images-wrapper">
+                        {% if section.settings.image1 != blank %}
+                            <div class="image-1">
+                                <img src="{{ section.settings.image1 | img_url: 'master' }}" alt="{{ section.settings.image1.alt }}" loading="lazy">
+                            </div>
+                        {% endif %}
+                        {% if section.settings.image2 != blank %}
+                            <div class="image-2">
+                                <img src="{{ section.settings.image2 | img_url: 'master' }}" alt="{{ section.settings.image2.alt }}" loading="lazy">
+                            </div>
+                        {% endif %}
+                        {% if section.settings.image3 != blank %}
+                            <div class="image-3">
+                                <img src="{{ section.settings.image3 | img_url: 'master' }}" alt="{{ section.settings.image3.alt }}" loading="lazy">
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+        
+                <div class="lower-wrapper">
+                    <div class="image-4">
+                        <img src="{{ section.settings.image4 | img_url: 'master' }}" alt="{{ section.settings.image4.alt }}" loading="lazy">
+                    </div>
+        
+                    <div class="text-wrapper">
+                        {% if section.settings.content2 != blank %}
+                            <div class="lower-content-wrapper">
+                                <p class="lower-content">{{ section.settings.content2 }}</p>
+                            </div>
+                        {% endif %}
+        
+                        {% if section.settings.signature %}
+                            <div class="signature-wrapper">
+                                {% render 'founder-signature' %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Heritage And Timeline",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Upper Content"
+            },
+            {
+                "type": "text",
+                "id": "sub-title",
+                "label": "Sub Title",
+                "default": "Our Founder"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Meet Elizabeth"
+            },
+            {
+                "type": "richtext",
+                "id": "content1",
+                "label": "Content"
+            },
+            {
+                "type": "image_picker",
+                "id": "image1",
+                "label": "Image 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "image2",
+                "label": "Image 2"
+            },
+            {
+                "type": "image_picker",
+                "id": "image3",
+                "label": "Image 3"
+            },
+            {
+                "type": "header",
+                "content": "Lower Content"
+            },
+            {
+                "type": "textarea",
+                "id": "content2",
+                "label": "Content",
+                "default": "Add content here"
+            },
+            {
+                "type": "image_picker",
+                "id": "image4",
+                "label": "Image 4"
+            },
+            {
+                "type": "checkbox",
+                "id": "signature",
+                "label": "Show founder's signature",
+                "default": true
+            }
+        ]
+    }
+{% endschema %}

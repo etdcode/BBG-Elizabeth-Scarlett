@@ -1,0 +1,25 @@
+<div class="monogram-lead">
+  <div class="monogram-lead__content-container">
+    <div class="monogram-lead__icon-container">
+      <img src="{{ 'bee.svg' | asset_url }}" loading="lazy" alt="Icon" class="monogram-lead__icon">
+    </div>
+    <div class="monogram-lead__text-container">
+      <p class="monogram-lead__text">{{ section.settings.content }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Lead in",
+    "class": "monogram-lead-in-section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content",
+        "default": "Add up to three initials, from A-Z, beautiful gold lettering embroidered onto our best-selling Pouches & Make Up Bags."
+      }
+    ]
+  }
+{% endschema %}

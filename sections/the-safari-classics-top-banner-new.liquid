@@ -1,0 +1,71 @@
+{% if section.settings.desktopimage != blank or section.settings.mobileimage != blank or section.settings.mainheading != blank or section.settings.mainbtntext != blank %}
+  <div class="page_top_banner_main_new {{ section.id }}_banner_new" style="{% if section.settings.desktopimage != blank %}background: url({{ section.settings.desktopimage | img_url: '1920x' }}) no-repeat center center; background-size: cover;{% else %}background: #cccccc;{% endif %}">
+    <div class="container page_width_new">
+      <div class="page_top_banner_inner_new">
+        <div class="page_top_banner_allmaintext_new">
+          {% if section.settings.mainheading != blank %}
+            <h1>{{ section.settings.mainheading }}</h1>
+          {% endif %}
+          {% if section.settings.mainbtntext != blank %}
+            <div class="page_top_banner_allmaintext_button_new">
+              <a href="{{ section.settings.mainbtnlink }}" class="btn banner_btn_new">
+                {{ section.settings.mainbtntext }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% if section.settings.mobileimage != blank %}
+  <style type="text/css">
+    @media(min-width:0px) and (max-width:768px)
+    {
+    	.{{ section.id }}_banner_new{ background: url({{ section.settings.mobileimage | img_url: '768x' }}) no-repeat center center !important; background-size: cover !important; }
+    }
+  </style>
+{% endif %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Top Banner New",
+	"class": "the_safari_classics_top_banner_new",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktopimage",
+        "label": "Add Desktop Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobileimage",
+        "label": "Add Mobile Background Image"
+      },
+      {
+		"type": "text",
+        "id": "mainheading",
+        "label": "Add Main Heading Text",
+        "default": "THE SAFARI CLASSICS<br/>COLLECTION"
+      },
+      {
+		"type": "text",
+        "id": "mainbtntext",
+        "label": "Add Main Button Text",
+        "default": "START SHOPPING"
+      },
+      {
+		"type": "url",
+        "id": "mainbtnlink",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Top Banner New"
+      }
+    ]
+  }
+{% endschema %}

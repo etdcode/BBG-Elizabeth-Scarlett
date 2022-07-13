@@ -1,0 +1,15 @@
+<!-- snippets/product-recommended-products.liquid -->
+
+<div class="container mb-5">
+    <div class="row text-center">
+      <div class="col-12">
+        <h3>Recommended products</h3>
+      </div>
+    </div>
+    <div class="row recommended-collection">    
+      {% for recommended_product in recommended_collection.products %}
+        {% render 'product-card', product: recommended_product %}
+      {% endfor %}
+    </div>
+</div>
+  

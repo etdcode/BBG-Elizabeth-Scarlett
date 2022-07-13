@@ -1,0 +1,77 @@
+<!-- sections/product.liquid -->
+
+{% render 'product-lightbox-gallery', images: product.images %}
+
+{% comment %}
+  The product option type will default to the global theme setting.
+    Dropdown selects and swatches separate the product options into multiple selectors
+    Single select instead provides one dropdown based on variants (NOT options)
+
+  You can set a per product option type by setting the product metafield: options.option_type
+  Valid option types are "dropdowns" "swatches" "single"
+
+  To add a colour or an image to a swatch, set the shop metafield: swatch_asset.<< swatch handle >>
+  Swatch handle should always be a handlized version of the option value e.g. blue, forest-green, etc.
+  The value of the swatch asset metafield can be one of:
+    - A full URL to an image for the swatch e.g. https://mysite.com/my_image.png
+    - A valid css background colour e.g. #0088CC
+{% endcomment %}
+{% assign option_type = settings.product_default_option_type %}
+{% if product.metafields.options.option_type != blank %}
+  {% assign option_type = product.metafields.options.option_type %}
+{% endif %}
+
+{% comment %} Used to render the recommended products {% endcomment %}
+{% assign recommended_collection = product.collections | first %}
+
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+
+        {% comment %} Product imagery, left column {% endcomment %}
+        <div class="col-12 col-md-6">
+          {% render 'product-images', product: product %}
+        </div>
+
+        {% comment %} Product info, right column {% endcomment %}
+        <div class="col-12 col-md-6 pl-lg-10 mt-3">
+
+          {% comment %} Top line, vendor and review stars {% endcomment %}
+          <div class="row mb-1">
+            <div class="col">
+              <a class="text-muted text-decoration-none" href="#">{{ product.vendor }}</a>
+            </div>
+            <div class="col-auto d-inline-flex">
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            </div>
+          </div>
+
+          {% comment %} Product title {% endcomment %}
+          <h3 class="mb-2">{{ product.title }}</h3>
+
+          {% comment %} Price, compare at price, in stock marker {% endcomment %}
+          <div class="mb-5">
+            {% if product.compare_at_price_min > 0 %}
+              <span class="fs-6 fw-bold text-muted text-decoration-line-through">{{ product.compare_at_price | money }}</span>
+            {% endif %}
+            <span class="ms-1 fs-5 fw-bold text-primary">{{ product.price | money }}</span>
+            <span class="small ms-1">{% if product.available %}(In Stock){% else %}(Out of Stock){% endif %}</span>
+          </div>
+
+          {% comment %} PDP form {% endcomment %}
+          {% render 'product-form', product: product, option_type: option_type %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% render 'product-tabs', product: product %}
+
+{% render 'product-reviews', product: product %}
+
+{% render 'product-recently-viewed.liquid' %}
+
+{% render 'product-recommended-products', recommended_collection: recommended_collection %}

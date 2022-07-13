@@ -1,0 +1,39 @@
+<!-- templates/customers/login.liquid -->
+<div class="page-wrapper">
+  <div class="container p-5">
+    <div class="row customer-login-wrapper">
+      {% render 'account-log-in', reset_password: true %}
+      <div class="col-md-5 offset-md-1 " id="signup-form">
+        <h1 class="login-page__title">Sign Up</h1>
+        {% form 'create_customer' %}
+        {{ form.errors | default_errors }}
+          <div class="form-floating">
+            <input type="text" id="floatingFirstName" name="customer[first_name]" class="form-control" placeholder="First Name" autofocus>
+            <label for="floatingFirstName">First name</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" id="floatingLastName" name="customer[last_name]" class="form-control" placeholder="Last Name">
+            <label for="floatingPassword">Last name</label>
+          </div>
+          <div class="form-floating">
+            <input type="email" name="customer[email]" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" name="customer[password]" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="right-align checkbox">
+            <label>I want to receive marketing communications.
+              <input type="checkbox" id="accepts_marketing" name="customer[accepts_marketing]" value="true">
+            </label>
+            <br><br>
+            <div class="form-group">
+              <button type="submit" class="form-submit btn btn-secondary">Sign Up</button>
+            </div>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,222 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "9371acf5-800f-4f22-82df-d891fd5cca84": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/BeautifullyEmbroidered-01.webp",
+            "text": "Beautifully Embroidered"
+          }
+        },
+        "c538a718-94a5-411b-bb78-a6a74b53aded": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/HandPaintedDesigns-01.webp",
+            "text": "Hand Painted Designs"
+          }
+        },
+        "44cb85bc-3c4c-4595-b937-4e1ab327dbeb": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/DoubleSided-01.webp",
+            "text": "Double Sided"
+          }
+        },
+        "e70488e4-96ce-4b30-a320-2097c06c0785": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/2totheWild-01.png",
+            "text": "2 to the Wild"
+          }
+        }
+      },
+      "block_order": [
+        "9371acf5-800f-4f22-82df-d891fd5cca84",
+        "c538a718-94a5-411b-bb78-a6a74b53aded",
+        "44cb85bc-3c4c-4595-b937-4e1ab327dbeb",
+        "e70488e4-96ce-4b30-a320-2097c06c0785"
+      ],
+      "settings": {
+        "customdescription": "<p>Our cosmetics bags are the perfect size to store your makeup, skincare and other lotions and potions. They add a little luxury and colour to your day and feature a handy water-resistant lining, so no need to worry about messy mishaps.<\/p>"
+      }
+    },
+    "list-gift": {
+      "type": "list-gift",
+      "settings": {
+        "classname": "desk_version",
+        "featured_collection": "gift-notes",
+        "sub_heading": "MAKE IT THE PERFECT GIFT",
+        "heading": "Add those finishing touches"
+      }
+    },
+    "product-tab": {
+      "type": "product-tab",
+      "blocks": {
+        "e0d2be42-a1e0-43d5-a5af-7e4ebb757682": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "THE DESIGN",
+            "title": "{{ product.metafields.my_fields.the_design_title.value }}",
+            "content": "<p>{{ product.metafields.my_fields.the_design_content.value }}<\/p>",
+            "metafield_content": ""
+          }
+        },
+        "5a3eb251-a640-40f1-95c9-d5d2fb6d56b3": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "PRODUCT details & care",
+            "title": "",
+            "content": "<p>Elizabeth was inspired by the Sheldrick Wildlife Trust’s work rescuing and nurturing orphaned baby elephants, rhinos, and other wildlife species. Featuring a hand-illustrated motif of the mother elephant leading her calf embroidered onto luxury cotton velvet, this pouch is perfect for storing your daily essentials, ideally sized to fit in your handbag or to use as a clutch. <\/p>",
+            "metafield_content": "{{ product.metafields.custom.product_details_care_content  }}"
+          }
+        },
+        "b66f5ef2-7905-480b-a590-df55620f3752": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "accordion_title": "delivery & returns",
+            "title": "",
+            "content": "<p>For every item sold from the collection, we’re donating the equivalent value of up to three bottles of specialist formula milk for orphan baby elephants.* <\/p>",
+            "metafield_content": ""
+          }
+        },
+        "4cc8996f-0603-47a1-817d-575a231fa03e": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "accordion_title": "need help?",
+            "title": "",
+            "content": "<p>Together we can raise vital funds to help the Trust on their mission to secure a future for these special keystone species.<\/p>",
+            "metafield_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "e0d2be42-a1e0-43d5-a5af-7e4ebb757682",
+        "5a3eb251-a640-40f1-95c9-d5d2fb6d56b3",
+        "b66f5ef2-7905-480b-a590-df55620f3752",
+        "4cc8996f-0603-47a1-817d-575a231fa03e"
+      ],
+      "settings": {
+        "img": "shopify:\/\/shop_images\/ES.png",
+        "description": "<p>We donate 2% of our annual sales to honour the beautiful animals that embellish our much-loved textiles. So far, with your help, we’ve awarded over £230,000 to charities and projects that support keystone species.<\/p><p><strong>ELIZABETH SCARLETT, FOUNDER<\/strong><\/p>"
+      }
+    },
+    "list-product": {
+      "type": "list-product",
+      "disabled": true,
+      "blocks": {
+        "1eb791ae-8fb9-4ba6-8dba-9a70c9455a57": {
+          "type": "products",
+          "settings": {
+            "featured_product": "british-blooms-black-velvet-cushion"
+          }
+        },
+        "25ba007f-bffb-4d53-825d-f6a2d967c499": {
+          "type": "products",
+          "settings": {
+            "featured_product": "british-blooms-wash-bag"
+          }
+        },
+        "8b9341ea-eb8e-45bb-be5e-2591ceb597cd": {
+          "type": "products",
+          "settings": {
+            "featured_product": "constellations-natural-velvet-wash-bag"
+          }
+        },
+        "c3840c54-985f-49a6-9106-f691e67690d8": {
+          "type": "products",
+          "settings": {
+            "featured_product": "aquarius-velvet-travel-pouch"
+          }
+        },
+        "ce55b411-c9bf-4de2-9c5f-093f081bf0f4": {
+          "type": "products",
+          "disabled": true,
+          "settings": {
+            "featured_product": "british-blooms-black-velvet-eye-mask"
+          }
+        },
+        "b46cf6b0-e144-42e4-99c9-ee648e42cdb1": {
+          "type": "products",
+          "disabled": true,
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "e66b3c3d-00fc-42b2-83ea-70a7b5bb5e2a": {
+          "type": "img-text",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/BF_Homepage_Mob_07.jpg",
+            "text": "Pouches",
+            "link": "shopify:\/\/collections\/pouches"
+          }
+        }
+      },
+      "block_order": [
+        "1eb791ae-8fb9-4ba6-8dba-9a70c9455a57",
+        "25ba007f-bffb-4d53-825d-f6a2d967c499",
+        "8b9341ea-eb8e-45bb-be5e-2591ceb597cd",
+        "c3840c54-985f-49a6-9106-f691e67690d8",
+        "ce55b411-c9bf-4de2-9c5f-093f081bf0f4",
+        "b46cf6b0-e144-42e4-99c9-ee648e42cdb1",
+        "e66b3c3d-00fc-42b2-83ea-70a7b5bb5e2a"
+      ],
+      "settings": {
+        "sub_heading": "discover",
+        "heading": "Wonderful Things",
+        "description": "Embroidered with Elizabeth's hand-painted designs from her travels, every limited-edition collections is designed to bring a little more luxury to the every day.",
+        "link_txt": "Shop best sellers",
+        "link": "shopify:\/\/collections\/constellations-collection"
+      }
+    },
+    "1649502118cd16e2e7": {
+      "type": "list-gift",
+      "settings": {
+        "classname": "mobile_version",
+        "featured_collection": "gift-notes",
+        "sub_heading": "MAKE IT THE PERFECT GIFT",
+        "heading": "Add those finishing touches"
+      }
+    },
+    "16495020781597a2d0": {
+      "type": "index--image-with-text",
+      "settings": {
+        "background-color": "",
+        "button_text": "",
+        "image_1": "shopify:\/\/shop_images\/ES.png",
+        "caption_1": "",
+        "link_1": "",
+        "caption_2": "",
+        "link_2": ""
+      }
+    },
+    "product-reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "product-recommendation": {
+      "type": "product-recommendation",
+      "disabled": true,
+      "settings": {}
+    },
+    "popup-mono": {
+      "type": "popup-mono",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "list-gift",
+    "product-tab",
+    "list-product",
+    "1649502118cd16e2e7",
+    "16495020781597a2d0",
+    "product-reviews",
+    "product-recommendation",
+    "popup-mono"
+  ]
+}

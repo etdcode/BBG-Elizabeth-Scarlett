@@ -1,0 +1,112 @@
+<!-- snippets/desktop-megamenu.liquid -->
+
+{% assign this_menu = linklists[menu] %}
+
+<div id="MainNav">
+  <nav class="navbar py-0 {% if hide_on_mobile %}h-desktop{% endif %}">
+    <div id="main_nav">
+      <ul class="is-flex header__main-links px-0">
+        {% for link in this_menu.links %}
+          {% assign link_title = link.title | downcase %}
+
+          {%- comment -%} Check if the link has child {%- endcomment -%}
+          {% assign is_child = false %}
+          {% assign count_child = 0.0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.parent == link_title %}
+              {% if is_child == false %}
+                {% assign is_child = true %}              
+              {% endif %}
+              {% if block.type == 'megamenu_product' %}
+                {% for i in (1..4) %}
+                  {% capture product_handle %}product_{{ i }}{% endcapture %}
+                  {% if block.settings[product_handle] != empty %}
+                    {% assign count_child = count_child | plus: 0.5 %}
+                  {% endif %}
+                {% endfor %}            
+              {% else %}
+                {% assign count_child = count_child | plus: 1 %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} This top level link does not have children {% endcomment %}
+          {% if is_child == false %}
+            <li class="nav-item nav__link">
+              <a href="{{ link.url }}" class="section__subheading no-margin {% if link.active %}active{% endif %}">{{ link.title }}</a>
+            </li>
+
+          {% comment %} This top level link does have children {% endcomment %}
+          {% else %}
+            <li class="nav-item dropdown has-megamenu position-static nav__link">
+              <a class="section__subheading no-margin dropdown-toggle {% if link.active %}active{% endif %}">{{ link.title }}</a>
+
+              <div class="dropdown-menu megamenu start-0 end-0 w100">
+                <div class="position-relative">
+                  <div class="page-wrapper megamenu__row {% if count_child > 4 %}row--spacing{% endif %}">
+                    {% for block in section.blocks %}
+                      {% if block.settings.parent == link_title %}
+                        {% if block.type == 'megamenu_links' %}
+                          <div class="megamenu__links">
+                            {% for i in (1..2) %}
+                              {% capture title %}title_{{ i }}{% endcapture %}
+                              {% capture titlelink %}title_link_{{ i }}{% endcapture %}
+                              {% capture list %}link_list_{{ i }}{% endcapture %}
+  
+                              {% if block.settings[list] != empty %}
+                                <ul>
+                                  {% if block.settings[title] %}
+                                    <div class="megamenu__link-title is-uppercase"><a href="{% if block.settings[titlelink] != blank %} {{ block.settings[titlelink] }} {% else %} javascript:void(0) {% endif %}">{{ block.settings[title] }}</a></div>                        
+                                  {% endif %}
+        
+                                  {% for link in linklists[block.settings[list]].links %}
+                                    <li><a class="megamenu__link" href="{{ link.url }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+  
+                        {% if block.type == 'megamenu_product' %}
+                          <div class="megamenu__product-row">
+                            {% for i in (1..4) %}
+                              {% capture product_handle %}product_{{ i }}{% endcapture %}
+                              {% if block.settings[product_handle] != empty %}
+                                {% assign product = block.settings[product_handle] %}
+                                <div class="index__product-card megamenu__product">
+                                  <a href="{{ product.url }}" class="index__product-image">
+                                    <img src="{{ product.images[0] | img_url: '600x' }}" {% if product.images[1] %}class="product__first-img"{% endif %}>
+                                    {% if product.images[1] %}
+                                      <img src="{{ product.images[1] | img_url: '600x' }}" class="product__second-img">             
+                                    {% endif %}
+                                  </a>
+                                  <a href="{{ product.url }}">
+                                    <div class="megamenu__product-title">{{ product.title }}</div>                              
+                                  </a>
+                                  <a class="megamenu__product-link is-uppercase" href="{{ product.url }}">Shop now</a>
+                                </div>
+                              {% endif %}
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+
+                  {% for block in section.blocks %}
+                    {% if block.type == 'corner_image' and block.settings.parent == link_title %}
+                      <img class="megamenu__corner-image megamenu__corner-image--{{ block.settings.corner_image_pos }}" src="{{ block.settings.corner_image | img_url: '300x' }}">
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </li>        
+          {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+   
+</div>

@@ -1,0 +1,10 @@
+<!-- snippets/header-ancillary-links.liquid -->
+<li class="header__search-form js-search-form">
+   <form class="search-form" action="/search" method="get" role="search">
+      <div class="search-btn h-desktop">{% render 'icon-search' %}</div>
+      <input id="HeaderSearchInput" type="search" name="q" placeholder="{{ 'general.search.placeholder' | t }}" value="{{ search.terms | escape }}">
+      <a id="CloseSearch">{% render 'icon-close' %}</a>
+   </form>
+</li>
+<li class="nav__btn"><a class="nav-link h-desktop" href="#swym-wishlist" class="swym-wishlist">{% render 'icon-wishlist' %}</a></li>
+<li class="nav__btn"><a class="nav-link h-desktop" href="{{ routes.account_url }}">{% render 'icon-account' %}</a></li> 

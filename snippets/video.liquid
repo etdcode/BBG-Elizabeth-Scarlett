@@ -1,0 +1,23 @@
+{% assign is_autoplay = 1 %} 
+{% assign is_mute = 1 %} 
+{% assign is_loop = 1 %} 
+{% assign is_control = 0 %} 
+{% if autoplay == false %} {% assign is_autoplay = 0 %} {% endif %} 
+{% if mute == false %} {% assign is_mute = 0 %} {% endif %} 
+{% if loop == false %} {% assign is_loop = 0 %} {% endif %} 
+{% if controls %} {% assign is_control = 1 %} {% endif %} 
+
+{% case video_type %} 
+   {% when 'youtube' %} 
+      <div class="plyr__video-wrapper plyr__video-embed">
+         <iframe class="js-player" frameborder="0" allowfullscreen="1" allow='autoplay' width="640" height="360" src="https://www.youtube.com/embed/{{ video_url.id }}?enablejsapi=1&autoplay={{ is_autoplay }}&controls={{ is_control }}&loop={{ is_loop }}&playlist={{ video_url.id }}&playsinline=1&rel=0&autohide=1&mute={{ is_mute }}"></iframe> 
+      </div>
+   {% when 'vimeo' %}
+      <div class="plyr__video-wrapper plyr__video-embed">  
+         <iframe src="https://player.vimeo.com/video/{{ video_url.id }}?autoplay=1&loop={{ is_loop }}&title=0&byline=0&portrait=0&muted={{ is_mute }}&controls={{ is_control }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div> 
+   {% else %}
+      <video autoplay muted loop playsinline class="video--self-host">
+         <source src="{{ video_url }}" type="video/mp4">
+      </video>
+{% endcase %} 

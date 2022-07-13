@@ -1,0 +1,141 @@
+<div class="page_Image_text_Infotext_main_new" style="background: {{ section.settings.backcolor }};">
+  <div class="container page_width_new">    
+    {% if section.settings.mainheadingtext != blank or section.settings.topinfotext != blank %}
+      <div class="page_Image_text_Infotext_allheading_new common_title_new">
+        {% if section.settings.mainheadingtext != blank or section.settings.topinfotext != blank %}
+          <div class="page_Image_text_Infotext_headingtext_new">
+            <h2>{{ section.settings.mainheadingtext }}</h2>
+            {% if section.settings.topinfotext != blank %}
+              {{ section.settings.topinfotext }}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    {% if section.settings.topdeskimg != blank or section.settings.topmobimg != blank or section.settings.bottomdeskimg != blank or section.settings.bottommobimg != blank or section.settings.quoteimg != blank or section.settings.bottoninfotext != blank or section.settings.bottommaintext != blank %}
+      <div class="page_Image_text_Infotext_inner_new">
+        {% if section.settings.topdeskimg != blank or section.settings.topmobimg != blank %}
+          <div class="page_Image_text_Infotext_top_new">
+            {% if section.settings.topdeskimg != blank %}
+              <div class="page_Image_text_Infotext_top_desktop_new">
+                <img src="{{ section.settings.topdeskimg | img_url: '900x' }}" alt="{{ section.settings.topdeskimg.alt }}" />
+              </div>
+            {% endif %}
+            {% if section.settings.topmobimg != blank %}
+              <div class="page_Image_text_Infotext_top_mobile_new">
+                <img src="{{ section.settings.topmobimg | img_url: '768x' }}" alt="{{ section.settings.topmobimg.alt }}" />
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.bottomdeskimg != blank or section.settings.bottommobimg != blank or section.settings.quoteimg != blank or section.settings.bottoninfotext != blank or section.settings.bottommaintext != blank %}
+          <div class="page_Image_text_Infotext_bottom_new">
+            {% if section.settings.bottomdeskimg != blank or section.settings.bottommobimg != blank %}
+              <div class="page_Image_text_Infotext_bottom_left_new">
+                {% if section.settings.bottomdeskimg != blank %}
+                  <div class="page_Image_text_Infotext_bottom_desktop_new">
+                    <img src="{{ section.settings.bottomdeskimg | img_url: '900x' }}" alt="{{ section.settings.bottomdeskimg.alt }}" />
+                  </div>
+                {% endif %}
+                {% if section.settings.bottommobimg != blank %}
+                  <div class="page_Image_text_Infotext_bottom_mobile_new">
+                    <img src="{{ section.settings.bottommobimg | img_url: '768x' }}" alt="{{ section.settings.bottommobimg.alt }}" />
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if section.settings.quoteimg != blank or section.settings.bottoninfotext != blank or section.settings.bottommaintext != blank %}
+              <div class="page_Image_text_Infotext_bottom_right_new">
+                {% if section.settings.quoteimg != blank %}
+                  <div class="page_Image_text_Infotext_quote_new">
+                    <img src="{{ section.settings.quoteimg | img_url: '100x' }}" alt="{{ section.settings.quoteimg.alt }}" />
+                  </div>
+                {% endif %}
+                {% if section.settings.bottoninfotext != blank %}
+                  <div class="page_Image_text_Infotext_quote_name_new">
+                    {{ section.settings.bottoninfotext }}
+                  </div>
+                {% endif %}
+                {% if section.settings.bottommaintext != blank %}
+                  <div class="page_Image_text_Infotext_quote_author_new">
+                    {{ section.settings.bottommaintext }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page Image Text Infotext",
+	"class": "the_safari_classics_Image_text_Infotext_new",
+    "settings": [
+	   {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#FFFEF9"
+      },
+      {
+        "type": "text",
+        "id": "mainheadingtext",
+        "label": "Add Main Heading Text",
+        "default": "Something For Everyone"
+      },
+      {
+        "type": "richtext",
+        "id": "topinfotext",
+        "label": "Add Top Information Text",
+        "default": "<p>Our luxury pyjama sets are perfect for cosy sleeps and lazy days at home. Made from 100% sustainable cotton, supporting the Better Cotton Initiative, they feel sumptuously soft against your skin.</p><p>Complete with Elizabeth’s hand-drawn prints, a relaxed fit, and detailed finishing touches, they will have you drifting off into the deepest of slumbers in no time.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "topdeskimg",
+        "label": "Add Top Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "topmobimg",
+        "label": "Add Top Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottomdeskimg",
+        "label": "Add Bottom Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottommobimg",
+        "label": "Add Bottom Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "quoteimg",
+        "label": "Add Quote Image"
+      },
+      {
+        "type": "textarea",
+        "id": "bottoninfotext",
+        "label": "Add Bottom Information Texts",
+        "default": "This collection is made up of some of our most loved designs. It’s so exciting to see what started as rough honeymoon inspired sketches all the years ago go on to live a life of their own, adding a touch of the wild to our lovely communities’ homes, travels and wardrobes while also raising money for vital wildlife conservation projects."
+      },
+      {
+        "type": "text",
+        "id": "bottommaintext",
+        "label": "Add Bottom Main Texts",
+        "default": "Elizabeth"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Image Text Infotext"
+      }
+    ]
+  }
+{% endschema %}

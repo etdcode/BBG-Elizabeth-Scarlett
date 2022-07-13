@@ -1,0 +1,101 @@
+{% if section.settings.mainheadingtext != blank or section.blocks.size > 0 %}
+  <div class="page_collection_lists_main_new" style="background: {{ section.settings.backcolor }};">
+    <div class="container page_width_new">
+      {% if section.settings.mainheadingtext != blank %}
+        <div class="page_collection_lists_heading_new common_title_new">
+          <h2>{{ section.settings.mainheadingtext }}</h2>
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="page_collection_lists_main_boxs_new">
+          {% for block in section.blocks %}
+            {% if block.settings.selectcollection != blank %}
+              {%- assign collection = collections[block.settings.selectcollection] -%}
+              <div class="page_collection_lists_inner_boxs_new">
+                <a href="{{ collection.url }}">
+                  <div class="page_collection_lists_inner_boxs_images_new">
+                    {% if block.settings.desktopImage != blank or block.settings.mobileImage != blank %}
+                      <img src="{{ block.settings.desktopImage | img_url: '600x' }}" alt="{{ block.settings.desktopImage.alt }}" class="dekstop_img_new" />
+                      <img src="{{ block.settings.mobileImage | img_url: '600x' }}" alt="{{ block.settings.mobileImage.alt }}" class="mobile_img_new" />
+                    {% else %}
+                      <img src="{{ collection.image | img_url: '600x' }}" alt="{{ collection.title }}" />
+                    {% endif %}
+                  </div>
+                  <div class="page_collection_lists_inner_boxs_texts_new">
+                    <h3>{{ collection.title }}</h3>
+                    <p>SHOP NOW</p>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page Collection Lists New",
+	"class": "the_safari_classics_collection_lists_new",
+	"max_blocks": 4,
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#f4efeb"
+      },
+      {
+          "type": "text",
+          "id": "mainheadingtext",
+          "label": "Add Main Heading Text",
+          "default": "Organisation for Every Occasion"
+      }
+    ],
+	"blocks" : [
+      {
+        "type": "collection_lists",
+        "name": "Collection Lists",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "selectcollection",
+            "label": "Select Collection Display"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktopImage",
+            "label": "Add Collection Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobileImage",
+            "label": "Add Collection Mobile Image"
+          }
+        ]
+      }
+	],
+    "presets": [
+      {
+        "name": "Page Collection Lists New",
+		"blocks": [
+          {
+            "type": "collection_lists"
+          },
+          {
+            "type": "collection_lists"
+          },
+          {
+            "type": "collection_lists"
+          },
+          {
+            "type": "collection_lists"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

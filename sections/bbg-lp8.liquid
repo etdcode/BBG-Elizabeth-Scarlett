@@ -1,0 +1,74 @@
+
+
+{% schema %} 
+{
+    "name": "Section 8 Text Banner",
+    "blocks": [{
+        "name" : "Section 8 text banner",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline8",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "text",
+            "id": "mob-headline8",
+            "label": "Enter the mobile Section Title"
+        },
+		{
+            "type": "textarea",
+            "id": "rev-body1",
+            "label": "Enter the Section text"
+        },
+		{
+            "type": "text",
+            "id": "but-txt",
+            "label": "Enter the button text"
+        },
+		{
+            "type": "text",
+            "id": "but-url",
+            "label": "Enter the button URL"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+	
+
+<!-- Section 8 - Text Banner-->
+		<div class="section8">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h2 class="sec-8-title">{{ b.section-headline8 | p_url }}</h2>
+                      <h2 class="sec-8-titlemob">{{ b.mob-headline8 | p_url }}</h2>
+                      <p class="sec-8-body">{{ b.rev-body1 | p_url }}</p><a href="{{ b.but-url | p_url }}"><button class="sec7-but">{{ b.but-txt | p_url }}</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		

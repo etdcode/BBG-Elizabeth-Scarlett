@@ -1,0 +1,29 @@
+{% assign video-type = video-url.type %}
+
+{% case video-type %}
+    {% when "youtube" %}
+        <div class="youtube-wrapper">
+            <iframe
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/{{ video-url.id }}?controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;mute=1&amp;autoplay=1&amp;loop=1"></iframe>
+        </div>
+    {% when "vimeo" %}
+        <div class="vimeo-wrapper">
+            <iframe
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen="allowfullscreen" width="100%" height="100%"
+            src="https://player.vimeo.com/video/{{ video-url.id }}?byline=0&amp;controls=1&amp;playsinline=1&amp;title=0&amp;muted=1&amp;autoplay=1&amp;loop=1"></iframe>
+        </div>
+    {% else %}
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="{{ video-url }}" type="video/mp4">
+            </video>
+            <div class="mute-button">
+                {% render 'icon-mute' %}
+            </div>
+            <div class="unmute-button">
+                {% render 'icon-unmute' %}
+            </div>
+        </div>
+{% endcase %}

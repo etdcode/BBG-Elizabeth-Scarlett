@@ -1,0 +1,129 @@
+{% if section.settings.desktopimage != blank or section.settings.mobileimage != blank or section.settings.starimage != blank or section.settings.addinfotext != blank or section.settings.authortext != blank %}
+  <div class="wild_garden_Imgs_Icon_Info_author_main_new" style="background:{{ section.settings.backcolor }};">
+    <div class="page-wrapper">
+      <div class="wild_garden_Imgs_Icon_Info_author_inner_new">
+        {% if section.settings.desktopimage != blank or section.settings.mobileimage != blank %}
+          <div class="wild_garden_Imgs_Icon_Info_author_fullimage_new">
+            {% if section.settings.desktop_video != blank %}
+              <div class="wild_garden_Imgs_Icon_Info_author_desktopimage_new wild_desktop-video wild-video-wrapper">
+                <video src="{{ section.settings.desktop_video }}" controls autoplay muted playsinline></video>
+              </div>
+            {% else %}
+              {% if section.settings.desktopimage != blank %}
+                <div class="wild_garden_Imgs_Icon_Info_author_desktopimage_new">
+                  <img src="{{ section.settings.desktopimage | img_url: 'master' }}" alt="{{ section.settings.desktopimage.alt }}" />
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if section.settings.mobile_video != blank %}
+              <div class="wild_garden_Imgs_Icon_Info_author_mobileimage_new wild_mobile-video wild-video-wrapper">
+                <video src="{{ section.settings.mobile_video }}" controls autoplay muted playsinline></video>
+              </div>
+            {% else %}
+              {% if section.settings.mobileimage != blank %}
+                <div class="wild_garden_Imgs_Icon_Info_author_mobileimage_new">
+                  <img src="{{ section.settings.mobileimage | img_url: 'master' }}" alt="{{ section.settings.mobileimage.alt }}" />
+                </div>
+              {% endif %}
+            {% endif %}
+            
+            {% if section.settings.leftcustomimage != blank %}
+              <div class="wild_garden_Imgs_Icon_Info_author_leftcustomimage_new">
+                <img src="{{ section.settings.leftcustomimage | img_url: 'master' }}" alt="{{ section.settings.leftcustomimage.alt }}" />
+              </div>
+            {% endif %}
+            {% if section.settings.rightcustomimage != blank %}
+              <div class="wild_garden_Imgs_Icon_Info_author_rightcustomimage_new">
+                <img src="{{ section.settings.rightcustomimage | img_url: 'master' }}" alt="{{ section.settings.rightcustomimage.alt }}" />
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        
+        <div class="wild_garden_Imgs_Icon_Info_new">
+          {% if section.settings.starimage != blank %}
+            <div class="wild_garden_Imgs_Icon_Info_author_stariconimg_new">
+              <img src="{{ section.settings.starimage | img_url: 'master' }}" alt="{{ section.settings.starimage.alt }}" />
+            </div>
+          {% endif %}
+
+          {% if section.settings.addinfotext != blank %}
+            {{ section.settings.addinfotext }}
+          {% endif %}
+
+          {% if section.settings.authortext != blank %}
+            <h3>{{ section.settings.authortext }}</h3>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Imgs Icon Info Author New",
+	"class": "wild_garden_Imgs_Icon_Info_author_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "desktop_video",
+        "label": "Desktop Video URL"
+      },
+      {
+        "type": "text",
+        "id": "mobile_video",
+        "label": "Mobile Video URL"
+      },
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#fffef9"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktopimage",
+        "label": "Add Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobileimage",
+        "label": "Add Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "leftcustomimage",
+        "label": "Add Left Custom Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "rightcustomimage",
+        "label": "Add Right Custom Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "starimage",
+        "label": "Add Star Icon Image"
+      },
+      {
+        "type": "richtext",
+        "id": "addinfotext",
+        "label": "Add Informations Texts",
+        "default": "<p>I have never been disappointed in anything I have bought from Elizabeth Scarlett. Beautiful rich colour, sumptuous velvet and wonderful design</p>"
+      },
+      {
+        "type": "text",
+        "id": "authortext",
+        "label": "Add Author Text",
+        "default": "Tanya N"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Imgs Icon Info Author New"
+      }
+    ]
+  }
+{% endschema %}

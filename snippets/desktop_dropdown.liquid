@@ -1,0 +1,88 @@
+<!-- snippets/desktop-megamenu.liquid -->
+
+{% assign this_menu = linklists[menu] %}
+
+
+
+<div id="MainNav">
+  <nav class="navbar py-0 {% if hide_on_mobile %}h-desktop{% endif %}">
+    <div id="main_nav">
+      <ul class="is-flex header__main-links px-0">
+        {% for link in this_menu.links %}
+        
+    {% if link.links != blank %}
+      {%- assign has_dropdown = true -%}
+      {% if link.levels > 1 %}
+        {%- assign is-mega-menu = true -%}
+      {% endif %}
+    {% endif %}
+          {% assign link_title = link.title | downcase %}
+
+          {%- comment -%} Check if the link has child {%- endcomment -%}
+          {% assign is_child = false %}
+          {% assign count_child = 0.0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.parent == link_title %}
+              {% if is_child == false %}
+                {% assign is_child = true %}              
+              {% endif %}
+              {% if block.type == 'megamenu_product' %}
+                {% for i in (1..4) %}
+                  {% capture product_handle %}product_{{ i }}{% endcapture %}
+                  {% if block.settings[product_handle] != empty %}
+                    {% assign count_child = count_child | plus: 0.5 %}
+                  {% endif %}
+                {% endfor %}            
+              {% else %}
+                {% assign count_child = count_child | plus: 1 %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} This top level link does not have children {% endcomment %}
+          {% if is_child == true %}
+            <li class="nav-item nav__link">
+              <a href="{{ link.url }}" class="section__subheading no-margin {% if link.active %}active{% endif %}">{{ link.title }}</a>
+            </li>
+
+          {% comment %} This top level link does have children {% endcomment %}
+          {% else %}
+            <li class="{% if has_dropdown %} site-nav--has-dropdown {% endif %}" {% if has_dropdown %}aria-haspopup="true"{% endif %}>
+      <a href="{{ link.url }}" class="site-nav__link site-nav__custom-link{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}" >{{ link.title }}</a>
+{% if has_dropdown %}
+        <ul class="site-nav__dropdown text-left">
+          {% for childlink in link.links %}
+            {%- assign has_sub_dropdown = false -%}
+            {% if childlink.links != blank %}
+              {%- assign has_sub_dropdown = true -%}
+            {% endif %}
+
+            <li class="{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}">
+              <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level {% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
+                {{ childlink.title | escape }}
+                {% if has_sub_dropdown %}
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
+                {% endif %}
+              </a>
+              {% if has_sub_dropdown %}
+                <ul class="site-nav__deep-dropdown">
+                  {% for grandchildlink in childlink.links %}
+                    <li>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">{{ grandchildlink.title | escape }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}   
+</li>       
+          {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+   
+</div>

@@ -1,0 +1,55 @@
+{%- if section.settings.iconpath != blank or section.settings.infotext != blank -%}
+  <div class="island_back_svg_icon_text_main_new" style="background: {{ section.settings.backcolor }};">
+    <div class="page-wrapper">
+      <div class="island_back_svg_icon_text_inner_new">
+        <div class="island_back_svg_icon_text_leftrightboth_new">
+          {%- if section.settings.iconpath != blank -%}
+            <div class="island_back_svg_icon_text_leftside_new">
+              <img src="{{ section.settings.iconpath | img_url:'master' }}" alt="{{ section.settings.iconpath.alt }}" />
+            </div>
+          {%- endif -%}
+          {%- if section.settings.infotext != blank -%}
+            <div class="island_back_svg_icon_text_rightside_new">
+              {{ section.settings.infotext }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div> 
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Island Back SVG Icon Text",
+	"class": "island_back_svg_icon_text_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "backcolor",
+        "label": "Select Background Color",
+        "default": "#F9F4ED"
+      },
+      {
+        "type": "header",
+        "content": "All Information Details"
+      },
+      {
+		"type": "image_picker",
+        "id": "iconpath",
+        "label": "Add Icon Image"
+      },
+      {
+		"type": "richtext",
+        "id": "infotext",
+        "label": "Add Information Text",
+        "default": "<p>*Supporting our 2% to the wild initiative, 2% from every item in our Island Paradise Collection and 10% of the sales of turtle range will be donated to the Blue Marine Foundation and will be allocated to St Maarten and St Eustatius projects. We will endeavour to direct the funds raised from your purchase to benefit turtles, however, any surplus funds will go towards their wider marine conservation initiatives.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Island Back SVG Icon Text"
+      }
+    ]
+  }
+{% endschema %}

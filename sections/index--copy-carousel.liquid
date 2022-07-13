@@ -1,0 +1,64 @@
+<div class="page-wrapper index__copy-carousel" tab-wrapper {% if section.settings.enable_autoplay %}autoplay="true" speed="{{ section.settings.autoplay_speed }}"{% endif %}>
+   <div class="cp-carousel__nav" tab-navigators>
+      {% for block in section.blocks %}
+         <a target="block_{{ block.id }}" {% if forloop.index == 1 %}class="active"{% endif %}><img src="{{ block.settings.icon | img_url: '100x' }}"></a>
+      {% endfor %}
+   </div>
+
+   <div class="cp-carousel__slider" tab-content>
+      {% for block in section.blocks %}
+         <div class="cp-carousel__single-slide {% if forloop.index == 1%}active{% endif %}" id="block_{{ block.id }}">
+            <div class="cp-carousel__caption cp-carousel__title text-center">{{ block.settings.text }}</div>  
+         </div>
+      {% endfor %}
+   </div>
+</div>
+
+{% schema %}
+   {
+      "name": "Copy carousel",
+      "settings": [
+         {
+            "id": "enable_autoplay",
+            "type": "checkbox",
+            "label": "Enable autoplay",
+            "default": true
+         },
+         {
+            "id": "autoplay_speed",
+            "type": "range",
+            "label": "Autoplay speed",
+            "min": 1000,
+            "max": 9000,
+            "step": 1000,
+            "unit": "ms",
+            "default": 5000
+         }
+      ],
+      "blocks": [
+         {
+            "name": "Page",
+            "type": "page",
+            "settings": [
+               {
+                  "id": "text",
+                  "type": "richtext",
+                  "label": "Text",
+                  "default": "<p>Some description goes here...</p>"
+               },
+               {
+                  "id": "icon",
+                  "type": "image_picker",
+                  "label": "Navigator icon"
+               }
+            ]
+         }
+      ],
+      "presets": [
+         {
+            "name": "Copy carousel",
+            "category": "Carousel"
+         }
+      ]
+   }
+{% endschema %}

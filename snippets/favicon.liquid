@@ -1,0 +1,5 @@
+{% if settings.favicon %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x180' }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x32' }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon | img_url: '16x16' }}">
+{% endif %}

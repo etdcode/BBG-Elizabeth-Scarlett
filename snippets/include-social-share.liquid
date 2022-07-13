@@ -1,0 +1,29 @@
+{% capture current_url %}{{shop.url}}{{ article.url }}{% endcapture %}
+
+<div class="is-flex justify-content-center align-items-center social-share-buttons">
+   {% capture title %}{{ article.title | strip_html | url_escape }}{% endcapture %}
+   {% capture shop_name %}{{ shop.name | url_param_escape }}{% endcapture %}
+   {% capture twitter_name %}{{ settings.twitter_link | split: 'twitter.com/' | last }}{% endcapture %}
+
+   <span class="section__subheading">{{ 'general.social.label' | t }}</span>
+   {% comment %} Facebook {% endcomment %}
+   <div class="share-btn share-btn--facebook control">
+      <a target="_blank" rel="noopener"class="button" href="https://www.facebook.com/sharer/sharer.php?u={{ current_url }}">
+         <i class="fab fa-facebook"></i>
+      </a>
+   </div>
+   
+   {% comment %} Twitter {% endcomment %}
+   <div class="share-btn share-btn--twitter control">
+      <a target="_blank" rel="noopener" class="button" href="https://twitter.com/intent/tweet?text={{ title | replace: '&','%26' }}&url={{ current_url }}{%- if twitter_name != blank -%}&via={{ twitter_name }}{%- endif -%}">
+         <i class="fab fa-twitter"></i>
+      </a>
+   </div>
+
+   {% comment %} Pinterest {% endcomment %}
+   <div class="share-btn share-btn--pinterest control">
+      <a target="_blank"  rel="noopener"data-pin-do="skipLink" class="button" href="https://pinterest.uk/pin/create/button/?url={{ current_url }}&description={{ article.content | strip_html | truncate: 240 }}&media={% if article.image %}{{ article.image | img_url: 'grande' }}{% else %}{% assign my_image_url=article.content | escape %}{% if my_image_url contains '&lt;img' %}{% assign my_image_url = my_image_url | split: 'src=&quot;' %}{% assign my_image_url = my_image_url[1] | split: '&quot;' %}{% assign my_image_url = my_image_url[0] | remove: '//cdn' %}{% assign my_image_url = my_image_url | remove: 'http:http://' %}{% assign my_image_url = my_image_url | remove: 'https:' %}{{ my_image_url | prepend: 'https://cdn'}}{% endif %}{% endif %}">
+         <i class="fab fa-pinterest"></i>
+      </a>
+   </div>
+</div>

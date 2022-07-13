@@ -1,0 +1,86 @@
+<div class="monogram-editorial">
+
+  <div class="monogram-editorial__video-wrapper">
+    <div class="monogram-editorial__video-container">
+      <video src="{{ section.settings.video }}" class="monogram-editorial__video" autoplay playsinline loop muted style="background: #f7f6f2;"></video>
+      <div class="monogram-editorial__mute-container" onclick="toggleMute(this)" data-muted="{{ 'mute.svg' | asset_url }}" data-unmuted="{{ 'unmute.svg' | asset_url }}" style="background-image: url({{ 'mute.svg' | asset_url }});"></div>
+    </div>
+    <img src="{{ 'flower duo.svg' | asset_url }}" alt="Flower Icon" loading="lazy" class="monogram-editorial__flower-icon">
+  </div>
+
+  <div class="monogram-editorial__quote">
+    <p class="monogram-editorial__quote-text">{{ section.settings.quote }}</p>
+    <span class="monogram-editorial__border">&nbsp;</span>
+    <img src="{{ 'Elizabeth_Scarlett_Signature_RichBlack.svg' | asset_url }}" loading="lazy" alt="Signature" class="monogram-editorial__signature">
+  </div>
+
+  <div class="monogram-editorial__grid">
+    <div class="monogram-editorial__grid-item">
+      <div class="monogram-editorial__grid-image-container">
+        <img src="{{ section.settings.first_image | img_url: 'master' }}" loading="lazy" alt="Grid Image" class="monogram-editorial__grid-image">
+      </div>
+    </div>
+    <div class="monogram-editorial__grid-item">
+      <img src="{{ 'flower.svg' | asset_url }}" alt="Image of a flower" class="monogram-editorial__grid-flower">
+      <div class="monogram-editorial__grid-image-container">
+        <img src="{{ section.settings.second_image | img_url: 'master' }}" loading="lazy" alt="Grid Image" class="monogram-editorial__grid-image">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    function fixVideoHeight() {
+      var monogramVideo = document.querySelector(".monogram-editorial__video");
+      if (monogramVideo) {
+        var monogramParent = monogramVideo.parentNode;
+        monogramParent.style.paddingTop = (monogramParent.clientWidth * 0.55).toString() + "px";
+      }
+    }
+    window.onresize = fixVideoHeight;
+    fixVideoHeight();
+  })();
+
+  function toggleMute(toggler) {
+    let video = toggler.parentElement?.querySelector("video")
+    video.muted = !video.muted
+    if (video.muted) {
+      toggler.style.backgroundImage = "url('" + toggler.dataset.muted + "')"
+    } else {
+      toggler.style.backgroundImage = "url('" + toggler.dataset.unmuted + "')"
+    }
+  } 
+</script>
+
+{% schema %}
+  {
+    "name": "Editorial",
+    "class": "monogram-editorial-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "video",
+        "label": "Video URL",
+        "info": "This must be a direct link to the file, not to the page it is hosted on."
+      },
+      {
+        "type": "textarea",
+        "id": "quote",
+        "label": "Quote",
+        "default": "“There’s nothing quite as special as a gift that is uniquely personalised. Whether you’re shopping for a birthday, bridesmaid, or your best friends, you can create something they’ll treasure for years to come.”"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_image",
+        "label": "First Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "second_image",
+        "label": "Second Image"
+      }
+    ]
+  }
+{% endschema %}

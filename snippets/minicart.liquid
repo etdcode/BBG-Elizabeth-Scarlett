@@ -1,0 +1,42 @@
+<!-- snippets/minicart.liquid -->
+{% comment %} Find the script for this file in src/js/minicart.js {% endcomment %}
+
+<div class="minicart__background" id="MinicartDrawer">
+  <form action="{{ routes.cart_url }}" method="post" novalidate class="minicart__main">
+    <div class="minicart__header">
+
+      {% comment %} Title and close {% endcomment %}
+      <div class="d-flex heading">
+        <h4 class="title-minicart position-relative">Review Your Bag</h4>
+        <a class="close-minicart" onclick="Minicart.toggleDrawer('close');">
+          <img src="{{ 'cancel_grey.svg' | asset_url }}" alt="">
+        </a>
+      </div>
+
+      {% comment %} Free shipping bar {% endcomment %}
+      <div id="MinicartFreeShipping"><!-- templates/cart.freeshipping.liquid --></div>
+
+    </div>
+
+    {% comment %} Cart items {% endcomment %}
+    <div class="minicart__body position-relative">
+      <div class="loader" hidden>
+        <span class="spiner"></span>
+      </div>
+      
+      <div class="minicart__items" id="MinicartItemContainer">
+        <!-- templates/cart.cartitems.liquid -->
+      </div>
+    </div>
+
+    {% comment %} Cart footer {% endcomment %}
+    <div class="minicart__footer">
+      <div class="p-3 d-flex w-100 subtotal">
+        <div class="col d-block text-start">Subtotal:</div>
+        <div class="col d-block text-end" id="MinicartSubtotal">{{ cart.total_price | money }}</div>
+      </div>
+      <a class="btn" onclick="location.href = '/cart'">continue to checkout</a>
+    </div>
+
+  </form>
+</div>

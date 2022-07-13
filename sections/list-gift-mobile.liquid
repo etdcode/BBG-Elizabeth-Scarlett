@@ -1,0 +1,156 @@
+<div class="{{ section.settings.classname | handle }} container-half-left">
+  <div class="d-lg-flex wrap--inner">
+
+    <div class="left col-lg-3 col-12">
+      {%- if section.settings.sub_heading != blank -%}
+        <p class="sub-heading">{{ section.settings.sub_heading }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="heading">{{ section.settings.heading }}</h3>
+      {%- endif -%}
+    </div>
+
+    <div class="right col-lg-9 col-12">
+      {% comment %}Checks cart items for list.product_gift metafield (upsells) {% endcomment %}
+      {% assign current_product = product.handle %}
+      {% if product.metafields.list.product_gift != blank %}
+        {% if product.metafields.list.product_gift != product.handle %} 
+          {% assign meta_product = product.metafields.list.product_gift | split: '|' %}
+        {% endif %}
+      {% endif %}
+        
+      {% if cart.item_count > 0 %}
+        {% for item in cart.items %}
+          {% assign cart_item = item.url | remove: '/products/' %}
+          {% assign check = cart_item  | split: '?' %}
+          {% if check != product.handle %}
+            {%- if item.product.metafields.list.product_gift != blank -%}
+              {% assign cart_handle_product = item.product.metafields.list.product_gift | split: '|'  %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% assign handle_product = meta_product | concat: cart_handle_product | uniq %}
+      {% else %}
+        {% assign handle_product = meta_product | uniq %}
+      {% endif %}
+
+      <div class="swiper giftSlider_">
+        <div class="swiper-wrapper">        
+         {% comment %} {%- for product in collections[section.settings.featured_collection].products -%}
+          {% if product.available == true %}
+              <div class="swiper-slide prod-info">
+                <div class="d-flex align-items-center">
+                  <div class="col-3 img">
+                    <a href="{{ product.url }}">
+                      <img src="{{ product.featured_image | img_url: '110x' }}" alt="">
+                    </a>
+                  </div>
+                  <div class="col-6 info">
+                    <h2 class="title"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+                    {%- if item.product.metafields.gift.note_gift != blank -%}
+                      <div class="note-gift">{{ item.product.metafields.gift.note_gift }}</div>
+                    {%- endif -%}
+                    <div class="price">{{ product.price | money | append: '.00' }}</div>
+                  </div>
+                  {% assign downcase_title = product.title | downcase %}
+                  {% if downcase_title contains "gift note" %}
+                    <div class="col-3 action no-ATC">
+                      <a href="javascript: GiftNotes.launchModal({{ product.first_available_variant.id }}, '{{ product.handle }}');" data-varid="{{ product.first_available_variant.id }}" class="list_gift-addToCart">ADD +</a>
+                    </div>
+                  {% else %}
+                    <div class="col-3 action form-ATC">
+                      <input type="hidden" class="minicart-item-id" name="" value="{{ product.first_available_variant.id }}">
+                      <a onclick="Minicart.submitAtcForm(this.closest('.form-ATC'));" data-id="{{ product.first_available_variant.id }}" class="list_gift-addToCart">ADD +</a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+          {% endif %}
+          {%- endfor -%}
+          {% endcomment %}
+
+          {% comment %}Checks theme customised settings for general collection upsell {% endcomment %} 
+          {%- if section.settings.featured_collection != blank -%}
+            {% assign collection = collections[section.settings.featured_collection] %}
+            {% paginate collection.products by collection.all_products_count %}
+            {%- for product in collection.products -%}
+            {% if product.available == true %}
+                {% if product.handle != current_product %}
+                  <div class="swiper-slide prod-info">
+                    <div class="d-flex align-items-center">
+                      <div class="col-3 img">
+                        <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: '110x' }}" alt=""></a>
+                      </div>
+                      <div class="col-6 info">
+                        <h2 class="title"><a href="{{ product.url }}">{{ product.title }}</a></h2>
+                        {%- if product.metafields.gift.note_gift != blank -%}
+                          <div class="note-gift">{{ product.metafields.gift.note_gift }}</div>
+                        {%- endif -%}
+                        <div class="price">{{ product.price | money | append: '.00' }}</div>
+                      </div>
+                      {% assign downcase_title = product.title | downcase %}
+                      {% if downcase_title contains "gift note" %}
+                        <div class="col-3 action no-ATC">
+                          <a href="javascript: GiftNotes.launchModal({{ product.first_available_variant.id }}, '{{ product.handle }}');" data-varid="{{ product.first_available_variant.id }}" class="list_gift-addToCart">ADD +</a>
+                        </div>
+                      {% else %}
+                        <div class="col-3 action form-ATC">
+                          <input type="hidden" class="minicart-item-id" name="" value="{{ product.first_available_variant.id }}">
+                          <a onclick="Minicart.submitAtcForm(this.closest('.form-ATC'));" data-id="{{ product.first_available_variant.id }}" class="list_gift-addToCart">ADD +</a>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+             
+          {% endif %}
+          {% endif %}
+              {%- endfor -%}
+            {% endpaginate %}
+          {%- endif -%}
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div> </div>
+
+<div class="line-bee position-relative col-12">
+  <img src="{{ 'icon-bee.png' | asset_url }}" alt="">
+</div>
+
+{% schema %}
+{
+	"name": "product list gift MV",
+	"class": "section--product-list-gift",
+	"settings": [
+{
+	"type":"text",
+	"id":"classname",
+	"label":"Class Name"
+},
+		{
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Collection"
+		},
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+	],
+"presets": [
+         {
+            "name": "product list gift MV",
+            "category": "Product Sections"
+         }
+      ]
+   }
+
+{% endschema %}

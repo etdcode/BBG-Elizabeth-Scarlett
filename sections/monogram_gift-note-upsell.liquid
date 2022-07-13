@@ -1,0 +1,91 @@
+<div class="monogram-upsell">
+  <div class="monogram-upsell__container">
+    <div class="monogram-upsell__content">
+      <p class="monogram-upsell__subtitle">{{ section.settings.subtitle }}</p>
+      <p class="monogram-upsell__title">{{ section.settings.title }}</p>
+    </div>
+    <div class="monogram-upsell__swiper">
+      <div class="monogram-upsell__swiper-wrapper swiper-wrapper">
+        {% assign product = section.settings.product %}
+        {% for variant in product.variants %}
+          <div class="monogram-upsell__swiper-slide swiper-slide">
+            <div class="monogram-upsell__product-card">
+              <div class="monogram-upsell__image-container">
+                <img src="{{ variant.featured_image | img_url: 'master' }}" loading="lazy" alt="{{ variant.title }}" loading="lazy" class="monogram-upsell__image">
+              </div>
+              <div class="monogram-upsell__details">
+                <div class="monogram-upsell__details-container">
+                  <p class="monogram-upsell__product-title">{{ product.title }}</p>
+                  <p class="monogram-upsell__variant">{{ variant.title }}</p>
+                  <p class="monogram-upsell__price">{{ variant.price | money }}</p>
+                </div>
+              </div>
+              <div class="monogram-upsell__cta-wrapper">
+                <button type="button" onclick="GiftNotes.launchModal({{ variant.id }}, '{{ product.handle }}')" class="monogram-upsell__cta">ADD +</button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Init slider
+
+  var monogramUpsellSwiper = undefined;
+
+  function initMonogramUpsellSwiper() {
+    if (window.innerWidth >= 767 && monogramUpsellSwiper == undefined) {
+      monogramUpsellSwiper = new Swiper('.monogram-upsell__swiper', {
+        direction: "horizontal",
+        loop: false,
+        centeredSlides: false,
+        slidesPerView: 2.75,
+        spaceBetween: 20,
+        noSwiping: true,
+        noSwipingClass: "monogram-upsell__cta-wrapper",
+        slidesOffsetAfter: 100
+      })
+    } else if (window.innerWidth < 767 && monogramUpsellSwiper != undefined) {
+      monogramUpsellSwiper.destroy()
+      monogramUpsellSwiper = undefined
+      document.querySelector(".monogram-upsell__swiper").setAttribute("style", "")
+    }
+  }
+
+  (function() {
+    initMonogramUpsellSwiper()
+    window.addEventListener("resize", function() {
+      initMonogramUpsellSwiper()
+    })
+  })();
+
+</script>
+
+{% schema %}
+  {
+    "name": "Gift Note Upsell",
+    "class": "monogram-gift-note-upsell-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Make it the perfect gift"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Add those finishing touches"
+      },
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Gift Note Product"
+      }
+    ]
+  }
+{% endschema %}

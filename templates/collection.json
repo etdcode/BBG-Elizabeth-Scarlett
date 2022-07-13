@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "collection_header_bg_color": "rgba(0,0,0,0)",
+        "collection_header_text_color": "#080c22",
+        "layout_type": "box",
+        "show_collection_image": false,
+        "show_collection_des": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "switch_layout_filter": "switch_layout_filter_vertical",
+        "enable_filter_sticky": false,
+        "toolbar_filter_sticky_mobile": true,
+        "filter_layout": "filter_layout_default",
+        "layout_type": "box",
+        "show_toolbar_view_as": true,
+        "show_toolbar_product_count": true,
+        "show_toolbar_sort_by": true,
+        "show_toolbar_view_as_mobile": true,
+        "show_toolbar_product_count_mobile": true,
+        "show_toolbar_sort_by_mobile": true,
+        "view_as_type": "view_as_type_grid_list",
+        "products_per_page": 31,
+        "products_per_row": 3,
+        "products_per_row_mobile": 2,
+        "product_item_type": "grid",
+        "product_item_layout": "no-border",
+        "text_alignment": "left",
+        "show_details_when_hovering": false,
+        "show_vendor": true,
+        "show_price": true,
+        "active_image_swap": true,
+        "show_product_review": false,
+        "show_sold_out_label": true,
+        "show_sale_label": true,
+        "show_sale_percent": false,
+        "product_label_has_border_radius": true,
+        "show_label_by_tag": false,
+        "product_item_label_position": "top_left",
+        "product_label_type": "rectangle",
+        "product_item_label_bg_color": "",
+        "product_item_label_text_color": "",
+        "show_product_label_image": false,
+        "product_item_title_color": "#3d4246",
+        "product_item_title_font": "poppins_n6",
+        "product_item_title_font_size": 14,
+        "product_item_vendor_color": "#969595",
+        "product_item_vendor_font": "poppins_n4",
+        "product_item_vendor_font_size": 12,
+        "product_item_price_color": "#222222",
+        "product_item_old_price_color": "#969595",
+        "product_item_sale_price_color": "#f30000",
+        "product_item_price_font": "poppins_n4",
+        "product_item_price_font_size": 14,
+        "product_item_des_color": "#3a3a3a",
+        "product_item_des_font": "poppins_n4",
+        "product_item_des_font_size": 14,
+        "display_item_swatch": true,
+        "show_item_swatch_tooltip": true,
+        "swatch_color_display_type": "swatch_color_display_type_image_product",
+        "swatch_color_event_change_image": "hover",
+        "swatches_color_shape": "circle",
+        "display_item_swatch_size": false,
+        "equal_height": "auto",
+        "ratio_width_height_other": "",
+        "equal_height_crop_image_position": "center"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "main-collection"
+  ]
+}

@@ -1,0 +1,212 @@
+
+{% schema %} 
+{
+    "name": "As Seen In",
+    "blocks": [{
+        "name" : "Section 2 As Seen In",
+        "type": "Hero",
+        "settings": [
+		{
+            "type": "text",
+            "id": "section-headline2",
+            "label": "Enter the Section Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block1-img",
+            "label": "Upload 1st Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle1",
+            "label": "Enter 1st Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block2-img",
+            "label": "Upload 2nd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blockbody2",
+            "label": "Enter 2nd Block title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block3-img",
+            "label": "Upload 3rd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle3",
+            "label": "Enter 3rd Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block4-img",
+            "label": "Upload 4th Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle4",
+            "label": "Enter 4th Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block5-img",
+            "label": "Upload 5th Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle5",
+            "label": "Enter 5th Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block1-imgb",
+            "label": "Upload 1st Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle1b",
+            "label": "Enter 1st Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block2-imgb",
+            "label": "Upload 2nd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blockbody2b",
+            "label": "Enter 2nd Block Body"
+        },
+		{
+            "type": "image_picker",
+            "id": "block3-imgb",
+            "label": "Upload 3rd Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle3b",
+            "label": "Enter 3rd Block Title"
+        },
+		{
+            "type": "image_picker",
+            "id": "block4-imgb",
+            "label": "Upload 4th Block Image"
+        },
+		{
+            "type": "text",
+            "id": "blocktitle4b",
+            "label": "Enter 4th Block Title"
+        }
+		
+        ]       
+    }
+    ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% for block in section.blocks %}
+    {% assign b = block.settings %}
+    {% if b.page_handle contains page.handle %}
+        <section {{ block.shopify_attributes }}>
+           
+          
+          <p>{{ b.but-txt | p_url }}</p>
+        </section>
+    {% break %}
+    {% endif %}
+{% endfor %}
+
+
+<div class="section6-header">
+			<div class="container">
+				<div class="hrblock">
+					<hr class="sec6-hr">
+					<img class="hr-icon" src="https://cdn.shopify.com/s/files/1/1957/2463/files/bee.svg?v=1655986444">
+					<hr class="sec6-hr">
+				</div>
+				<h3 class="sec6-title">{{ b.section-headline2 | p_url }}</h3>
+				<div class="row">
+					<div class="owl-carousel owl-theme" id="owl-demo3">
+						<div class="item">
+							<div class="slider-cont">
+								<div class="sec6-slide-block">
+									<img class="sec6-logo1" src="{{b.block1-img | img_url: 'master' }}">
+									<p class="sec6-quote-1">{{ b.blocktitle1 | p_url }}</p>
+								</div></div></div>
+                              <div class="item">
+							<div class="slider-cont">
+								<div class="sec6-slide-block">
+									<img class="sec6-logo2" src="{{b.block2-img | img_url: 'master' }}">
+									<p class="sec6-quote-2">{{ b.blockbody2 | p_url }}</p>
+								</div></div></div>
+                              <div class="item">
+							<div class="slider-cont">
+								<div class="sec6-slide-block">
+								<div class="sec6-slide-block">
+									<img class="sec6-logo3" src="{{b.block3-img | img_url: 'master' }}">
+									<p class="sec6-quote-3">{{ b.blocktitle3 | p_url }}</p>
+								</div></div></div>
+                             
+							</div>
+		
+                              
+                              <div class="item">
+							<div class="slider-cont">
+								<div class="sec6-slide-block">
+									<img class="sec6-logo5" src="{{b.block4-img | img_url: 'master' }}">
+									<p class="sec6-quote-2">{{ b.blocktitle4 | p_url }}</p>
+								</div></div></div>
+                              <div class="item">
+							<div class="slider-cont">
+								<div class="sec6-slide-block">
+								<div class="sec6-slide-block">
+									<img class="sec6-logo6" src="{{b.block5-img | img_url: 'master' }}">
+									<p class="sec6-quote-3">{{ b.blocktitle5 | p_url }}</p>
+								</div></div></div>
+                             
+							</div>
+					</div>
+				</div>
+				<div class="hrblock2">
+					<hr class="sec6-hr">
+					<img class="hr-icon" src="https://cdn.shopify.com/s/files/1/1957/2463/files/bee.svg?v=1655986444">
+					<hr class="sec6-hr">
+				</div>
+				<div class="row">
+                  <div class="quad-box">
+					<div class="quad">
+						<img class="sales-icns" src="{{b.block1-imgb | img_url: 'master' }}">
+						<p class="sec-6-body">{{ b.blocktitle1b | p_url }}</p>
+					</div>
+					<div class="quad">
+						<img class="sales-icns" src=
+						"{{b.block2-imgb | img_url: 'master' }}">
+						<p class="sec-6-body">{{ b.blockbody2b | p_url }}</p>
+					</div></div>
+                    <div class="quad-box">
+					<div class="quad">
+						<img class="sales-icns" src=
+						"{{b.block3-imgb | img_url: 'master' }}">
+						<p class="sec-6-body">{{ b.blocktitle3b | p_url }}</p>
+					</div>
+					<div class="quad">
+						<img class="sales-icns" src="{{b.block4-imgb | img_url: 'master' }}">
+						<p class="sec-6-body">{{ b.blocktitle4b | p_url }}</p>
+					</div>
+				</div>
+			</div>
+              </div>
+		</div><!-- Section 7 - Text and Image-->
+
+

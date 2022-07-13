@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "8778ea74-734f-4130-be2e-540f1ebf61ed": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "300 thread count"
+          }
+        },
+        "4c2824da-6196-4de2-b0f9-b55f3edead60": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "2% to the wild"
+          }
+        },
+        "6d3b8c94-5c89-4972-8d73-ae49bce24628": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "giftboxes available"
+          }
+        },
+        "c7c431c0-262d-4721-94b9-59a87cd0f0bb": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "300 thread count"
+          }
+        },
+        "aad4c178-b479-44c0-b6c7-2581c98dabff": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "2% to the wild"
+          }
+        },
+        "9ac4de9a-317d-4973-8c4f-403952c8966b": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_489_2dcd4036-6247-43b5-afc5-8bb13f223a22.png",
+            "text": "giftboxes available"
+          }
+        }
+      },
+      "block_order": [
+        "8778ea74-734f-4130-be2e-540f1ebf61ed",
+        "4c2824da-6196-4de2-b0f9-b55f3edead60",
+        "6d3b8c94-5c89-4972-8d73-ae49bce24628",
+        "c7c431c0-262d-4721-94b9-59a87cd0f0bb",
+        "aad4c178-b479-44c0-b6c7-2581c98dabff",
+        "9ac4de9a-317d-4973-8c4f-403952c8966b"
+      ],
+      "settings": {
+        "customdescription": "<p>Our Gift Cards allow you to spread joy to those you love the most, treating them to whichever Elizabeth Scarlett treasure they have their eye on. Available in £10, £25, £50 and £100 denominations, the cards are the perfect way to show you care from afar, delivered instantly by email to the recipient of your choosing.<\/p>"
+      }
+    },
+    "list-gift": {
+      "type": "list-gift",
+      "settings": {
+        "classname": "",
+        "featured_collection": "gift-notes",
+        "sub_heading": "MAKE IT THE PERFECT GIFT",
+        "heading": "Add those finishing touches"
+      }
+    },
+    "product-tab": {
+      "type": "product-tab",
+      "blocks": {
+        "e0d2be42-a1e0-43d5-a5af-7e4ebb757682": {
+          "type": "accordion",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/acf.ELEPHANTS-V2-1.png",
+            "accordion_title": "THE DESIGN",
+            "title": "Elephants",
+            "content": "<p>Elizabeth was inspired by the Sheldrick Wildlife Trust’s work rescuing and nurturing orphaned baby elephants, rhinos, and other wildlife species. Featuring a hand-illustrated motif of the mother elephant leading her calf embroidered onto luxury cotton velvet, this pouch is perfect for storing your daily essentials, ideally sized to fit in your handbag or to use as a clutch. <\/p>\n\n\n\n<p>For every item sold from the collection, we’re donating the equivalent value of up to three bottles of specialist formula milk for orphan baby elephants.* <\/p>\n\n\n\n<p>Together we can raise vital funds to help the Trust on their mission to secure a future for these special keystone species.<\/p>",
+            "metafield_content": ""
+          }
+        },
+        "5a3eb251-a640-40f1-95c9-d5d2fb6d56b3": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "PRODUCT details & care",
+            "title": "",
+            "content": "<p>Elizabeth was inspired by the Sheldrick Wildlife Trust’s work rescuing and nurturing orphaned baby elephants, rhinos, and other wildlife species. Featuring a hand-illustrated motif of the mother elephant leading her calf embroidered onto luxury cotton velvet, this pouch is perfect for storing your daily essentials, ideally sized to fit in your handbag or to use as a clutch. <\/p>",
+            "metafield_content": "{{ product.metafields.custom.product_details_care_content  }}"
+          }
+        },
+        "b66f5ef2-7905-480b-a590-df55620f3752": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "accordion_title": "delivery & returns",
+            "title": "",
+            "content": "<p>For every item sold from the collection, we’re donating the equivalent value of up to three bottles of specialist formula milk for orphan baby elephants.* <\/p>",
+            "metafield_content": ""
+          }
+        },
+        "4cc8996f-0603-47a1-817d-575a231fa03e": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "accordion_title": "need help?",
+            "title": "",
+            "content": "<p>Together we can raise vital funds to help the Trust on their mission to secure a future for these special keystone species.<\/p>",
+            "metafield_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "e0d2be42-a1e0-43d5-a5af-7e4ebb757682",
+        "5a3eb251-a640-40f1-95c9-d5d2fb6d56b3",
+        "b66f5ef2-7905-480b-a590-df55620f3752",
+        "4cc8996f-0603-47a1-817d-575a231fa03e"
+      ],
+      "settings": {
+        "img": "shopify:\/\/shop_images\/ES.png",
+        "description": ""
+      }
+    },
+    "featured-collections": {
+      "type": "index--featured-collections",
+      "blocks": {
+        "dc4e856b-ea0d-4c37-b0ee-e140e4d30673": {
+          "type": "collection",
+          "settings": {
+            "title": "bags",
+            "image_1": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1.png",
+            "image_2": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1_1.png",
+            "link": "shopify:\/\/collections\/constellations-collection"
+          }
+        },
+        "d8fbe7d9-50f4-4814-ba41-acd20b85f65b": {
+          "type": "collection",
+          "settings": {
+            "title": "Pouches",
+            "image_1": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1_bc4f32ed-ec14-4cd5-b242-718217d538d2.png",
+            "image_2": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1_1.png",
+            "link": ""
+          }
+        },
+        "a9c2d70d-fc1d-46fe-8a86-984f17744491": {
+          "type": "collection",
+          "settings": {
+            "title": "bedding",
+            "image_1": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1_1_acd32dc6-b663-4f1b-895a-912b18240693.png",
+            "image_2": "shopify:\/\/shop_images\/BritishBloomsNautralPouch2_1024x1024_1_1.png",
+            "link": ""
+          }
+        },
+        "2624c5ee-bed3-4909-a571-2a62981d0622": {
+          "type": "collection",
+          "settings": {
+            "title": "luxury eye masks",
+            "image_1": "shopify:\/\/shop_images\/03_MEADOW_431_RT_1_4000x_1.png",
+            "link": ""
+          }
+        },
+        "2624c5ee-bed3-4909-a571-2a62981d0623": {
+          "type": "collection",
+          "settings": {
+            "title": "wash bags",
+            "image_1": "shopify:\/\/shop_images\/03_MEADOW_431_RT_1_4000x_1.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "dc4e856b-ea0d-4c37-b0ee-e140e4d30673",
+        "d8fbe7d9-50f4-4814-ba41-acd20b85f65b",
+        "a9c2d70d-fc1d-46fe-8a86-984f17744491",
+        "2624c5ee-bed3-4909-a571-2a62981d0622",
+        "2624c5ee-bed3-4909-a571-2a62981d0623"
+      ],
+      "settings": {
+        "heading": "The Perfect Gift",
+        "subheading": "Discover",
+        "desc": "<p>Feel inspired by the magnificent animals and wildlife found on Safari in Africa; Zebra, Kissing Flamingos and African Palmier. <\/p>",
+        "button_text": "Shop new",
+        "button_url": "",
+        "background_color": "#faf4ec"
+      }
+    },
+    "product-reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "product-recommendation": {
+      "type": "product-recommendation",
+      "disabled": true,
+      "settings": {}
+    },
+    "popup-mono": {
+      "type": "popup-mono",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "list-gift",
+    "product-tab",
+    "featured-collections",
+    "product-reviews",
+    "product-recommendation",
+    "popup-mono"
+  ]
+}
