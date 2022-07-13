@@ -367,12 +367,27 @@
 											"{{b.prod1-img3 | img_url: 'master' }}"></div>
 										</div>
 										<h3 class="prod-slide-title">{{ b.prodname1 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice1 | p_url }}</p>
-                                             {%- assign prod-slug = "alphabet-navy-everyday-pouch" -%}
+                                        <p class="prod-slide-body">{{ b.prodprice1 | p_url }}</p>
+                                        {%- assign prod-slug = "alphabet-navy-everyday-pouch" -%}
                                       		
-                                      <a class="pers-buttons" href="../products/{{prod-slug}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton1m makeUrl1m sle-buttons" href=
+                                        <!-- product options start -->
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="mobile-prod-variant-id">
+                                            
+                                            {% for option in prod_obj.options %}
+                                                {% render 'product-options-select', product: prod_obj, option_type: 'dropdowns', option_name: option %}
+                                            {% endfor %}
+                                            <script type="application/json" class="ProductJson">
+                                                {{ prod_obj | json }}
+                                            </script>
+                                        </div>
+                                        <!-- product options end -->
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#mobile-prod-variant-id').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
+                                        <form>
+                                            <a class="ctaButton1m makeUrl1m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792416325721&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -385,13 +400,13 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod2-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname2 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice2 | p_url }}</p>
-                                          {%- assign prod-slug2 = "coming-mid-november-hummingbird-pouch" -%}
+                                        <h3 class="prod-slide-title">{{ b.prodname2 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice2 | p_url }}</p>
+                                        {%- assign prod-slug2 = "coming-mid-november-hummingbird-pouch" -%}
                                          
-                                      <a class="pers-buttons" href="../products/{{prod-slug2}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton2m makeUrl2m sle-buttons" href=
+                                        <a class="pers-buttons" href="../products/{{prod-slug2}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton2m makeUrl2m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792397189209&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -407,12 +422,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod3-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname3 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice3 | p_url }}</p>
-                                          {%- assign prod-slug3 = "swimming-turtle-everyday-pouch" -%}{%- assign i = "3" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug3}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton3m makeUrl3m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname3 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice3 | p_url }}</p>
+                                        {%- assign prod-slug3 = "swimming-turtle-everyday-pouch" -%}{%- assign i = "3" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug3}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton3m makeUrl3m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792406528089&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -425,13 +440,13 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod4-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname4 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice4 | p_url }}</p>
-                                          {%- assign prod-slug4 = "tiger-apricot-velvet-everyday-pouch" -%}{%- assign i = "4" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug4}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton4m makeUrl4m sle-buttons" href=
-											"https://www.elizabethscarlett.com/cart/add?id=39765267710041&quantity=1">ADD TO CART</a>
+                                        <h3 class="prod-slide-title">{{ b.prodname4 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice4 | p_url }}</p>
+                                        {%- assign prod-slug4 = "tiger-apricot-velvet-everyday-pouch" -%}{%- assign i = "4" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug4}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton4m makeUrl4m sle-buttons" href=
+                                            "https://www.elizabethscarlett.com/cart/add?id=39765267710041&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
 									
@@ -449,12 +464,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod5-img3 | img_url: 'master' }}"></div>
 										</div>
-                                           <h3 class="prod-slide-title">{{ b.prodname5 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice5 | p_url }}</p>
-                                      {%- assign prod-slug5 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "5" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug5}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton5m makeUrl5m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname5 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice5 | p_url }}</p>
+                                        {%- assign prod-slug5 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "5" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug5}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton5m makeUrl5m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792322805849&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -467,12 +482,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod6-img3 | img_url: 'master' }}"></div>
 										</div>
-										 <h3 class="prod-slide-title">{{ b.prodname6 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice6 | p_url }}</p>
-                                           {%- assign prod-slug6 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "6" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug6}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton6m makeUrl6m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname6 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice6 | p_url }}</p>
+                                        {%- assign prod-slug6 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "6" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug6}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton6m makeUrl6m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39480383471705&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -488,12 +503,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod7-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname7 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice7 | p_url }}</p>
-                                          {%- assign prod-slug7 = "savanna-giraffe-travel-pouch" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug7}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton7m makeUrl7m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname7 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice7 | p_url }}</p>
+                                        {%- assign prod-slug7 = "savanna-giraffe-travel-pouch" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug7}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton7m makeUrl7m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792403742809&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -506,12 +521,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod8-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname8 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice8 | p_url }}</p>
-                                          {%- assign prod-slug8 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug8}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton8m makeUrl8m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname8 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice8 | p_url }}</p>
+                                        {%- assign prod-slug8 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug8}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton8m makeUrl8m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39412739965017&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -530,12 +545,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod9-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname9 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice9 | p_url }}</p>
-                                      {%- assign prod-slug9 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug9}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton9m makeUrl9m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname9 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice9 | p_url }}</p>
+                                        {%- assign prod-slug9 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug9}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton9m makeUrl9m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39412739997785&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -548,11 +563,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod10-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname10 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice10 | p_url }}</p>
-                                      {%- assign prod-slug10 = "daisy-everyday-pouch" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug10}}">PERSONALISE</a>
-                                         <form><a class="ctaButton10m makeUrl10m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname10 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice10 | p_url }}</p>
+                                        {%- assign prod-slug10 = "daisy-everyday-pouch" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug10}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton10m makeUrl10m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39810952921177&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -570,10 +586,11 @@
 											"{{b.prod11-img3 | img_url: 'master' }}"></div>
 										</div>
 										<h3 class="prod-slide-title">{{ b.prodname11 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice11 | p_url }}</p>
-                                      {%- assign prod-slug11 = "dragonfly-moon-everyday-pouch" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug11}}">PERSONALISE</a>
-                                         <form><a class="ctaButton11m makeUrl11m sle-buttons" href=
+                                        <p class="prod-slide-body">{{ b.prodprice11 | p_url }}</p>
+                                        {%- assign prod-slug11 = "dragonfly-moon-everyday-pouch" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug11}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton11m makeUrl11m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39810967175257&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
@@ -586,12 +603,12 @@
 											<div class="item"><img class="imgimg" src=
 											"{{b.prod12-img3 | img_url: 'master' }}"></div>
 										</div>
-										<h3 class="prod-slide-title">{{ b.prodname12 | p_url }}</h3>
-											<p class="prod-slide-body">{{ b.prodprice12 | p_url }}</p>
-                                      {%- assign prod-slug12 = "strawberry-moon-everyday-pouch" -%}{%- assign i = "7" -%}
-                                           <a class="pers-buttons" href="../products/{{prod-slug12}}">PERSONALISE</a>
-                                         <form>
-                                           <a class="ctaButton12m makeUrl12m sle-buttons" href=
+                                        <h3 class="prod-slide-title">{{ b.prodname12 | p_url }}</h3>
+                                        <p class="prod-slide-body">{{ b.prodprice12 | p_url }}</p>
+                                        {%- assign prod-slug12 = "strawberry-moon-everyday-pouch" -%}{%- assign i = "7" -%}
+                                        <a class="pers-buttons" href="../products/{{prod-slug12}}">PERSONALISE</a>
+                                        <form>
+                                            <a class="ctaButton12m makeUrl12m sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39811004465241&quantity=1">ADD TO CART</a>
 										</form>
 									</div>
