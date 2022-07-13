@@ -383,6 +383,7 @@
                                             </script>
                                         </div>
                                         <!-- product options end -->
+                                        <!-- <a class="pers-buttons" href="../products/{{prod-slug}}">PERSONALISE</a> -->
                                         {%- if prod_obj.tags contains "monogram" -%}
                                             <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
                                         {%- endif -%}
@@ -404,8 +405,14 @@
                                         <h3 class="prod-slide-title">{{ b.prodname2 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice2 | p_url }}</p>
                                         {%- assign prod-slug2 = "coming-mid-november-hummingbird-pouch" -%}
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug2] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id2">
+                                        </div>
                                         <div style="height: 38px;"></div>
-                                        <a class="pers-buttons" href="../products/{{prod-slug2}}">PERSONALISE</a>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id2').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
 											<a class="ctaButton2 makeUrl2 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792397189209&quantity=1">ADD TO CART</a>
@@ -424,8 +431,14 @@
                                         <h3 class="prod-slide-title">{{ b.prodname3 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice3 | p_url }}</p>
                                         {%- assign prod-slug3 = "swimming-turtle-everyday-pouch" -%}{%- assign i = "3" -%}
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug3] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id3">
+                                        </div>
                                         <div style="height: 38px;"></div>
-                                        <a class="pers-buttons" href="../products/{{prod-slug3}}">PERSONALISE</a>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id3').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
 											<a class="ctaButton3 makeUrl3 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792406528089&quantity=1">ADD TO CART</a>
@@ -446,7 +459,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname4 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice4 | p_url }}</p>
                                         {%- assign prod-slug4 = "tiger-apricot-velvet-everyday-pouch" -%}{%- assign i = "4" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug4}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug4] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id4">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id4').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
 											<a class="ctaButton4 makeUrl4 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39765267710041&quantity=1">ADD TO CART</a>
@@ -465,7 +484,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname5 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice5 | p_url }}</p>
                                         {%- assign prod-slug5 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "5" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug5}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug5] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id5">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id5').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton5 makeUrl5 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792322805849&quantity=1">ADD TO CART</a>
@@ -484,7 +509,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname6 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice6 | p_url }}</p>
                                         {%- assign prod-slug6 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "6" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug6}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug6] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id6">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id6').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton6 makeUrl6 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39480383471705&quantity=1">ADD TO CART</a>
@@ -507,7 +538,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname7 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice7 | p_url }}</p>
                                         {%- assign prod-slug7 = "savanna-giraffe-travel-pouch" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug7}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug7] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id7">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id7').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton7 makeUrl7 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39792403742809&quantity=1">ADD TO CART</a>
@@ -526,7 +563,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname8 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice8 | p_url }}</p>
                                         {%- assign prod-slug8 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug8}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug8] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id8">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id8').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton8 makeUrl8 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39412739965017&quantity=1">ADD TO CART</a>
@@ -545,7 +588,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname9 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice9 | p_url }}</p>
                                         {%- assign prod-slug9 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug9}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug9] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id9">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id9').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form><a class="ctaButton9 makeUrl9 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39412739997785&quantity=1">ADD TO CART</a>
 										</form>
@@ -565,7 +614,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname10 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice10 | p_url }}</p>
                                         {%- assign prod-slug10 = "daisy-everyday-pouch" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug10}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug10] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id10">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id10').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form><a class="ctaButton10 makeUrl10 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39810952921177&quantity=1">ADD TO CART</a>
 										</form>
@@ -583,7 +638,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname11 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice11 | p_url }}</p>
                                         {%- assign prod-slug11 = "dragonfly-moon-everyday-pouch" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug11}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug11] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id11">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id11').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton11 makeUrl11 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39810967175257&quantity=1">ADD TO CART</a>
@@ -602,7 +663,13 @@
                                         <h3 class="prod-slide-title">{{ b.prodname12 | p_url }}</h3>
                                         <p class="prod-slide-body">{{ b.prodprice12 | p_url }}</p>
                                         {%- assign prod-slug12 = "strawberry-moon-everyday-pouch" -%}{%- assign i = "7" -%}
-                                        <a class="pers-buttons" href="../products/{{prod-slug12}}">PERSONALISE</a>
+                                        <div class="product-option-group">
+                                            {% assign prod_obj = all_products[prod-slug12] %}
+                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id12">
+                                        </div>
+                                        {%- if prod_obj.tags contains "monogram" -%}
+                                            <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id12').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
+                                        {%- endif -%}
                                         <form>
                                            <a class="ctaButton12 makeUrl12 sle-buttons" href=
 											"https://www.elizabethscarlett.com/cart/add?id=39811004465241&quantity=1">ADD TO CART</a>
@@ -629,8 +696,6 @@ a.pers-buttons:hover {
 }
 .pers-buttons {
     line-height: 32px;
-}
-button.pers-buttons {
     padding-top: 0;
 }
 .product-option-group .option-variant {
