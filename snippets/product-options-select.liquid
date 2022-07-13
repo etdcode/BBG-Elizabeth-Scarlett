@@ -1,0 +1,24 @@
+<!-- snippets/product-options-select.liquid -->
+{% assign this_option_set = product.options_by_name[option_name] %}
+{% assign option_name_handle = option_name | handle %}
+{% assign variant_size = false %}
+{% assign count_variant = this_option_set.values | size %}
+
+<div class="option-variant variant-option--{{this_option_set.position}} {{option_name_handle}}" {% if count_variant < 2 %}hidden{% endif %}>
+  <p class="label-variant">{{ option_name }}: &nbsp;<span class="name-option">{{ this_option_set.values[0] }}</span></p>
+
+  <div class="d-flex flex-wrap align-items-baseline section--variants">
+    <select name="option{{ this_option_set.position }}" data-option="option{{ this_option_set.position }}" class="pdp-option-select form-select" required>
+    <option value="" disabled>Please select a {{ option_name }}</option>
+    {% assign option_selected = true %}
+    {%- for option in this_option_set.values -%}
+        {% if product.variants[forloop.index0].available %}
+            {% if product.variants[forloop.index0].metafields.my_fields.variant_hide == blank or product.variants[forloop.index0].metafields.my_fields.variant_hide == false %}
+                <option value="{{ option }}" {% if option_selected %}selected{% endif %}>{{ option }}</option>
+                {% assign option_selected = false %}
+            {% endif %}
+        {% endif %}
+    {%- endfor -%}
+    </select>
+  </div>
+</div>
