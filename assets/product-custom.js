@@ -21,6 +21,8 @@ $(document).ready(function() {
         const variant_id = variant[0].id;
 
         wrapper.find(".prod-variant-id").val(variant_id);
+        $(this).closest(".slide-box1").find(".ctaButton1").attr("href", "https://www.elizabethscarlett.com/cart/add?id="+ variant_id +"&quantity=1");
+        $(this).closest(".slide-box1").find(".ctaButton1m").attr("href", "https://www.elizabethscarlett.com/cart/add?id="+ variant_id +"&quantity=1");
     })
     $("body").on("click", ".monogram-modal__button", function() {
         setTimeout(function() {

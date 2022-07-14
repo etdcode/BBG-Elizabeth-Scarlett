@@ -31,32 +31,37 @@
 
           {%- unless item.product.has_only_default_variant -%}
             <p class="variant">
+              {% assign v_title = item.variant.title %}
               {%- for product_option in item.product.options_with_values -%}
                 {{ product_option.name }}:
 
                 {% for value in product_option.values %}
-                  {% if item.variant.title contains value %}
+                  {% if v_title contains value %}
+                    {% assign v_title = v_title | replace: value, '' %}
                     {{ value }}<br>
                   {%- endif %}
                 {% endfor %}
               {%- endfor -%}
             </p>
           {%- endunless -%}
-{% assign property_size = item.properties | size %}
-{% if property_size > 0 %}
-  {% for p in item.properties %}
-    {% assign first_character_in_key = p.first | truncate: 1, '' %}
-    {% unless p.last == blank or first_character_in_key == '_' %}
-      {{ p.first }}:
-      {% if p.last contains '/uploads/' %}
-        <a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
-      {% else %}
-        {{ p.last }}
-      {% endif %}
-      <br>
-    {% endunless %}
-  {% endfor %}
-{% endif %}
+
+          {% assign property_size = item.properties | size %}
+
+          {% if property_size > 0 %}
+            {% for p in item.properties %}
+              {% assign first_character_in_key = p.first | truncate: 1, '' %}
+              {% unless p.last == blank or first_character_in_key == '_' %}
+                {{ p.first }}:
+                {% if p.last contains '/uploads/' %}
+                  <a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                {% else %}
+                  {{ p.last }}
+                {% endif %}
+                <br>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+
           {% if item.properties.text != blank %}
             <p class="variant">Message: {{ item.properties.text | truncate: 20, '...' }}</p>
           {% endif %}
