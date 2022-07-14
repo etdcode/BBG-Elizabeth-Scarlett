@@ -511,7 +511,7 @@
                                         {%- assign prod-slug6 = "bee-black-velvet-everyday-pouch" -%}{%- assign i = "6" -%}
                                         <div class="product-option-group">
                                             {% assign prod_obj = all_products[prod-slug6] %}
-                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id6">
+                                            <input type="hidden" value="{{ prod_obj.variants[1].id }}" class="prod-variant-id" id="prod-variant-id6">
                                         </div>
                                         {%- if prod_obj.tags contains "monogram" -%}
                                             <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id6').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
@@ -590,7 +590,7 @@
                                         {%- assign prod-slug9 = "pouch-for-purpose-milk-for-orphaned-elephants" -%}{%- assign i = "7" -%}
                                         <div class="product-option-group">
                                             {% assign prod_obj = all_products[prod-slug9] %}
-                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id9">
+                                            <input type="hidden" value="{{ prod_obj.variants[1].id }}" class="prod-variant-id" id="prod-variant-id9">
                                         </div>
                                         {%- if prod_obj.tags contains "monogram" -%}
                                             <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id9').value, '{{ prod_obj.handle }}');">PERSONALISE</button>
@@ -640,7 +640,7 @@
                                         {%- assign prod-slug11 = "dragonfly-moon-everyday-pouch" -%}{%- assign i = "7" -%}
                                         <div class="product-option-group">
                                             {% assign prod_obj = all_products[prod-slug11] %}
-                                            <input type="hidden" value="{{prod_obj.selected_or_first_available_variant.id}}" class="prod-variant-id" id="prod-variant-id11">
+                                            <input type="hidden" value="{{ prod_obj.variants[1].id }}" class="prod-variant-id" id="prod-variant-id11">
                                         </div>
                                         {%- if prod_obj.tags contains "monogram" -%}
                                             <button type="button" class="pers-buttons" onclick="Monogram.launchModal(document.querySelector('#prod-variant-id11').value, '{{ prod_obj.handle }}');">PERSONALISE</button>

@@ -9,7 +9,7 @@
 
   <div class="d-flex flex-wrap align-items-baseline section--variants">
     <select name="option{{ this_option_set.position }}" data-option="option{{ this_option_set.position }}" class="pdp-option-select form-select" required>
-    <option value="" disabled>Please select a {{ option_name }}</option>
+    <option value="" disabled>Select</option>
     {% assign option_selected = true %}
     {%- for option in this_option_set.values -%}
         {% if product.variants[forloop.index0].available %}
